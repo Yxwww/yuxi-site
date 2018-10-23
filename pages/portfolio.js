@@ -1,5 +1,5 @@
 import '../sass/index.scss';
-import { LFVIEW_EXPERIENCE } from './constants';
+import { LFVIEW_EXPERIENCE } from './constants/index';
 import ExperienceContent from '../components/experienceContent';
 
 export default () => (
@@ -20,7 +20,9 @@ export default () => (
       </section>
       <section className="projects">
         <h2>Projects</h2>
-        <ExperienceContent thumbnails={LFVIEW_EXPERIENCE.thumbnails}/>
+        <ExperienceContent
+          experience={LFVIEW_EXPERIENCE}
+        />
       </section>
     </div>
   </div> /* end of app */
