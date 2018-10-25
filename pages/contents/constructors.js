@@ -1,5 +1,12 @@
 import { generate } from 'shortid';
-import { pipe, map, objOf, assoc, partial } from 'ramda';
+import {
+    pipe,
+    map,
+    objOf,
+    assoc,
+    partial,
+    concat,
+} from 'ramda';
 
 /**
  * Have I gone too far ?
@@ -19,8 +26,12 @@ function transformIntoObjectWithUid(key) {
         addUid,
     );
 }
+const appendProjectImageUrl = concat('/static/img/projects/');
 
-const transformThumbnails = map(transformIntoObjectWithUid('img'));
+const transformThumbnails = map(pipe(
+    appendProjectImageUrl,
+    transformIntoObjectWithUid('img')
+));
 const transformContributions = map(transformIntoObjectWithUid('contribution'));
 
 export function createExperience(uid, company, product, thumbnails, description, contributions) {

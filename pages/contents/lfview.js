@@ -11,9 +11,9 @@ const contributions =  [
 ];
 
 const thumbnails = [
-    'static/img/projects/seequent-eagle.png',
-    'static/img/projects/lfview-look-at-wing.png',
-    'static/img/projects/seequent-eagle-slides.png',
+    'seequent-eagle.png',
+    'lfview-look-at-wing.png',
+    'seequent-eagle-slides.png',
 ]
 const description = 'Frontend software developer of 3D data visualization application Lfview.  Mainly contribute in state control design, business logic implementation, data structure design, cross-platform performance monitoring,  algorithm optimization, visualization feature implementation, UI design and implementation.';
 

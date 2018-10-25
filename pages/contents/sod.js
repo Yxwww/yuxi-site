@@ -5,19 +5,19 @@ const contributions =  [
 ];
 
 const thumbnails = [
-    'erwear-poster.png'
+    'sod-cropped.png'
 ];
 
-const descrption = 'A wearable system to facilitate status monitoring, location tracking, real-time communications, and media transfer for emergency response.';
+const descrption = 'Designed and developed project SoD-Toolkit : A Toolkit for Interactively Prototyping and Developing Multi-Sensor, Multi-Device Environments. SoD uses Nodejs as server, SocketIO for communication, and adopts MS Kinect, Google Tango for providing spatial awareness.';
 
 let experience;
 
-export function createERWearExperience() {
+export function createSodExperience() {
     if (!experience) {
         experience = createExperience(
             generate(),
             'Agile Surface Engineering',
-            'ERWear',
+            'Society of Devices',
             thumbnails,
             descrption,
             contributions,
