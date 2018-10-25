@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic'
-import { experience } from './contents/index';
+import { getExperience } from './contents/index';
+import '../sass/index.scss';
 
-const ExperienceContent = dynamic(() => import('../components/experienceContent'))
+const ExperienceContent = dynamic(() => import('../components/ExperienceContent'))
 
 export default () => (
   <div id="app">
@@ -22,7 +23,7 @@ export default () => (
       <section className="projects">
         <h2>Projects</h2>
         <ExperienceContent
-          experience={experience}
+          experience={getExperience()}
         />
       </section>
     </div>

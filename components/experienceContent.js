@@ -1,10 +1,7 @@
-import '../sass/index.scss';
 import { map } from 'ramda';
-import shortid from 'shortid'
-// this whole key in list is weird
 
-const createContributionList = map((contribution) => <li key={shortid.generate()}>{contribution}</li>)
-const createThumbnailDivs = map((img) => <div key={shortid.generate()} className='thumbnail' style={{ backgroundImage: `url(${img})` }}></div>)
+const createContributionList = map((data) => <li key={data.uid}>{data.contribution}</li>)
+const createThumbnailDivs = map((data) => <div key={data.uid} className='thumbnail' style={{ backgroundImage: `url(${data.img})` }}></div>);
 
 function ExperienceContent(props) {
     const experienceSections = props.experience.map((exp,i) => {
@@ -13,11 +10,12 @@ function ExperienceContent(props) {
             description,
             contributions,
             product,
+            uid,
         } = exp;
         const thumbnailsDivs = createThumbnailDivs(thumbnails)
         const contributionLists = createContributionList(contributions);
 
-        return <div key={shortid.generate()} className="project-card collapsed">
+        return <div key={uid} className="project-card collapsed">
             <div className='thumbnail-gallery'>
                 { thumbnailsDivs }
             </div>

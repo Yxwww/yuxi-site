@@ -1,4 +1,5 @@
 import { createExperience } from './constructors';
+import { generate } from 'shortid';
 
 const contributions =  [
     'lead development of fronted stack',
@@ -16,11 +17,19 @@ const thumbnails = [
 ]
 const description = 'Frontend software developer of 3D data visualization application Lfview.  Mainly contribute in state control design, business logic implementation, data structure design, cross-platform performance monitoring,  algorithm optimization, visualization feature implementation, UI design and implementation.';
 
-export const lfviewExperience = createExperience(
-    'seequent',
-    'LeapFrog View',
-    thumbnails,
-    description,
-    contributions,
-);
+let experience;
+
+export function createLfviewExperience() {
+    if (!experience) {
+        experience = createExperience(
+            generate(),
+            'seequent',
+            'LeapFrog View',
+            thumbnails,
+            description,
+            contributions,
+        );
+    }
+    return experience;
+}
 

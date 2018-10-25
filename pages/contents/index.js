@@ -1,6 +1,8 @@
-import { lfviewExperience } from './lfview';
-import { erwearExperience } from './erwear';
-export const experience = [
-    lfviewExperience,
-    erwearExperience,
-];
+import { createLfviewExperience } from './lfview';
+import { createERWearExperience } from './erwear';
+export function getExperience() {
+    return [
+        createLfviewExperience(),
+        createERWearExperience(),
+    ];
+}
