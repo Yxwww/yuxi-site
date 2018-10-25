@@ -21,7 +21,7 @@ function transformIntoObjectWithUid(key) {
 }
 
 const transformThumbnails = map(transformIntoObjectWithUid('img'));
-const transformContributions = map(transformIntoObjectWithUid('contributions'));
+const transformContributions = map(transformIntoObjectWithUid('contribution'));
 
 export function createExperience(uid, company, product, thumbnails, description, contributions) {
     return {
