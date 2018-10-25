@@ -1,5 +1,5 @@
-import React from 'react'
-import App, { Container } from 'next/app'
+import React from 'react';
+import App, { Container } from 'next/app';
 
 
 export default class MyApp extends App {
@@ -16,6 +16,7 @@ export default class MyApp extends App {
   render () {
     const { Component, pageProps } = this.props
 
+    console.log('render',this.props);
     return (
       <Container>
         <Component {...pageProps} />

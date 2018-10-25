@@ -1,6 +1,7 @@
-import '../sass/index.scss';
-import { LFVIEW_EXPERIENCE } from './constants/index';
-import ExperienceContent from '../components/experienceContent';
+import dynamic from 'next/dynamic'
+import { experience } from './contents/index';
+
+const ExperienceContent = dynamic(() => import('../components/experienceContent'))
 
 export default () => (
   <div id="app">
@@ -21,7 +22,7 @@ export default () => (
       <section className="projects">
         <h2>Projects</h2>
         <ExperienceContent
-          experience={LFVIEW_EXPERIENCE}
+          experience={experience}
         />
       </section>
     </div>

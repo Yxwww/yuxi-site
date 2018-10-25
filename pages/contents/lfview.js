@@ -1,6 +1,6 @@
 import { createExperience } from './constructors';
 
-const LFVIEW_CONTRIBUTIONS =  [
+const contributions =  [
     'lead development of fronted stack',
     'Provide expertise and incorporate best practices of frontend stack.',
     'Design, propose, and implement advanced state control system with Redux and Rxjs',
@@ -9,22 +9,18 @@ const LFVIEW_CONTRIBUTIONS =  [
     'Setup frontend test environment and encourage test driven development',
 ];
 
-const LFVIEW_THUMBNAILS = [
+const thumbnails = [
     'static/img/projects/seequent-eagle.png',
     'static/img/projects/lfview-look-at-wing.png',
     'static/img/projects/seequent-eagle-slides.png',
 ]
-const LFVIEW_EXPERIENCE_DESCRIPTION = 'Frontend software developer of 3D data visualization application Lfview.  Mainly contribute in state control design, business logic implementation, data structure design, cross-platform performance monitoring,  algorithm optimization, visualization feature implementation, UI design and implementation.';
-export const LFVIEW_EXPERIENCE = createExperience(
+const description = 'Frontend software developer of 3D data visualization application Lfview.  Mainly contribute in state control design, business logic implementation, data structure design, cross-platform performance monitoring,  algorithm optimization, visualization feature implementation, UI design and implementation.';
+
+export const lfviewExperience = createExperience(
     'seequent',
-    'lfview',
-    LFVIEW_THUMBNAILS,
-    LFVIEW_EXPERIENCE_DESCRIPTION,
-    LFVIEW_CONTRIBUTIONS,
+    'LeapFrog View',
+    thumbnails,
+    description,
+    contributions,
 );
-
-export const EXPERIENCES = [
-    LFVIEW_EXPERIENCE,
-]
-
 
