@@ -1,11 +1,17 @@
+import React from 'react';
 import dynamic from 'next/dynamic'
 import { getExperience } from './contents/index';
-import '../sass/index.scss';
 
 const ExperienceContent = dynamic(() => import('../components/ExperienceContent'))
 
-export default () => (
-  <div id="app">
+export default class PortolioPage extends React.Component {
+  static async getInitialProps({ Component, router, ctx }) {
+    const experience = await getExperience();
+    return { experience };
+  }
+
+  render() {
+  return (<div id="app">
     <div className="container">
       <div>
         <h1 style={{ display: 'inline-block' }}>Yuxi Wang</h1>
@@ -23,9 +29,11 @@ export default () => (
       <section className="projects">
         <h2>Projects</h2>
         <ExperienceContent
-          experience={getExperience()}
+          experience={ this.props.experience }
         />
       </section>
     </div>
   </div> /* end of app */
 )
+  }
+}
