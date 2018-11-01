@@ -7,5 +7,9 @@ export default function Nav(props) {
       <a href={url}>{label}</a>
     </div>
   ))
-  return <div className="nav-container">{itemDivs}</div>
+  return (
+    <div className="nav">
+      <div className="container">{itemDivs}</div>
+    </div>
+  )
 }

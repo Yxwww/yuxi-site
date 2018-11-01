@@ -27,9 +27,10 @@ p {
 h2 {
   margin-bottom: 8px;
 }
-div.container {
+#app {
   min-height: 100vh;
-  // padding-top: calc(#{$nav-height} + 20px);
+}
+div.container {
   @include container();
 }
 

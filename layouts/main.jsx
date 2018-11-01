@@ -18,7 +18,7 @@ const Nav = dynamic(() =>
 export default ({children}) => {
   const navItems = createNavItems([['/', 'home'], ['/portfolio','portfolio']]);
   return (
-  <div>
+  <div id="app">
     <Nav items={navItems}/>
     {children}
   </div>
