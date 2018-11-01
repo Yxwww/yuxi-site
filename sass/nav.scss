@@ -2,6 +2,12 @@
   .container {
     @include container();
   }
-  .nav-items {
+  .nav-container {
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    .nav-items {
+       padding-left: 10px;
+    }
   }
 }

@@ -9,7 +9,7 @@ export default function Nav(props) {
   ))
   return (
     <div className="nav">
-      <div className="container">{itemDivs}</div>
+      <div className="container nav-container">{itemDivs}</div>
     </div>
   )
 }
