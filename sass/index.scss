@@ -1,5 +1,6 @@
 @import 'mixins';
 @import 'modal';
+@import 'nav';
 
 $primary-font: 'Fira Mono', monospace, sans-serif;
 $primary-color: grey;
@@ -7,148 +8,153 @@ $primary-color-strong: rgb(94, 94, 94);
 $primary-color-contrary: white;
 $project-card-height: 200px;
 
+/* MARK: NAV */
+$nav-height: 80px;
+
 body {
-    font-family: $primary-font;
-    background-color: rgb(243, 243, 243);
+  font-family: $primary-font;
+  background-color: rgb(243, 243, 243);
 }
 
 section {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 p {
-    // text-align: justify;
-    font-size: 14px;
+  // text-align: justify;
+  font-size: 14px;
 }
 h2 {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
-div#app {
-    max-width: 800px;
-    padding-left: 16px;
-    padding-right: 16px;
-    background-color: transparent;
-    margin: auto;
+div.container {
+  min-height: 100vh;
+  // padding-top: calc(#{$nav-height} + 20px);
+  max-width: 800px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  margin: auto;
 }
 
-.projects > .container {
-    @include center-block;
-    @include flexbox;
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
+.projects > .project-container {
+  @include center-block;
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
 
 }
 .project-card {
-    margin-top: 12px;
-    margin-left: 4px;
-    margin-right: 4px;
+  margin-top: 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 100%;
+  max-height: $project-card-height;
+  transition: box-shadow .25s, max-height .15s;
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  align-items: center;
+  justify-content: left;
+  // @include shadow-elevation-2dp;
+  background-color: rgb(248, 248, 248);
+  .thumbnail-gallery {
+    height: 100%;
+    overflow: scroll;
+  }
+  .thumbnail {
+    width: 300px;
+    height: $project-card-height;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    img {
+      width: 100%;
+    }
+    cursor: pointer;
+  }
+  .content {
+    padding: 5px 0px 0px 10px;
+    max-width: 480px;
+    height: 100%;
+    overflow: scroll;
+  }
+  &:hover {
+    // cursor: row-resize;
+    @include shadow-elevation-3dp;
+  }
+  & > div {
+    display: inline-block;
+  }
+  &.collapsed {
     width: 100%;
-    max-height: $project-card-height;
-    transition: box-shadow .25s, max-height .15s;
-    @include flexbox;
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
-    align-items: center;
-    justify-content: left;
-    // @include shadow-elevation-2dp;
-    background-color: rgb(248, 248, 248);
-    .thumbnail-gallery {
-        height: 100%;
-        overflow: scroll;
+    height: auto;
+    max-height: 100vh;
+    .content {
+      .contributions {
+        display: block;
+      }
     }
     .thumbnail {
-        width: 300px;
-        height: $project-card-height;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        img {
-            width: 100%;
-        }
-        cursor: pointer;
-    }
-    .content {
-        padding: 5px 0px 0px 10px;
-        max-width: 480px;
-        height: 100%;
-        overflow: scroll;
-    }
-    &:hover {
-        // cursor: row-resize;
-        @include shadow-elevation-3dp;
-    }
-    & > div {
-        display: inline-block;
-    }
-    &.collapsed {
-        width: 100%;
-        height: auto;
-        max-height: 100vh;
-        .content {
-            .contributions {
-                display: block;
-            }
-        }
-        .thumbnail {
-            display: block;
-        }
-        @include desktop {
-            .thumbnail {
-                height: $project-card-height;
-            }
-        }
+      display: block;
     }
     @include desktop {
-        h3 {
-            font-weight: 500;
-        }
-    }
-    @include phone {
+      .thumbnail {
         height: $project-card-height;
+      }
     }
-    @include lt-desktop {
-        margin-top: 2em;
-        width: 100%;
-        height: auto;
-        justify-content: center;
-        max-height: 100vh;
-        .thumbnail-gallery {
-            width: 100%;
-            height: 400px;
-        }
-        .thumbnail {
-            height: 400px;
-            width: 100%;
-        }
-        .content {
-            height: auto;
-            padding: 5px;
-            .contributions {
-                display: none;
-            }
-        }
+  }
+  @include desktop {
+    h3 {
+      font-weight: 500;
     }
-    ul {
-        li {
-            margin: 5px 0;
-        }
+  }
+  @include phone {
+    height: $project-card-height;
+  }
+  @include lt-desktop {
+    margin-top: 2em;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    max-height: 100vh;
+    .thumbnail-gallery {
+      width: 100%;
+      height: 400px;
     }
+    .thumbnail {
+      height: 400px;
+      width: 100%;
+    }
+    .content {
+      height: auto;
+      padding: 5px;
+      .contributions {
+        display: none;
+      }
+    }
+  }
+  ul {
+    li {
+      margin: 5px 0;
+    }
+  }
 }
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 
 button {
-    background-color: $primary-color;
-    border: 0;
-    color: $primary-color-contrary;
-    height: 24px;
-    padding: 0 30px;
-    &:focus{
-        outline: none;
-    }
-    &:active {
-        background-color: $primary-color-strong;
-    }
+  background-color: $primary-color;
+  border: 0;
+  color: $primary-color-contrary;
+  height: 24px;
+  padding: 0 30px;
+  &:focus{
+    outline: none;
+  }
+  &:active {
+    background-color: $primary-color-strong;
+  }
 }

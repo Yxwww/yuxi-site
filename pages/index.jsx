@@ -1,23 +1,22 @@
+import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
 export default () => (
   <div>
     <Head>
-      <title>My page title</title>
+      <title>Yuxi Wang</title>
       <meta
         name="viewport"
         content="initial-scale=1.0, width=device-width"
         key="viewport"
       />
     </Head>
-    <p>Hello world!</p>
-    <div>
-      Click{' '}
+    <div className="container">
+      <h1>Home</h1>
       <Link prefetch href="/portfolio">
-        <a>here</a>
-      </Link>{' '}
-      to read more
+        <a href="/portfolio">Portfolio</a>
+      </Link>
     </div>
   </div>
 )

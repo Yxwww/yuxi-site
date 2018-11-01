@@ -8,8 +8,8 @@ const ExperienceContent = dynamic(() =>
 export default class PortolioPage extends React.Component {
   render() {
     return (
-      <div id="app">
-        <div className="container">
+      <div className="container">
+        <div>
           <div>
             <h1 style={{display: 'inline-block'}}>Yuxi Wang</h1>
             <a

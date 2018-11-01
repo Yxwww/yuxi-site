@@ -14,7 +14,7 @@ const createThumbnailDivs = map(data => (
 
 function ExperienceContent(props) {
   const {experience} = props
-  const experienceSections = experience.map((exp) => {
+  const experienceSections = experience.map(exp => {
     const {thumbnails, description, contributions, product, uid} = exp
     const thumbnailsDivs = createThumbnailDivs(thumbnails)
     const contributionLists = createContributionList(contributions)
@@ -35,7 +35,7 @@ function ExperienceContent(props) {
     )
   })
 
-  return <div className="container">{experienceSections}</div>
+  return <div className="project-container">{experienceSections}</div>
 }
 
 export default ExperienceContent
