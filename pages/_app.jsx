@@ -4,7 +4,7 @@ import '../sass/index.scss'
 import {getExperience} from './contents'
 
 export default class MyApp extends App {
-        static async getInitialProps() {
+  static async getInitialProps() {
     const pageProps = {experience: getExperience()}
     return {pageProps}
   }
