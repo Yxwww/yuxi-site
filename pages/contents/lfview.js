@@ -15,7 +15,7 @@ const thumbnails = [
     'lfview-look-at-wing.png',
     'seequent-eagle-slides.png',
 ]
-const description = 'Frontend software developer of 3D data visualization application Lfview.  Mainly contribute in state control design, business logic implementation, data structure design, cross-platform performance monitoring,  algorithm optimization, visualization feature implementation, UI design and implementation.';
+const description = 'Design and implement LeapFrog frontend stack from scratch, with a test coverage of over 90%, to the Redux/Rxjs/Polymer/ThreeJS based 3D data visualization web application.  Application went from initial research, design and development to production in less than 12 months and has continued with weekly deployment';
 
 let experience;
 

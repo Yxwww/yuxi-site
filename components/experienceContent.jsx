@@ -1,3 +1,4 @@
+import React from 'react';
 import { map } from 'ramda';
 
 const createContributionList = map((data) => <li key={data.uid}>{data.contribution}</li>)
@@ -35,9 +36,9 @@ function ExperienceContent(props) {
     })
 
 
-  return <div className="container">
-      { experienceSections }
-      </div>
+    return <div className="container">
+        { experienceSections }
+    </div>
 }
 
 export default ExperienceContent;
