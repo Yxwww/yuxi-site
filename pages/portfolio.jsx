@@ -1,5 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
+import Page from '../layouts/main';
 
 const ExperienceContent = dynamic(() =>
   import('../components/ExperienceContent'),
@@ -8,6 +9,7 @@ const ExperienceContent = dynamic(() =>
 export default class PortolioPage extends React.Component {
   render() {
     return (
+      <Page>
       <div className="container">
         <div>
           <div>
@@ -40,6 +42,7 @@ export default class PortolioPage extends React.Component {
           </section>
         </div>
       </div> /* end of app */
+    </Page>
     )
   }
 }

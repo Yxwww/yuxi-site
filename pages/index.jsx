@@ -1,8 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Page from '../layouts/main'
 
 export default () => (
+  <Page>
   <div>
     <Head>
       <title>Yuxi Wang</title>
@@ -19,4 +21,5 @@ export default () => (
       </Link>
     </div>
   </div>
+</Page>
 )
