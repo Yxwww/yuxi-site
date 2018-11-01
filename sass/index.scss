@@ -1,6 +1,6 @@
 @import 'mixins';
 @import 'modal';
-@import 'nav';
+@import './nav';
 
 $primary-font: 'Fira Mono', monospace, sans-serif;
 $primary-color: grey;
@@ -30,11 +30,7 @@ h2 {
 div.container {
   min-height: 100vh;
   // padding-top: calc(#{$nav-height} + 20px);
-  max-width: 800px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: transparent;
-  margin: auto;
+  @include container();
 }
 
 .projects > .project-container {

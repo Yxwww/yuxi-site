@@ -11,6 +11,14 @@
     margin-right: auto;
 }
 
+@mixin container {
+  max-width: 800px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  margin: auto;
+}
+
 @mixin flex-direction($value: row) {
 	@if $value == row-reverse {
 		-webkit-box-direction: reverse;
