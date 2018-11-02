@@ -1,26 +1,23 @@
 import dynamic from 'next/dynamic'
-import {
-    map,
-    objOf,
-} from 'ramda';
+import {map, objOf} from 'ramda'
+import {generate} from 'shortid'
 
-const createNavItems = map(function([url, label]) {
-  return {
-    url,
-    label,
-  }
-})
+const createNavItems = map(([url, label]) => ({
+  uid: generate(),
+  url,
+  label,
+}))
 
-const Nav = dynamic(() =>
-  import('../components/Nav'),
+const Nav = dynamic(
+  () => import('../components/Nav'),
 )
 
 export default ({children}) => {
-  const navItems = createNavItems([['/', 'home'], ['/portfolio','portfolio']]);
+  const navItems = createNavItems([['/', 'home'], ['/portfolio', 'portfolio']])
   return (
-  <div id="app">
-    <Nav items={navItems}/>
-    {children}
-  </div>
+    <div id="app">
+      <Nav items={navItems} />
+      {children}
+    </div>
   )
 }
