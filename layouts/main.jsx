@@ -1,6 +1,8 @@
+import React from 'react';
 import dynamic from 'next/dynamic'
-import {map, objOf} from 'ramda'
-import {generate} from 'shortid'
+import { withRouter } from 'next/router'
+import { map } from 'ramda'
+import { generate } from 'shortid'
 
 const createNavItems = map(([url, label]) => ({
   uid: generate(),
@@ -8,16 +10,19 @@ const createNavItems = map(([url, label]) => ({
   label,
 }))
 
-const Nav = dynamic(
-  () => import('../components/Nav'),
-)
+const Nav = dynamic(() => import('../components/Nav'))
+export const HOME_LABEL = 'home';
+const navItemData = [['/', HOME_LABEL], ['/portfolio', 'portfolio']];
 
-export default ({children}) => {
-  const navItems = createNavItems([['/', 'home'], ['/portfolio', 'portfolio']])
+const page = ({ children, router }) => {
+  const navItems = createNavItems(navItemData)
+  const { pathname } = router
   return (
     <div id="app">
-      <Nav items={navItems} />
+      <Nav items={navItems} highlight={pathname} />
       {children}
     </div>
   )
 }
+
+export default withRouter(page)

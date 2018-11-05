@@ -1,0 +1,14 @@
+$primary-font: 'Fira Mono', monospace, sans-serif;
+$primary-color: grey;
+$primary-color-strong: rgb(94, 94, 94);
+$primary-color-contrary: white;
+$project-card-height: 200px;
+
+$primary-grey: #3e3e3e;
+$primary-grey-light: lighten($primary-grey, 30%);
+$primary-grey-superlight: lighten($primary-grey, 50%);
+
+
+$primary-text-color: $primary-grey;
+$primary-text-light-color: $primary-grey-light;
+$primary-text-lighter-color: $primary-grey-superlight;

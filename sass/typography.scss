@@ -1,0 +1,9 @@
+a {
+  color: $primary-text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $primary-text-color;
+  }
+}
+
