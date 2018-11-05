@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'next/router'
 import { removeFirstChar } from '../utils/index'
 import { HOME_LABEL } from '../layouts/main'
 
@@ -9,13 +10,13 @@ function isLabelOurCurrentHighlight(label, highlight) {
   return label === removeFirstChar(highlight)
 }
 
-export default function Nav(props) {
-  const { items, highlight } = props
+function Nav(props) {
+  const { items, router: { pathname } } = props
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
       className={`nav-items ${
-        isLabelOurCurrentHighlight(label, highlight) ? 'selected' : ''
+        isLabelOurCurrentHighlight(label, pathname) ? 'selected' : ''
       }`}
     >
       <a href={url}>{label}</a>
@@ -27,3 +28,5 @@ export default function Nav(props) {
     </div>
   )
 }
+
+export default withRouter(Nav);
