@@ -7,7 +7,7 @@
     @include flex-direction(row);
     @include flex-wrap(wrap);
     .nav-items {
-      margin: 0px 10px 0px 10px;
+      margin: 0px 10px 0px 0px;
       padding-bottom: 5px;
       &.selected {
         border-bottom: 2px solid $primary-text-lighter-color;

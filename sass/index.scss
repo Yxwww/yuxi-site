@@ -36,8 +36,8 @@ div.container {
   @include flexbox;
   @include flex-direction(row);
   @include flex-wrap(wrap);
-
 }
+
 .project-card {
   margin-top: 12px;
   margin-left: 4px;
