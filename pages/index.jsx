@@ -16,9 +16,7 @@ export default () => (
       </Head>
       <div className="container">
         <h1>Home</h1>
-        <Link prefetch href="/portfolio">
-          <a href="/portfolio">Portfolio</a>
-        </Link>
+        <p>Hello traveller, welcome to my site !</p>
       </div>
     </div>
   </Page>

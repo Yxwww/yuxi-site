@@ -17,7 +17,6 @@ export default function(props) {
             <a href="https://github.com/Yxwww" style={{ display: 'block' }}>
               <img height="32" width="32" src="static/img/github.png" alt="" />
             </a>
-            <p>Hello traveller, welcome to my site !</p>
           </div>
           <section>
             <h2>Summary</h2>
