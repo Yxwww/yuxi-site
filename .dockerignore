@@ -3,6 +3,7 @@
 !components
 !sass
 !utils
+!layouts
 !static
 !package.json
 !yarn.lock
