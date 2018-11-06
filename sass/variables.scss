@@ -14,3 +14,7 @@ $primary-grey-superlight: lighten($primary-grey, 50%);
 $primary-text-color: $primary-grey;
 $primary-text-light-color: $primary-grey-light;
 $primary-text-lighter-color: $primary-grey-superlight;
+
+@mixin font-size-regular() {
+  font-size: 12px;
+};

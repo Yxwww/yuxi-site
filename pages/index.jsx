@@ -1,19 +1,9 @@
 import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
 import Page from '../layouts/main'
 
 export default () => (
   <Page>
     <div>
-      <Head>
-        <title>Yuxi Wang</title>
-        <meta
-          name="viewport"
-          content="initial-scale=1.0, width=device-width"
-          key="viewport"
-        />
-      </Head>
       <div className="container">
         <h1>Home</h1>
         <p>Hello traveller, welcome to my site !</p>
