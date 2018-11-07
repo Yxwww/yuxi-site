@@ -1,7 +1,7 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import '../sass/index.scss'
-import { getExperience } from './contents'
+import { getExperience } from '../src/contents'
 
 export default class MyApp extends App {
   static async getInitialProps() {
