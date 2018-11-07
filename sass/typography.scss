@@ -12,4 +12,11 @@ a {
     color: $primary-color-darken;
   }
 }
+h1 {
+  @include font-size($font-size-x-large);
+}
 
+
+ol, ul {
+    list-style: lao;
+}

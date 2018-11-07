@@ -138,3 +138,13 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+// PX to REM - Usage: font-size: rem(37px);
+@function rem($px, $base: $base-font-size) {
+    @return ($px / $base) * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+};
+
