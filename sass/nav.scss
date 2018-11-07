@@ -9,6 +9,7 @@
     .nav-items {
       margin: 0px 10px 0px 0px;
       padding-bottom: 5px;
+      text-transform: capitalize;
       &.selected {
         border-bottom: 2px solid $secondary-color;
       }
