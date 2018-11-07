@@ -15,6 +15,11 @@ $primary-text-color: $primary-grey;
 $primary-text-light-color: $primary-grey-light;
 $primary-text-lighter-color: $primary-grey-superlight;
 
-@mixin font-size-regular() {
-  font-size: 12px;
+$font-size-small: 12px;
+$font-size-regular: 16px;
+$font-size-large: 24px;
+$font-size-x-large: 32px;
+
+@mixin font-size($size) {
+  font-size: $size;
 };

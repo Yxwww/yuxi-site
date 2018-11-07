@@ -14,7 +14,9 @@ export default function(props) {
         <div>
           <div>
             <h1 style={{ display: 'inline-block' }}>Yuxi Wang</h1>
-            <a href="https://github.com/Yxwww" style={{ display: 'block' }}>
+          </div>
+          <div>
+            <a target="_blank" href="https://github.com/Yxwww">
               <img height="32" width="32" src="static/img/github.png" alt="" />
             </a>
           </div>
