@@ -1,6 +1,9 @@
 body {
-    font-size: 14px;
+  font-family: $primary-font;
+  font-size: 14px;
+  font-weight: 400;
 }
+
 a {
   display: inline-block;
   color: $primary-color;
@@ -22,4 +25,12 @@ h1 {
 
 ol, ul {
     list-style: square;
+}
+
+p {
+  letter-spacing: -.001em;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+  --webkit-font-smoothing: antialiased;
 }
