@@ -16,7 +16,11 @@ export default function(props) {
             <h1 style={{ display: 'inline-block' }}>Yuxi Wang</h1>
           </div>
           <div>
-            <a target="_blank" href="https://github.com/Yxwww">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/Yxwww"
+            >
               <img height="32" width="32" src="static/img/github.png" alt="" />
             </a>
           </div>
@@ -34,6 +38,7 @@ export default function(props) {
             </div>
             <div className="right">
               <div className="contact" />
+              {/* leave contact info here ? */}
             </div>
           </section>
           <section className="projects">
