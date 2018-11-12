@@ -29,9 +29,11 @@
     cursor: pointer;
   }
   .content {
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
     padding-left: 10px;
-    max-width: 480px;
+    max-width: 600px;
     height: 100%;
   }
   // &:hover {
