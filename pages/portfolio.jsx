@@ -20,16 +20,21 @@ export default function(props) {
               <img height="32" width="32" src="static/img/github.png" alt="" />
             </a>
           </div>
-          <section>
-            <h2>Summary</h2>
-            <p>
-              Experienced Software Developer (5 years) with a demonstrated
-              history of working in the computer software industry. Skilled in
-              Javascript, web application development, and realtime application
-              state control. Strong engineering professional with a
-              Bachelor&apos;s Degree focused in Computer Science from University
-              of Calgary.
-            </p>
+          <section className="title">
+            <div className="left">
+              <h2>Summary</h2>
+              <p>
+                Experienced Software Developer (5 years) with a demonstrated
+                history of working in the computer software industry. Skilled in
+                Javascript, web application development, and realtime
+                application state control. Strong engineering professional with
+                a Bachelor&apos;s Degree focused in Computer Science from
+                University of Calgary.
+              </p>
+            </div>
+            <div className="right">
+              <div className="contact" />
+            </div>
           </section>
           <section className="projects">
             <h2>Projects</h2>
