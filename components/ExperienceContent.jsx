@@ -16,13 +16,13 @@ function ExperienceContent(props) {
   const { experience } = props
   const experienceSections = experience.map(exp => {
     const { thumbnails, description, contributions, product, uid } = exp
-    const thumbnailsDivs = createThumbnailDivs(thumbnails)
+    // const thumbnailsDivs = createThumbnailDivs(thumbnails)
     const contributionLists = createContributionList(contributions)
 
     return (
       <div key={uid} className="project-card-container">
         <div className="project-card collapsed">
-          <div className="thumbnail-gallery">{thumbnailsDivs}</div>
+          {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
           <div className="content">
             <div>
               <h3 className="text-center">{product}</h3>
