@@ -1,4 +1,5 @@
 .nav{
+  font-weight: $font-weight-medium;
   .container {
     @include container();
   }

@@ -7,9 +7,6 @@
   margin: 0;
   width: auto;
   transition: box-shadow .25s, max-height .15s;
-  @include flexbox;
-  @include flex-direction(row);
-  @include flex-wrap(wrap);
   align-items: center;
   justify-content: left;
   // @include shadow-elevation-2dp;
