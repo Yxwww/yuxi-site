@@ -32,10 +32,10 @@ a {
       bottom: -3px;
   }
 }
+
 h1 {
   @include font-size($font-size-x-large);
 }
-
 
 ol, ul {
     list-style: square;
@@ -55,7 +55,7 @@ p {
   text-align: left;
 }
 
-h2 {
-  margin-bottom: 8px;
+h1, h2, h3, h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
