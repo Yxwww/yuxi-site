@@ -1,9 +1,15 @@
 body {
   font-family: $primary-font;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+  --webkit-font-smoothing: antialiased;
 }
 
+h3 {
+    font-weight: 500;
+}
 a {
   display: inline-block;
   color: $primary-color;
@@ -16,6 +22,12 @@ a {
 
   &:hover {
     color: $primary-color-darken;
+  }
+
+  img {
+      max-width: 16px;
+      position: relative;
+      bottom: -3px;
   }
 }
 h1 {
@@ -30,7 +42,13 @@ ol, ul {
 p {
   letter-spacing: -.001em;
   overflow-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  word-break: break-word;
-  --webkit-font-smoothing: antialiased;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+

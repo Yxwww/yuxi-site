@@ -1,7 +1,8 @@
 $primary-font: 'Fira Mono', monospace, sans-serif;
-$primary-color: #10458c;
-$primary-color-darken: darken(#3045f5, 30%);
-$secondary-color: #66a929;
+$primary-color: rgb(0, 122, 255);
+$primary-color-darken: darken($primary-color, 25%);
+$primary-color-lighter: lighten($primary-color, 25%);
+$secondary-color: rgb(35, 35, 35);
 $secondary-color-superlight: lighten($secondary-color, 40%);
 $primary-color-strong: rgb(94, 94, 94);
 $primary-color-contrary: white;

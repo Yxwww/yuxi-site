@@ -18,6 +18,10 @@ const thumbnails = [
 const description = `Design and implement LeapFrog frontend stack from scratch, with a test coverage of over 90%, to the Redux/Rxjs/Polymer/ThreeJS based 3D data visualization web application.\n
     Application went from initial research, design and development to production in less than 12 months and has continued with weekly deployment.`
 
+const time = 'June 2016 - Now'
+
+const url = 'https://lfview.com'
+
 let experience
 
 export function createLfviewExperience() {
@@ -29,6 +33,8 @@ export function createLfviewExperience() {
       thumbnails,
       description,
       contributions,
+      time,
+      url,
     )
   }
   return experience

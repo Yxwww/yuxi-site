@@ -34,6 +34,8 @@ export function createExperience(
   thumbnails,
   description,
   contributions,
+  time = '',
+  projecturl = '',
 ) {
   return {
     uid,
@@ -42,5 +44,7 @@ export function createExperience(
     thumbnails: transformThumbnails(thumbnails),
     description,
     contributions: transformContributions(contributions),
+    time,
+    projecturl,
   }
 }

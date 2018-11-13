@@ -21,7 +21,7 @@ export default function(props) {
               target="_blank"
               href="https://github.com/Yxwww"
             >
-              <img height="32" width="32" src="static/img/github.png" alt="" />
+              <img src="static/img/github.png" alt="" />
             </a>
           </div>
           <section className="title">
