@@ -14,7 +14,7 @@ export default function(props) {
       <div className="container">
         <div>
           <div>
-            <h1 style={{ display: 'inline-block' }}>
+            <h1>
               Yuxi Wang
               <span className="social-icons">
                 <a
@@ -37,7 +37,7 @@ export default function(props) {
               </span>
             </h1>
           </div>
-          <section className="title">
+          <div className="title">
             <div className="left">
               <h2>Summary</h2>
               <p>
@@ -53,11 +53,11 @@ export default function(props) {
               <div className="contact" />
               {/* leave contact info here ? */}
             </div>
-          </section>
-          <section className="projects">
+          </div>
+          <div className="projects">
             <h2>Projects</h2>
             <ExperienceContent experience={experience} />
-          </section>
+          </div>
         </div>
       </div>
       {/* end of app */}
