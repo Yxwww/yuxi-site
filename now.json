@@ -1,8 +1,7 @@
 {
-  "type": "docker",
-  "features": {
-    "cloud": "v2"
-  },
   "alias": "yuxiwang.me",
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" }
+  ],
   "version": 2
 }
