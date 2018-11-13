@@ -1,6 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Page from '../layouts/main'
+import '../sass/page-portfolio.scss'
 
 const ExperienceContent = dynamic(() =>
   import('../components/ExperienceContent'),
@@ -13,18 +14,29 @@ export default function(props) {
       <div className="container">
         <div>
           <div>
-            <h1 style={{ display: 'inline-block' }}>Yuxi Wang</h1>
+            <h1 style={{ display: 'inline-block' }}>
+              Yuxi Wang
+              <span className="social-icons">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://github.com/Yxwww"
+                >
+                  <img
+                    src="static/img/logos/github.png"
+                    alt=""
+                  />
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/yuxiwang/"
+                >
+                    <img src="/static/img/logos/in-black-28px.png" alt="" />
+                </a>
+              </span>
+            </h1>
           </div>
-          {/* <div className="social-icons">
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://github.com/Yxwww"
-            >
-              <img src="static/img/github.png" alt="" />
-            </a>
-          </div>
-          */ }
           <section className="title">
             <div className="left">
               <h2>Summary</h2>

@@ -72,7 +72,6 @@
     height: $project-card-height;
   }
   @include lt-desktop {
-    margin-top: 2em;
     width: 100%;
     height: auto;
     justify-content: center;
@@ -87,7 +86,6 @@
     }
     .content {
       height: auto;
-      // padding: 5px;
       .contributions {
         display: none;
       }
