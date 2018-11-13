@@ -15,7 +15,7 @@ export default function(props) {
           <div>
             <h1 style={{ display: 'inline-block' }}>Yuxi Wang</h1>
           </div>
-          <div>
+          {/* <div className="social-icons">
             <a
               rel="noopener noreferrer"
               target="_blank"
@@ -24,6 +24,7 @@ export default function(props) {
               <img src="static/img/github.png" alt="" />
             </a>
           </div>
+          */ }
           <section className="title">
             <div className="left">
               <h2>Summary</h2>
