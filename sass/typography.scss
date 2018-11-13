@@ -42,8 +42,9 @@ ol, ul {
 }
 
 p {
-  letter-spacing: -0.037px;
-  overflow-wrap: break-word;
+    @include font-size($font-size-regular);
+    letter-spacing: -0.037px;
+    overflow-wrap: break-word;
 }
 
 .text-center {
