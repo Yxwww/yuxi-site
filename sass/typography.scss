@@ -9,8 +9,11 @@ body {
   text-size-adjust: 100%;
 }
 
+h1, h2, h3,h4,h5, span, i, b {
+  @include user-select(text);
+}
 h3 {
-    font-weight: 500;
+  font-weight: 500;
 }
 a {
   display: inline-block;
@@ -42,9 +45,11 @@ ol, ul {
 }
 
 p {
-    @include font-size($font-size-regular);
-    letter-spacing: -0.037px;
-    overflow-wrap: break-word;
+  @include user-select(text);
+
+  @include font-size($font-size-regular);
+  letter-spacing: -0.037px;
+  overflow-wrap: break-word;
 }
 
 .text-center {

@@ -11,6 +11,24 @@
 /* MARK: NAV */
 $nav-height: 80px;
 
+/* global */
+html {
+  box-sizing: border-box;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+
+  @include user-select(none);
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background-color: rgb(243, 243, 243);
 }
