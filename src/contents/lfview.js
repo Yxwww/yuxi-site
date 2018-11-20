@@ -13,7 +13,7 @@ const contributions = [
   'Participate in design and implementation of the full aspect of frontend stack includes visualization, UI components, and overall application business logic and state control.',
   'Diagnose and improve application performance. Mainly contributed in large datasets handling between business logic and visualization',
   'Experienced through perspective of project maintainer of application life cycle includes ideation, research, proposal, development, and maintenance',
-  'Onboarding new teammates. Provides training materials, documentation, and communication',
+  'Onboarding new teammates. Provide training materials, documentation, and communication',
   'Design and contributed in setup and maintain frontend test environment, maximize productivity utilizing testing techniques',
 ]
 
