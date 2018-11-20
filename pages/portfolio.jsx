@@ -20,16 +20,6 @@ export default function(props) {
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
-                  href="https://github.com/Yxwww"
-                >
-                  <img
-                    src="static/img/logos/github.png"
-                    alt=""
-                  />
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
                   href="https://www.linkedin.com/in/yuxiwang/"
                 >
                     <img src="/static/img/logos/in-black-28px.png" alt="" />

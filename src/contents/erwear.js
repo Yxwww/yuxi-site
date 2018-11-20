@@ -1,7 +1,9 @@
 import { generate } from 'shortid'
 import { createExperience } from './constructors'
 
-const contributions = []
+const contributions = [
+
+]
 
 const thumbnails = ['erwear-poster.png']
 
