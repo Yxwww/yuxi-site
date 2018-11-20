@@ -41,10 +41,10 @@ h1 {
 }
 
 ol, ul {
-    list-style: square;
+  list-style: square;
 }
 
-p {
+p, li {
   @include user-select(text);
 
   @include font-size($font-size-regular);
