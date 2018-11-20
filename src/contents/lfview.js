@@ -19,7 +19,7 @@ const contributions = [
 
 const description = `
     Lead developer of 3D data visualization web application LFView frontend stack. Re-design and implement frontend stack from ground up, with test coverage of over 90%, to the Redux/Rxjs/Polymer/ThreeJS based web app.
-    Application went from initial research, design and development to production in less than 12 months and has continued with weekly continuous deployment.
+    Project went from initial research, design and development to production in less than 12 months and has continued with weekly continuous deployment.
     `
 
 const time = 'June,2016 - Now'
