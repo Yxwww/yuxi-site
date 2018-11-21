@@ -1,4 +1,5 @@
 import { generate } from 'shortid'
+import { DEVELOPER_ROLE } from './constants'
 import { createExperience } from './constructors'
 
 const thumbnails = [
@@ -22,6 +23,7 @@ const description = `
     Project went from initial research, design and development to production in less than 12 months and has continued with weekly continuous deployment.
     `
 
+const roles = [DEVELOPER_ROLE]
 const time = 'June,2016 - Now'
 
 const url = 'https://lfview.com'
@@ -39,6 +41,7 @@ export function createLfviewExperience() {
       contributions,
       time,
       url,
+      roles,
     )
   }
   return experience

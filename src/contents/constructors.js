@@ -36,6 +36,7 @@ export function createExperience(
   contributions,
   time = '',
   projecturl = '',
+  roles=[],
 ) {
   return {
     uid,
@@ -46,5 +47,6 @@ export function createExperience(
     contributions: transformContributions(contributions),
     time,
     projecturl,
+    roles,
   }
 }
