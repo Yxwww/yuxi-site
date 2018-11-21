@@ -12,8 +12,8 @@ const contributions = [
   'Provide expertise and incorporate best practices of frontend stack.',
   'Design, propose, and implement state control system with Redux and Rxjs',
   'Participate in design and implementation of the full aspect of frontend stack includes visualization, UI components, and overall application business logic and state control.',
-  'Diagnose and improve application performance. Mainly contributed in large datasets handling between business logic and visualization',
-  'Experienced through perspective of project maintainer of application life cycle includes ideation, research, proposal, development, and maintenance',
+  'Diagnose and improve application performance. Mainly contributed in large datasets handling within business logic and visualization.',
+  'Experienced as project maintainer of application life cycle includes ideation, research, proposal, development, and maintenance',
   'Onboarding new teammates. Provide training materials, documentation, and communication',
   'Design and contributed in setup and maintain frontend test environment, maximize productivity utilizing testing techniques',
 ]
