@@ -3,9 +3,10 @@ import { createExperience } from './constructors'
 import { ROLE_DEVELOPER_INTERN, ROLE_RESEARCH_ASSISTANT } from './constants'
 
 const contributions = [
-  'Design and implemented multi-Kinect feature technique which greatly improves spatial awareness tracking area.',
-  'Intergrate with Google Tango, Leap Motion, iBeacon and mobile devices by building and maintaining clients for various platform and their domain specific features',
-  'Design and implemented SoD server with realtime communication technology.',
+  'Develop and maintain client library in varies platform including C#, Obj-C, JavaScript, Android, and Unity. ',
+  'Design and develop node server with socket management, geometric computation, and state control',
+  'Intergrate toolkit with Google Tango, Leap Motion, iBeacon, mobile devices and wearables utilize client libraries and the hardware domain specific features',
+  'Design and implement multi-Kinect feature technique which greatly improves spatial awareness tracking area.',
 ]
 
 const thumbnails = ['sod-cropped.png']
