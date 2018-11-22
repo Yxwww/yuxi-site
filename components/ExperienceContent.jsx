@@ -48,7 +48,7 @@ const createExpereienceSections = map(exp => {
                 )}
               </span>
             </h3>
-            <div className="flex space-between flex-end">
+            <div className="flex space-between flex-end flex-wrap-wrap">
               <i className="text-left experience-time">{time}</i>
               <i className="text-left medium-weight experience-roles">
                 {generateRolesString(roles)}

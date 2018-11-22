@@ -17,6 +17,14 @@
   padding-right: 16px;
   background-color: transparent;
   margin: auto;
+  @include phone() {
+    @include smallScreenPadding
+  }
+}
+
+@mixin smallScreenPadding {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 @mixin flex-direction($value: row) {
