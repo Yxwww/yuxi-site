@@ -3,10 +3,11 @@ import { createExperience } from './constructors'
 import { ROLE_DEVELOPER_INTERN, ROLE_RESEARCH_ASSISTANT } from './constants'
 
 const contributions = [
-  'Develop and maintain client library in varies platform including C#, Obj-C, JavaScript, Android, and Unity. ',
-  'Design and develop node server with socket management, geometric computation, and state control',
-  'Intergrate toolkit with Google Tango, Leap Motion, iBeacon, mobile devices and wearables utilize client libraries and the hardware domain specific features',
-  'Design and implement multi-Kinect feature technique which greatly improves spatial awareness tracking area.',
+  'Design and develop node server with socket management, geometric computation, and real time state control.',
+  'Develop and maintain client library in various platforms including C#, Obj-C, JavaScript, Android, and Unity. ',
+  'Design and implement 2D and 3D visualizer utilizes html5 canvas and Unity to provide visual demonstration of server state in realtime.',
+  'Intergrate toolkit with Google Tango, Leap Motion, iBeacon, wearables, and mobile devices utilize client libraries and the hardware domain specific features',
+  'Design and implement multi-Kinect fusion technique which greatly improves spatial awareness tracking area.',
 ]
 
 const thumbnails = ['sod-cropped.png']
