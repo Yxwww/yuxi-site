@@ -4,7 +4,7 @@ import { createExperience } from './constructors'
 const contributions = [
   'Conduct interview with first responders following IDEO methods. Analyze and incorporate design based on user feedback',
   'Design and develop functional protpotype utilizes glass and writst based wearable hardware, and websocket based real time communication technology',
-  'Conduct research on usability study of a wearable computing solution for first responders',
+  'Conduct usability study of the solution with first responders',
 ]
 
 const thumbnails = ['erwear-poster.png']
