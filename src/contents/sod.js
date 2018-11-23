@@ -24,7 +24,7 @@ export function createSodExperience() {
     experience = createExperience(
       generate(),
       'Agile Surface Engineering Lab',
-      'Society of Devices',
+      'SoD Toolkit',
       thumbnails,
       description,
       contributions,
