@@ -1,6 +1,6 @@
 body {
   font-family: $primary-font;
-  font-size: 16px;
+  font-size: $font-size-regular;
   font-weight: 400;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
@@ -12,6 +12,7 @@ body {
 h1, h2, h3,h4,h5, span, i, b {
   @include user-select(text);
 }
+
 h3 {
   font-weight: 500;
 }
@@ -38,6 +39,11 @@ a {
 
 h1 {
   @include font-size($font-size-x-large);
+  font-weight: 700;
+}
+h2 {
+  @include font-size($font-size-large);
+  font-weight: 700;
 }
 
 ol, ul {

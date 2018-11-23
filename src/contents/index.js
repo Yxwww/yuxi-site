@@ -6,8 +6,8 @@ import { createSodExperience } from './sod'
 export function getExperience() {
   return [
     createLfviewExperience(),
-    createSodExperience(),
     createERWearExperience(),
+    createSodExperience(),
     // createEocfExperience(),
   ]
 }
