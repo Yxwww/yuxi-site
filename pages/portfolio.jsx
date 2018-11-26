@@ -48,6 +48,9 @@ export default function(props) {
             <h2>Projects</h2>
             <ExperienceContent experience={experience} />
           </div>
+          <div>
+              <h2>Education</h2>
+          </div>
         </div>
       </div>
       {/* end of app */}
