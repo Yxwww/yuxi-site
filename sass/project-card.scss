@@ -11,6 +11,13 @@
   justify-content: left;
   // @include shadow-elevation-2dp;
   background-color: transparent;
+  .experience-time {
+
+  }
+  .experience-roles {
+    @include font-size($font-size-medium);
+    font-weight: 500;
+  }
   .thumbnail-gallery {
     height: 100%;
   }
@@ -34,6 +41,9 @@
     height: 100%;
     .project-url{
         margin-left: 0.5em;
+    }
+    @include phone {
+      @include smallScreenPadding
     }
   }
   // &:hover {
@@ -71,7 +81,6 @@
     width: 100%;
     height: auto;
     justify-content: center;
-    max-height: 100vh;
     .thumbnail-gallery {
       width: 100%;
       height: 400px;

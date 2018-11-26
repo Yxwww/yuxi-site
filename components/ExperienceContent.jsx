@@ -1,5 +1,6 @@
 import React from 'react'
-import { map } from 'ramda'
+import { map, join } from 'ramda'
+import '../sass/layout.scss'
 
 const createContributionList = map(data => (
   <li key={data.uid}>{data.contribution}</li>
@@ -11,6 +12,7 @@ const createThumbnailDivs = map(data => (
     style={{ backgroundImage: `url(${data.img})` }}
   />
 ))
+const generateRolesString = join(', ')
 
 const createExpereienceSections = map(exp => {
   const {
@@ -20,6 +22,7 @@ const createExpereienceSections = map(exp => {
     product,
     uid,
     time,
+    roles,
     projecturl,
   } = exp
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
@@ -40,15 +43,22 @@ const createExpereienceSections = map(exp => {
                     href={projecturl}
                     target="_blank"
                   >
-                    <img
-                      src="/static/img/icons/url.svg"
-                      alt="url"
-                    />
+                    <img src="/static/img/icons/url.svg" alt="url" />
                   </a>
                 )}
               </span>
             </h3>
-            <i className="text-left">{time}</i>
+
+            <div className="flex space-between flex-end flex-wrap-wrap">
+              <div>
+                <i className="text-left experience-time">{time}</i>
+              </div>
+              <div>
+                <i className="text-left medium-weight experience-roles">
+                  {generateRolesString(roles)}
+                </i>
+              </div>
+            </div>
             <p>{description}</p>
           </div>
           <div className="contributions">

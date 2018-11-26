@@ -4,7 +4,6 @@ import { map } from 'ramda'
 import { generate } from 'shortid'
 import Head from '../components/Head'
 
-
 const createNavItems = map(([url, label]) => ({
   uid: generate(),
   url,

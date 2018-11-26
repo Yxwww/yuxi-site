@@ -4,7 +4,7 @@ import { pipe, map, objOf, assoc, partial, concat } from 'ramda'
 /**
  * Have I gone too far ?
  */
-const associateUidWithGeneratedUid = pipe(
+export const associateUidWithGeneratedUid = pipe(
   generate,
   partial(assoc, ['uid']),
 )
@@ -36,6 +36,7 @@ export function createExperience(
   contributions,
   time = '',
   projecturl = '',
+  roles=[],
 ) {
   return {
     uid,
@@ -46,5 +47,6 @@ export function createExperience(
     contributions: transformContributions(contributions),
     time,
     projecturl,
+    roles,
   }
 }

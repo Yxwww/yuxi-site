@@ -1,6 +1,6 @@
 body {
   font-family: $primary-font;
-  font-size: 16px;
+  font-size: $font-size-regular;
   font-weight: 400;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
@@ -9,8 +9,12 @@ body {
   text-size-adjust: 100%;
 }
 
+h1, h2, h3,h4,h5, span, i, b {
+  @include user-select(text);
+}
+
 h3 {
-    font-weight: 500;
+  font-weight: 500;
 }
 a {
   display: inline-block;
@@ -35,16 +39,23 @@ a {
 
 h1 {
   @include font-size($font-size-x-large);
+  font-weight: 700;
+}
+h2 {
+  @include font-size($font-size-large);
+  font-weight: 700;
 }
 
 ol, ul {
-    list-style: square;
+  list-style: square;
 }
 
-p {
-    @include font-size($font-size-regular);
-    letter-spacing: -0.037px;
-    overflow-wrap: break-word;
+p, li {
+  @include user-select(text);
+
+  @include font-size($font-size-regular);
+  letter-spacing: -0.037px;
+  overflow-wrap: break-word;
 }
 
 .text-center {
