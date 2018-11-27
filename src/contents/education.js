@@ -1,8 +1,12 @@
 import { generate } from 'shortid'
-import { DEVELOPER_ROLE } from './constants'
 import { createExperience } from './constructors'
 
-const contributions = []
+const contributions = [
+  // 'CPSC-449: Programing Paradigms',
+  // 'CPSC-502: Research Project in Computer Science',
+  // 'CPSC-599: Advanced iOS Programming',
+  // 'CPSC-481: Human-Computer Interaction',
+]
 
 const description =
   'Graduated from University of Calgary Bachelor of Science in Computer Science Internship Program.'

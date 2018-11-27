@@ -17,19 +17,25 @@ function Portfolio(props) {
     <Page>
       <div className="container">
         <div>
-          <div>
-            <h1>
-              Yuxi Wang
-              <span className="social-icons">
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/yuxiwang/"
-                >
-                  <img src="/static/img/logos/in-black-28px.png" alt="" />
-                </a>
-              </span>
-            </h1>
+          <div className="flex space-between flex-end flex-wrap-wrap">
+            <div>
+              <h1>
+                Yuxi Wang
+                <span className="social-icons">
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/yuxiwang/"
+                  >
+                    <img src="/static/img/logos/in-black-28px.png" alt="" />
+                  </a>
+                </span>
+              </h1>
+            </div>
+            <div className="contact">
+              <a href="mailto:">jim@rock.com</a>
+              <br />
+            </div>
           </div>
           <div className="title">
             <div className="left">
