@@ -35,7 +35,7 @@ a {
   }
 
   img {
-      max-width: 15px;
+      max-height: 15px;
       position: relative;
       bottom: -3px;
   }
@@ -60,6 +60,10 @@ p, li {
   @include font-size($font-size-regular);
   letter-spacing: -0.037px;
   overflow-wrap: break-word;
+
+  @include print {
+    @include font-size($font-size-small);
+  }
 }
 
 .text-center {

@@ -29,11 +29,16 @@ function Portfolio(props) {
                   >
                     <img src="/static/img/logos/in-black-28px.png" alt="" />
                   </a>
+                  <a href="mailto:yuxi.wangcd@gmail.com">
+                    <img src="/static/img/icons/email.png" alt="" />
+                  </a>
                 </span>
               </h1>
             </div>
             <div className="contact">
-              {/* <a href="mailto:">yuxi.wangcd@gmail.com</a> */}
+              <div />
+              <div>Email: yuxi.wangcd@gmail.com</div>
+
               <br />
             </div>
           </div>
