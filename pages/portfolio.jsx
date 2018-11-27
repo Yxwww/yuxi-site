@@ -33,7 +33,7 @@ function Portfolio(props) {
               </h1>
             </div>
             <div className="contact">
-              // <a href="mailto:">yuxi.wangcd@gmail.com</a>
+              {/* <a href="mailto:">yuxi.wangcd@gmail.com</a> */}
               <br />
             </div>
           </div>
