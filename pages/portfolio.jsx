@@ -36,10 +36,9 @@ function Portfolio(props) {
               </h1>
             </div>
             <div className="contact">
-              <div />
-              <div>Email: yuxi.wangcd@gmail.com</div>
-
-              <br />
+              <a href="mailto:yuxi.wangcd@gmail.com">
+                Email: yuxi.wangcd@gmail.com
+              </a>
             </div>
           </div>
           <div className="title">

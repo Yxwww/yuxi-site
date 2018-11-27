@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'variables';
 
 .social-icons {
   margin-left: 0.2em;
@@ -9,5 +10,11 @@
 
   @include print {
     display: none;
+  }
+}
+
+.contact {
+  a {
+    color: $primary-text-color;
   }
 }
