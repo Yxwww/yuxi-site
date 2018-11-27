@@ -28,15 +28,15 @@ const transformThumbnails = map(
 const transformContributions = map(transformIntoObjectWithUid('contribution'))
 
 export function createExperience(
-  uid,
-  company,
-  product,
-  thumbnails,
-  description,
-  contributions,
+  uid = generate(),
+  company = '',
+  product = '',
+  thumbnails = '',
+  description = '',
+  contributions = [],
   time = '',
   projecturl = '',
-  roles=[],
+  roles = [],
 ) {
   return {
     uid,

@@ -12,7 +12,7 @@ const createThumbnailDivs = map(data => (
 ))
 
 const createExpereienceSections = map(exp => (
-  <ExperienceSection experience={exp} />
+  <ExperienceSection key={exp.uid} experience={exp} />
 ))
 
 function ExperienceContent(props) {

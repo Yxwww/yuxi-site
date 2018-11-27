@@ -7,8 +7,12 @@ const ExperienceContent = dynamic(() =>
   import('../components/ExperienceContent'),
 )
 
-export default function(props) {
-  const { experience } = props
+const ExperienceSection = dynamic(() =>
+  import('../components/ExperienceSection'),
+)
+
+function Portfolio(props) {
+  const { experience, education } = props
   return (
     <Page>
       <div className="container">
@@ -22,7 +26,7 @@ export default function(props) {
                   target="_blank"
                   href="https://www.linkedin.com/in/yuxiwang/"
                 >
-                    <img src="/static/img/logos/in-black-28px.png" alt="" />
+                  <img src="/static/img/logos/in-black-28px.png" alt="" />
                 </a>
               </span>
             </h1>
@@ -49,7 +53,8 @@ export default function(props) {
             <ExperienceContent experience={experience} />
           </div>
           <div>
-              <h2>Education</h2>
+            <h2>Education</h2>
+            <ExperienceSection experience={education} />
           </div>
         </div>
       </div>
@@ -57,3 +62,5 @@ export default function(props) {
     </Page>
   )
 }
+
+export default Portfolio
