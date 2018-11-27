@@ -14,6 +14,7 @@ export default props => {
       description,
       contributions,
       product,
+      company,
       uid,
       time,
       roles,
@@ -30,7 +31,7 @@ export default props => {
         <div className="content">
           <div>
             <h3 className="text-left">
-              {product}
+                {product} - <span class="captalized">{company}</span>
               <span className="project-url">
                 {projecturl && (
                   <a

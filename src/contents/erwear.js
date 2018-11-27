@@ -3,15 +3,15 @@ import { createExperience } from './constructors'
 import { RESEARCHER_ROLE, DEVELOPER_ROLE } from './constants'
 
 const contributions = [
-  'Conduct interview with first responders following IDEO methods. Analyze and incorporate design based on user feedback',
-  'Design and develop functional prototype utilizes glass and writst based wearable hardware',
-  'Integrate wearable application with SoD-Toolkit to enable spatial awareness',
+  'Conducted interviews with first responders following IDEO methods. Analyzed and iterated design based on user feedback',
+  'Designed and developed functional prototype with glass and wrist based wearable hardware.',
+  'Integrated wearable application with internal spatial-aware communication system.',
 ]
 
 const thumbnails = ['erwear-poster.png']
 
 const descrption =
-  'Research, design and developed wearable system, utilizes glass and wrist based wearable technology ,to enhance emergency responders situational awarenes.'
+  'Researched, designed and developed a wearable system leveraging glass and wrist based wearable technology to enhance situational awareness of emergency responders.'
 const roles = [RESEARCHER_ROLE, DEVELOPER_ROLE]
 const time = 'September, 2015 - June, 2016'
 
@@ -20,7 +20,7 @@ export function createERWearExperience() {
   if (!experience) {
     experience = createExperience(
       generate(),
-      'Agile Surface Engineering',
+      'Agile Surface Engineering Lab',
       'ERWear',
       thumbnails,
       descrption,
