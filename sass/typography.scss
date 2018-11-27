@@ -13,6 +13,10 @@ h1, h2, h3,h4,h5, span, i, b {
   @include user-select(text);
 }
 
+.capitalized{
+  text-transform: capitalize;
+}
+
 h3 {
   font-weight: 500;
 }
