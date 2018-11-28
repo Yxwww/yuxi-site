@@ -13,6 +13,11 @@ const ExperienceSection = dynamic(() =>
 
 function Portfolio(props) {
   const { experience, education } = props
+
+  function printPage(e) {
+    e.preventDefault()
+    window.print()
+  }
   return (
     <Page>
       <div className="container">
@@ -25,6 +30,9 @@ function Portfolio(props) {
               <div className="social-icons hide-on-print">
                 You may reach me through:
                 <div className="text-right">
+                  <a href="#" onClick={printPage}>
+                    <img src="/static/img/icons/download.png" alt="" />
+                  </a>
                   <a
                     rel="noopener noreferrer"
                     target="_blank"
