@@ -46,6 +46,11 @@ function Portfolio(props) {
                     href="mailto:yuxi.wangcd@gmail.com">
                     <img src="/static/img/icons/email.png" alt="" />
                   </a>
+                  <a
+                    title="Phone"
+                    href="rel:1-403-560-6778">
+                    <img src="/static/img/icons/phone.png" alt="" />
+                  </a>
                 </div>
               </div>
               <div className="show-on-print">
@@ -56,6 +61,11 @@ function Portfolio(props) {
               <div className="show-on-print">
                 <a href="https://yuxiwang.me/portfolio">
                   Website: https://yuxiwang.me/portfolio
+                </a>
+              </div>
+              <div className="show-on-print">
+                <a href="rel:1-403-560-6778">
+                  Phone: 403-560-67778
                 </a>
               </div>
             </div>

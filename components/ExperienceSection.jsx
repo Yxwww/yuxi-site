@@ -23,6 +23,9 @@ export default props => {
   } = props
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
   const contributionLists = createContributionList(contributions)
+  const imgStyle = {
+    maxHeight: '15px',
+  }
 
   return (
     <div key={uid} className="project-card-container">
@@ -31,7 +34,8 @@ export default props => {
         <div className="content">
           <div>
             <h3 className="text-left">
-              {product} - <span className="captalized">{company}</span>
+              {product} -
+              <span className="captalized">{company}</span>
               <span className="project-url">
                 {projecturl && (
                   <a
@@ -39,7 +43,11 @@ export default props => {
                     href={projecturl}
                     target="_blank"
                   >
-                    <img src="/static/img/icons/url.svg" alt="url" />
+                    <img
+                      style={imgStyle}
+                      src="/static/img/icons/url.svg"
+                      alt="url"
+                    />
                   </a>
                 )}
               </span>
