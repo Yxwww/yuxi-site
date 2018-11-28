@@ -35,7 +35,7 @@ function Portfolio(props) {
                 </span>
               </h1>
             </div>
-            <div className="contact">
+            <div className="contact show-on-print">
               <div>
                 <a href="mailto:yuxi.wangcd@gmail.com">
                   Email: yuxi.wangcd@gmail.com
