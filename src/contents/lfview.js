@@ -14,7 +14,7 @@ const contributions = [
   'Diagnosed and improved application performance from 10 fps to 50 fps by improving rendering process. Designed architecture to handle large datasets within business logic and visualization components.',
   'Maintained the project through entire development life cycle including ideation, research, proposal, development, and maintenance.',
   'Onboarded new team members by providing training materials, documentation, and mentorship.',
-  // 'standardize coding style + side effects handling etc ...',
+  'Researched and standardized industry coding style. Introduced and maintained linter, formatter into development workflow.',
   'Designed and contributed in setup and maintainance of frontend test environment. Maximized productivity utilizing automated testing techniques.',
 ]
 
