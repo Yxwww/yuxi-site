@@ -11,7 +11,7 @@ const thumbnails = []
 
 const descrption =
   'Designed, developed and maintained community website. Coordinated design and development process. Researched and implemented software solution for various feature requests.'
-const roles = ['Technical Director, Developer']
+const roles = ['Web Developer']
 const time = 'October, 2013 - May, 2015'
 
 let experience
