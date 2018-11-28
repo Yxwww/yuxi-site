@@ -30,17 +30,20 @@ function Portfolio(props) {
               <div className="social-icons hide-on-print">
                 You may reach me through:
                 <div className="text-right">
-                  <a href="#" onClick={printPage}>
+                  <a title="print" href="#" onClick={printPage}>
                     <img src="/static/img/icons/download.png" alt="" />
                   </a>
                   <a
+                    title="open LinkedIn"
                     rel="noopener noreferrer"
                     target="_blank"
                     href="https://www.linkedin.com/in/yuxiwang/"
                   >
                     <img src="/static/img/logos/in-black-28px.png" alt="" />
                   </a>
-                  <a href="mailto:yuxi.wangcd@gmail.com">
+                  <a
+                    title="Email"
+                    href="mailto:yuxi.wangcd@gmail.com">
                     <img src="/static/img/icons/email.png" alt="" />
                   </a>
                 </div>
