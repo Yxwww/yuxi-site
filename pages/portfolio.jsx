@@ -19,9 +19,12 @@ function Portfolio(props) {
         <div>
           <div className="flex space-between flex-end flex-wrap-wrap">
             <div>
-              <h1>
-                Yuxi Wang
-                <span className="social-icons">
+              <h1>Yuxi Wang</h1>
+            </div>
+            <div className="contact">
+              <div className="social-icons hide-on-print">
+                You may reach me through:
+                <div className="text-right">
                   <a
                     rel="noopener noreferrer"
                     target="_blank"
@@ -32,17 +35,17 @@ function Portfolio(props) {
                   <a href="mailto:yuxi.wangcd@gmail.com">
                     <img src="/static/img/icons/email.png" alt="" />
                   </a>
-                </span>
-              </h1>
-            </div>
-            <div className="contact show-on-print">
-              <div>
+                </div>
+              </div>
+              <div className="show-on-print">
                 <a href="mailto:yuxi.wangcd@gmail.com">
                   Email: yuxi.wangcd@gmail.com
                 </a>
               </div>
               <div className="show-on-print">
-                  <a href="https://yuxiwang.me/portfolio">Website: https://yuxiwang.me/portfolio</a>
+                <a href="https://yuxiwang.me/portfolio">
+                  Website: https://yuxiwang.me/portfolio
+                </a>
               </div>
             </div>
           </div>
