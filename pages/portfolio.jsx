@@ -42,7 +42,7 @@ function Portfolio(props) {
                 </a>
               </div>
               <div className="show-on-print">
-                <a href="https://yuxiwang.me">Website: https://yuxiwang.me</a>
+                  <a href="https://yuxiwang.me/portfolio">Website: https://yuxiwang.me/portfolio</a>
               </div>
             </div>
           </div>

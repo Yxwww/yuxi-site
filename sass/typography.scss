@@ -62,7 +62,7 @@ p, li {
   overflow-wrap: break-word;
 
   @include print {
-    @include font-size($font-size-small);
+    @include font-size($font-size-medium);
   }
 }
 

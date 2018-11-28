@@ -14,8 +14,8 @@
 }
 
 .contact {
-  @include font-size($font-size-small);
   a {
+    @include font-size($font-size-medium);
     color: $primary-text-color;
   }
 }
