@@ -43,7 +43,7 @@ function Portfolio(props) {
                   </a>
                   <a
                     title="Email"
-                    href="mailto:yuxi.wangcd@gmail.com">
+                    href="mailto:yuxi.wang.dev@gmail.com">
                     <img src="/static/img/icons/email.png" alt="" />
                   </a>
                   <a
@@ -54,8 +54,8 @@ function Portfolio(props) {
                 </div>
               </div>
               <div className="show-on-print">
-                <a href="mailto:yuxi.wangcd@gmail.com">
-                  Email: yuxi.wangcd@gmail.com
+                <a href="mailto:yuxi.wang.dev@gmail.com">
+                  Email: yuxi.wang.dev@gmail.com
                 </a>
               </div>
               <div className="show-on-print">
