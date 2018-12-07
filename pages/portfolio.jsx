@@ -7,25 +7,68 @@ const ExperienceContent = dynamic(() =>
   import('../components/ExperienceContent'),
 )
 
-export default function(props) {
-  const { experience } = props
+const ExperienceSection = dynamic(() =>
+  import('../components/ExperienceSection'),
+)
+
+function Portfolio(props) {
+  const { experience, education } = props
+
+  function printPage(e) {
+    e.preventDefault()
+    window.print()
+  }
   return (
     <Page>
       <div className="container">
         <div>
-          <div>
-            <h1>
-              Yuxi Wang
-              <span className="social-icons">
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/yuxiwang/"
-                >
+          <div className="flex space-between flex-end flex-wrap-wrap">
+            <div>
+              <h1>Yuxi Wang</h1>
+            </div>
+            <div className="contact">
+              <div className="social-icons hide-on-print">
+                You may reach me through:
+                <div className="text-right">
+                  <a title="print" href="#" onClick={printPage}>
+                    <img src="/static/img/icons/download.png" alt="" />
+                  </a>
+                  <a
+                    title="open LinkedIn"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/yuxiwang/"
+                  >
                     <img src="/static/img/logos/in-black-28px.png" alt="" />
+                  </a>
+                  <a
+                    title="Email"
+                    href="mailto:yuxi.wang.dev@gmail.com">
+                    <img src="/static/img/icons/email.png" alt="" />
+                  </a>
+                  <a
+                    title="Phone"
+                    href="rel:1-403-560-6778">
+                    <img src="/static/img/icons/phone.png" alt="" />
+                  </a>
+                </div>
+              </div>
+              <div className="show-on-print">
+                <a href="mailto:yuxi.wang.dev@gmail.com">
+                  Email: yuxi.wang.dev@gmail.com
                 </a>
-              </span>
-            </h1>
+              </div>
+              <div className="show-on-print">
+                <a href="https://yuxiwang.me/portfolio">
+                  Website: https://yuxiwang.me/portfolio
+                </a>
+              </div>
+              <div className="show-on-print">
+                <a href="rel:1-403-560-6778">
+                  Phone: 403-560-67778
+                </a>
+              </div>
+            </div>
           </div>
           <div className="title">
             <div className="left">
@@ -48,9 +91,15 @@ export default function(props) {
             <h2>Projects</h2>
             <ExperienceContent experience={experience} />
           </div>
+          <div>
+            <h2>Education</h2>
+            <ExperienceSection experience={education} />
+          </div>
         </div>
       </div>
       {/* end of app */}
     </Page>
   )
 }
+
+export default Portfolio

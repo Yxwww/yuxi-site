@@ -13,6 +13,10 @@ h1, h2, h3,h4,h5, span, i, b {
   @include user-select(text);
 }
 
+.capitalized{
+  text-transform: capitalize;
+}
+
 h3 {
   font-weight: 500;
 }
@@ -31,9 +35,10 @@ a {
   }
 
   img {
-      max-width: 15px;
-      position: relative;
-      bottom: -3px;
+    max-height: 18px;
+    position: relative;
+    bottom: -3px;
+    margin-right: 3px;
   }
 }
 
@@ -56,10 +61,18 @@ p, li {
   @include font-size($font-size-regular);
   letter-spacing: -0.037px;
   overflow-wrap: break-word;
+
+  @include print {
+    @include font-size($font-size-medium);
+  }
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-left {

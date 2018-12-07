@@ -9,18 +9,18 @@ const thumbnails = [
 ]
 
 const contributions = [
-  'Researched and recommended emerging technologies and best practices to improve frontend stack such as redux, rxjs, ramda, and TypeScript',
-  'Closely worked with product stakeholders and dev team, participated in design and implementation of the full aspect of frontend stack span across visualization, UI components, business logic and state control.',
-  'Diagnosed and improved application performance. Mainly contributed in large datasets handling within business logic and visualization.',
-  'Experienced as project maintainer of application life cycle includes ideation, research, proposal, development, and maintenance',
-  'Onboarded new teammates. Provide training materials, documentation, and communication',
-  // 'standardize coding style + side effects handling etc ...',
-  'Designed and contributed in setup and maintain frontend test environment, maximize productivity utilizing testing techniques',
+  'Researched and recommended emerging technologies and best practices to improve frontend stack such as redux, rxjs, TypeScript, and functional programming paradigm',
+  'Collaborated with product stakeholders and dev team, participated in design and implementation of all aspects of frontend stack including visualization, UI components, business logic and state control.',
+  'Diagnosed and improved application performance from 10 fps to 50 fps by improving rendering process. Designed architecture to handle large datasets within business logic and visualization components.',
+  'Maintained the project through entire development life cycle including ideation, research, proposal, development, and maintenance.',
+  'Onboarded new team members by providing training materials, documentation, and mentorship.',
+  'Researched and standardized industry coding style. Introduced and maintained linter, formatter into development workflow.',
+  'Designed and contributed in setup and maintainance of frontend test environment. Maximized productivity utilizing automated testing techniques.',
 ]
 
 const description = `
-    Lead developer of 3D data visualization web application LFView frontend stack. Re-designed and implemented frontend stack from ground up, with test coverage of over 90%, to the Redux/Rxjs/Polymer/ThreeJS based web app.
-    Project went from initial research, design and development to production in less than 12 months and has continued with weekly continuous deployment.
+    Lead developer of 3D data visualization web application. Re-designed and implemented frontend stack from ground up, with test coverage of over 90%, to the Redux/Rxjs/Polymer/ThreeJS based web app.
+    Project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.
     `
 
 const roles = [DEVELOPER_ROLE]
@@ -34,7 +34,7 @@ export function createLfviewExperience() {
   if (!experience) {
     experience = createExperience(
       generate(),
-      'seequent',
+      'Seequent',
       'LeapFrog View',
       thumbnails,
       description,

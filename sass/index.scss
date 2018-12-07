@@ -65,3 +65,18 @@ button {
   }
 }
 
+.show-on-print {
+  display: none;
+  @include print {
+    display: block;
+  }
+}
+
+.hide-on-print {
+  display: block;
+  @include print {
+    display: none;
+  }
+}
+
+
