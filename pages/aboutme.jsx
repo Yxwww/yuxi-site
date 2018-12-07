@@ -6,7 +6,7 @@ const Markdown = dynamic(() =>
   import('../components/code/Markdown.jsx'),
 )
 
-export default props => {
+export default () => {
   const markdown = `
   # This is the first markdown page
   ### What is up?
