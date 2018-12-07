@@ -1,6 +1,10 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
+import dynamic from 'next/dynamic'
 import Page from '../layouts/main'
+
+const Markdown = dynamic(() =>
+  import('../components/code/Markdown.jsx'),
+)
 
 export default props => {
   const markdown = `
@@ -8,6 +12,9 @@ export default props => {
   ### What is up?
   \`\`\`javascript
   const lovelife = 'test'
+  function addLove(life) {
+    return \`love $\{life}\`;
+  }
   \`\`\`
 
   `
@@ -19,7 +26,9 @@ export default props => {
           <p>
             Hello traveller, welcome to my site testing react-markdown here!
           </p>
-          <ReactMarkdown source={markdown} />
+          <Markdown
+            value={markdown}
+          />
         </div>
       </div>
     </Page>

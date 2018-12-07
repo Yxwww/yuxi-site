@@ -10,10 +10,12 @@
         "@zeit/next-sass": "^1.0.1",
         "next": "^7.0.2",
         "node-sass": "^4.9.4",
+        "prop-types": "^15.6.2",
         "ramda": "^0.25.0",
         "react": "^16.5.2",
         "react-dom": "^16.5.2",
         "react-markdown": "^4.0.4",
+        "react-syntax-highlighter": "^10.1.2",
         "shortid": "^2.2.13"
     },
     "devDependencies": {
