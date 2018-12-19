@@ -1,4 +1,5 @@
 $primary-font: 'Fira Mono', monospace, sans-serif;
+$title-font: sans-serif;
 $primary-color: rgb(0, 64, 221);
 $primary-color-darken: darken($primary-color, 25%);
 $primary-color-lighter: lighten($primary-color, 25%);
@@ -16,6 +17,7 @@ $primary-grey-superlight: lighten($primary-grey, 60%);
 $primary-text-color: $primary-grey;
 $primary-text-light-color: $primary-grey-light;
 $primary-text-lighter-color: $primary-grey-superlight;
+
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;

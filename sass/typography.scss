@@ -44,11 +44,12 @@ a {
 
 h1 {
   @include font-size($font-size-x-large);
-  font-weight: 700;
+  font-weight: $font-weight-medium;
 }
 h2 {
   @include font-size($font-size-large);
   font-weight: 700;
+  font-family: $title-font;
 }
 
 ol, ul {
