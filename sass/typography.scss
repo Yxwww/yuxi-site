@@ -56,11 +56,12 @@ ol, ul {
 }
 
 p, li {
+  font-weight: $font-weight-medium;
   @include user-select(text);
 
   @include font-size($font-size-regular);
-  letter-spacing: -0.037px;
   overflow-wrap: break-word;
+  letter-spacing: -0.037px;
 
   @include print {
     @include font-size($font-size-medium);
