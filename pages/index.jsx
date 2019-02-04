@@ -2,7 +2,6 @@ import React from 'react'
 import Page from '../layouts/main'
 
 export default props => {
-  const markdown = '## HELLO there'
   return (
     <Page>
       <div>
