@@ -1,6 +1,7 @@
 {
   "builds": [
-    { "src": "next.config.js", "use": "@now/next" }
+    { "src": "next.config.js", "use": "@now/next" },
+    { "src": "api/index.js", "use": "@now/node" }
   ],
   "alias": "yuxiwang.me",
   "version": 2
