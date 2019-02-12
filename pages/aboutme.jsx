@@ -2,9 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import Page from '../layouts/main'
 
-const Markdown = dynamic(() =>
-  import('../components/code/Markdown.jsx'),
-)
+const Markdown = dynamic(() => import('../components/code/Markdown.jsx'))
 
 export default () => {
   const markdown = `
@@ -26,9 +24,7 @@ export default () => {
           <p>
             Hello traveller, welcome to my site testing react-markdown here!
           </p>
-          <Markdown
-            value={markdown}
-          />
+          <Markdown value={markdown} />
         </div>
       </div>
     </Page>
