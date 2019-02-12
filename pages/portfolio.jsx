@@ -2,6 +2,8 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import Page from '../layouts/main'
 import '../sass/page-portfolio.scss'
+import { getExperience } from '../src/contents'
+import { createEducation } from '../src/contents/education'
 
 const ExperienceContent = dynamic(() =>
   import('../components/ExperienceContent'),
@@ -13,6 +15,7 @@ const ExperienceSection = dynamic(() =>
 
 function Portfolio(props) {
   const { experience, education } = props
+  const experienceString = JSON.stringify(experience)
 
   function printPage(e) {
     e.preventDefault()
@@ -100,6 +103,13 @@ function Portfolio(props) {
       {/* end of app */}
     </Page>
   )
+}
+
+Portfolio.getInitialProps = async function getInitialProps() {
+  return {
+    experience: getExperience(),
+    education: createEducation(),
+  }
 }
 
 export default Portfolio

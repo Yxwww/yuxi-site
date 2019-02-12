@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { map } from 'ramda'
 import '../sass/layout.scss'
 import ExperienceSection from './ExperienceSection'
@@ -16,10 +16,14 @@ const createExpereienceSections = map(exp => (
 ))
 
 function ExperienceContent(props) {
-  const { experience } = props
+  const { experience } = props;
   const experienceSections = createExpereienceSections(experience)
 
-  return <div className="project-container">{experienceSections}</div>
+  return (
+    <>
+      <div className="project-container">{experienceSections}</div>
+    </>
+  )
 }
 
 export default ExperienceContent
