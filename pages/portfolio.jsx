@@ -17,10 +17,7 @@ function Portfolio(props) {
   const { experience, education } = props
   const experienceString = JSON.stringify(experience)
 
-  function printPage(e) {
-    e.preventDefault()
-    window.print()
-  }
+  function printPage(e) {}
   return (
     <Page>
       <div className="container">
@@ -33,7 +30,14 @@ function Portfolio(props) {
               <div className="social-icons hide-on-print">
                 You may reach me through:
                 <div className="text-right">
-                  <a title="print" href="#" onClick={printPage}>
+                  <a
+                    title="print"
+                    href="#"
+                    onClick={e => {
+                      e.preventDefault()
+                      window.print()
+                    }}
+                  >
                     <img src="/static/img/icons/download.png" alt="" />
                   </a>
                   <a
@@ -45,13 +49,11 @@ function Portfolio(props) {
                     <img src="/static/img/logos/in-black-28px.png" alt="" />
                   </a>
                   <a
-                    title="Email"
-                    href="mailto:yuxi.wang.dev@gmail.com">
+title="Email" href="mailto:yuxi.wang.dev@gmail.com">
                     <img src="/static/img/icons/email.png" alt="" />
                   </a>
                   <a
-                    title="Phone"
-                    href="rel:1-403-560-6778">
+title="Phone" href="rel:1-403-560-6778">
                     <img src="/static/img/icons/phone.png" alt="" />
                   </a>
                 </div>
@@ -67,9 +69,7 @@ function Portfolio(props) {
                 </a>
               </div>
               <div className="show-on-print">
-                <a href="rel:1-403-560-6778">
-                  Phone: 403-560-67778
-                </a>
+                <a href="rel:1-403-560-6778">Phone: 403-560-67778</a>
               </div>
             </div>
           </div>
