@@ -15,9 +15,6 @@ const ExperienceSection = dynamic(() =>
 
 function Portfolio(props) {
   const { experience, education } = props
-  const experienceString = JSON.stringify(experience)
-
-  function printPage(e) {}
   return (
     <Page>
       <div className="container">
