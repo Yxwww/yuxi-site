@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useReducer, useState } from 'react'
-import { fromEvent } from 'rxjs'
+import { fromEvent, pipe } from 'rxjs'
 import { join, map, cloneDeep } from 'lodash/fp'
-import { switchMap, tap, takeUntil, sampleTime } from 'rxjs/operators'
+import {
+  switchMap,
+  tap,
+  takeUntil,
+  sampleTime,
+  skipUntil,
+  repeat,
+} from 'rxjs/operators'
 import '../sass/whiteboard.scss'
 
 const arrToStr = join(', ')
@@ -31,28 +38,28 @@ const useMouseDrag = containerRef => {
     const mu$ = fromEvent(canvas, 'mouseup').pipe(
       tap(() => setInteraction('up')),
     )
-    const mv$ = fromEvent(canvas, 'mousemove').pipe(
-      sampleTime(100),
-      tap(e => {
-        const pos = [e.clientX, e.clientY]
-        setPosition(pos)
-        dispatch({ type: 'add_path', pos: cloneDeep(pos) })
-        setDrawingPath(path.concat([cloneDeep(pos)]))
-      }),
-    )
+    const mv$ = fromEvent(canvas, 'mousemove')
     const md$ = fromEvent(canvas, 'mousedown').pipe(
       tap(e => {
+        console.log('mousedown')
         const pos = [e.clientX, e.clientY]
+        setInteraction('down')
         setStartPos(pos)
       }),
     )
-    const drawing$ = md$.pipe(
-      tap(() => setInteraction('down')),
-      switchMap(() =>
-        mv$.pipe(
-          tap(() => setInteraction('dragging')),
-          takeUntil(mu$),
-        ),
+    const drawing$ = mv$.pipe(
+      skipUntil(md$),
+      takeUntil(mu$),
+      repeat(),
+      pipe(
+        sampleTime(16),
+        tap(e => {
+          setInteraction('dragging')
+          const pos = [e.clientX, e.clientY]
+          setPosition(pos)
+          dispatch({ type: 'add_path', pos: cloneDeep(pos) })
+          setDrawingPath(path.concat([cloneDeep(pos)]))
+        }),
       ),
     )
 
@@ -63,11 +70,8 @@ const useMouseDrag = containerRef => {
     })
 
     return () => {
+      console.log('clean up listeners ?')
       sub.unsubscribe()
-      drawing$.complete()
-      mu$.complete()
-      mv$.complete()
-      md$.complete()
     }
   }, [])
 
@@ -76,23 +80,35 @@ const useMouseDrag = containerRef => {
 
 const Whiteboard = function Whiteboard() {
   const canvasRef = useRef()
-  const { mouseState, position, startPos, path, pathState } = useMouseDrag(
-    canvasRef,
-  )
   const [count, setCount] = useState([])
+  const { interaction, position, startPos, path, pathState } = useMouseDrag(
+    canvasRef,
+    count,
+  )
+  const strToRender = (() => {
+    const { path } = pathState
+    if (path.length < 2) {
+      return <path />
+    }
+    let str = `M${path[0]} ${path[1]} `
+    const svgPathStr = pathState.path.map(([x, y]) => `L ${x} ${y}`)
+    str += svgPathStr.join(' ')
+
+    return <path d={str} />
+  })()
   return (
     <>
       <canvas ref={canvasRef} />
       <div>
         Mouse:
-        {mouseState}
+        {interaction}
       </div>
       <div>{arrToStr(position)}</div>
       <div>{arrToStr(startPos)}</div>
-      <div>{map(arrToStr)(path)}</div>
 
-      <svg height="210" width="500">
-        {pathState.path.map((pos, index) => {
+      <svg height="400" width="400">
+        {strToRender}
+        {/* {pathState.path.map((pos, index) => {
           const nextSeg = pathState.path[index + 1]
           if (nextSeg)
             return (
@@ -115,7 +131,7 @@ const Whiteboard = function Whiteboard() {
               style={strokeStyle}
             />
           )
-        })}
+        })} */}
       </svg>
 
       <hr />
