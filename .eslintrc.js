@@ -5,6 +5,7 @@ module.exports = {
   "rules": {
     "prettier/prettier": "error",
     "import/prefer-default-export": "warning",
+    "react-hooks/rules-of-hooks": "error",
   },
   env: {
     browser: true,

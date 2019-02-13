@@ -9,6 +9,7 @@
   "dependencies": {
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-sass": "^1.0.1",
+    "lodash": "^4.17.11",
     "next": "^8.0.0",
     "node-sass": "^4.9.4",
     "prop-types": "^15.6.2",
