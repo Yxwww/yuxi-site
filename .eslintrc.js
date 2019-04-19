@@ -1,10 +1,11 @@
 module.exports = {
   'extends': ['airbnb', 'prettier'],
   "parser": "babel-eslint",
-  "plugins": ['prettier'],
+  "plugins": ['prettier', "react-hooks"],
   "rules": {
     "prettier/prettier": "error",
-    "import/prefer-default-export": "warning",
+    "import/prefer-default-export": "warn",
+    "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
   },
   env: {
