@@ -4,10 +4,10 @@ import { join, map, cloneDeep } from 'lodash/fp'
 import { switchMap, tap, takeUntil, sampleTime } from 'rxjs/operators'
 import '../sass/whiteboard.scss'
 
-const arrToStr = join(', ')
+export const arrToStr = join(', ')
 
-const strokeStyle = { stroke: 'rgb(255,0,0)', strokeWidth: 2 }
-const useMouseDrag = containerRef => {
+export const strokeStyle = { stroke: 'rgb(255,0,0)', strokeWidth: 2 }
+export const useMouseDrag = containerRef => {
   const [interaction, setInteraction] = useState('idle')
   const [startPos, setStartPos] = useState([0, 0])
   const [position, setPosition] = useState([0, 0])
@@ -27,11 +27,11 @@ const useMouseDrag = containerRef => {
 
   useEffect(() => {
     document.title = map(arrToStr)(path)
-    const canvas = containerRef.current
-    const mu$ = fromEvent(canvas, 'mouseup').pipe(
+    const container = containerRef.current
+    const mu$ = fromEvent(container, 'mouseup').pipe(
       tap(() => setInteraction('up')),
     )
-    const mv$ = fromEvent(canvas, 'mousemove').pipe(
+    const mv$ = fromEvent(container, 'mousemove').pipe(
       sampleTime(100),
       tap(e => {
         const pos = [e.clientX, e.clientY]
@@ -40,7 +40,7 @@ const useMouseDrag = containerRef => {
         setDrawingPath(path.concat([cloneDeep(pos)]))
       }),
     )
-    const md$ = fromEvent(canvas, 'mousedown').pipe(
+    const md$ = fromEvent(container, 'mousedown').pipe(
       tap(e => {
         const pos = [e.clientX, e.clientY]
         setStartPos(pos)
@@ -76,7 +76,7 @@ const useMouseDrag = containerRef => {
 
 const Whiteboard = function Whiteboard() {
   const canvasRef = useRef()
-  const { mouseState, position, startPos, path, pathState } = useMouseDrag(
+  const { interaction, position, startPos, path, pathState } = useMouseDrag(
     canvasRef,
   )
   const [count, setCount] = useState([])
@@ -85,7 +85,7 @@ const Whiteboard = function Whiteboard() {
       <canvas ref={canvasRef} />
       <div>
         Mouse:
-        {mouseState}
+        {interaction}
       </div>
       <div>{arrToStr(position)}</div>
       <div>{arrToStr(startPos)}</div>
