@@ -7,6 +7,10 @@ import '../sass/whiteboard.scss'
 export const arrToStr = join(', ')
 
 export const strokeStyle = { stroke: 'rgb(255,0,0)', strokeWidth: 2 }
+const UPDATE_STARTPOS = 'update_startPos';
+const UPDATE_MOVEDELTA = 'update_movedelta';
+const UPDATE_POS = 'update_pos';
+const subVec = (vec1,vec2) => [(vec1[0] - vec2[0]), (vec1[1] - vec2[1])]
 export const useMouseDrag = containerRef => {
   const [interaction, setInteraction] = useState('idle')
   const [startPos, setStartPos] = useState([0, 0])
@@ -14,21 +18,43 @@ export const useMouseDrag = containerRef => {
   const [moveDelta, setMoveDelta] = useState([0, 0])
   const [path, setDrawingPath] = useState([])
   const initialState = {
+    startPos: [],
+    pos: [],
     path: [],
+    moveDelta: [],
   }
   function reducer(state, action) {
     switch (action.type) {
-      case 'add_path':
-        return { path: state.path.concat([action.pos]) }
+      case 'add_path':{
+        return { ...state, path: state.path.concat([action.pos]) }
+      }
+      case UPDATE_STARTPOS: {
+        return {
+          ...state,
+          startPos: action.startPos,
+        }
+      }
+      case UPDATE_MOVEDELTA: {
+        return {
+          ...state,
+          moveDelta: subVec(state.pos, state.startPos),
+        }
+      }
+      case UPDATE_POS: {
+        return {
+          ...state,
+          pos: action.pos,
+        }
+      }
       default:
         throw new Error()
     }
   }
 
-  const [pathState, dispatch] = useReducer(reducer, initialState)
+  const [dragState, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    console.log('useMouseDrag');
+    console.log('useMouseDrag')
     const container = containerRef.current
     const mu$ = fromEvent(container, 'mouseup').pipe(
       tap(() => setInteraction('up')),
@@ -37,17 +63,17 @@ export const useMouseDrag = containerRef => {
       sampleTime(100),
       tap(e => {
         const pos = [e.clientX, e.clientY]
-        setPosition(pos)
+        dispatch({ type: UPDATE_POS, pos })
         dispatch({ type: 'add_path', pos: cloneDeep(pos) })
         setDrawingPath(path.concat([cloneDeep(pos)]))
-        console.log(pos, startPos, pos[0] - startPos[0]);
-        setMoveDelta([pos[0] - startPos[0], pos[1] - startPos[1]])
+        console.log(pos, startPos, pos[0] - startPos[0])
+        dispatch({ type: UPDATE_MOVEDELTA })
       }),
     )
     const md$ = fromEvent(container, 'mousedown').pipe(
       tap(e => {
         const pos = [e.clientX, e.clientY]
-        setStartPos(pos)
+        dispatch({ type: UPDATE_STARTPOS, startPos: pos })
       }),
     )
     const drawing$ = md$.pipe(
@@ -75,12 +101,12 @@ export const useMouseDrag = containerRef => {
     }
   }, [])
 
-  return { interaction, position, startPos, path, pathState, moveDelta}
+  return { interaction, position, startPos, path, dragState, moveDelta}
 }
 
 const Whiteboard = function Whiteboard() {
   const canvasRef = useRef()
-  const { interaction, position, startPos, path, pathState } = useMouseDrag(
+  const { interaction, position, startPos, path, dragState } = useMouseDrag(
     canvasRef,
   )
   const [count, setCount] = useState([])
@@ -96,8 +122,8 @@ const Whiteboard = function Whiteboard() {
       <div>{map(arrToStr)(path)}</div>
 
       <svg height="210" width="500">
-        {pathState.path.map((pos, index) => {
-          const nextSeg = pathState.path[index + 1]
+        {dragState.path.map((pos, index) => {
+          const nextSeg = dragState.path[index + 1]
           if (nextSeg)
             return (
               <line

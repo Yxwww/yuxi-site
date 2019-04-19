@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { fromEvent } from 'rxjs'
-import { tap, sampleTime, switchMap, takeUntil } from 'rxjs/operators'
 import { join, map, cloneDeep } from 'lodash/fp'
 import { useMouseDrag, arrToStr } from '../pages/whiteboard';
 
@@ -26,7 +25,7 @@ const containerStyle = {
 export default function Dragbar() {
   const dragNodeRef = useRef(null)
   const containerRef = useRef(null)
-  const { interaction, position, startPos, moveDelta} = useMouseDrag(
+  const { interaction, dragState: {pos, startPos, moveDelta} } = useMouseDrag(
     containerRef,
   )
   return (
@@ -43,7 +42,7 @@ export default function Dragbar() {
         Mouse:
         {interaction}
       </div>
-      <div>position: {arrToStr(position)}</div>
+      <div>position: {arrToStr(pos)}</div>
       <div>startpos: {arrToStr(startPos)}</div>
       <div>delta: {arrToStr(moveDelta)}</div>
     </>
