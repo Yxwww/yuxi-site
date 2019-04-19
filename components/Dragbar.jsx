@@ -26,13 +26,16 @@ const containerStyle = {
 export default function Dragbar() {
   const dragNodeRef = useRef(null)
   const containerRef = useRef(null)
-  const { interaction, position, startPos, path, pathState } = useMouseDrag(
+  const { interaction, position, startPos, moveDelta} = useMouseDrag(
     containerRef,
   )
   return (
     <>
       <div style={containerStyle} ref={containerRef}>
-        <div style={dragNodeStyle} ref={dragNodeRef} />
+        <div
+          style={{ ...dragNodeStyle, marginLeft: `${moveDelta[0]}px` }}
+          ref={dragNodeRef}
+        />
         <div style={barStyle} />
       </div>
 
@@ -42,7 +45,7 @@ export default function Dragbar() {
       </div>
       <div>position: {arrToStr(position)}</div>
       <div>startpos: {arrToStr(startPos)}</div>
-      <div>path: {map(arrToStr)(path)}</div>
+      <div>delta: {arrToStr(moveDelta)}</div>
     </>
   )
 }

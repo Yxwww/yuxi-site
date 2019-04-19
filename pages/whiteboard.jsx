@@ -11,6 +11,7 @@ export const useMouseDrag = containerRef => {
   const [interaction, setInteraction] = useState('idle')
   const [startPos, setStartPos] = useState([0, 0])
   const [position, setPosition] = useState([0, 0])
+  const [moveDelta, setMoveDelta] = useState([0, 0])
   const [path, setDrawingPath] = useState([])
   const initialState = {
     path: [],
@@ -23,10 +24,11 @@ export const useMouseDrag = containerRef => {
         throw new Error()
     }
   }
+
   const [pathState, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    document.title = map(arrToStr)(path)
+    console.log('useMouseDrag');
     const container = containerRef.current
     const mu$ = fromEvent(container, 'mouseup').pipe(
       tap(() => setInteraction('up')),
@@ -38,6 +40,8 @@ export const useMouseDrag = containerRef => {
         setPosition(pos)
         dispatch({ type: 'add_path', pos: cloneDeep(pos) })
         setDrawingPath(path.concat([cloneDeep(pos)]))
+        console.log(pos, startPos, pos[0] - startPos[0]);
+        setMoveDelta([pos[0] - startPos[0], pos[1] - startPos[1]])
       }),
     )
     const md$ = fromEvent(container, 'mousedown').pipe(
@@ -71,7 +75,7 @@ export const useMouseDrag = containerRef => {
     }
   }, [])
 
-  return { interaction, position, startPos, path, pathState }
+  return { interaction, position, startPos, path, pathState, moveDelta}
 }
 
 const Whiteboard = function Whiteboard() {
