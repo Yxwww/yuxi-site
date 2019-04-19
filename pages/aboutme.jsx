@@ -18,14 +18,12 @@ export default () => {
   `
   return (
     <Page>
-      <div>
-        <div className="container">
-          <h1>Home</h1>
-          <p>
-            Hello traveller, welcome to my site testing react-markdown here!
-          </p>
-          <Markdown value={markdown} />
-        </div>
+      <div className="container">
+        <h1>Home</h1>
+        <p>
+          Hello traveller, welcome to my site testing react-markdown here!
+        </p>
+        <Markdown value={markdown} />
       </div>
     </Page>
   )
