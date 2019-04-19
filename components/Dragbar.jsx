@@ -1,8 +1,9 @@
 import React from 'react'
 
 const barStyle = {
-  width: `100px`,
+  width: `200px`,
   height: `5px`,
+  background: `black`,
 }
 
 export default function Dragbar() {
