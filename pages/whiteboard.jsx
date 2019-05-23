@@ -4,46 +4,76 @@ import { join, map, cloneDeep } from 'lodash/fp'
 import { switchMap, tap, takeUntil, sampleTime } from 'rxjs/operators'
 import '../sass/whiteboard.scss'
 
-const arrToStr = join(', ')
+export const arrToStr = join(', ')
 
-const strokeStyle = { stroke: 'rgb(255,0,0)', strokeWidth: 2 }
-const useMouseDrag = containerRef => {
+export const strokeStyle = { stroke: 'rgb(255,0,0)', strokeWidth: 2 }
+const UPDATE_STARTPOS = 'update_startPos';
+const UPDATE_MOVEDELTA = 'update_movedelta';
+const UPDATE_POS = 'update_pos';
+const subVec = (vec1,vec2) => [(vec1[0] - vec2[0]), (vec1[1] - vec2[1])]
+export const useMouseDrag = containerRef => {
   const [interaction, setInteraction] = useState('idle')
   const [startPos, setStartPos] = useState([0, 0])
   const [position, setPosition] = useState([0, 0])
+  const [moveDelta, setMoveDelta] = useState([0, 0])
   const [path, setDrawingPath] = useState([])
   const initialState = {
+    startPos: [],
+    pos: [],
     path: [],
+    moveDelta: [],
   }
   function reducer(state, action) {
     switch (action.type) {
-      case 'add_path':
-        return { path: state.path.concat([action.pos]) }
+      case 'add_path':{
+        return { ...state, path: state.path.concat([action.pos]) }
+      }
+      case UPDATE_STARTPOS: {
+        return {
+          ...state,
+          startPos: action.startPos,
+        }
+      }
+      case UPDATE_MOVEDELTA: {
+        return {
+          ...state,
+          moveDelta: subVec(state.pos, state.startPos),
+        }
+      }
+      case UPDATE_POS: {
+        return {
+          ...state,
+          pos: action.pos,
+        }
+      }
       default:
         throw new Error()
     }
   }
-  const [pathState, dispatch] = useReducer(reducer, initialState)
+
+  const [dragState, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    document.title = map(arrToStr)(path)
-    const canvas = containerRef.current
-    const mu$ = fromEvent(canvas, 'mouseup').pipe(
+    console.log('useMouseDrag')
+    const container = containerRef.current
+    const mu$ = fromEvent(container, 'mouseup').pipe(
       tap(() => setInteraction('up')),
     )
-    const mv$ = fromEvent(canvas, 'mousemove').pipe(
+    const mv$ = fromEvent(container, 'mousemove').pipe(
       sampleTime(100),
       tap(e => {
         const pos = [e.clientX, e.clientY]
-        setPosition(pos)
+        dispatch({ type: UPDATE_POS, pos })
         dispatch({ type: 'add_path', pos: cloneDeep(pos) })
         setDrawingPath(path.concat([cloneDeep(pos)]))
+        console.log(pos, startPos, pos[0] - startPos[0])
+        dispatch({ type: UPDATE_MOVEDELTA })
       }),
     )
-    const md$ = fromEvent(canvas, 'mousedown').pipe(
+    const md$ = fromEvent(container, 'mousedown').pipe(
       tap(e => {
         const pos = [e.clientX, e.clientY]
-        setStartPos(pos)
+        dispatch({ type: UPDATE_STARTPOS, startPos: pos })
       }),
     )
     const drawing$ = md$.pipe(
@@ -71,12 +101,12 @@ const useMouseDrag = containerRef => {
     }
   }, [])
 
-  return { interaction, position, startPos, path, pathState }
+  return { interaction, position, startPos, path, dragState, moveDelta}
 }
 
 const Whiteboard = function Whiteboard() {
   const canvasRef = useRef()
-  const { mouseState, position, startPos, path, pathState } = useMouseDrag(
+  const { interaction, position, startPos, path, dragState } = useMouseDrag(
     canvasRef,
   )
   const [count, setCount] = useState([])
@@ -85,15 +115,15 @@ const Whiteboard = function Whiteboard() {
       <canvas ref={canvasRef} />
       <div>
         Mouse:
-        {mouseState}
+        {interaction}
       </div>
       <div>{arrToStr(position)}</div>
       <div>{arrToStr(startPos)}</div>
       <div>{map(arrToStr)(path)}</div>
 
       <svg height="210" width="500">
-        {pathState.path.map((pos, index) => {
-          const nextSeg = pathState.path[index + 1]
+        {dragState.path.map((pos, index) => {
+          const nextSeg = dragState.path[index + 1]
           if (nextSeg)
             return (
               <line
