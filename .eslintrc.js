@@ -7,6 +7,7 @@ module.exports = {
     "import/prefer-default-export": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+    "import/prefer-default-export": "off",
   },
   env: {
     browser: true,
