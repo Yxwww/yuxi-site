@@ -12,7 +12,7 @@ const createNavItems = map(([url, label]) => ({
 
 const Nav = dynamic(() => import('../components/Nav'))
 export const HOME_LABEL = 'home'
-const navItemData = [['/', HOME_LABEL], ['/portfolio', 'portfolio']]
+const navItemData = [['/', HOME_LABEL], ['/portfolio', 'portfolio'], ['/blog', 'blog']]
 
 const page = ({ children }) => {
   const navItems = createNavItems(navItemData)

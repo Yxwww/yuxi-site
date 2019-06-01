@@ -29,4 +29,4 @@ function Nav(props) {
   )
 }
 
-export default withRouter(Nav);
+export default withRouter(Nav)
