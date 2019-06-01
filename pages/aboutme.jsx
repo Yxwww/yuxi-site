@@ -18,9 +18,9 @@ export default () => {
   `
   return (
     <Page>
-        <h1>Home</h1>
-        <p>Hello traveller, welcome to my site testing react-markdown here!</p>
-        <Markdown value={markdown} />
+      <h1>Home</h1>
+      <p>Hello traveller, welcome to my site testing react-markdown here!</p>
+      <Markdown value={markdown} />
     </Page>
   )
 }

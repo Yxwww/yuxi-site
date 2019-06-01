@@ -1,18 +1,38 @@
+import fetch from 'isomorphic-unfetch'
 import React from 'react'
 import { withRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 import Page from '../layouts/main'
 
-const Content = withRouter(({ router: { query: { title } } }) => (
-  <div>
-    <h1>{title}</h1>
-    <p>This is the blog post content.</p>
-  </div>
-))
+const Markdown = dynamic(() => import('../components/code/Markdown.jsx'))
 
-const Post = () => (
-  <Page>
-      <Content />
-  </Page>
-)
+const Content = withRouter(({ router: { query: { title } }, markdown }) => {
+  console.log({ markdown });
+  return (
+    <div>
+      <h1 style={{ textTransform: 'capitalize' }}>{title}</h1>
+      <Markdown value={markdown} />
+    </div>
+  )
+})
+
+const Post = ({ markdown }) => {
+  return (
+    <Page>
+      <Content markdown={markdown} />
+    </Page>
+  )
+}
+
+Post.getInitialProps = async function getInitialProps({ req }) {
+  const baseUrl = req
+    ? `${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}`
+    : ''
+// console.log(req.headers);
+    console.log({baseUrl});
+  const response = await fetch(`${baseUrl}/api`)
+  const { content } = await response.json();
+  return { markdown: content }
+}
 
 export default Post

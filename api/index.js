@@ -1,3 +1,16 @@
 module.exports = (req, res) => {
-  res.end('Welcome to my API')
+  res.end(
+    JSON.stringify({
+      content: `
+    # This is the first markdown page
+    ### What is up?
+    \`\`\`javascript
+    const lovelife = 'test'
+    function addLove(life) {
+      return \`love $\{life}\`;
+    }
+    \`\`\`
+  `,
+    }),
+  )
 }

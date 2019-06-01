@@ -4,5 +4,8 @@
     { "src": "api/index.js", "use": "@now/node" }
   ],
   "alias": "yuxiwang.me",
+  "routes": [
+    { "src": "/post/(?<name>[^/]+)$", "dest": "/post?title=$name" }
+  ],
   "version": 2
 }
