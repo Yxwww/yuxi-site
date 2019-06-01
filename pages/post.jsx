@@ -11,9 +11,7 @@ const Content = withRouter(({ router: { query: { title } } }) => (
 
 const Post = () => (
   <Page>
-    <div className="container">
       <Content />
-    </div>
   </Page>
 )
 

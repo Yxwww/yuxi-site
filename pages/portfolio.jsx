@@ -17,7 +17,6 @@ function Portfolio(props) {
   const { experience, education } = props
   return (
     <Page>
-      <div className="container">
         <div>
           <div className="flex space-between flex-end flex-wrap-wrap">
             <div>
@@ -96,7 +95,6 @@ title="Phone" href="rel:1-403-560-6778">
             <ExperienceSection experience={education} />
           </div>
         </div>
-      </div>
       {/* end of app */}
     </Page>
   )

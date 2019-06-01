@@ -7,7 +7,6 @@ const Dragbar = dynamic(() => import('../components/Dragbar'))
 export default function() {
   return (
     <Page>
-      <div className="container">
         <h1>hooks viz playground</h1>
         <div
           style={{
@@ -19,7 +18,6 @@ export default function() {
         >
           <Dragbar />
         </div>
-      </div>
     </Page>
   )
 }
