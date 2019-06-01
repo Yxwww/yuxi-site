@@ -1,0 +1,20 @@
+import React from 'react'
+import { withRouter } from 'next/router'
+import Page from '../layouts/main'
+
+const Content = withRouter(({ router: { query: { title } } }) => (
+  <div>
+    <h1>{title}</h1>
+    <p>This is the blog post content.</p>
+  </div>
+))
+
+const Post = () => (
+  <Page>
+    <div className="container">
+      <Content />
+    </div>
+  </Page>
+)
+
+export default Post
