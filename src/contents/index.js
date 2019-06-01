@@ -9,6 +9,6 @@ export function getExperience() {
     createLfviewExperience(),
     createERWearExperience(),
     createSodExperience(),
-      createMediaBroExperience(),
+    createMediaBroExperience(),
   ]
 }
