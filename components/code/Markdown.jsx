@@ -5,7 +5,6 @@ import CodeBlock from './CodeBlock'
 
 function Markdown(props) {
   const { value } = props
-  console.log(value);
   return (
     <ReactMarkdown
       source={value}

@@ -51,16 +51,24 @@ div.container {
 }
 
 button {
-  background-color: $primary-color;
+  font-size: $font-size-regular;
+  font-weight: $font-weight-bold;
+  box-sizing: border-box;
   border: 0;
-  color: $primary-color-contrary;
-  height: 24px;
-  padding: 0 30px;
+  color: $primary-color;
+  padding: 8px 0px;
+  margin: 0 8px;
+  // border-bottom: 2px solid transparent;
   &:focus{
     outline: none;
   }
   &:active {
-    background-color: $primary-color-strong;
+    background-color: transparent;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $primary-color-darken;
+    // border-bottom: 2px solid $primary-grey;
   }
 }
 

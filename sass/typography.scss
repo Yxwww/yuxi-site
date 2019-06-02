@@ -1,7 +1,7 @@
 body {
   font-family: $primary-font;
   font-size: $font-size-regular;
-  font-weight: 400;
+  font-weight: $font-weight-regular;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
   font-style: normal;

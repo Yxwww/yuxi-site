@@ -7,7 +7,6 @@ import Page from '../layouts/main'
 const Markdown = dynamic(() => import('../components/code/Markdown.jsx'))
 
 const Content = withRouter(({ router: { query: { title } }, markdown }) => {
-  console.log({ markdown });
   return (
     <div>
       <h1 style={{ textTransform: 'capitalize' }}>{title}</h1>
@@ -28,10 +27,8 @@ Post.getInitialProps = async function getInitialProps({ req }) {
   const baseUrl = req
     ? `${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}`
     : ''
-// console.log(req.headers);
-    console.log({baseUrl});
   const response = await fetch(`${baseUrl}/api`)
-  const { content } = await response.json();
+  const { content } = await response.json()
   return { markdown: content }
 }
 
