@@ -65,7 +65,7 @@ p, li {
   line-height: 1.5;
   @include user-select(text);
 
-  @include font-size($font-size-medium);
+  @include font-size($font-size-regular);
   overflow-wrap: break-word;
 
   @include print {
