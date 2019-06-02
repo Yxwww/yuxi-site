@@ -24,12 +24,7 @@ export default props => {
   } = props
   const [showMore, setShowMore] = useState(false)
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
-  const contributionLists = createContributionList(
-    contributions.slice(0, NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD),
-  )
-  const hiddenContributions = createContributionList(
-    contributions.slice(NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD),
-  )
+  const contributionLists = createContributionList(contributions)
   const imgStyle = {
     maxHeight: '15px',
   }
@@ -74,7 +69,7 @@ export default props => {
           </div>
           <div className="contributions">
             <ul>{contributionLists}</ul>
-            {showMore && <ul>{hiddenContributions}</ul>}
+            {/* {showMore && <ul>{hiddenContributions}</ul>}
             {contributions.length > NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD ? (
               <button
                 type="button"
@@ -86,7 +81,7 @@ export default props => {
               </button>
             ) : (
               <></>
-            )}
+            )} */}
           </div>
         </div>
       </div>
