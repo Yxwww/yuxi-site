@@ -5,7 +5,8 @@ import { pipe, T, identity, equals, cond, always } from 'ramda'
 import { removeFirstChar, captalizeFirstChar } from '../utils/index'
 
 const processPathNameHomeCase = cond([
-  [equals('/'), always('/home')],[T, identity],
+  [equals('/'), always('/home')],
+  [T, identity],
 ])
 const processPathNameToTitle = pipe(
   processPathNameHomeCase,
@@ -20,8 +21,9 @@ function Header(props) {
   return (
     <div>
       <Head>
-        <title>
-Yuxi Wang |{` ${processPathNameToTitle(pathname)}`}</title>
+        <title>Yuxi Wang |
+{` ${processPathNameToTitle(pathname)}`}
+</title>
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -100,9 +102,14 @@ Yuxi Wang |{` ${processPathNameToTitle(pathname)}`}</title>
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
-          href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700"
+          href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
           rel="stylesheet"
         />
+
+        {/* <link
+          href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap"
+          rel="stylesheet"
+        /> */}
       </Head>
     </div>
   )

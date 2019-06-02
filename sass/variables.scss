@@ -1,5 +1,5 @@
-$primary-font: 'Fira Mono', monospace, sans-serif;
-$title-font: sans-serif;
+$primary-font: 'Lora', sans-serif;
+$title-font: $primary-font;
 $primary-color: rgb(0, 64, 221);
 $primary-color-darken: darken($primary-color, 25%);
 $primary-color-lighter: lighten($primary-color, 25%);
@@ -24,8 +24,8 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-size-small: 11px;
 $font-size-x-small: 10px;
-$font-size-medium: 13px;
 $font-size-regular: 14px;
+$font-size-medium: 16px;
 $font-size-large: 18px;
 $font-size-x-large: 24px;
 

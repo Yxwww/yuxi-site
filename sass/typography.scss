@@ -3,10 +3,12 @@ body {
   font-size: $font-size-regular;
   font-weight: $font-weight-regular;
   word-break: break-word;
-  -webkit-font-smoothing: antialiased;
   font-style: normal;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 h1, h2, h3,h4,h5, span, i, b {
@@ -63,7 +65,6 @@ p, li {
 
   @include font-size($font-size-medium);
   overflow-wrap: break-word;
-  letter-spacing: -0.037px;
 
   @include print {
     @include font-size($font-size-medium);
