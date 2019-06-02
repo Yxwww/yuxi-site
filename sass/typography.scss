@@ -20,6 +20,7 @@ h1, h2, h3,h4,h5, span, i, b {
 }
 
 h3 {
+  font-size: $font-size-large;
   font-weight: 500;
 }
 a {
@@ -61,6 +62,7 @@ ol, ul {
 
 p, li {
   font-weight: $font-weight-regular;
+  line-height: 1.5;
   @include user-select(text);
 
   @include font-size($font-size-medium);
