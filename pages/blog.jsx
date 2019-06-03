@@ -4,7 +4,7 @@ import Page from '../layouts/main'
 
 const PostLink = ({ id, title }) => (
   <li>
-    <Link prefetch href={`/post`}>
+    <Link prefetch href="/post">
       <a>{title}</a>
     </Link>
   </li>
@@ -15,9 +15,7 @@ export default function Blog() {
     <Page>
       <h1>Blog</h1>
       <p>Under construction :)</p>
-      <ul>
-        <PostLink id="hello-nextjs" title="Testing Selectors" />
-      </ul>
+      <ul>{/* <PostLink id="hello-nextjs" title="Testing Selectors" /> */}</ul>
     </Page>
   )
 }

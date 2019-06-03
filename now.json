@@ -3,7 +3,7 @@
     { "src": "next.config.js", "use": "@now/next" },
     { "src": "api/index.js", "use": "@now/node" }
   ],
-  "alias": "yuxiwang.me",
+  "alias": "yuxiwang.dev",
   "routes": [
     { "src": "/post/(?<name>[^/]+)$", "dest": "/post?title=$name" }
   ],
