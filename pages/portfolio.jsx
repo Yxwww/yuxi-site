@@ -73,8 +73,8 @@ function Portfolio(props) {
             <p>
               Experienced Software Developer (5 years) with a demonstrated
               history of working in the computer software industry. Skilled in
-              Javascript, web application development, and realtime application
-              state control. Strong engineering professional with a
+              UI programming, graphic programming, and realtime application
+              state management,. Strong engineering professional with a
               Bachelor&apos;s Degree focused in Computer Science from University
               of Calgary.
             </p>
