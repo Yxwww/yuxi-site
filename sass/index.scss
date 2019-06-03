@@ -75,6 +75,8 @@ button {
 .show-on-print {
   display: none;
   @include print {
+    text-align: right;
+    font-size: 5px;
     display: block;
   }
 }
