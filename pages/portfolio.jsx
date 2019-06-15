@@ -36,6 +36,15 @@ function Portfolio(props) {
                 >
                   <img src="/static/img/icons/download.png" alt="" />
                 </a>
+
+                <a
+                  title="open twitter"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://twitter.com/thissushiguy"
+                >
+                  <img src="/static/img/logos/twitter-icon-4.png" alt="" />
+                </a>
                 <a
                   title="open LinkedIn"
                   rel="noopener noreferrer"
