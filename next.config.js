@@ -16,4 +16,5 @@ module.exports = () => ({
     cssModules: false,
   }),
   target: 'serverless',
+  crossOrigin: 'anonymous',
 })

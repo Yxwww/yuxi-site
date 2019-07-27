@@ -16,7 +16,7 @@ const createExpereienceSections = map(exp => (
 ))
 
 function ExperienceContent(props) {
-  const { experience } = props;
+  const { experience } = props
   const experienceSections = createExpereienceSections(experience)
 
   return (

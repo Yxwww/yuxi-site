@@ -7,16 +7,19 @@ function isLabelOurCurrentHighlight(label, highlight) {
   if (highlight === '/' && label === HOME_LABEL) {
     return true
   }
-  return label === removeFirstChar(highlight)
+  return removeFirstChar(highlight).startsWith(label)
 }
 
 function Nav(props) {
-  const { items, router: { pathname } } = props
+  const {
+    items,
+    router: { asPath },
+  } = props
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
       className={`nav-items ${
-        isLabelOurCurrentHighlight(label, pathname) ? 'selected' : ''
+        isLabelOurCurrentHighlight(label, asPath) ? 'selected' : ''
       }`}
     >
       <a href={url}>{label}</a>
@@ -24,9 +27,9 @@ function Nav(props) {
   ))
   return (
     <div className="nav">
-      <div className="container nav-container">{itemDivs}</div>
+      <div className="nav-container">{itemDivs}</div>
     </div>
   )
 }
 
-export default withRouter(Nav);
+export default withRouter(Nav)
