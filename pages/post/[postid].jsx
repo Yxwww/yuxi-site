@@ -30,7 +30,7 @@ Post.getInitialProps = async function getInitialProps({ query }) {
   console.log(query)
   return {
     markdown: `
-  # CONTENT!
+  To be continued ...
   `,
   }
 }
