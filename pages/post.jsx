@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch'
+// import fetch from 'isomorphic-unfetch'
 import React from 'react'
 import { withRouter } from 'next/router'
 import dynamic from 'next/dynamic'
@@ -24,12 +24,12 @@ const Post = ({ markdown }) => {
 }
 
 Post.getInitialProps = async function getInitialProps({ req }) {
-  const baseUrl = req
-    ? `${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}`
-    : ''
-  const response = await fetch(`${baseUrl}/api`)
-  const { content } = await response.json()
-  return { markdown: content }
+  // console.log(req.params.id)
+  return {
+    markdown: `
+  # CONTENT!
+  `,
+  }
 }
 
 export default Post

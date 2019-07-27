@@ -1,11 +1,10 @@
 {
   "builds": [
     { "src": "next.config.js", "use": "@now/next" },
+    { "src": "server.js", "use": "@now/node-server" },
     { "src": "api/index.js", "use": "@now/node" }
   ],
   "alias": "yuxiwang.dev",
-  "routes": [
-    { "src": "/post/(?<name>[^/]+)$", "dest": "/post?title=$name" }
-  ],
+  "routes": [{ "src": "/post/(?<name>[^/]+)$", "dest": "/post?title=$name" }],
   "version": 2
 }
