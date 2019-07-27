@@ -2,13 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../layouts/main'
 
-const PostLink = ({ title }) => (
-  <li>
-    <Link prefetch href="/blog/testing-selectors">
-      <a href="/blog/testing-selectors">{title}</a>
-    </Link>
-  </li>
-)
+const PostLink = ({ title, url }) => {
+  console.log(title)
+  return (
+    <li>
+      <Link prefetch href={`/post?title=${url}`} as={`/post/${url}`}>
+        <a>{title}</a>
+      </Link>
+    </li>
+  )
+}
 
 export default function Blog() {
   return (
@@ -16,7 +19,7 @@ export default function Blog() {
       <h1>Blog</h1>
       <p>Under construction :)</p>
       <ul>
-        <PostLink id="hello-nextjs" title="Testing Selectors" />
+        <PostLink title="Testing Selectors" url="testing-selectors" />
       </ul>
     </Page>
   )

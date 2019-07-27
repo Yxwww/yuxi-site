@@ -2,9 +2,9 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import dynamic from 'next/dynamic'
-import Page from '../layouts/main'
+import Page from '../../layouts/main'
 
-const Markdown = dynamic(() => import('../components/code/Markdown.jsx'))
+const Markdown = dynamic(() => import('../../components/code/Markdown.jsx'))
 
 const Content = withRouter(({ router: { query: { title } }, markdown }) => {
   console.log('query', title)
@@ -27,11 +27,10 @@ const Post = ({ markdown, title }) => {
   )
 }
 
-Post.getInitialProps = async function getInitialProps({ query }) {
-  console.log(query.title)
+Post.getInitialProps = async function getInitialProps({ query, req }) {
   return {
     markdown: `
-  # CONTENT!
+  # CONTENT! in pages/post/
   `,
     title: query.title,
   }
