@@ -3,10 +3,9 @@ import Link from 'next/link'
 import Page from '../layouts/main'
 
 const PostLink = ({ title, url }) => {
-  console.log(title)
   return (
     <li>
-      <Link prefetch href={`/post?title=${url}`} as={`/post/${url}`}>
+      <Link prefetch href={'/{[title]'} as={`/post/${url}`}>
         <a>{title}</a>
       </Link>
     </li>
