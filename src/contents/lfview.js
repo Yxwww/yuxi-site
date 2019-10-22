@@ -13,6 +13,7 @@ const contributions = [
   'Participated in design and implementation of all aspects of frontend including: visualization library, UI programming, and application dataflow control.',
   'Maintained projects through critical life cycle including ideation, research, proposal, development, maintenance and sunset.',
   'Researched and improved application rendering and memory performance.',
+  'Maximize productivity by balancing between various testing philosophies while maintaining over 95% test coverage.',
   'Onboarded new team members by providing training materials, documentation, and mentorship.',
 ]
 
