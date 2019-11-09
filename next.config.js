@@ -1,11 +1,13 @@
 const { pipe } = require('ramda')
 const withSass = require('@zeit/next-sass')
+const withCSS = require('@zeit/next-css')
 const withMdx = require('@zeit/next-mdx')({
   extension: /.mdx?$/,
 })
 
 const plugins = pipe(
   withSass,
+  withCSS,
   withMdx,
 )
 
