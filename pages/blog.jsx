@@ -5,7 +5,7 @@ import Page from '../layouts/main'
 const PostLink = ({ title, url }) => {
   return (
     <li>
-      <Link prefetch href="/post/[postid]" as={`/post/${url}`}>
+      <Link href="/post/[postid]" as={`/post/${url}`}>
         <a>{title}</a>
       </Link>
     </li>
