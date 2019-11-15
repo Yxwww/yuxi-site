@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "now dev",
     "build": "next build",
-    "deploy": "now --target production"
+    "deploy": "now --prod"
   },
   "dependencies": {
     "@zeit/next-mdx": "^1.2.0",
