@@ -32,4 +32,5 @@ function Nav(props) {
   )
 }
 
-export default withRouter(Nav)
+const NavWithRouter = withRouter(Nav)
+export default NavWithRouter
