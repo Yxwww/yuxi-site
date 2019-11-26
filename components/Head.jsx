@@ -21,9 +21,7 @@ function Header(props) {
   return (
     <div>
       <Head>
-        <title>Yuxi Wang |
-{` ${processPathNameToTitle(pathname)}`}
-</title>
+        <title>Yuxi Wang |{` ${processPathNameToTitle(pathname)}`}</title>
         <link
           rel="apple-touch-icon"
           sizes="57x57"
