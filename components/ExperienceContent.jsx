@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { map } from 'ramda'
 import '../sass/layout.scss'
 import ExperienceSection from './ExperienceSection'
 
-const createThumbnailDivs = map(data => (
-  <div
-    key={data.uid}
-    className="thumbnail"
-    style={{ backgroundImage: `url(${data.img})` }}
-  />
-))
+// const createThumbnailDivs = map(data => (
+//   <div
+//     key={data.uid}
+//     className="thumbnail"
+//     style={{ backgroundImage: `url(${data.img})` }}
+//   />
+// ))
 
 const createExpereienceSections = map(exp => (
   <ExperienceSection key={exp.uid} experience={exp} />

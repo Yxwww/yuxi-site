@@ -1,9 +1,8 @@
 module.exports = {
-  'extends': ['airbnb', 'prettier'],
+  'extends': ['airbnb', "plugin:prettier/recommended", "prettier/react"],
   "parser": "babel-eslint",
   "plugins": ['prettier', "react-hooks"],
   "rules": {
-    "prettier/prettier": "error",
     "import/prefer-default-export": "warn",
     "react/prop-types": "off",
     "jsx-a11y/anchor-is-valid": "off",

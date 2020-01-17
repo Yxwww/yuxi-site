@@ -8,6 +8,13 @@ const thumbnails = [
   'seequent-eagle-slides.png',
 ]
 
+const blurb = [
+  'Frontend developer of 3D data visualization web application LFView. Proposed and implemented web frontend visualization and UI application redesign from ground up. Project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.',
+  'Co-designed and implemented web visualization, pushing the boundaries of web application capability. Greatly improved performance and visual presentation.',
+  'Researched and introduced emerging technologies, design patterns and paradigms including sveltejs, reactjs (w/ hooks api), Flux(redux), rxjs, TypeScript, css-grid and Functional/Reactive Programming paradigm. The architecture has proven to be scalable as the team size significantly increased.',
+  'Participated in design and implementation of all aspects of web frontend stack including: visualization library, UI programming, and general application dataflow state control.',
+]
+
 const contributions = [
   'Researched and introduced emerging technologies, design patterns and programming paradigms.',
   'Participated in design and implementation of all aspects of frontend including: visualization library, UI programming, and application dataflow control.',
@@ -17,9 +24,7 @@ const contributions = [
   'Onboarded new team members by providing training materials, documentation, and mentorship.',
 ]
 
-const description = `
-Frontend developer of 3D data visualization web application LFView. Reserached and developed frontend UI and visualization redesign from ground up with technologies such as Redux/React(Hooks API), Rxjs, Svelte, and TypeScript etc. Project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.
-`
+const description = blurb
 
 const roles = [DEVELOPER_ROLE]
 const time = 'June,2016 - Now'
@@ -40,6 +45,7 @@ export function createLfviewExperience() {
       time,
       url,
       roles,
+      blurb,
     )
   }
   return experience
