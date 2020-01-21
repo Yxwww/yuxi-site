@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import { removeFirstChar } from '../utils/index'
-import { HOME_LABEL } from '../layouts/main'
+import { HOME_LABEL } from '../constants'
 
 function isLabelOurCurrentHighlight(label, highlight) {
   if (highlight === '/' && label === HOME_LABEL) {
