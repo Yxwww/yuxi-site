@@ -8,3 +8,7 @@
 body {
   /* @apply p-12 bg-blue-500; */
 }
+
+@variant hover {
+
+}
