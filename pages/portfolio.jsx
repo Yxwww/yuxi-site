@@ -1,7 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Page from '../layouts/main'
-import '../sass/page-portfolio.scss'
 import { getExperience } from '../src/contents'
 import { createEducation } from '../src/contents/education'
 

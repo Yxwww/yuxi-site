@@ -1,6 +1,5 @@
 import React from 'react'
 import App from 'next/app'
-// import '../sass/index.scss'
 import '../styles/index.css'
 
 class MyApp extends App {

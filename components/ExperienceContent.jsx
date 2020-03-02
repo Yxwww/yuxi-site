@@ -1,6 +1,5 @@
 import React from 'react'
 import { map } from 'ramda'
-import '../sass/layout.scss'
 import ExperienceSection from './ExperienceSection'
 
 // const createThumbnailDivs = map(data => (
