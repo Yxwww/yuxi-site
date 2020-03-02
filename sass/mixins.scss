@@ -165,7 +165,6 @@ $desktop-width: 1024px;
 
 @mixin user-select($select) {
   -webkit-user-select: $select;
-  user-select: $select;
 }
 
 

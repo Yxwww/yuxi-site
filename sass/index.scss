@@ -18,18 +18,6 @@ html {
   position: relative;
 }
 
-* {
-  box-sizing: inherit;
-
-  @include user-select(none);
-
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-
-  -webkit-tap-highlight-color: transparent;
-}
-
 body {
 }
 
@@ -40,9 +28,9 @@ section {
 #app {
   min-height: 100vh;
 }
-div.container {
-  @include container();
-}
+// div.container {
+//   @include container();
+// }
 
 .projects > .project-container {
   @include center-block;

@@ -4,8 +4,7 @@ import Page from '../layouts/main'
 
 export default () => (
   <Page>
-    <div>
-      <h1>Home</h1>
+    <div className="container">
       <p>
         Hi, I am a software developer currently working on{' '}
         <a href="https://views.seequent.com">Seequent View</a>.
