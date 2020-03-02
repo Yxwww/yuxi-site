@@ -18,18 +18,14 @@ function Nav(props) {
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
-      className={`nav-items ${
-        isLabelOurCurrentHighlight(label, asPath) ? 'selected' : ''
+      className={`nav-items capitalize inline-block text-gray-800 m-1 hover:text-indigo-500 hover:border-blue-500 ${
+        isLabelOurCurrentHighlight(label, asPath) ? 'text-indigo-600' : ''
       }`}
     >
       <a href={url}>{label}</a>
     </div>
   ))
-  return (
-    <div className="nav">
-      <div className="nav-container">{itemDivs}</div>
-    </div>
-  )
+  return <nav className="container px-4 mx-auto">{itemDivs}</nav>
 }
 
 const NavWithRouter = withRouter(Nav)
