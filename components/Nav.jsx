@@ -18,7 +18,7 @@ function Nav(props) {
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
-      className={`font-sans nav-items capitalize inline-block text-gray-800 m-1 hover:text-indigo-500 border-b-2 border-transparent border-solid hover:border-gray-500 ${
+      className={`my-4 text-lg font-sans nav-items capitalize inline-block text-gray-800 m-1 first:ml-0 hover:text-indigo-800 border-b-2 border-transparent border-solid hover:border-gray-500 ${
         isLabelOurCurrentHighlight(label, asPath)
           ? 'text-indigo-600 border-gray-700'
           : ''
@@ -27,7 +27,7 @@ function Nav(props) {
       <a href={url}>{label}</a>
     </div>
   ))
-  return <nav className="container">{itemDivs}</nav>
+  return <nav className="container absolute bg-white z-10">{itemDivs}</nav>
 }
 
 const NavWithRouter = withRouter(Nav)

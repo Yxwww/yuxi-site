@@ -10,5 +10,17 @@ body {
 }
 
 @variant hover {
+}
 
+a {
+  @apply text-indigo-600;
+}
+a:hover {
+  @apply text-indigo-800;
+}
+
+.vertical-align {
+  @apply absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }

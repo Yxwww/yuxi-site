@@ -21,7 +21,7 @@ const navItemData = [
 const page = ({ children }) => {
   const navItems = createNavItems(navItemData)
   return (
-    <div id="app">
+    <div id="app" className="w-full">
       <Head />
       <Nav items={navItems} />
       {children}
