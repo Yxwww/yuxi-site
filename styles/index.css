@@ -24,3 +24,11 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
 }
+
+h1 {
+  @apply text-4xl my-4;
+}
+
+.screen-nav {
+  height: calc(100vh - 60px);
+}

@@ -15,10 +15,12 @@ const PostLink = ({ title, url }) => {
 export default function Blog() {
   return (
     <Page>
-      <h1>Blog</h1>
-      <ul>
-        <PostLink title="Testing Selectors" url="testing-selectors" />
-      </ul>
+      <div className="container">
+        <h1>Blog</h1>
+        <ul className="">
+          <PostLink title="Testing Selectors" url="testing-selectors" />
+        </ul>
+      </div>
     </Page>
   )
 }

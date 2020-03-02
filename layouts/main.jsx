@@ -14,7 +14,8 @@ const createNavItems = map(([url, label]) => ({
 const Nav = dynamic(() => import('../components/Nav'))
 const navItemData = [
   ['/', HOME_LABEL],
-  ['/portfolio', 'portfolio'],
+  ['/resume', 'resume'],
+  ['/projects', 'projects'],
   ['/blogs', 'blog'],
 ]
 
