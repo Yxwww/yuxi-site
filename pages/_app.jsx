@@ -7,7 +7,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <div className="container">
+      <div className="container font-sans">
         <Component {...pageProps} />
       </div>
     )
