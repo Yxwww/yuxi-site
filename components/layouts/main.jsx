@@ -2,8 +2,8 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import { map } from 'ramda'
 import { generate } from 'shortid'
-import Head from '../components/Head'
-import { HOME_LABEL } from '../constants'
+import Head from '../Head'
+import { HOME_LABEL } from '../../constants'
 
 const createNavItems = map(([url, label]) => ({
   uid: generate(),
@@ -11,7 +11,7 @@ const createNavItems = map(([url, label]) => ({
   label,
 }))
 
-const Nav = dynamic(() => import('../components/Nav'))
+const Nav = dynamic(() => import('../Nav'))
 const navItemData = [
   ['/', HOME_LABEL],
   ['/resume', 'resume'],

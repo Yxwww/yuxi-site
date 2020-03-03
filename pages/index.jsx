@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Page from '../layouts/main'
+import Page from '../components/layouts/main'
 
 export default () => (
   <Page>
