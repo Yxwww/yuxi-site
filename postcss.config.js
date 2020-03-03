@@ -8,11 +8,7 @@ module.exports = {
           [
             '@fullhuman/postcss-purgecss',
             {
-              content: [
-                './components/**/*.js',
-                './pages/**/*.js',
-                './layouts/**/*.js',
-              ],
+              content: ['./components/**/*.jsx', './pages/**/*.jsx'],
               defaultExtractor: content =>
                 content.match(/[\w-/:]+(?<!:)/g) || [],
             },
