@@ -1,9 +1,8 @@
 /* purgecss start ignore */
-@tailwind base;
+@import "tailwindcss/base";
 /* purgecss end ignore */
-
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
   /* @apply p-12 bg-blue-500; */
