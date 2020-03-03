@@ -5,7 +5,7 @@
 @import "tailwindcss/utilities";
 
 body {
-  /* @apply p-12 bg-blue-500; */
+  @apply font-sans;
 }
 
 @variant hover {
@@ -30,4 +30,8 @@ h1 {
 
 .screen-nav {
   height: calc(100vh - 60px);
+}
+
+.social-icon {
+  @apply fill-current w-6 h-6 mr-2 inline-block;
 }

@@ -21,6 +21,9 @@ module.exports = {
       '4': '4px',
     },
     extend: {
+      screens: {
+        print: { raw: 'print' },
+      },
       colors: {
         cyan: '#9cdbff',
       },
