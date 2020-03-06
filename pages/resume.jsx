@@ -17,7 +17,7 @@ function Portfolio(props) {
   return (
     <Page>
       <div className="font-resume flex flex-col">
-        <h1>Resume</h1>
+        <h1 className="print:hidden">Resume</h1>
         <div className="flex justify-between items-center flex-wrap">
           <div>
             <h2>Yuxi Wang</h2>
