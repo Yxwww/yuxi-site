@@ -12,7 +12,8 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      sans: ['Lato', ...defaultTheme.fontFamily.sans],
+      main: ['Inter', ...defaultTheme.fontFamily.sans],
+      resume: ['Lora', ...defaultTheme.fontFamily.sans],
     },
     borderWidth: {
       default: '1px',

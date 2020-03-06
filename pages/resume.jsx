@@ -15,8 +15,8 @@ const ExperienceSection = dynamic(() =>
 function Portfolio(props) {
   const { experience, education } = props
   return (
-    <Page fonts={['Lato']}>
-      <div className="flex flex-col">
+    <Page>
+      <div className="font-resume flex flex-col">
         <h1>Resume</h1>
         <div className="flex justify-between items-center flex-wrap">
           <div>
