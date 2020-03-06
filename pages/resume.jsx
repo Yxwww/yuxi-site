@@ -16,7 +16,7 @@ function Portfolio(props) {
   const { experience, education } = props
   return (
     <Page fonts={['Lato']}>
-      <div className="container flex flex-col">
+      <div className="flex flex-col">
         <h1>Resume</h1>
         <div className="flex justify-between items-center flex-wrap">
           <div>
