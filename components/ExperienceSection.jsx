@@ -5,7 +5,9 @@ import { generate } from 'shortid'
 const generateRolesString = join(', ')
 
 const createContributionList = map(data => (
-  <li key={data.uid}>{data.contribution}</li>
+  <li className="my-1" key={data.uid}>
+    {data.contribution}
+  </li>
 ))
 // const NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD = 3
 const toArrayOfP = map(o => <p key={generate()}>{o}</p>)
@@ -38,15 +40,15 @@ export default props => {
   }
 
   return (
-    <div key={uid} className="project-card-container">
-      <div className="project-card collapsed">
+    <div key={uid} className="">
+      <div className="my-8">
         {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
-        <div className="content">
+        <div>
           <div>
-            <h3 className="text-left">
+            <h3 className="my-2 text-left">
               {`${product} - `}
-              <span className="captalized">{company}</span>
-              <span className="project-url">
+              <span className="captalize">{company}</span>
+              <span className="">
                 {projecturl && (
                   <a
                     rel="noopener noreferrer"
@@ -55,6 +57,7 @@ export default props => {
                   >
                     <img
                       style={imgStyle}
+                      className="social-icon"
                       src="/static/img/icons/url.svg"
                       alt="url"
                     />
@@ -75,8 +78,8 @@ export default props => {
             </div>
             {renderDescription(description)}
           </div>
-          <div className="contributions">
-            <ul>{contributionLists}</ul>
+          <div className="container">
+            <ul className="list-disc">{contributionLists}</ul>
             {/* {showMore && <ul>{hiddenContributions}</ul>}
             {contributions.length > NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD ? (
               <button

@@ -40,6 +40,10 @@ h3 {
   @apply text-lg;
 }
 
+p {
+  @apply m-4 font-normal leading-normal select-text text-base;
+}
+
 .screen-nav {
   height: calc(100vh - 60px);
 }

@@ -52,7 +52,7 @@ function Portfolio(props) {
           </div>
         </div>
         <div className="title">
-          <div className="left">
+          <div className="text-left">
             <h2>Summary</h2>
             <p>
               Experienced Software Developer (5 years) with a demonstrated
@@ -69,11 +69,11 @@ function Portfolio(props) {
           </div>
         </div>
         <div className="projects">
-          <h2>Projects</h2>
+          <h2 className="font-medium">Projects</h2>
           <ExperienceContent experience={experience} />
         </div>
         <div>
-          <h2>Education</h2>
+          <h2 className="font-medium">Education</h2>
           <ExperienceSection experience={education} />
         </div>
       </div>

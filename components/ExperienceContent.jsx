@@ -20,7 +20,7 @@ function ExperienceContent(props) {
 
   return (
     <>
-      <div className="project-container">{experienceSections}</div>
+      <div className="mx-auto">{experienceSections}</div>
     </>
   )
 }
