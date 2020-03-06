@@ -19,11 +19,11 @@ const navItemData = [
   ['/blogs', 'blog'],
 ]
 
-const page = ({ children }) => {
+const page = ({ children, fonts = ['Inter'] }) => {
   const navItems = createNavItems(navItemData)
   return (
     <div id="app" className="w-full">
-      <Head />
+      <Head fonts={fonts} />
       <Nav items={navItems} />
       {children}
     </div>

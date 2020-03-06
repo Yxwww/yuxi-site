@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import Head from 'next/head'
-import { pipe, T, identity, equals, cond, always } from 'ramda'
+import { pipe, T, identity, equals, cond, always, memoizeWith } from 'ramda'
 import { removeFirstChar, captalizeFirstChar } from '../utils/index'
 
 const processPathNameHomeCase = cond([
@@ -13,11 +13,24 @@ const processPathNameToTitle = pipe(
   removeFirstChar,
   captalizeFirstChar,
 )
+const fontsConfig = {
+  Lora: '400,700',
+  Inter: '400,500,700',
+}
 
+const computeFonts = memoizeWith(identity, function computeFonts(fonts) {
+  return fonts
+    .map(font => {
+      return `${font}:${fontsConfig[font]}`
+    })
+    .join('|')
+})
 function Header(props) {
   const {
     router: { pathname },
+    fonts = ['Lato'],
   } = props
+  const fontsString = computeFonts(fonts)
   return (
     <div>
       <Head>
@@ -100,14 +113,10 @@ function Header(props) {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
-          href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
+          href={`https://fonts.googleapis.com/css?family=${fontsString}:&display=swap`}
           rel="stylesheet"
         />
-
-        {/* <link
-          href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap"
-          rel="stylesheet"
-        /> */}
+        )
       </Head>
     </div>
   )

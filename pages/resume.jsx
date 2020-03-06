@@ -15,11 +15,12 @@ const ExperienceSection = dynamic(() =>
 function Portfolio(props) {
   const { experience, education } = props
   return (
-    <Page>
+    <Page fonts={['Lato']}>
       <div className="container flex flex-col">
+        <h1>Resume</h1>
         <div className="flex justify-between items-center flex-wrap">
           <div>
-            <h1>Yuxi Wang</h1>
+            <h2>Yuxi Wang</h2>
           </div>
           <div className="contact">
             <div className="social-icons print:hidden">

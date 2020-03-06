@@ -28,6 +28,10 @@ h1 {
   @apply text-4xl my-4;
 }
 
+h2 {
+  @apply text-2xl my-4;
+}
+
 .screen-nav {
   height: calc(100vh - 60px);
 }
