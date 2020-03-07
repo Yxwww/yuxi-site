@@ -2,14 +2,20 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
-    container: {
-      padding: '2rem',
-    },
+    container: {},
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
+      tablet: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      laptop: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: '1280px',
+      // => @media (min-width: 1280px) { ... }
     },
     fontFamily: {
       main: ['Inter', ...defaultTheme.fontFamily.sans],

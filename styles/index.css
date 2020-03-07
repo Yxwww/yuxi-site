@@ -41,7 +41,7 @@ h3 {
 }
 
 p {
-  @apply m-4 font-normal leading-normal select-text text-base;
+  @apply m-2 font-normal leading-normal select-text text-base;
 }
 
 .screen-nav {
@@ -50,4 +50,17 @@ p {
 
 .social-icon {
   @apply fill-current w-6 h-6 mr-2 inline-block;
+}
+
+.right-bottom-corner {
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    @apply text-gray-900;
 }
