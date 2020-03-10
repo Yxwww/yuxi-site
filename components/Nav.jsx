@@ -27,7 +27,7 @@ function Nav(props) {
       <a href={url}>{label}</a>
     </div>
   ))
-  return <nav className="absolute container z-10">{itemDivs}</nav>
+  return <nav className="container z-10 mx-1 tablet:mx-4">{itemDivs}</nav>
 }
 
 const NavWithRouter = withRouter(Nav)
