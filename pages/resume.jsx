@@ -15,21 +15,21 @@ const SocialIcons = dynamic(() => import('../components/SocialIcons'))
 
 function ContactInfo() {
   return (
-    <>
+    <div className="text-sm">
       <div className="hidden print:block">
         <a href="mailto:yuxi.wang.dev@gmail.com">
           Email: yuxi.wang.dev@gmail.com
         </a>
       </div>
       <div className="hidden print:block">
-        <a href="https://yuxiwang.me/portfolio">
-          Website: https://yuxiwang.me/portfolio
+        <a href="https://yuxiwang.dev/resume">
+          Website: https://yuxiwang.dev/resum
         </a>
       </div>
       <div className="hidden print:block">
         <a href="rel:1-403-560-6778">Phone: 403-560-67778</a>
       </div>
-    </>
+    </div>
   )
 }
 
