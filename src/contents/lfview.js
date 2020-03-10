@@ -29,7 +29,7 @@ const description = blurb
 const roles = [DEVELOPER_ROLE]
 const time = 'June,2016 - Now'
 
-const url = 'https://lfview.com'
+const url = 'https://view.seequent.com'
 
 let experience
 
