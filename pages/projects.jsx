@@ -4,7 +4,7 @@ import Page from '../components/layouts/main'
 
 const PostLink = ({ id, children }) => (
   <li>
-    <Link href="/p/[id]" as={`/p/${id}`}>
+    <Link href="/post/[id]" as={`/post/${id}`}>
       <a>{children || <a>{id}</a>}</a>
     </Link>
   </li>
