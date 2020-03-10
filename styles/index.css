@@ -24,8 +24,8 @@ a:hover {
 
 .vertical-align {
   @apply absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 4rem);;
+  transform: translateY(calc(50% - 4rem));
 }
 
 h1 {
@@ -45,7 +45,7 @@ p {
 }
 
 .screen-nav {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 4rem);
 }
 
 .social-icon {

@@ -22,10 +22,12 @@ const navItemData = [
 const page = ({ children, fonts = ['Inter'] }) => {
   const navItems = createNavItems(navItemData)
   return (
-    <div id="app" className="w-full">
+    <div id="app" className="relative w-full">
       <Head fonts={fonts} />
       <Nav items={navItems} />
-      <div className="container px-1 table:px-2">{children}</div>
+      <div className="relative container pt-16 print:pt-2 px-1 table:px-2">
+        {children}
+      </div>
     </div>
   )
 }
