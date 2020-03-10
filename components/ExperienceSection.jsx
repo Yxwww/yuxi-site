@@ -72,8 +72,8 @@ export default props => {
         </div>
         {renderDescription(description)}
       </div>
-      <div className="px-1 tablet:px-4">
-        <ul className="list-disc">{contributionLists}</ul>
+      <div className="px-2 tablet:px-4">
+        <ul className="px-4 list-disc">{contributionLists}</ul>
         {/* {showMore && <ul>{hiddenContributions}</ul>}
             {contributions.length > NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD ? (
               <button

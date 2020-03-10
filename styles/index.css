@@ -55,8 +55,8 @@ p {
 .right-bottom-corner {
     display: block;
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     position: absolute;
     bottom: -5px;
     right: -5px;
