@@ -1,0 +1,66 @@
+/* purgecss start ignore */
+@import "tailwindcss/base";
+/* purgecss end ignore */
+@import "./fonts.css";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+  @apply antialiased leading-tight;
+}
+body {
+  @apply font-main min-h-screen bg-gray-100;
+}
+
+@variant hover {
+}
+
+a {
+  @apply text-indigo-600;
+}
+a:hover {
+  @apply text-indigo-800;
+}
+
+.vertical-align {
+  @apply absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  @apply text-4xl my-4;
+}
+
+h2 {
+  @apply text-2xl my-4;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+p {
+  @apply m-2 font-normal leading-normal select-text text-base;
+}
+
+.screen-nav {
+  height: calc(100vh - 60px);
+}
+
+.social-icon {
+  @apply fill-current w-6 h-6 mr-2 inline-block;
+}
+
+.right-bottom-corner {
+    display: block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    @apply text-gray-900;
+}

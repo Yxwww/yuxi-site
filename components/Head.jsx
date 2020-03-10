@@ -99,15 +99,7 @@ function Header(props) {
         />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
-          rel="stylesheet"
-        />
-
-        {/* <link
-          href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap"
-          rel="stylesheet"
-        /> */}
+        )
       </Head>
     </div>
   )

@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { map, join } from 'ramda'
 import { generate } from 'shortid'
 
 const generateRolesString = join(', ')
 
 const createContributionList = map(data => (
-  <li key={data.uid}>{data.contribution}</li>
+  <li className="my-1" key={data.uid}>
+    {data.contribution}
+  </li>
 ))
 // const NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD = 3
 const toArrayOfP = map(o => <p key={generate()}>{o}</p>)
@@ -13,7 +15,7 @@ function renderDescription(description) {
   if (Array.isArray(description)) {
     return toArrayOfP(description)
   }
-  return <div>{description}</div>
+  return <p>{description}</p>
 }
 
 export default props => {
@@ -38,46 +40,41 @@ export default props => {
   }
 
   return (
-    <div key={uid} className="project-card-container">
-      <div className="project-card collapsed">
-        {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
-        <div className="content">
-          <div>
-            <h3 className="text-left">
-              {`${product} - `}
-              <span className="captalized">{company}</span>
-              <span className="project-url">
-                {projecturl && (
-                  <a
-                    rel="noopener noreferrer"
-                    href={projecturl}
-                    target="_blank"
-                  >
-                    <img
-                      style={imgStyle}
-                      src="/static/img/icons/url.svg"
-                      alt="url"
-                    />
-                  </a>
-                )}
-              </span>
-            </h3>
+    <div className="my-8 relative" key={uid}>
+      {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
+      <div>
+        <h3 className="my-2 text-left">
+          {`${product} - `}
+          <span className="captalize">{company}</span>
+          <span className="">
+            {projecturl && (
+              <a rel="noopener noreferrer" href={projecturl} target="_blank">
+                <img
+                  style={imgStyle}
+                  className="social-icon"
+                  src="/static/img/icons/url.svg"
+                  alt="url"
+                />
+              </a>
+            )}
+          </span>
+        </h3>
 
-            <div className="flex space-between flex-end flex-wrap-wrap">
-              <div>
-                <i className="text-left experience-time">{time}</i>
-              </div>
-              <div>
-                <i className="text-left medium-weight experience-roles">
-                  {generateRolesString(roles)}
-                </i>
-              </div>
-            </div>
-            {renderDescription(description)}
+        <div className="flex justify-between align-end my-3">
+          <div>
+            <i className="text-left experience-time">{time}</i>
           </div>
-          <div className="contributions">
-            <ul>{contributionLists}</ul>
-            {/* {showMore && <ul>{hiddenContributions}</ul>}
+          <div>
+            <i className="text-left experience-roles">
+              {generateRolesString(roles)}
+            </i>
+          </div>
+        </div>
+        {renderDescription(description)}
+      </div>
+      <div className="px-2 tablet:px-4">
+        <ul className="px-4 list-disc">{contributionLists}</ul>
+        {/* {showMore && <ul>{hiddenContributions}</ul>}
             {contributions.length > NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD ? (
               <button
                 type="button"
@@ -90,8 +87,6 @@ export default props => {
             ) : (
               <></>
             )} */}
-          </div>
-        </div>
       </div>
       <span className="right-bottom-corner" />
     </div>

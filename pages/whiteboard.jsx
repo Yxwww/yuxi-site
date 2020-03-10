@@ -2,15 +2,14 @@ import React, { useEffect, useRef, useReducer, useState } from 'react'
 import { fromEvent } from 'rxjs'
 import { join, map, cloneDeep } from 'lodash/fp'
 import { switchMap, tap, takeUntil, sampleTime } from 'rxjs/operators'
-import '../sass/whiteboard.scss'
 
 export const arrToStr = join(', ')
 
 export const strokeStyle = { stroke: 'rgb(255,0,0)', strokeWidth: 2 }
-const UPDATE_STARTPOS = 'update_startPos';
-const UPDATE_MOVEDELTA = 'update_movedelta';
-const UPDATE_POS = 'update_pos';
-const subVec = (vec1,vec2) => [(vec1[0] - vec2[0]), (vec1[1] - vec2[1])]
+const UPDATE_STARTPOS = 'update_startPos'
+const UPDATE_MOVEDELTA = 'update_movedelta'
+const UPDATE_POS = 'update_pos'
+const subVec = (vec1, vec2) => [vec1[0] - vec2[0], vec1[1] - vec2[1]]
 export const useMouseDrag = containerRef => {
   const [interaction, setInteraction] = useState('idle')
   const [startPos, setStartPos] = useState([0, 0])
@@ -25,7 +24,7 @@ export const useMouseDrag = containerRef => {
   }
   function reducer(state, action) {
     switch (action.type) {
-      case 'add_path':{
+      case 'add_path': {
         return { ...state, path: state.path.concat([action.pos]) }
       }
       case UPDATE_STARTPOS: {
@@ -99,9 +98,9 @@ export const useMouseDrag = containerRef => {
       mv$.complete()
       md$.complete()
     }
-  }, [])
+  }, [containerRef, path, startPos])
 
-  return { interaction, position, startPos, path, dragState, moveDelta}
+  return { interaction, position, startPos, path, dragState, moveDelta }
 }
 
 const Whiteboard = function Whiteboard() {

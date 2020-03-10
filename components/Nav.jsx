@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import { removeFirstChar } from '../utils/index'
-import { HOME_LABEL } from '../layouts/main'
+import { HOME_LABEL } from '../constants'
 
 function isLabelOurCurrentHighlight(label, highlight) {
   if (highlight === '/' && label === HOME_LABEL) {
@@ -18,18 +18,16 @@ function Nav(props) {
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
-      className={`nav-items ${
-        isLabelOurCurrentHighlight(label, asPath) ? 'selected' : ''
+      className={`print:hidden m-3 text-lg font-sans nav-items capitalize inline-block text-gray-800 m-1 first:ml-0 hover:text-indigo-800 border-b-2 border-transparent border-solid hover:border-gray-500 ${
+        isLabelOurCurrentHighlight(label, asPath)
+          ? 'text-indigo-600 border-gray-700'
+          : ''
       }`}
     >
       <a href={url}>{label}</a>
     </div>
   ))
-  return (
-    <div className="nav">
-      <div className="nav-container">{itemDivs}</div>
-    </div>
-  )
+  return <nav className="container z-10">{itemDivs}</nav>
 }
 
 const NavWithRouter = withRouter(Nav)

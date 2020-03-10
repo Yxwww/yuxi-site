@@ -2,7 +2,8 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import { map } from 'ramda'
 import { generate } from 'shortid'
-import Head from '../components/Head'
+import Head from '../Head'
+import { HOME_LABEL } from '../../constants'
 
 const createNavItems = map(([url, label]) => ({
   uid: generate(),
@@ -10,21 +11,21 @@ const createNavItems = map(([url, label]) => ({
   label,
 }))
 
-const Nav = dynamic(() => import('../components/Nav'))
-export const HOME_LABEL = 'home'
+const Nav = dynamic(() => import('../Nav'))
 const navItemData = [
   ['/', HOME_LABEL],
-  ['/portfolio', 'portfolio'],
-  ['/blog', 'blog'],
+  ['/resume', 'resume'],
+  ['/projects', 'projects'],
+  ['/blogs', 'blog'],
 ]
 
-const page = ({ children }) => {
+const page = ({ children, fonts = ['Inter'] }) => {
   const navItems = createNavItems(navItemData)
   return (
-    <div id="app">
-      <Head />
+    <div id="app" className="w-full">
+      <Head fonts={fonts} />
       <Nav items={navItems} />
-      {children}
+      <div className="container px-1 table:px-2">{children}</div>
     </div>
   )
 }

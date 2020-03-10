@@ -1,15 +1,27 @@
 import React from 'react'
-import Page from '../layouts/main'
+import Link from 'next/link'
+import Page from '../components/layouts/main'
 
 export default () => (
   <Page>
-    <div>
-      <h1>Home</h1>
-      {/* <p> */}
-      {/*   All written content on this site is provided under a Creative Commons */}
-      {/*   ShareAlike license. All code is provided under a MIT license unless */}
-      {/*   otherwise stated. */}
-      {/* </p> */}
+    <div className="container relative screen-nav">
+      <div className="text-xl mx-auto vertical-align text-center left-0 right-0">
+        <p>
+          Hi, I am a software developer currently working on{' '}
+          <a href="https://views.seequent.com">Seequent View</a>.
+        </p>
+        <p>
+          Here are my{' '}
+          <Link href="/blogs">
+            <a>blogs</a>
+          </Link>
+          , and (hopefully) updated{' '}
+          <Link href="/portfolio">
+            <a>portfolio</a>
+          </Link>
+          .
+        </p>
+      </div>
     </div>
   </Page>
 )
