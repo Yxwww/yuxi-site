@@ -4,7 +4,7 @@ import Page from '../components/layouts/main'
 
 export default () => (
   <Page>
-    <div className="container absolute t-0 screen-nav">
+    <div className="container screen-nav">
       <div className="text-xl mx-auto vertical-align text-center left-0 right-0">
         <p>
           Hi, I am a software developer currently working on{' '}

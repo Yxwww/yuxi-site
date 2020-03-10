@@ -59,6 +59,7 @@ module.exports = {
   },
   variants: {
     margin: ['first'],
+    rotate: ['hover'],
   },
   plugins: [],
 }
