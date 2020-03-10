@@ -12,6 +12,10 @@ export default () => (
         </p>
         <p>
           Here are my{' '}
+          <Link href="/projects">
+            <a>projects</a>
+          </Link>
+          ,
           <Link href="/blogs">
             <a>blogs</a>
           </Link>
