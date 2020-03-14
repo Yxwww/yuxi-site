@@ -18,8 +18,8 @@ module.exports = {
       // => @media (min-width: 1280px) { ... }
     },
     fontFamily: {
-      main: ['Inter', ...defaultTheme.fontFamily.sans],
-      resume: ['Lora', ...defaultTheme.fontFamily.sans],
+      main: ['Monolisa', ...defaultTheme.fontFamily.sans],
+      resume: ['Monolisa', ...defaultTheme.fontFamily.sans],
     },
     borderWidth: {
       default: '1px',

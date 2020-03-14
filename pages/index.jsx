@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import Page from '../components/layouts/main'
+
+const Attributions = dynamic(() => import('../components/Attributions'))
 
 export default () => (
   <Page>
@@ -26,6 +29,7 @@ export default () => (
           .
         </p>
       </div>
+      <Attributions />
     </div>
   </Page>
 )
