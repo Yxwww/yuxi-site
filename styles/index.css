@@ -37,12 +37,17 @@ h2 {
 }
 
 h3 {
-  @apply text-lg;
+  @apply text-xl;
+}
+
+body {
+  @apply font-normal leading-normal select-text text-base tracking-tight text-sm;
 }
 
 p {
-  @apply m-2 font-normal leading-normal select-text text-base;
+  @apply m-2;
 }
+
 
 .screen-nav {
   min-height: calc(100vh - 50px);
