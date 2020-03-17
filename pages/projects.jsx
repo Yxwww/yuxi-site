@@ -43,8 +43,8 @@ export default () => {
         <div className="mt-8">
           <div className="my-4">
             <ul className="m-2">
-              <PostLink id="sod">SoD Toolkit</PostLink>
               <PostLink id="steno3d-view">Steno3D (Leapfrog View)</PostLink>
+              <PostLink id="sod">SoD Toolkit</PostLink>
             </ul>
           </div>
           <p>

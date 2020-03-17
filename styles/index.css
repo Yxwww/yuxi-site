@@ -9,7 +9,6 @@ html {
   @apply antialiased leading-tight;
 }
 body {
-  @apply font-main min-h-screen bg-gray-100;
 }
 
 @variant hover {
@@ -41,7 +40,7 @@ h3 {
 }
 
 body {
-  @apply font-normal leading-normal select-text text-base tracking-tight text-sm;
+  @apply min-h-screen bg-gray-100 font-normal leading-normal select-text text-base tracking-tight text-sm;
 }
 
 p {
