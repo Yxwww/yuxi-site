@@ -9,8 +9,6 @@ html {
   @apply antialiased leading-tight;
 }
 
-@variant hover {
-}
 
 a {
   @apply text-indigo-600;
