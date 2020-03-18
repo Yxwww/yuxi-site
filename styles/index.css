@@ -6,13 +6,17 @@
 @import "tailwindcss/utilities";
 
 html {
-  @apply antialiased leading-tight;
+  @apply antialiased bg-gray-100 leading-tight min-h-screen ;
 }
 
+.body {
+  @apply font-normal leading-normal select-text text-base tracking-tight text-sm;
+}
 
 a {
   @apply text-indigo-600;
 }
+
 a:hover {
   @apply text-indigo-800;
 }
@@ -33,10 +37,6 @@ h2 {
 
 h3 {
   @apply text-xl;
-}
-
-body {
-  @apply min-h-screen bg-gray-100 font-normal leading-normal select-text text-base tracking-tight text-sm;
 }
 
 p {
