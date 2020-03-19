@@ -29,7 +29,7 @@ export function createSodExperience() {
       description,
       contributions,
       time,
-      '',
+      '/post/sod',
       roles,
     )
   }
