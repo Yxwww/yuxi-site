@@ -35,30 +35,17 @@ export default props => {
   // const [showMore, setShowMore] = useState(false)
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
   const contributionLists = createContributionList(contributions)
-  const imgStyle = {
-    maxHeight: '15px',
-  }
 
   return (
     <div className="my-8 relative" key={uid}>
       {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
       <div>
-        <h3 className="my-2 text-left">
-          {`${product} - `}
-          <span className="captalize">{company}</span>
-          <span className="">
-            {projecturl && (
-              <a rel="noopener noreferrer" href={projecturl} target="_blank">
-                <img
-                  style={imgStyle}
-                  className="social-icon"
-                  src="/static/img/icons/url.svg"
-                  alt="url"
-                />
-              </a>
-            )}
-          </span>
-        </h3>
+        <a rel="noopener noreferrer" href={projecturl} target="_blank">
+          <h3 className="my-2 text-left">
+            {`${product} - `}
+            <span className="captalize">{company}</span>
+          </h3>
+        </a>
 
         <div className="flex justify-between align-end my-3">
           <div>
