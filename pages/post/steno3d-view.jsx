@@ -1,5 +1,10 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import Page from '../../components/layouts/main'
+
+const UnderConstruction = dynamic(() =>
+  import('../../components/UnderConstruction'),
+)
 
 export default function Steno3DProject() {
   return (
@@ -17,7 +22,7 @@ export default function Steno3DProject() {
           <a href="https://view.seequent.com" className="block my-2">
             link to project
           </a>
-          <p>to be continued ...</p>
+          <UnderConstruction />
         </div>
       </div>
     </Page>

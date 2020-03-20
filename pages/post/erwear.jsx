@@ -1,6 +1,10 @@
 import React from 'react'
-// import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import Page from '../../components/layouts/main'
+
+const UnderConstruction = dynamic(() =>
+  import('../../components/UnderConstruction'),
+)
 
 export default function SoDProject() {
   return (
@@ -12,7 +16,7 @@ export default function SoDProject() {
           src="/static/img/projects/erwear-map-bak.png"
           alt="earwear-eoc-center"
         />
-        <p>to be continued ...</p>
+        <UnderConstruction />
       </div>
     </Page>
   )
