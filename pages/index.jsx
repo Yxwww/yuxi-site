@@ -8,8 +8,15 @@ const SocialIcons = dynamic(() => import('../components/SocialIcons'))
 
 export default () => (
   <Page>
-    <div className="container screen-nav">
-      <div className="text-xl mx-auto vertical-align text-center left-0 right-0">
+    <div className="container">
+      <img
+        className="py-4"
+        style={{ maxWidth: '12rem' }}
+        src="/static/img/kinect-infra-red.jpeg"
+        alt="profile-kinect-infra-red"
+      />
+      <SocialIcons className="text-left py-4" />
+      <div>
         <p>
           Hi, I am a software developer currently working on{' '}
           <a href="https://views.seequent.com">Seequent View</a>.
@@ -29,7 +36,6 @@ export default () => (
           </Link>
           .
         </p>
-        <SocialIcons className="text-center" />
       </div>
       <Attributions />
     </div>
