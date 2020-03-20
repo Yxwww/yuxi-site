@@ -45,6 +45,7 @@ export default () => {
             <ul className="m-2">
               <PostLink id="steno3d-view">Steno3D (Leapfrog View)</PostLink>
               <PostLink id="sod">SoD Toolkit</PostLink>
+              <PostLink id="erwear">ERWear</PostLink>
             </ul>
           </div>
           <p>
