@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import Page from '../components/layouts/main'
 
 const Attributions = dynamic(() => import('../components/Attributions'))
+const SocialIcons = dynamic(() => import('../components/SocialIcons'))
 
 export default () => (
   <Page>
@@ -22,12 +23,13 @@ export default () => (
           <Link href="/blogs">
             <a>blogs</a>
           </Link>
-          , and (hopefully) updated{' '}
+          , and updated{' '}
           <Link href="/portfolio">
             <a>portfolio</a>
           </Link>
           .
         </p>
+        <SocialIcons className="text-center" />
       </div>
       <Attributions />
     </div>

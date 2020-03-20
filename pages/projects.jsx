@@ -38,53 +38,55 @@ export default () => {
       <div className="container relative screen-nav">
         <h1>Projects</h1>
         <div className="mt-8">
-          <div className="flex flex-wrap">
-            <PostLink
-              id="steno3d-view"
-              imgUrl="/static/img/projects/seequent-eagle.png"
-              title="View"
-              description="
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              "
-            ></PostLink>
-
-            <PostLink
-              id="rdsdataviz"
-              imgUrl="/static/img/projects/rdsviz.png"
-              title="rds-dataviz"
-              description="
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              "
-            ></PostLink>
-
-            <PostLink
-              id="sod"
-              imgUrl="/static/img/projects/sod-cropped.png"
-              title="SoD Toolkit"
-              description="
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              "
-            ></PostLink>
-
-            <PostLink
-              id="erwear"
-              imgUrl="/static/img/projects/erwear-map-bak.png"
-              title="ERWear"
-              description="
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              "
-            ></PostLink>
-          </div>
-          <UnderConstruction />
+          I&apos;m very fortunate to work on very fun and challenging projects.
+          Some of them as listed below.
         </div>
+        <div className="flex flex-wrap">
+          <PostLink
+            id="steno3d-view"
+            imgUrl="/static/img/projects/seequent-eagle.png"
+            title="View"
+            description="
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+            "
+          ></PostLink>
+
+          <PostLink
+            id="rdsdataviz"
+            imgUrl="/static/img/projects/rdsviz.png"
+            title="rds-dataviz"
+            description="
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+            "
+          ></PostLink>
+
+          <PostLink
+            id="erwear"
+            imgUrl="/static/img/projects/erwear-map-bak.png"
+            title="ERWear"
+            description="
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+            "
+          ></PostLink>
+
+          <PostLink
+            id="sod"
+            imgUrl="/static/img/projects/sod-cropped.png"
+            title="SoD Toolkit"
+            description="
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+            "
+          ></PostLink>
+        </div>
+        <UnderConstruction />
       </div>
     </Page>
   )

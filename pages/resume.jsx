@@ -46,7 +46,7 @@ function Portfolio(props) {
           <div className="contact">
             <div className="social-icons print:hidden">
               <p>You may reach me through:</p>
-              <SocialIcons />
+              <SocialIcons className="text-right" />
             </div>
             <ContactInfo />
           </div>

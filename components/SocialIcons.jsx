@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function SocialIcons() {
+export default function SocialIcons({ className }) {
   return (
-    <div className="text-right">
+    <div className={className}>
       <a
         title="print"
         href="#"

@@ -1,9 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 
 export default function Attributions() {
   return (
-    <div className="absolute bottom-0 text-center">
+    <div className="absolute left-0 bottom-0 text-center w-full">
       <div>
         Icons made by{' '}
         <a
@@ -19,9 +18,13 @@ export default function Attributions() {
       </div>
       <div>
         Fonts is made by{' '}
-        <Link href="https://monolisa.dev/">
-          <a>https://monolisa.dev/</a>
-        </Link>
+        <a
+          href="https://monolisa.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://monolisa.dev/
+        </a>
       </div>
     </div>
   )
