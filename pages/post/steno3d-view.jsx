@@ -14,7 +14,7 @@ export default function Steno3DProject() {
         <div className="py-4">
           <a href="https://view.seequent.com">
             <img
-              className="max-w-full rounded-lg tablet:max-w-5xl"
+              className="w-full tablet:max-w-5xl mx-auto rounded-lg tablet:max-w-5xl"
               src="/static/img/projects/seequent-eagle.png"
               alt="steno3d-img"
             />

@@ -12,7 +12,7 @@ export default function SoDProject() {
       <div className="container">
         <h1>ERWear</h1>
         <img
-          className="max-w-5xl"
+          className="w-full tablet:max-w-5xl mx-auto"
           src="/static/img/projects/erwear-map-bak.png"
           alt="earwear-eoc-center"
         />

@@ -12,7 +12,7 @@ export default function SoDProject() {
       <div className="container">
         <h1>SoD Toolkit</h1>
         <img
-          className="max-w-5xl"
+          className="w-full tablet:max-w-5xl mx-auto"
           src="/static/img/projects/SoD.png"
           alt="sod-2d-visualizer"
         />
