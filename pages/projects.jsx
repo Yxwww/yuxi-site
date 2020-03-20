@@ -8,8 +8,8 @@ const UnderConstruction = dynamic(() =>
 )
 
 const PostLink = ({ id, imgUrl, title, description }) => (
-  <div className="flex-1 flex-wrap">
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+  <div className="m-2 tablet:m-0 flex-1">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200">
       <Link href="/post/[id]" as={`/post/${id}`}>
         <a>
           <img
@@ -38,7 +38,7 @@ export default () => {
       <div className="container relative screen-nav">
         <h1>Projects</h1>
         <div className="mt-8">
-          <div className="flex">
+          <div className="flex flex-wrap ">
             <PostLink
               id="steno3d-view"
               imgUrl="/static/img/projects/seequent-eagle.png"
