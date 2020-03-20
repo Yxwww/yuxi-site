@@ -17,11 +17,11 @@ export default () => (
       />
       <SocialIcons className="text-left py-4" />
       <div>
-        <p>
+        <p className="mx-0">
           Hi, I am a software developer currently working on{' '}
           <a href="https://views.seequent.com">Seequent View</a>.
         </p>
-        <p>
+        <p className="mx-0">
           Here are my{' '}
           <Link href="/projects">
             <a>projects</a>
