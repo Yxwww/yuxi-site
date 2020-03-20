@@ -13,8 +13,8 @@ const PostLink = ({ id, imgUrl, title, description }) => (
       <Link href="/post/[id]" as={`/post/${id}`}>
         <a>
           <img
-            className="w-full"
-            style={{ minHeight: 230 }}
+            className="w-full object-contain"
+            style={{ minHeight: 230, minWidth: 300 }}
             src={imgUrl}
             alt={`${title}-img`}
           />
@@ -26,7 +26,7 @@ const PostLink = ({ id, imgUrl, title, description }) => (
             <div className="font-bold text-xl mb-2">{title}</div>
           </a>
         </Link>
-        <p className="text-gray-700 text-base">{description}</p>
+        <p className="text-gray-700 text-sm mx-0 my-2">{description}</p>
       </div>
     </div>
   </div>
@@ -38,11 +38,22 @@ export default () => {
       <div className="container relative screen-nav">
         <h1>Projects</h1>
         <div className="mt-8">
-          <div className="flex flex-wrap ">
+          <div className="flex flex-wrap">
             <PostLink
               id="steno3d-view"
               imgUrl="/static/img/projects/seequent-eagle.png"
-              title="Steno3D (Leapfrog View)"
+              title="View"
+              description="
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                exercitationem praesentium nihil.
+              "
+            ></PostLink>
+
+            <PostLink
+              id="rdsdataviz"
+              imgUrl="/static/img/projects/rdsviz.png"
+              title="rds-dataviz"
               description="
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptatibus quia, nulla! Maiores et perferendis eaque,
@@ -52,7 +63,7 @@ export default () => {
 
             <PostLink
               id="sod"
-              imgUrl="/static/img/projects/SoD-cropped.png"
+              imgUrl="/static/img/projects/sod-cropped.png"
               title="SoD Toolkit"
               description="
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
