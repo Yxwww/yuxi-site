@@ -13,7 +13,7 @@ export default function SoDProject() {
         <h1>SoD Toolkit</h1>
         <img
           className="w-full tablet:max-w-5xl mx-auto"
-          src="/static/img/projects/SoD.png"
+          src="/static/img/projects/sod-cropped.png"
           alt="sod-2d-visualizer"
         />
         <UnderConstruction />
