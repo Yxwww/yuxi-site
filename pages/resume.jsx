@@ -38,14 +38,13 @@ function Portfolio(props) {
   return (
     <Page>
       <div className="font-resume flex flex-col">
-        <h1 className="print:hidden">Resume</h1>
         <div className="flex justify-between flex-wrap">
           <div>
-            <h2>Yuxi Wang</h2>
+            <h1>Yuxi Wang</h1>
           </div>
           <div className="contact">
             <div className="social-icons print:hidden">
-              <p>You may reach me through:</p>
+              <p className="my-2">You may reach me through:</p>
               <SocialIcons className="text-right" />
             </div>
             <ContactInfo />

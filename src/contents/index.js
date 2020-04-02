@@ -12,3 +12,5 @@ export function getExperience() {
     // createMediaBroExperience(),
   ]
 }
+
+export const ERWearExperience = createERWearExperience()

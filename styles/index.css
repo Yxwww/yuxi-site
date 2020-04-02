@@ -10,7 +10,7 @@ html {
 }
 
 .body {
-  @apply font-normal leading-normal select-text text-base tracking-tight text-sm;
+  @apply font-normal leading-normal select-text text-base tracking-tight;
 }
 
 a {
@@ -36,11 +36,15 @@ h2 {
 }
 
 h3 {
-  @apply text-xl;
+  @apply text-xl my-4;
 }
 
 p {
-  @apply m-4;
+  @apply my-4;
+}
+
+img {
+  @apply my-2;
 }
 
 
