@@ -9,13 +9,18 @@ const ExperienceSection = dynamic(() =>
 const UnderConstruction = dynamic(() =>
   import('../../components/UnderConstruction'),
 )
-const Image = dynamic(() => import('../../components/Image'))
 const ImageModal = dynamic(() => import('../../components/modals/ImageModal'))
+const ImageGallery = dynamic(() => import('../../components/ImageGallery'))
 
 export default function SoDProject() {
   const [modelOpened, setModelOpened] = useState(false)
+  const [imageModelState, setImageModelState] = useState({ url: '', title: '' })
   function toggleModel() {
     setModelOpened(!modelOpened)
+  }
+  function onImageClicked({ url, title }) {
+    setImageModelState({ url, title })
+    toggleModel()
   }
   return (
     <Page>
@@ -25,18 +30,30 @@ export default function SoDProject() {
           <ExperienceSection experience={ERWearExperience} />
         </div>
         <div className="my-4">
+          <ImageGallery
+            items={[
+              {
+                url: '/static/img/projects/erwear-map-bak.png',
+                title: 'earwear eoc center',
+              },
+              {
+                url: '/static/img/projects/GlassView.png',
+                title: 'erwear google glass app',
+              },
+              {
+                url: '/static/img/projects/erwear-poster-bak.png',
+                title: 'earwear eoc center',
+              },
+            ]}
+            imageStyle={{ minHeight: 230, minWidth: 300 }}
+            onClick={onImageClicked}
+          />
           <ImageModal
-            url="/static/img/projects/erwear-map-bak.png"
-            title="earwear-eoc-center-img"
+            url={imageModelState.url}
+            title={imageModelState.title}
             style={{ minHeight: 230, minWidth: 300 }}
             isOpened={modelOpened}
             onCloseClicked={toggleModel}
-          />
-          <Image
-            url="/static/img/projects/erwear-map-bak.png"
-            title="earwear-eoc-center-img"
-            style={{ minHeight: 230, minWidth: 300 }}
-            onClick={toggleModel}
           />
         </div>
 

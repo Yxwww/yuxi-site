@@ -15,7 +15,7 @@ export default function ImageModal({
   onCloseClicked = noop,
 }) {
   return (
-    <Modal isOpened={isOpened} onCloseClicked={onCloseClicked}>
+    <Modal title={title} isOpened={isOpened} onCloseClicked={onCloseClicked}>
       <Image url={url} alt={alt} style={style} />
       {description && <div>Im the children!</div>}
     </Modal>

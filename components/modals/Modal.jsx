@@ -1,6 +1,11 @@
 import React from 'react'
 
-export default function Modal({ isOpened = false, onCloseClicked, children }) {
+export default function Modal({
+  isOpened = false,
+  onCloseClicked,
+  title = '',
+  children,
+}) {
   return (
     <div
       className={`modal ${isOpened ||
@@ -8,7 +13,7 @@ export default function Modal({ isOpened = false, onCloseClicked, children }) {
     >
       <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
-      <div className="modal-container bg-white w-11/12 tablet:max-w-6xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      <div className="modal-container bg-white w-11/12 tablet:max-w-4xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
         <div className="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
           <svg
             className="fill-current text-white"
@@ -24,7 +29,7 @@ export default function Modal({ isOpened = false, onCloseClicked, children }) {
 
         <div className="modal-content py-4 text-left px-6">
           <div className="flex justify-between items-center pb-3">
-            <p className="text-2xl font-bold">Simple Modal!</p>
+            <p className="text-2xl font-bold capitalize my-0">{title}</p>
             <div
               className="modal-close cursor-pointer z-50"
               role="button"
