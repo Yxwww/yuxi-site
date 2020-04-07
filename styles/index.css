@@ -2,6 +2,7 @@
 @import "tailwindcss/base";
 /* purgecss end ignore */
 @import "./fonts/fonts.css";
+@import "./fonts/inter.css";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
@@ -10,7 +11,7 @@ html {
 }
 
 .body {
-  @apply font-normal leading-normal select-text text-base tracking-tight;
+  @apply font-normal leading-normal select-text text-base;
 }
 
 a {

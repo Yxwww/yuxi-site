@@ -29,7 +29,7 @@ const description = blurb
 const roles = [DEVELOPER_ROLE]
 const time = 'June,2016 - Now'
 
-const url = 'https://view.seequent.com'
+const url = '/post/steno3d-view'
 
 let experience
 

@@ -19,7 +19,8 @@ module.exports = {
     },
     fontFamily: {
       mono: ['Monolisa', ...defaultTheme.fontFamily.mono],
-      sans: ['Intel', ...defaultTheme.fontFamily.sans],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      article: ['Lora', ...defaultTheme.fontFamily.serif],
     },
     borderWidth: {
       default: '1px',

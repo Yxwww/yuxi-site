@@ -37,7 +37,7 @@ function Portfolio(props) {
   const { experience, education } = props
   return (
     <Page>
-      <div className="font-resume flex flex-col">
+      <div className="font-article flex flex-col">
         <div className="flex justify-between flex-wrap">
           <div>
             <h1>Yuxi Wang</h1>
@@ -45,7 +45,7 @@ function Portfolio(props) {
           <div className="contact">
             <div className="social-icons print:hidden">
               <p className="my-2">You may reach me through:</p>
-              <SocialIcons className="text-right" />
+              <SocialIcons className="text-left tablet:text-right" />
             </div>
             <ContactInfo />
           </div>

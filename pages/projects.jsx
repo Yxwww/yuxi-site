@@ -38,8 +38,8 @@ export default () => {
       <div className="container relative screen-nav">
         <h1>Projects</h1>
         <div className="mt-8">
-          I&apos;m very fortunate to work on very fun and challenging projects.
-          Some of them as listed below.
+          I&apos;m very fortunate to work on fun and challenging projects. Some
+          of them as listed below.
         </div>
         <div className="flex flex-wrap">
           <PostLink
