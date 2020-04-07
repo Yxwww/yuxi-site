@@ -4,13 +4,13 @@ import { createERWearExperience } from './erwear'
 import { createSodExperience } from './sod'
 // import { createMediaBroExperience } from './media-bro'
 
+export const ERWearExperience = createERWearExperience()
+export const LfviewExperience = createLfviewExperience()
 export function getExperience() {
   return [
-    createLfviewExperience(),
-    createERWearExperience(),
+    LfviewExperience,
+    ERWearExperience,
     createSodExperience(),
     // createMediaBroExperience(),
   ]
 }
-
-export const ERWearExperience = createERWearExperience()

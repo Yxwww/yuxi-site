@@ -14,7 +14,12 @@ export default function Modal({
       <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
       <div className="modal-container bg-white w-11/12 tablet:max-w-4xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
-        <div className="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+        <div
+          className="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"
+          onClick={onCloseClicked}
+          role="button"
+          tabIndex={0}
+        >
           <svg
             className="fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"

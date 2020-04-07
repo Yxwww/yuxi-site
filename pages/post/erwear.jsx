@@ -33,8 +33,12 @@ export default function SoDProject() {
           <ImageGallery
             items={[
               {
+                url: '/static/img/projects/watchUI.png',
+                title: 'ERWear Watch UI',
+              },
+              {
                 url: '/static/img/projects/erwear-map-bak.png',
-                title: 'earwear eoc center',
+                title: 'ERWear EoC Center Prototype',
               },
               {
                 url: '/static/img/projects/GlassView.png',
