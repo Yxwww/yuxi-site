@@ -13,20 +13,20 @@ const PostLink = ({ id, imgUrl, title, description }) => (
       <Link href="/post/[id]" as={`/post/${id}`}>
         <a>
           <img
-            className="w-full object-contain"
+            className="w-full object-contain my-0"
             style={{ minHeight: 230, minWidth: 300 }}
             src={imgUrl}
             alt={`${title}-img`}
           />
         </a>
       </Link>
-      <div className="px-6 py-4">
+      <div className="px-6 pt-0 pb-4">
         <Link href="/post/[id]" as={`/post/${id}`}>
           <a>
             <div className="font-medium text-xl mb-2">{title}</div>
           </a>
         </Link>
-        <p className="text-gray-700 text-sm mx-0 my-2">{description}</p>
+        <p className="text-gray-700 text-base m-0">{description}</p>
       </div>
     </div>
   </div>
