@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Page from '../../components/layouts/main'
 import { ERWearExperience } from '../../src/contents'
@@ -9,8 +9,14 @@ const ExperienceSection = dynamic(() =>
 const UnderConstruction = dynamic(() =>
   import('../../components/UnderConstruction'),
 )
+const Image = dynamic(() => import('../../components/Image'))
+const ImageModal = dynamic(() => import('../../components/modals/ImageModal'))
 
 export default function SoDProject() {
+  const [modelOpened, setModelOpened] = useState(false)
+  function toggleModel() {
+    setModelOpened(!modelOpened)
+  }
   return (
     <Page>
       <div className="container">
@@ -19,10 +25,18 @@ export default function SoDProject() {
           <ExperienceSection experience={ERWearExperience} />
         </div>
         <div className="my-4">
-          <img
-            className="w-full tablet:max-w-2xl"
-            src="/static/img/projects/erwear-map-bak.png"
-            alt="earwear-eoc-center"
+          <ImageModal
+            url="/static/img/projects/erwear-map-bak.png"
+            title="earwear-eoc-center-img"
+            style={{ minHeight: 230, minWidth: 300 }}
+            isOpened={modelOpened}
+            onCloseClicked={toggleModel}
+          />
+          <Image
+            url="/static/img/projects/erwear-map-bak.png"
+            title="earwear-eoc-center-img"
+            style={{ minHeight: 230, minWidth: 300 }}
+            onClick={toggleModel}
           />
         </div>
 
