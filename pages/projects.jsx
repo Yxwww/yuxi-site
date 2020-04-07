@@ -23,7 +23,7 @@ const PostLink = ({ id, imgUrl, title, description }) => (
       <div className="px-6 py-4">
         <Link href="/post/[id]" as={`/post/${id}`}>
           <a>
-            <div className="font-bold text-xl mb-2">{title}</div>
+            <div className="font-medium text-xl mb-2">{title}</div>
           </a>
         </Link>
         <p className="text-gray-700 text-sm mx-0 my-2">{description}</p>
