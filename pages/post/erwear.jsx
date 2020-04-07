@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Page from '../../components/layouts/main'
 import { ERWearExperience } from '../../src/contents'
@@ -9,8 +9,19 @@ const ExperienceSection = dynamic(() =>
 const UnderConstruction = dynamic(() =>
   import('../../components/UnderConstruction'),
 )
+const ImageModal = dynamic(() => import('../../components/modals/ImageModal'))
+const ImageGallery = dynamic(() => import('../../components/ImageGallery'))
 
 export default function SoDProject() {
+  const [modelOpened, setModelOpened] = useState(false)
+  const [imageModelState, setImageModelState] = useState({ url: '', title: '' })
+  function toggleModel() {
+    setModelOpened(!modelOpened)
+  }
+  function onImageClicked({ url, title }) {
+    setImageModelState({ url, title })
+    toggleModel()
+  }
   return (
     <Page>
       <div className="container">
@@ -19,10 +30,34 @@ export default function SoDProject() {
           <ExperienceSection experience={ERWearExperience} />
         </div>
         <div className="my-4">
-          <img
-            className="w-full tablet:max-w-2xl"
-            src="/static/img/projects/erwear-map-bak.png"
-            alt="earwear-eoc-center"
+          <ImageGallery
+            items={[
+              {
+                url: '/static/img/projects/watchUI.png',
+                title: 'ERWear Watch UI',
+              },
+              {
+                url: '/static/img/projects/erwear-map-bak.png',
+                title: 'ERWear EoC Center Prototype',
+              },
+              {
+                url: '/static/img/projects/GlassView.png',
+                title: 'erwear google glass app',
+              },
+              {
+                url: '/static/img/projects/erwear-poster-bak.png',
+                title: 'earwear eoc center',
+              },
+            ]}
+            imageStyle={{ minHeight: 230, minWidth: 300 }}
+            onClick={onImageClicked}
+          />
+          <ImageModal
+            url={imageModelState.url}
+            title={imageModelState.title}
+            style={{ minHeight: 230, minWidth: 300 }}
+            isOpened={modelOpened}
+            onCloseClicked={toggleModel}
           />
         </div>
 
