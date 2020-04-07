@@ -44,15 +44,19 @@ export default function Steno3DProject() {
             items={[
               {
                 url: '/static/img/projects/seequent-eagle-slides.png',
-                title: 'earwear eoc center',
+                title: 'Eagle Geometry with Data',
               },
               {
                 url: '/static/img/projects/steno3d/lfview-leda.png',
-                title: 'erwear google glass app',
+                title: 'LEDA View',
+              },
+              {
+                url: '/static/img/projects/steno3d/lfview-motion.gif',
+                title: 'Motion Control',
               },
               {
                 url: '/static/img/projects/steno3d/steno3d-landing.png',
-                title: 'earwear eoc center',
+                title: 'landing page',
               },
             ]}
             imageStyle={{ minHeight: 230, minWidth: 300 }}
