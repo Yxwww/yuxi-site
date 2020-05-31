@@ -19,7 +19,7 @@ module.exports = {
     },
     fontFamily: {
       mono: ['Monolisa', ...defaultTheme.fontFamily.mono],
-      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
       article: ['Lora', ...defaultTheme.fontFamily.serif],
     },
     borderWidth: {
