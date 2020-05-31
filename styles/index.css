@@ -2,7 +2,6 @@
 @import "tailwindcss/base";
 /* purgecss end ignore */
 @import "./fonts/fonts.css";
-@import "./fonts/inter.css";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
