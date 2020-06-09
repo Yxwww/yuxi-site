@@ -25,7 +25,7 @@ const page = ({ children, fonts = ['Inter'] }) => {
     <div id="app" className="w-full">
       <Head fonts={fonts} />
       <Nav items={navItems} />
-      <div className="container pt-4 print:pt-2 px-1 table:px-2">
+      <div className="container py-2 print:pt-2 px-1 table:px-2">
         {children}
       </div>
     </div>

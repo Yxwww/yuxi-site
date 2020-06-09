@@ -26,8 +26,7 @@ const Post = ({ markdown }) => {
   )
 }
 
-Post.getInitialProps = async function getInitialProps({ query }) {
-  console.log(query)
+Post.getInitialProps = async function getInitialProps() {
   return {
     markdown: `
   To be continued ...

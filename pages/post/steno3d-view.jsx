@@ -25,8 +25,7 @@ export default function Steno3DProject() {
   return (
     <Page>
       <div className="container">
-        <h1>Steno3D(LeapFrog View)</h1>
-        <div className="p-2 tablet:p-8">
+        <div className="py-2">
           <ExperienceSection experience={LfviewExperience} />
         </div>
         <a href="https://view.seequent.com">

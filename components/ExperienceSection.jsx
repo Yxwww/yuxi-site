@@ -38,9 +38,8 @@ export default props => {
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
   const contributionLists = createContributionList(contributions)
 
-  console.log(props)
   return (
-    <div className="my-8 relative" key={uid}>
+    <div className="my-2 relative" key={uid}>
       {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
       <div>
         {linkTitle ? (

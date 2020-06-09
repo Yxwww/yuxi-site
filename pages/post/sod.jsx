@@ -10,7 +10,6 @@ export default function SoDProject() {
   return (
     <Page>
       <div className="container">
-        <h1>SoD Toolkit</h1>
         <img
           className="w-full tablet:max-w-5xl mx-auto"
           src="/static/img/projects/sod-cropped.png"
