@@ -10,7 +10,7 @@ export default () => (
   <Page>
     <div className="container">
       <img
-        className="py-4"
+        className="pb-4"
         style={{ maxWidth: '12rem' }}
         src="/static/img/kinect-infra-red.jpeg"
         alt="profile-kinect-infra-red"
