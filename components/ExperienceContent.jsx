@@ -11,7 +11,7 @@ import ExperienceSection from './ExperienceSection'
 // ))
 
 const createExpereienceSections = map(exp => (
-  <ExperienceSection key={exp.uid} experience={exp} />
+  <ExperienceSection key={exp.uid} experience={exp} linkTitle />
 ))
 
 function ExperienceContent(props) {

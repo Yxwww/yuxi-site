@@ -26,8 +26,8 @@ export default function SoDProject() {
     <Page>
       <div className="container">
         <h1 className="my-4">ERWear</h1>
-        <div className="p-2 tablet:p-8 border-solid border-4 border-gray-600">
-          <ExperienceSection experience={ERWearExperience} />
+        <div className="p-2 tablet:p-8">
+          <ExperienceSection experience={ERWearExperience} linkTitle />
         </div>
         <div className="my-4">
           <ImageGallery

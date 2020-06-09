@@ -31,24 +31,33 @@ export default props => {
       time,
       roles,
       projecturl,
+      linkTitle,
     },
   } = props
   // const [showMore, setShowMore] = useState(false)
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
   const contributionLists = createContributionList(contributions)
 
+  console.log(props)
   return (
     <div className="my-8 relative" key={uid}>
       {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
       <div>
-        <Link href={projecturl}>
-          <a rel="noopener noreferrer">
-            <h3 className="my-2 text-left">
-              {`${product} - `}
-              <span className="captalize">{company}</span>
-            </h3>
-          </a>
-        </Link>
+        {linkTitle ? (
+          <Link href={projecturl}>
+            <a rel="noopener noreferrer">
+              <h3 className="my-2 text-left">
+                {`${product} - `}
+                <span className="captalize">{company}</span>
+              </h3>
+            </a>
+          </Link>
+        ) : (
+          <h3 className="my-2 text-left">
+            {`${product} - `}
+            <span className="captalize">{company}</span>
+          </h3>
+        )}
 
         <div className="flex justify-between align-end my-3">
           <div>
