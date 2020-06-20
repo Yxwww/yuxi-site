@@ -20,7 +20,6 @@
     "react-dom": "^16.13.0",
     "react-markdown": "^4.0.4",
     "react-syntax-highlighter": "^10.1.2",
-    "rxjs": "^6.4.0",
     "shortid": "^2.2.13",
     "tailwindcss": "^1.2.0"
   },
