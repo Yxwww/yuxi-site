@@ -10,7 +10,7 @@ const UnderConstruction = dynamic(() =>
 const PostLink = ({ id, imgUrl, title, description }) => (
   <div className="m-2 tablet:m-0 flex-1">
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200">
-      <Link href="/post/[id]" as={`/post/${id}`}>
+      <Link href={`/post/${id}`} as={`/post/${id}`}>
         <a>
           <img
             className="w-full object-contain my-0"
@@ -21,7 +21,7 @@ const PostLink = ({ id, imgUrl, title, description }) => (
         </a>
       </Link>
       <div className="px-6 pt-0 pb-4">
-        <Link href="/post/[id]" as={`/post/${id}`}>
+        <Link href={`/post/${id}`} as={`/post/${id}`}>
           <a>
             <div className="font-medium text-xl mb-2">{title}</div>
           </a>
