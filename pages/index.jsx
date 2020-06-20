@@ -26,13 +26,13 @@ export default () => (
           <Link href="/projects">
             <a>projects</a>
           </Link>
-          ,
+          ,{' '}
           <Link href="/blogs">
             <a>blogs</a>
           </Link>
           , and updated{' '}
-          <Link href="/portfolio">
-            <a>portfolio</a>
+          <Link href="/resume">
+            <a>resume</a>
           </Link>
           .
         </p>
