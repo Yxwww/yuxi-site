@@ -39,7 +39,7 @@ export default props => {
   const contributionLists = createContributionList(contributions)
 
   return (
-    <div className="my-2 relative" key={uid}>
+    <div className="py-2 tablet:py-4 relative" key={uid}>
       {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
       <div>
         {linkTitle ? (
