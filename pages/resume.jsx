@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import Page from '../components/layouts/main'
+import { Page } from '../components/layouts/main'
 import { getExperience } from '../src/contents'
 import { createEducation } from '../src/contents/education'
 
@@ -36,7 +36,7 @@ function ContactInfo() {
 function Portfolio(props) {
   const { experience, education } = props
   return (
-    <Page>
+    <Page className="max-w-2xl mx-auto">
       <div className="font-article flex flex-col">
         <div className="flex justify-between flex-wrap">
           <div>

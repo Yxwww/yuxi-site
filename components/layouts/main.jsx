@@ -19,17 +19,15 @@ const navItemData = [
   ['/blogs', 'blog'],
 ]
 
-const page = ({ children, fonts = ['Inter'] }) => {
+export const Page = ({ children, fonts = ['Inter'], className }) => {
   const navItems = createNavItems(navItemData)
   return (
-    <div id="app" className="w-full">
+    <div id="app" className="max-w-2xl mx-auto">
       <Head fonts={fonts} />
       <Nav items={navItems} />
-      <div className="container py-2 print:pt-2 px-1 table:px-2">
+      <div className={`container py-2 print:pt-2 px-1 table:px-2 ${className}`}>
         {children}
       </div>
     </div>
   )
 }
-
-export default page

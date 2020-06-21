@@ -1,7 +1,7 @@
 import React from 'react'
 import Error from 'next/error'
 import fetch from 'isomorphic-unfetch'
-import Page from '../components/layouts/main'
+import { Page } from '../components/layouts/main'
 
 const ErrorPage = ({ errorCode, stars }) => {
   if (errorCode) {
