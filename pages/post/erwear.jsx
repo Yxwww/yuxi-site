@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
-import Page from '../../components/layouts/main'
+import { Page } from '../../components/layouts/main'
 import { ERWearExperience } from '../../src/contents'
 
 const ExperienceSection = dynamic(() =>

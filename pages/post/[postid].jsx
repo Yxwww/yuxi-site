@@ -2,7 +2,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
-import Page from '../../components/layouts/main'
+import { Page } from '../../components/layouts/main'
 
 const Markdown = dynamic(() => import('../../components/code/Markdown.jsx'))
 
