@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './CodeBlock'
 
@@ -13,10 +12,6 @@ function Markdown(props) {
       }}
     />
   )
-}
-
-Markdown.propTypes = {
-  value: PropTypes.string.isRequired,
 }
 
 export default Markdown
