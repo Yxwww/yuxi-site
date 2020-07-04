@@ -33,8 +33,9 @@ function ContactInfo() {
   )
 }
 
-function Portfolio(props) {
-  const { experience, education } = props
+function Portfolio() {
+  const experience = getExperience()
+  const education = createEducation()
   return (
     <Page className="max-w-2xl mx-auto">
       <div className="font-article flex flex-col">
@@ -79,13 +80,6 @@ function Portfolio(props) {
       {/* end of app */}
     </Page>
   )
-}
-
-Portfolio.getInitialProps = async function getInitialProps() {
-  return {
-    experience: getExperience(),
-    education: createEducation(),
-  }
 }
 
 export default Portfolio
