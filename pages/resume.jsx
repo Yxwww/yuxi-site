@@ -45,7 +45,7 @@ function Portfolio() {
           </div>
           <div className="contact">
             <div className="social-icons print:hidden">
-              <p className="my-2">You may reach me through:</p>
+              <p className="my-0">You can reach me through:</p>
               <SocialIcons className="text-left tablet:text-right" />
             </div>
             <ContactInfo />
@@ -55,10 +55,10 @@ function Portfolio() {
           <div className="text-left">
             <h2 className="pt-4">Summary</h2>
             <p>
-              Experienced Software Developer (5 years) with a demonstrated
-              history of working in the computer software industry. Skilled in
-              UI programming, graphic programming, and realtime application
-              state management,. Strong engineering professional with a
+              Experienced Software Developer with a demonstrated history of
+              working in the computer software industry. Skilled in UI
+              programming, graphic programming, and realtime application state
+              management,. Strong engineering professional with a
               Bachelor&apos;s Degree focused in Computer Science from University
               of Calgary.
             </p>
