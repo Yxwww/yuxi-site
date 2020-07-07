@@ -17,11 +17,18 @@ export default () => (
       />
       <SocialIcons className="text-left py-4" />
       <div>
-        <p className="mx-0">
-          Hi, I am a software developer currently working on{' '}
+        <p className="m-1">
+          Hi{' '}
+          <span role="img" aria-label="wave">
+            👋
+          </span>
+          , my name is Yuxi Wang.
+        </p>
+        <p className="m-1">
+          I am a software developer currently working on{' '}
           <a href="https://views.seequent.com">Seequent View</a>.
         </p>
-        <p className="mx-0">
+        <p className="m-1">
           Here are my{' '}
           <Link href="/projects">
             <a>projects</a>

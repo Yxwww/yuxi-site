@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import { removeFirstChar } from '../utils/index'
 import { HOME_LABEL } from '../constants'
 
@@ -10,11 +10,8 @@ function isLabelOurCurrentHighlight(label, highlight) {
   return removeFirstChar(highlight).startsWith(label)
 }
 
-function Nav(props) {
-  const {
-    items,
-    router: { asPath },
-  } = props
+function Nav({ items }) {
+  const { asPath } = useRouter()
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
@@ -30,5 +27,4 @@ function Nav(props) {
   return <nav className="z-10 my-4">{itemDivs}</nav>
 }
 
-const NavWithRouter = withRouter(Nav)
-export default NavWithRouter
+export default Nav
