@@ -21,7 +21,7 @@ export default function UnderConstruction() {
     }
     const id = setInterval(() => {
       dispatch({ type: 'toggle' })
-    }, 2000)
+    }, 1500)
     return () => {
       clearInterval(id)
     }
