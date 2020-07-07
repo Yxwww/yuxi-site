@@ -29,15 +29,15 @@ a:hover {
 }
 
 h1 {
-  @apply text-4xl my-4;
+  @apply text-4xl;
 }
 
 h2 {
-  @apply text-3xl my-4;
+  @apply text-3xl;
 }
 
 h3 {
-  @apply text-2xl my-4;
+  @apply text-2xl;
 }
 
 p {
