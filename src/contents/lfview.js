@@ -9,7 +9,7 @@ const thumbnails = [
 ]
 
 const blurb = [
-  'Currently, maintaining the internal web visualization library for Seequent View. Previously, proposed and implemented frontend redesign. The redesign project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.',
+  'Core maintainer of internal web visualization library for Seequent View. Previously, proposed and implemented frontend redesign. Project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.',
 ]
 
 const contributions = [
