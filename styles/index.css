@@ -69,3 +69,9 @@ img {
     border-right: 2px solid;
     @apply text-gray-900;
 }
+
+
+@media print {
+    body {zoom: 75%;}
+}
+
