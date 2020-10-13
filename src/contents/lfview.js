@@ -9,11 +9,11 @@ const thumbnails = [
 ]
 
 const blurb = [
-  'Core maintainer of internal web visualization library for Seequent View. Previously, proposed and implemented frontend redesign. Project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.',
+  'Core maintainer of internal web visualization library for Seequent View. Proposed and implemented frontend redesign. Project went from initial research, design and development, to delivery of an enterprise grade product in less than 12 months and has continued with weekly continuous deployment.',
 ]
 
 const contributions = [
-  'Core maintainer of web visualization library. Improved state management, rendering performance and visual presentation.',
+  'Maintain web visualization library. Improved state management, rendering performance and visual presentation.',
   'Proposed and implemented frontend UI application redesign. Improved state management, performance, and user experience',
   'Researched and introduced emerging technologies, design patterns and paradigms including sveltejs, reactjs (w/ hooks api), redux, rxjs, TypeScript, css-grid and Functional/Reactive Programming paradigm. The architecture has proven to be scalable as the team size significantly increased.',
   'Onboarded new team members by providing training materials, documentation, and mentorship.',

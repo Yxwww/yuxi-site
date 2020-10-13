@@ -19,6 +19,19 @@ export default function SocialIcons({ className }) {
       </a>
 
       <a
+        title="open github"
+        href="https://github.com/Yxwww"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          className="social-icon"
+          src="/static/img/icons/github-64px.png"
+          alt=""
+        />
+      </a>
+
+      <a
         title="open twitter"
         rel="noopener noreferrer"
         target="_blank"
