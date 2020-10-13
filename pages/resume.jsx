@@ -23,11 +23,11 @@ function ContactInfo() {
       </div>
       <div className="hidden print:block">
         <a href="https://yuxiwang.dev/resume">
-          Website: https://yuxiwang.dev/resum
+          Website: https://yuxiwang.dev/resume
         </a>
       </div>
       <div className="hidden print:block">
-        <a href="rel:1-403-560-6778">Phone: 403-560-67778</a>
+        <a href="rel:1-403-560-6778">Phone: 403-560-6778</a>
       </div>
     </div>
   )
