@@ -32,7 +32,7 @@ const PostLink = ({ id, imgUrl, title, description }) => (
   </div>
 )
 
-export default () => {
+export default function Projects() {
   return (
     <Page>
       <div className="container relative screen-nav">

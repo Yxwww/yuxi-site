@@ -19,7 +19,7 @@ function renderDescription(description) {
   return <p>{description}</p>
 }
 
-export default props => {
+export default function ExperienceSection(props) {
   const {
     experience: {
       // thumbnails,
