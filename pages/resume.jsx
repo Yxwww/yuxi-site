@@ -57,9 +57,11 @@ function Portfolio() {
             <p>
               Experienced Software Developer with a demonstrated history of
               working in the computer software industry. Skilled in UI
-              programming, graphic programming, and realtime application state
+              programming, graphic programming, and real-time application state
               management. Strong engineering professional with a Bachelor&apos;s
-              Degree focused in Computer Science from University of Calgary.
+              Degree focused in Computer Science from the University of Calgary.
+              I am passionate about solving problems in a simple, performant,
+              and sophisticated way.
             </p>
           </div>
           <div className="right">

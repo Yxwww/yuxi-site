@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { removeFirstChar } from '../utils/index'
 import { HOME_LABEL } from '../constants'
 
@@ -21,7 +22,9 @@ function Nav({ items }) {
           : ''
       }`}
     >
-      <a href={url}>{label}</a>
+      <Link href={url}>
+        <a>{label}</a>
+      </Link>
     </div>
   ))
   return <nav className="z-10 my-4">{itemDivs}</nav>

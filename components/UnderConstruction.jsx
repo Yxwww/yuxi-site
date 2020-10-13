@@ -28,7 +28,7 @@ export default function UnderConstruction() {
   }, [hammer])
   return (
     <p>
-      Under construction{' '}
+      This page is under construction{' '}
       <img
         className={
           hammerSwingRight
