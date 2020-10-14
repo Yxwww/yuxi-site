@@ -22,7 +22,7 @@ const navItemData = [
 export const Page = ({ children, fonts = ['Inter'], className }) => {
   const navItems = createNavItems(navItemData)
   return (
-    <div id="app" className="max-w-6xl mx-auto">
+    <div id="app" className="max-w-5xl mx-auto">
       <Head fonts={fonts} />
       <Nav items={navItems} />
       <div className={`container py-2 print:pt-2 px-1 table:px-2 ${className}`}>

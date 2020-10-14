@@ -33,7 +33,7 @@ module.exports = {
     },
     fontFamily: {
       mono: ['Monolisa', ...defaultTheme.fontFamily.mono],
-      sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+      sans: ['Helvetica', 'Open Sans', ...defaultTheme.fontFamily.sans],
       article: ['Lora', ...defaultTheme.fontFamily.serif],
     },
     borderWidth: {
