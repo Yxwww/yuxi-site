@@ -1,11 +1,3 @@
-/* purgecss start ignore */
-@import "tailwindcss/base";
-/* purgecss end ignore */
-@import "./fonts/fonts.css";
-@import "./fonts/opensans.css";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
 html {
   @apply antialiased bg-gray-100 leading-tight min-h-screen ;
 }
@@ -72,6 +64,6 @@ img {
 
 
 @media print {
-    body {zoom: 70%;}
+    body {zoom: 75%;}
 }
 

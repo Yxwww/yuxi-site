@@ -11,7 +11,7 @@ const contributions = [
 const thumbnails = ['erwear-poster.png']
 
 const descrption =
-  'Researched, designed and developed a wearable system leveraging glass and wrist based wearable technology to enhance situational awareness of emergency responders.'
+  "ERWear is my undergraduate research project. My responsibility was to design a system leveraging glass and wrist-based wearable technology to enhance emergency responders' situational awareness."
 const roles = [RESEARCHER_ROLE, DEVELOPER_ROLE]
 const time = 'September, 2015 - June, 2016'
 

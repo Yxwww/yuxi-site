@@ -37,7 +37,7 @@ function Portfolio() {
   const experience = getExperience()
   const education = createEducation()
   return (
-    <Page className="max-w-2xl mx-auto">
+    <Page className="mx-auto">
       <div className="font-article flex flex-col">
         <div className="flex justify-between flex-wrap">
           <div>
@@ -72,7 +72,7 @@ function Portfolio() {
           <h2 className="font-medium pt-6">Projects</h2>
           <ExperienceContent experience={experience} />
         </div>
-        <div>
+        <div className="py-8">
           <h2 className="font-medium pt-6">Education</h2>
           <ExperienceSection experience={education} />
         </div>
