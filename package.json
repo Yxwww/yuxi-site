@@ -20,7 +20,7 @@
     "react-markdown": "^4.3.1",
     "react-syntax-highlighter": "^12.2.1",
     "shortid": "^2.2.13",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^1.9.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
