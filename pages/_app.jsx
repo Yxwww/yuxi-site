@@ -7,7 +7,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <div className="w-screen container font-sans mx-auto body">
+      <div className="w-screen font-sans px-2 body">
         <Component {...pageProps} />
       </div>
     )
