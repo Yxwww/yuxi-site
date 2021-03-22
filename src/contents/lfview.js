@@ -15,14 +15,14 @@ const blurb = [
 const contributions = [
   'Core maintainer of web visualization library. Improved state management, rendering performance and visual presentation.',
   'Proposed and implemented frontend UI application redesign. Improved state management, performance, and user experience',
-  'Researched and introduced emerging technologies, design patterns and paradigms including sveltejs, reactjs (w/ hooks api), redux, rxjs, TypeScript, css-grid and Functional/Reactive Programming paradigm. The architecture has proven to be scalable as the team size significantly increased.',
+  'Researched and introduced emerging technologies, design patterns and paradigms, including sveltejs, reactjs (w/ hooks api), redux, rxjs, TypeScript, css-grid and Functional/Reactive Programming paradigm. The architecture has proven to be scalable as the team size significantly increased.',
   'Onboarded new team members by providing training materials, documentation, and mentorship.',
 ]
 
 const description = blurb
 
 const roles = [DEVELOPER_ROLE]
-const time = 'June,2016 - Now'
+const time = 'June 2016 - Now'
 
 const url = '/post/steno3d-view'
 

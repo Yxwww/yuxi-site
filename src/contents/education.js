@@ -12,7 +12,7 @@ const description =
   'Graduated from University of Calgary Bachelor of Science in Computer Science Internship Program.'
 
 const roles = ["Bachelor's Degree"]
-const time = 'September, 2012 - June, 2016'
+const time = 'September 2012 - June 2016'
 
 const url = ''
 const thumbnails = ''

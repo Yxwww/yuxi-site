@@ -13,10 +13,6 @@ export default function Projects() {
       <div className="container relative screen-nav">
         <div className="py-8 text-center">
           <h1>Projects</h1>
-          <div className="mt-8">
-            I am passionate about solving problems in a simple, performant and
-            sophisticated way.{' '}
-          </div>
         </div>
 
         <AllProjects />
