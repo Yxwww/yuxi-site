@@ -56,10 +56,9 @@ function Portfolio() {
             <h2 className="pt-4">Summary</h2>
             <p>
               Experienced Software Developer who is passionate about solving
-              problems in a simple, performant, and sophisticated way. Skilled
-              in UI programming, graphic programming, and real-time application
-              state management. Strong engineering professional with a
-              Bachelor&apos;s Degree focused in Computer Science from the
+              problems. Skilled in UI programming, graphic programming, and real
+              application state management. Strong engineering professional with
+              a Bachelor&apos;s Degree focused in Computer Science from the
               University of Calgary.
             </p>
           </div>
