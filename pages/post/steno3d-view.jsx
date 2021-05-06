@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { Page } from '../../components/layouts/main'
 import { LfviewExperience } from '../../src/contents'
 
@@ -28,13 +29,20 @@ export default function Steno3DProject() {
         <div className="py-2">
           <ExperienceSection experience={LfviewExperience} />
         </div>
-        <a href="https://view.seequent.com">
-          <img
-            className="w-full tablet:max-w-5xl mx-auto rounded-lg tablet:max-w-5xl"
-            src="/static/img/projects/seequent-eagle.png"
-            alt="steno3d-img"
-          />
-        </a>
+        <div className="w-full tablet:max-w-5xl mx-auto rounded-lg tablet:max-w-5xl">
+          <a
+            href="https://view.seequent.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/static/img/projects/seequent-eagle.png"
+              alt="steno3d-img"
+              width={700}
+              height={400}
+            />
+          </a>
+        </div>
         <a href="https://view.seequent.com" className="block my-2">
           link to project
         </a>
