@@ -1,3 +1,4 @@
+const typographyPlugin = require('@tailwindcss/typography')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -55,5 +56,5 @@ module.exports = {
     margin: ['first'],
     rotate: ['hover'],
   },
-  plugins: [],
+  plugins: [typographyPlugin],
 }
