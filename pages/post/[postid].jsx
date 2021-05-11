@@ -1,36 +1,42 @@
-// import fetch from 'isomorphic-unfetch'
-import React from 'react'
-import { useRouter } from 'next/router'
-import dynamic from 'next/dynamic'
-import { Page } from '../../components/layouts/main'
+import { MDXRemote } from 'next-mdx-remote'
+import { getFiles, getFileBySlug } from '@/lib/mdx'
+import { Page } from '@/components/layouts/main'
 
-const Markdown = dynamic(() => import('../../components/code/Markdown.jsx'))
-
-function Content({ markdown, title }) {
+function Content({ source, title }) {
   return (
-    <div>
-      <h1 style={{ textTransform: 'capitalize' }}>{title}</h1>
-      <Markdown value={markdown} />
+    <div className="prose lg:prose-xl">
+      <h2>{title}</h2>
+      <MDXRemote {...source} />
     </div>
   )
 }
 
-const Post = ({ markdown }) => {
-  const {
-    query: { postid: title },
-  } = useRouter()
+function Post({ source, title = '' }) {
   return (
     <Page>
-      <Content markdown={markdown} title={title} />
+      <Content source={source} title={title} />
     </Page>
   )
 }
 
-Post.getInitialProps = async function getInitialProps() {
+export async function getStaticProps({ params: { postid } }) {
+  // MDX text - can be from a local file, database, anywhere
+  const { mdxSource, frontMatter } = await getFileBySlug('blog', postid)
+  // return { props: { source: mdxSource } }
+  return { props: { source: mdxSource, frontMatter, } }
+}
+
+export async function getStaticPaths() {
+  const posts = await getFiles('blog');
   return {
-    markdown: `
-  To be continued ...
-  `,
+    paths: posts.map((p) => {
+      return {
+        params: {
+          postid: p.replace(/\.mdx/, '')
+        },
+      }
+    }),
+    fallback: false
   }
 }
 
