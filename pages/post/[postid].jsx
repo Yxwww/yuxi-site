@@ -11,32 +11,33 @@ function Content({ source, title }) {
   )
 }
 
-function Post({ source, title = '' }) {
+function Post({ source, frontMatter }) {
   return (
-    <Page>
-      <Content source={source} title={title} />
-    </Page>
+    <>
+      <Page>
+        <Content source={source} title={frontMatter.title} />
+      </Page>
+    </>
   )
 }
 
 export async function getStaticProps({ params: { postid } }) {
   // MDX text - can be from a local file, database, anywhere
   const { mdxSource, frontMatter } = await getFileBySlug('blog', postid)
-  // return { props: { source: mdxSource } }
-  return { props: { source: mdxSource, frontMatter, } }
+  return { props: { source: mdxSource, frontMatter } }
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles('blog');
+  const posts = await getFiles('blog')
   return {
-    paths: posts.map((p) => {
+    paths: posts.map(p => {
       return {
         params: {
-          postid: p.replace(/\.mdx/, '')
+          postid: p.replace(/\.mdx/, ''),
         },
       }
     }),
-    fallback: false
+    fallback: false,
   }
 }
 

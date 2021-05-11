@@ -16,7 +16,7 @@ const navItemData = [
   ['/', HOME_LABEL],
   ['/resume', 'resume'],
   ['/projects', 'projects'],
-  ['/blogs', 'blog'],
+  ['/blogs', 'blogs'],
 ]
 
 export function Page({ children, fonts = ['Inter'], className }) {
