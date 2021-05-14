@@ -39,8 +39,10 @@ module.exports = {
     },
   },
   variants: {
-    margin: ['first'],
-    rotate: ['hover'],
+    extend: {
+      rotate: ['hover'],
+      borderColor: ['hover'],
+    },
   },
   plugins: [typographyPlugin],
 }
