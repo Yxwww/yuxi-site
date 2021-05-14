@@ -46,6 +46,11 @@ module.exports = {
     },
   },
   plugins: [typographyPlugin],
-  purge: [],
+  purge: [
+    'pages/**/*.jsx',
+    'pages/**/*.tsx',
+    'components/**/*.jsx',
+    'components/**/*.tsx',
+  ],
   darkMode: false, // or 'media' or 'class'
 }
