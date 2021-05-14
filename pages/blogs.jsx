@@ -15,7 +15,7 @@ function PostLinks({ posts }) {
     <div>
       {posts.map(post => {
         return (
-          <div>
+          <div key={post.frontMatter.slug}>
             <Link
               key={posts}
               as={`/post/${post.frontMatter.slug}`}
@@ -39,7 +39,7 @@ function PostLinks({ posts }) {
 export default function Blog({ posts }) {
   return (
     <Page>
-      <h1 className="mb-16">Blogs</h1>
+      <h1 className="mb-16 lg:mb-32">Blogs</h1>
       <ul className="mb-16">
         <PostLinks posts={posts} />
       </ul>
