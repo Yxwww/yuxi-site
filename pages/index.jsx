@@ -27,7 +27,14 @@ export default function Home() {
           </p>
           <p className="m-1">
             I am a software developer currently working on{' '}
-            <a href="https://curvenote.com">Curvenote</a>.
+            <a
+              href="https://curvenote.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Curvenote
+            </a>
+            .
           </p>
           <p className="m-1">
             Here are my{' '}
