@@ -27,7 +27,7 @@ export default function Home() {
           </p>
           <p className="m-1">
             I am a software developer currently working on{' '}
-            <a href="https://views.seequent.com">Seequent View</a>.
+            <a href="https://curvenote.com">Curvenote</a>.
           </p>
           <p className="m-1">
             Here are my{' '}
