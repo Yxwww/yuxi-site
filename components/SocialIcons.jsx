@@ -4,6 +4,19 @@ export default function SocialIcons({ className }) {
   return (
     <div className={className}>
       <a
+        title="open twitter"
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://curvenote.com/@yuxi"
+      >
+        <img
+          className="social-icon"
+          src="/static/img/logos/curvenote-icon.svg"
+          alt="curvenote social icon"
+        />
+      </a>
+
+      <a
         title="print"
         href="#"
         onClick={e => {
@@ -43,6 +56,7 @@ export default function SocialIcons({ className }) {
           alt=""
         />
       </a>
+
       <a
         title="open LinkedIn"
         rel="noopener noreferrer"
