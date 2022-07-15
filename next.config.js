@@ -1,3 +1,7 @@
-module.exports = {
-  /* config options here */
-}
+const withMarkdoc = require('@markdoc/next.js');
+
+module.exports = withMarkdoc(/* options */)({
+  pageExtensions: ['md', 'mdoc', 'js', 'jsx', 'ts', 'tsx']
+});
+
+
