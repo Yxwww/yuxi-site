@@ -19,7 +19,11 @@ const navItemData = [
   ['/blogs', 'blog'],
 ]
 
-export const Page = ({ children, fonts = ['Inter'], className }) => {
+export const Page = ({
+  children = null,
+  fonts = ['Inter'],
+  className = '',
+}) => {
   const navItems = createNavItems(navItemData)
   return (
     <div id="app" className="max-w-5xl mx-auto">
