@@ -39,15 +39,15 @@ export default function Home() {
           <p className="m-1">
             Here are my{' '}
             <Link href="/projects">
-              <a>projects</a>
+              projects
             </Link>
             ,{' '}
             <Link href="/blogs">
-              <a>blogs</a>
+              blogs
             </Link>
             , and updated{' '}
             <Link href="/resume">
-              <a>resume</a>
+              resume
             </Link>
             .
           </p>

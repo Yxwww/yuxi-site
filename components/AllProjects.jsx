@@ -5,20 +5,16 @@ const PostLink = ({ id, imgUrl, title, description, techStack }) => (
   <div className="inline-block m-2 tablet:m-0 align-top">
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200">
       <Link href={`/post/${id}`} as={`/post/${id}`}>
-        <a>
-          <img
-            className="w-full object-contain my-0"
-            style={{ minHeight: 230, minWidth: 300 }}
-            src={imgUrl}
-            alt={`${title}-img`}
-          />
-        </a>
+        <img
+          className="w-full object-contain my-0"
+          style={{ minHeight: 230, minWidth: 300 }}
+          src={imgUrl}
+          alt={`${title}-img`}
+        />
       </Link>
       <div className="px-6 pt-0 pb-4 bg-white">
         <Link href={`/post/${id}`} as={`/post/${id}`}>
-          <a>
-            <div className="font-medium text-xl py-2 font-bold">{title}</div>
-          </a>
+          <div className="font-medium text-xl py-2 font-bold">{title}</div>
         </Link>
         <p className="text-gray-700 text-base py-2 my-0">{description}</p>
         <span className="text-gray-600">
