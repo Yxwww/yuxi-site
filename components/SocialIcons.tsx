@@ -13,7 +13,6 @@ export default function SocialIcons({ className }) {
     <div className={className}>
       <button
         title="print"
-        href="#"
         onClick={e => {
           e.preventDefault()
           window.print()
@@ -23,7 +22,7 @@ export default function SocialIcons({ className }) {
           src={ProfilePicture}
           className="social-icon"
           alt=""
-          layout="fill"
+        fill
         />
       </button>
 

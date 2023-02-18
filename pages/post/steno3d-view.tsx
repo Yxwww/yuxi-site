@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { Page } from '../../components/layouts/main'
 import { LfviewExperience } from '../../src/contents'
+import ImageModal from '../../components/modals/ImageModal'
+import ImageGallery from '../../components/ImageGallery'
 
 const UnderConstruction = dynamic(() =>
   import('../../components/UnderConstruction'),
@@ -10,8 +12,6 @@ const UnderConstruction = dynamic(() =>
 const ExperienceSection = dynamic(() =>
   import('../../components/ExperienceSection'),
 )
-const ImageModal = dynamic(() => import('../../components/modals/ImageModal'))
-const ImageGallery = dynamic(() => import('../../components/ImageGallery'))
 
 export default function Steno3DProject() {
   const [modelOpened, setModelOpened] = useState(false)
@@ -66,13 +66,11 @@ export default function Steno3DProject() {
                 title: 'landing page',
               },
             ]}
-            imageStyle={{ minHeight: 230, minWidth: 300 }}
             onClick={onImageClicked}
           />
           <ImageModal
             url={imageModelState.url}
             title={imageModelState.title}
-            style={{ minHeight: 230, minWidth: 300 }}
             isOpened={modelOpened}
             onCloseClicked={toggleModel}
           />

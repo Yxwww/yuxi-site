@@ -3,17 +3,18 @@ import React from 'react'
 import { map, join } from 'ramda'
 import { nanoid as generate } from 'nanoid'
 
+// TODO: all generate uid stuff going on here is messy
 
 const generateRolesString = join(', ')
 
-const createContributionList = map(data => (
+const createContributionList = map((data: any) => (
   <li className="my-1" key={data.uid}>
     {data.contribution}
   </li>
 ))
 // const NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD = 3
-const toArrayOfP = map(o => <p key={generate()}>{o}</p>)
-function renderDescription(description) {
+const toArrayOfP = map((o: any) => <p key={generate()}>{o}</p>)
+function renderDescription(description: string[]) {
   if (Array.isArray(description)) {
     return toArrayOfP(description)
   }

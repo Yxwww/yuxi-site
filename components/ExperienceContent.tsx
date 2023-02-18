@@ -10,11 +10,11 @@ import ExperienceSection from './ExperienceSection'
 //   />
 // ))
 
-const createExpereienceSections = map(exp => (
+const createExpereienceSections = map((exp: any) => (
   <ExperienceSection key={exp.uid} experience={exp} linkTitle />
 ))
 
-function ExperienceContent(props) {
+function ExperienceContent(props: any) {
   const { experience } = props
   const experienceSections = createExpereienceSections(experience)
 

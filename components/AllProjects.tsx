@@ -7,7 +7,7 @@ const PostLink = ({ id, imgUrl, title, description, techStack }) => (
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200">
       <Link href={`/post/${id}`} as={`/post/${id}`}>
         <Image
-          className="w-full object-contain my-0 h-[230px]"
+          className="w-full my-0 h-[230px]"
           src={imgUrl}
           alt={`${title}-img`}
           fill

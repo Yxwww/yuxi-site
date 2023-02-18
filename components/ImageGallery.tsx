@@ -1,20 +1,19 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { noop } from '../src/utils/components'
+import Image from './Image'
 
-const Image = dynamic(() => import('./Image'))
 
 export default function ImageGallery({
   items = [],
-  imageStyle = {},
-  onClick = noop,
+  onClick = noop as (arg: any) => void,
 }) {
   const images = items.map(({ url, title }) => {
     return (
       <Image
-        url={url}
+        src={url}
         alt={title}
-        style={imageStyle}
+        className="h-[230px]"
+        fill
         onClick={() => onClick({ url, title })}
         key={url}
       />

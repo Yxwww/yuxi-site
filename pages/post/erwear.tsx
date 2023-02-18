@@ -49,13 +49,11 @@ export default function SoDProject() {
                 title: 'earwear eoc center',
               },
             ]}
-            imageStyle={{ minHeight: 230, minWidth: 300 }}
             onClick={onImageClicked}
           />
           <ImageModal
             url={imageModelState.url}
             title={imageModelState.title}
-            style={{ minHeight: 230, minWidth: 300 }}
             isOpened={modelOpened}
             onCloseClicked={toggleModel}
           />
