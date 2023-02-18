@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { map } from 'ramda'
-import { generate } from 'shortid'
+import { nanoid as generate } from 'nanoid'
 import Head from '../Head'
 import { HOME_LABEL } from '../../constants'
 

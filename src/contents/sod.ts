@@ -1,4 +1,4 @@
-import { generate } from 'shortid'
+import { nanoid as generate } from 'nanoid'
 import { createExperience } from './constructors'
 import { ROLE_DEVELOPER_INTERN, ROLE_RESEARCH_ASSISTANT } from './constants'
 

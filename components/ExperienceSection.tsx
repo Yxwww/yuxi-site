@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { map, join } from 'ramda'
-import { generate } from 'shortid'
+import { nanoid as generate } from 'nanoid'
+
 
 const generateRolesString = join(', ')
 

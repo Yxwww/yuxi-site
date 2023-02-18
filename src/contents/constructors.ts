@@ -1,4 +1,4 @@
-import { generate } from 'shortid'
+import { nanoid as generate } from 'nanoid'
 import { pipe, map, objOf, assoc, partial, concat } from 'ramda'
 
 /**
@@ -31,8 +31,8 @@ export function createExperience(
   uid = generate(),
   company = '',
   product = '',
-  thumbnails = '',
-  description = '',
+  thumbnails: string[],
+  description: string[] = [],
   contributions = [],
   time = '',
   projecturl = '',

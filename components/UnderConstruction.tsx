@@ -1,4 +1,6 @@
-import React, { useReducer, useState, useEffect } from 'react'
+import React, { useReducer, useState, useEffect, useCallback } from 'react'
+import Image from './Image'
+import HammerEmoji from '/public/static/img/icons/hammer.svg'
 
 const hammerClass =
   'social-icon transform transition ease-in-out duration-200 hover:rotate-0'
@@ -13,7 +15,7 @@ function reducer(state = false, action) {
 }
 
 export default function UnderConstruction() {
-  const [hammer, ref] = useState()
+  const [hammer, setRef] = useState()
   const [hammerSwingRight, dispatch] = useReducer(reducer, false)
   useEffect(() => {
     if (!hammer) {
@@ -27,18 +29,20 @@ export default function UnderConstruction() {
     }
   }, [hammer])
   return (
-    <p>
+      <div>
       This page is under construction{' '}
-      <img
-        className={
-          hammerSwingRight
-            ? `${hammerClass} -rotate-45`
-            : `${hammerClass} rotate-0`
-        }
-        ref={ref}
-        src="/static/img/icons/hammer.svg"
-        alt="hammer-icon"
+      <div className="">
+      <Image
+      className={
+      hammerSwingRight
+      ? `${hammerClass} -rotate-45`
+      : `${hammerClass} rotate-0`
+      }
+      imageRef={useCallback(node => { setRef(node) }, [])}
+      src={HammerEmoji}
+      alt="hammer-icon"
       />
-    </p>
-  )
+      </div>
+      </div>
+      )
 }

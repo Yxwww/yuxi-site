@@ -1,15 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from './Image'
 
 const PostLink = ({ id, imgUrl, title, description, techStack }) => (
   <div className="inline-block m-2 tablet:m-0 align-top">
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200">
       <Link href={`/post/${id}`} as={`/post/${id}`}>
-        <img
-          className="w-full object-contain my-0"
-          style={{ minHeight: 230, minWidth: 300 }}
+        <Image
+          className="w-full object-contain my-0 h-[230px]"
           src={imgUrl}
           alt={`${title}-img`}
+          fill
         />
       </Link>
       <div className="px-6 pt-0 pb-4 bg-white">
@@ -40,7 +41,7 @@ export default function AllProjects() {
         imgUrl="/static/img/projects/seequent-eagle.png"
         title="Seequent View"
         description="
-            Seequent View is a 3D web data visualization application. My responsibility is to maintain 3D data visualization library. I also proposed and implemented frontend stack revamp to improve architecture, user experience, and performance. 
+            Seequent View is a 3D web data visualization application. My responsibility is to maintain 3D data visualization library. I also proposed and implemented frontend stack revamp to improve architecture, user experience, and performance.
             "
         techStack={['JS/TS', 'WebGL', 'Three', 'React', 'Redux', 'Svelte']}
       ></PostLink>
@@ -50,7 +51,7 @@ export default function AllProjects() {
         imgUrl="/static/img/projects/lfr.png"
         title="LFR - Li's Food Revolution"
         description="
-              LFR is a Vancouver based healthy meal delivery business. My responsibility is to ideate, design, plan, and implement a full-stack application to fit the business needs. 
+              LFR is a Vancouver based healthy meal delivery business. My responsibility is to ideate, design, plan, and implement a full-stack application to fit the business needs.
             "
         techStack={[
           'nextjs',
