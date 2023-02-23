@@ -4,12 +4,12 @@ import { Page } from '../components/layouts/main'
 import { getExperience } from '../src/contents'
 import { createEducation } from '../src/contents/education'
 
-const ExperienceContent = dynamic(() =>
-  import('../components/ExperienceContent'),
+const ExperienceContent = dynamic(
+  () => import('../components/ExperienceContent')
 )
 
-const ExperienceSection = dynamic(() =>
-  import('../components/ExperienceSection'),
+const ExperienceSection = dynamic(
+  () => import('../components/ExperienceSection')
 )
 const SocialIcons = dynamic(() => import('../components/SocialIcons'))
 
@@ -55,9 +55,12 @@ function Portfolio() {
           <div className="text-left">
             <h2 className="pt-4">Summary</h2>
             <p>
-
-
-    Experienced developer with a passion for creating elegant solutions to complex problems. Skilled in state management, architecture design, and optimization, with over 7 years of experience building web applications. Proficient in JavaScript, React, and Node. Committed to delivering exceptional user experiences.
+              Experienced developer with a passion for creating elegant
+              solutions to complex problems. Skilled in state management,
+              architecture design, and optimization, with over 7 years of
+              experience building web applications. Proficient in JavaScript,
+              React, and Node. Committed to delivering exceptional user
+              experiences.
             </p>
           </div>
           <div className="right">

@@ -3,11 +3,11 @@ import dynamic from 'next/dynamic'
 import { Page } from '../../components/layouts/main'
 import { ERWearExperience } from '../../src/contents'
 
-const ExperienceSection = dynamic(() =>
-  import('../../components/ExperienceSection'),
+const ExperienceSection = dynamic(
+  () => import('../../components/ExperienceSection')
 )
-const UnderConstruction = dynamic(() =>
-  import('../../components/UnderConstruction'),
+const UnderConstruction = dynamic(
+  () => import('../../components/UnderConstruction')
 )
 const ImageModal = dynamic(() => import('../../components/modals/ImageModal'))
 const ImageGallery = dynamic(() => import('../../components/ImageGallery'))

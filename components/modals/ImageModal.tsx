@@ -14,7 +14,7 @@ export default function ImageModal({
 }) {
   return (
     <Modal title={title} isOpened={isOpened} onCloseClicked={onCloseClicked}>
-      <Image src={url} alt={alt}  className="h-[230px]" />
+      <Image src={url} alt={alt} className="h-[230px]" />
       {description && <div>Im the children!</div>}
     </Modal>
   )

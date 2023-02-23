@@ -12,8 +12,9 @@ const contributions = [
 
 const thumbnails = ['sod-cropped.png']
 
-const description =
-  ['Developer and maintainer of SoD-Toolkit. A web based toolkit for interactively prototyping and developing multi-sensor, multi-device environments.']
+const description = [
+  'Developer and maintainer of SoD-Toolkit. A web based toolkit for interactively prototyping and developing multi-sensor, multi-device environments.',
+]
 
 const time = 'June 2014 - June 2016'
 const roles = [ROLE_DEVELOPER_INTERN, ROLE_RESEARCH_ASSISTANT]
@@ -30,7 +31,7 @@ export function createSodExperience() {
       contributions,
       time,
       '/post/sod',
-      roles,
+      roles
     )
   }
   return experience

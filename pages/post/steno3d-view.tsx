@@ -6,11 +6,11 @@ import { LfviewExperience } from '../../src/contents'
 import ImageModal from '../../components/modals/ImageModal'
 import ImageGallery from '../../components/ImageGallery'
 
-const UnderConstruction = dynamic(() =>
-  import('../../components/UnderConstruction'),
+const UnderConstruction = dynamic(
+  () => import('../../components/UnderConstruction')
 )
-const ExperienceSection = dynamic(() =>
-  import('../../components/ExperienceSection'),
+const ExperienceSection = dynamic(
+  () => import('../../components/ExperienceSection')
 )
 
 export default function Steno3DProject() {

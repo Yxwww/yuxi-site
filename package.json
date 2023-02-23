@@ -11,7 +11,6 @@
   "dependencies": {
     "@markdoc/markdoc": "^0.1.13",
     "@markdoc/next.js": "^0.1.10",
-    "eslint": "^8.34.0",
     "nanoid": "^4.0.1",
     "next": "^13.1.6",
     "ramda": "^0.28.0",
@@ -19,19 +18,23 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.14.0",
-    "@types/react": "^18.0.28",
     "@types/markdown-it": "^12.2.3",
+    "@types/node": "^18.14.0",
     "@types/ramda": "^0.28.23",
+    "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.34.0",
     "eslint-config-next": "13.1.6",
+    "eslint-config-yuxi": "^0.0.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.5.0",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "tailwindcss": "^3.2.7",
     "tsm": "^2.3.0",
     "typescript": "^4.9.5",
-    "uvu": "^0.5.6"
+    "uvu": "^0.5.6",
+    "yuxi-scripts": "^0.0.1"
   },
   "husky": {
     "hooks": {

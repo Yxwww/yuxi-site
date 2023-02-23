@@ -1,9 +1,9 @@
 import { nanoid as generate } from 'nanoid'
 import { DEVELOPER_ROLE } from './constants'
 import { createExperience } from './constructors'
-import EAGLE_IMG from '/static/img/projects/seequent-eagle.png';
-import WING_IMG from '/static/img/projects/lfview-look-at-wing.png';
-import SLIDES_IMG from '/static/img/projects/seequent-eagle-slides.png';
+import EAGLE_IMG from '/static/img/projects/seequent-eagle.png'
+import WING_IMG from '/static/img/projects/lfview-look-at-wing.png'
+import SLIDES_IMG from '/static/img/projects/seequent-eagle-slides.png'
 
 const THUMBNAILS = [
   'seequent-eagle.png',
@@ -17,7 +17,7 @@ const blurb = [
 
 const contributions = [
   'Maintained and improved 3D data visualization library, enhancing rendering performance and visual presentation',
-'Led a redesign of the frontend UI application to improve user experience, performance, and architecture',
+  'Led a redesign of the frontend UI application to improve user experience, performance, and architecture',
   'Researched and integrated emerging technologies such as SvelteJS, ReactJS, Redux, RxJS, TypeScript, CSS Grid, and Functional/Reactive Programming paradigm, enabling the architecture to scale with team growth',
   'Trained and mentored new team members with onboarding materials and documentation',
 ]
@@ -33,8 +33,8 @@ let experience
 
 export function createLfviewExperience() {
   if (!experience) {
-    const uid = generate();
-    console.log('uid', uid);
+    const uid = generate()
+    console.log('uid', uid)
     experience = createExperience(
       uid,
       'Seequent',
@@ -44,7 +44,7 @@ export function createLfviewExperience() {
       contributions,
       time,
       url,
-      roles,
+      roles
       // blurb,
     )
   }

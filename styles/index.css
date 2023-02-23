@@ -1,5 +1,5 @@
 html {
-  @apply antialiased bg-gray-100 leading-tight min-h-screen ;
+  @apply antialiased bg-gray-100 leading-tight min-h-screen;
 }
 
 .body {
@@ -16,7 +16,7 @@ a:hover {
 
 .vertical-align {
   @apply absolute;
-  top: calc(50% - 4rem);;
+  top: calc(50% - 4rem);
   transform: translateY(calc(50% - 4rem));
 }
 
@@ -40,7 +40,6 @@ img {
   @apply my-2;
 }
 
-
 .screen-nav {
   min-height: calc(100vh - 50px);
 }
@@ -50,20 +49,20 @@ img {
 }
 
 .right-bottom-corner {
-    display: block;
-    content: "";
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    bottom: -5px;
-    right: -5px;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    @apply text-gray-900;
+  display: block;
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  @apply text-gray-900;
 }
-
 
 @media print {
-    body {zoom: 70%;}
+  body {
+    zoom: 70%;
+  }
 }
-

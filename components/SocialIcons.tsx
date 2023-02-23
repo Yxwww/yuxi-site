@@ -13,17 +13,12 @@ export default function SocialIcons({ className }) {
     <div className={className}>
       <button
         title="print"
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault()
           window.print()
         }}
       >
-        <Image
-          src={ProfilePicture}
-          className="social-icon"
-          alt=""
-        fill
-        />
+        <Image src={ProfilePicture} className="social-icon" alt="" fill />
       </button>
 
       <Link
@@ -32,11 +27,7 @@ export default function SocialIcons({ className }) {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <Image
-          className="social-icon"
-          src={GithubIcon}
-          alt=""
-        />
+        <Image className="social-icon" src={GithubIcon} alt="" />
       </Link>
 
       <Link
@@ -45,11 +36,7 @@ export default function SocialIcons({ className }) {
         target="_blank"
         href="https://twitter.com/thissushiguy"
       >
-        <Image
-          className="social-icon"
-          src={TwitterIcon}
-          alt="Twitter link"
-        />
+        <Image className="social-icon" src={TwitterIcon} alt="Twitter link" />
       </Link>
 
       <Link
@@ -58,11 +45,7 @@ export default function SocialIcons({ className }) {
         target="_blank"
         href="https://www.linkedin.com/in/yuxiwang/"
       >
-        <Image
-          className="social-icon"
-          src={LinkedinIcon}
-          alt="Linkedin Link"
-        />
+        <Image className="social-icon" src={LinkedinIcon} alt="Linkedin Link" />
       </Link>
       <Link title="Email" href="mailto:yuxi.wang.dev@gmail.com">
         <Image className="social-icon" src={EmailIcon} alt="" />
@@ -70,7 +53,6 @@ export default function SocialIcons({ className }) {
       <Link title="Phone" href="rel:1-403-560-6778">
         <Image className="social-icon" src={PhoneIcon} alt="" />
       </Link>
-
     </div>
   )
 }

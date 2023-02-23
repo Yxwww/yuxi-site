@@ -11,7 +11,7 @@ const processPathNameHomeCase = cond([
 const processPathNameToTitle = pipe(
   processPathNameHomeCase,
   removeFirstChar,
-  captalizeFirstChar,
+  captalizeFirstChar
 )
 
 function Header(props) {

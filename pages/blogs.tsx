@@ -1,10 +1,6 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { Page } from '../components/layouts/main'
-
-const UnderConstruction = dynamic(() =>
-  import('../components/UnderConstruction'),
-)
+import UnderConstruction from '../components/UnderConstruction'
 
 export default function Blog() {
   return (

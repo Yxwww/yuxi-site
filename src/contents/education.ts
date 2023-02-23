@@ -8,8 +8,9 @@ const contributions = [
   // 'CPSC-481: Human-Computer Interaction',
 ]
 
-const description =
-  ['Graduated from University of Calgary Bachelor of Science in Computer Science Internship Program.']
+const description = [
+  'Graduated from University of Calgary Bachelor of Science in Computer Science Internship Program.',
+]
 
 const roles = ["Bachelor's Degree"]
 const time = 'September 2012 - June 2016'
@@ -30,7 +31,7 @@ export function createEducation() {
       contributions,
       time,
       url,
-      roles,
+      roles
     )
   }
   return experience

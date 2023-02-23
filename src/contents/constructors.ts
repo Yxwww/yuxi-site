@@ -6,24 +6,18 @@ import { pipe, map, objOf, assoc, partial, concat } from 'ramda'
  */
 export const associateUidWithGeneratedUid = pipe(
   generate,
-  partial(assoc, ['uid']),
+  partial(assoc, ['uid'])
 )
 
-const addUid = obj => associateUidWithGeneratedUid()(obj)
+const addUid = (obj) => associateUidWithGeneratedUid()(obj)
 
 function transformIntoObjectWithUid(key) {
-  return pipe(
-    objOf(key),
-    addUid,
-  )
+  return pipe(objOf(key), addUid)
 }
 const appendProjectImageUrl = concat('/static/img/projects/')
 
 const transformThumbnails = map(
-  pipe(
-    appendProjectImageUrl,
-    transformIntoObjectWithUid('img'),
-  ),
+  pipe(appendProjectImageUrl, transformIntoObjectWithUid('img'))
 )
 const transformContributions = map(transformIntoObjectWithUid('contribution'))
 
@@ -36,7 +30,7 @@ export function createExperience(
   contributions = [],
   time = '',
   projecturl = '',
-  roles = [],
+  roles = []
 ) {
   return {
     uid,

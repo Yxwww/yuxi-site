@@ -19,7 +19,7 @@ const PostLink = ({ id, imgUrl, title, description, techStack }) => (
         </Link>
         <p className="text-gray-700 text-base py-2 my-0">{description}</p>
         <span className="text-gray-600">
-          {techStack.map(skill => (
+          {techStack.map((skill) => (
             <span
               key={`${id}-${skill}`}
               className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"

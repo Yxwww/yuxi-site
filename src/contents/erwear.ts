@@ -10,8 +10,9 @@ const contributions = [
 
 const thumbnails = ['erwear-poster.png']
 
-const descrption =
-  ["ERWear is my undergraduate research project. My responsibility was to design a system leveraging glass and wrist-based wearable technology to enhance emergency responders' situational awareness."]
+const descrption = [
+  "ERWear is my undergraduate research project. My responsibility was to design a system leveraging glass and wrist-based wearable technology to enhance emergency responders' situational awareness.",
+]
 const roles = [RESEARCHER_ROLE, DEVELOPER_ROLE]
 const time = 'September 2015 - June 2016'
 
@@ -27,7 +28,7 @@ export function createERWearExperience() {
       contributions,
       time,
       '',
-      roles,
+      roles
     )
   }
   return experience

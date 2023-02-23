@@ -2,7 +2,6 @@ import React from 'react'
 import { noop } from '../src/utils/components'
 import Image from './Image'
 
-
 export default function ImageGallery({
   items = [],
   onClick = noop as (arg: any) => void,

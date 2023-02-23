@@ -4,7 +4,7 @@ import { Page } from '../../components/layouts/main'
 import Image from '../../components/Image'
 
 const UnderConstruction = dynamic(() =>
-  import('../../components/UnderConstruction'),
+  import('../../components/UnderConstruction')
 )
 
 export default function SoDProject() {

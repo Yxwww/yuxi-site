@@ -16,14 +16,13 @@ function Nav({ items }) {
   const itemDivs = items.map(({ label, uid, url }) => (
     <div
       key={uid}
-      className={`print:hidden mx-1 text-base nav-items capitalize inline-block border-b-2 border-transparent border-solid hover:border-teal-600 ${isLabelOurCurrentHighlight(label, asPath)
-        ? 'text-indigo-600 border-teal-500'
-        : ''
-        }`}
+      className={`print:hidden mx-1 text-base nav-items capitalize inline-block border-b-2 border-transparent border-solid hover:border-teal-600 ${
+        isLabelOurCurrentHighlight(label, asPath)
+          ? 'text-indigo-600 border-teal-500'
+          : ''
+      }`}
     >
-      <Link href={url}>
-        {label}
-      </Link>
+      <Link href={url}>{label}</Link>
     </div>
   ))
   return <nav className="z-10 my-4">{itemDivs}</nav>

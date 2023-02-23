@@ -24,25 +24,18 @@ export default function Home() {
             <span role="img" aria-label="wave">
               👋
             </span>
-            , my name is Yuxi(pronounced &apos;Yushi&apos;) I often use a playful approach when introducing myself, telling people they can call me &quot;Sushi&quot; with a Y instead.
+            , my name is Yuxi(pronounced &apos;Yushi&apos;) I often use a
+            playful approach when introducing myself, telling people they can
+            call me &quot;Sushi&quot; with a Y instead.
           </p>
           <p className="m-1">
-            I&apos;m a software developer currently looking for new possibility and eager to find my next career opportunity.
+            I&apos;m a software developer currently looking for new possibility
+            and eager to find my next career opportunity.
           </p>
           <p className="m-1">
-            Here are my{' '}
-            <Link href="/projects">
-              projects
-            </Link>
-            ,{' '}
-            <Link href="/blogs">
-              blogs
-            </Link>
-            , and updated{' '}
-            <Link href="/resume">
-              resume
-            </Link>
-            .
+            Here are my <Link href="/projects">projects</Link>,{' '}
+            <Link href="/blogs">blogs</Link>, and updated{' '}
+            <Link href="/resume">resume</Link>.
           </p>
         </div>
         <Attributions />

@@ -29,20 +29,21 @@ export default function UnderConstruction() {
     }
   }, [hammer])
   return (
-      <div>
+    <p>
       This page is under construction{' '}
-      <div className="">
       <Image
-      className={
-      hammerSwingRight
-      ? `${hammerClass} -rotate-45`
-      : `${hammerClass} rotate-0`
-      }
-      imageRef={useCallback(node => { setRef(node) }, [])}
-      src={HammerEmoji}
-      alt="hammer-icon"
+        inline
+        className={
+          hammerSwingRight
+            ? `${hammerClass} -rotate-45`
+            : `${hammerClass} rotate-0`
+        }
+        imageRef={useCallback((node) => {
+          setRef(node)
+        }, [])}
+        src={HammerEmoji}
+        alt="hammer-icon"
       />
-      </div>
-      </div>
-      )
+    </p>
+  )
 }
