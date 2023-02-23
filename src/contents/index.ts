@@ -1,16 +1,12 @@
 import { createLfviewExperience } from './lfview'
+import { createCurvenoteExperience } from './curvenote'
 import { createERWearExperience } from './erwear'
-// import { createEocfExperience } from './eocf'
 import { createSodExperience } from './sod'
-// import { createMediaBroExperience } from './media-bro'
 
 export const ERWearExperience = createERWearExperience()
 export const LfviewExperience = createLfviewExperience()
+export const sodExp = createSodExperience()
+export const curvenoteExp = createCurvenoteExperience()
 export function getExperience() {
-  return [
-    LfviewExperience,
-    ERWearExperience,
-    createSodExperience(),
-    // createMediaBroExperience(),
-  ]
+  return [curvenoteExp, LfviewExperience, ERWearExperience, sodExp]
 }
