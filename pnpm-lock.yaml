@@ -10,7 +10,6 @@ specifiers:
   autoprefixer: ^10.4.13
   eslint: ^8.34.0
   eslint-config-next: 13.1.6
-  eslint-config-yuxi: ^0.0.1
   husky: ^7.0.4
   lint-staged: ^12.5.0
   nanoid: ^4.0.1
@@ -24,7 +23,7 @@ specifiers:
   tsm: ^2.3.0
   typescript: ^4.9.5
   uvu: ^0.5.6
-  yuxi-scripts: ^0.0.1
+  yuxi-scripts: ^0.0.2
 
 dependencies:
   '@markdoc/markdoc': 0.1.13_wbq6czl73o2dzdhaehakq6xtsq
@@ -43,7 +42,6 @@ devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.21
   eslint: 8.34.0
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
-  eslint-config-yuxi: 0.0.1_7kw3g6rralp5ps6mg3uyzz6azm
   husky: 7.0.4
   lint-staged: 12.5.0
   postcss: 8.4.21
@@ -52,7 +50,7 @@ devDependencies:
   tsm: 2.3.0
   typescript: 4.9.5
   uvu: 0.5.6
-  yuxi-scripts: 0.0.1_prettier@2.8.4
+  yuxi-scripts: 0.0.2_ztlnmuobvwn63gpuifwwrjpt4i
 
 packages:
 
@@ -3189,10 +3187,14 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /yuxi-scripts/0.0.1_prettier@2.8.4:
-    resolution: {integrity: sha512-do1Bu00F5dMhqPutdT9/Nf6pPp63AYOOjTJzWx2NZqcCTi1xm2gbOXFaoQq6vQTjswM7op1zZ2UIHT44E8lfLw==}
+  /yuxi-scripts/0.0.2_ztlnmuobvwn63gpuifwwrjpt4i:
+    resolution: {integrity: sha512-rXnYAYNYA0MNPOBxIAae5stPaFxXTH0JdXcI+SP6c1aAg51Rzb6IpuYnx2D9WujuexWYqvNHvNDsKknm5Jn/Pw==}
     peerDependencies:
       prettier: ^2.8.0
     dependencies:
+      eslint-config-yuxi: 0.0.1_7kw3g6rralp5ps6mg3uyzz6azm
       prettier: 2.8.4
+    transitivePeerDependencies:
+      - eslint
+      - typescript
     dev: true

@@ -25,7 +25,6 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.34.0",
     "eslint-config-next": "13.1.6",
-    "eslint-config-yuxi": "^0.0.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.5.0",
     "postcss": "^8.4.21",
@@ -34,7 +33,7 @@
     "tsm": "^2.3.0",
     "typescript": "^4.9.5",
     "uvu": "^0.5.6",
-    "yuxi-scripts": "^0.0.1"
+    "yuxi-scripts": "^0.0.2"
   },
   "husky": {
     "hooks": {
