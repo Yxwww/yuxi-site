@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import { map, join } from 'ramda'
+import { map, join, all } from 'ramda'
 import { nanoid as generate } from 'nanoid'
+import { allDefined } from 'utils'
 
 // TODO: all generate uid stuff going on here is messy
 
@@ -40,6 +41,12 @@ export default function ExperienceSection(props) {
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
   const contributionLists = createContributionList(contributions)
 
+  const CompanyInfo = (
+    <>
+      {all((v: string) => !!v && v.length > 0)([company, product]) && ' - '}
+      <span className="captalize">{company}</span>
+    </>
+  )
   return (
     <div className="py-2 tablet:py-4 relative" key={uid}>
       {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
@@ -48,15 +55,15 @@ export default function ExperienceSection(props) {
           <Link href={projecturl}>
             <a rel="noopener noreferrer">
               <h3 className="my-2 text-left">
-                {`${product} - `}
-                <span className="captalize">{company}</span>
+                {`${product}`}
+                {CompanyInfo}
               </h3>
             </a>
           </Link>
         ) : (
           <h3 className="my-2 text-left">
-            {`${product} - `}
-            <span className="captalize">{company}</span>
+            {`${product}`}
+            {CompanyInfo}
           </h3>
         )}
 

@@ -25,7 +25,7 @@ const contributions = [
 const description = blurb
 
 const roles = [DEVELOPER_ROLE]
-const time = 'June 2016 - Now'
+const time = 'June 2016 - May 2021'
 
 const url = '/post/steno3d-view'
 

@@ -1,17 +1,10 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
-import { Page } from '../components/layouts/main'
-import { getExperience } from '../src/contents'
-import { createEducation } from '../src/contents/education'
-
-const ExperienceContent = dynamic(
-  () => import('../components/ExperienceContent')
-)
-
-const ExperienceSection = dynamic(
-  () => import('../components/ExperienceSection')
-)
-const SocialIcons = dynamic(() => import('../components/SocialIcons'))
+import { Page } from 'components/layouts/main'
+import { getExperience } from 'src/contents'
+import { createEducation } from 'src/contents/education'
+import ExperienceContent from 'components/ExperienceContent'
+import ExperienceSection from 'components/ExperienceSection'
+import SocialIcons from 'components/SocialIcons'
 
 function ContactInfo() {
   return (
@@ -27,7 +20,7 @@ function ContactInfo() {
         </a>
       </div>
       <div className="hidden print:block">
-        <a href="rel:1-403-560-6778">Phone: 403-560-6778</a>
+        <a href="rel:1-403-560-6778">Phone: 778-992-0773</a>
       </div>
     </div>
   )
@@ -37,8 +30,8 @@ function Portfolio() {
   const experience = getExperience()
   const education = createEducation()
   return (
-    <Page className="mx-auto">
-      <div className="font-article flex flex-col">
+    <Page className="">
+      <div className="font-article flex flex-col mx-auto">
         <div className="flex justify-between flex-wrap">
           <div>
             <h1>Yuxi Wang</h1>

@@ -1,5 +1,5 @@
 import { nanoid as generate } from 'nanoid'
-import { DEVELOPER_ROLE } from './constants'
+import { SENIOR_DEVELOPER_ROLE } from './constants'
 import { createExperience } from './constructors'
 
 const THUMBNAILS = []
@@ -16,8 +16,8 @@ const contributions = [
 
 const description = blurb
 
-const roles = [DEVELOPER_ROLE]
-const time = 'June 2016 - May 2021'
+const roles = [SENIOR_DEVELOPER_ROLE]
+const time = 'May 2021 - Sep 2022'
 
 const url = '/post/curvenote'
 
@@ -30,7 +30,7 @@ export function createCurvenoteExperience() {
     experience = createExperience(
       uid,
       'Curvenote',
-      'Curvenote',
+      '',
       THUMBNAILS,
       description,
       contributions,

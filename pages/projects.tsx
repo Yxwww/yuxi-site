@@ -1,11 +1,7 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { Page } from '../components/layouts/main'
-
-const UnderConstruction = dynamic(
-  () => import('../components/UnderConstruction')
-)
-const AllProjects = dynamic(() => import('../components/AllProjects'))
+import UnderConstruction from 'components/UnderConstruction'
+import AllProjects from 'components/AllProjects'
 
 export default function Projects() {
   return (
