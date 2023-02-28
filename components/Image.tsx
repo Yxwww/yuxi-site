@@ -23,12 +23,12 @@ export default function Image({
   onClick?: () => void
   inline?: boolean
 }) {
+  const shouldFill = fill && noneDefined([width, height])
+  console.log({ shouldFill, width, height })
   return (
     <div
-      className={`${
-        inline && 'inline'
-      } relative outline-none w-4 h-4 ${className}`}
-      role="button"
+      className={`${inline && 'inline'} relative outline-none ${className}`}
+      role={onClick && 'button'}
       onClick={onClick}
     >
       <NextImage
@@ -36,7 +36,7 @@ export default function Image({
         className="object-cover"
         src={src}
         alt={alt}
-        fill={fill && noneDefined([width, height])}
+        fill={shouldFill}
         width={width}
         height={height}
       />
