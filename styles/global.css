@@ -1,6 +1,5 @@
 @tailwind base;
-@import "./fonts/fonts.css";
-@import "./fonts/opensans.css";
+@import './fonts/fonts.css';
+@import './fonts/opensans.css';
 @tailwind components;
 @tailwind utilities;
-

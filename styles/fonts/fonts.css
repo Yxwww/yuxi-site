@@ -5,11 +5,16 @@
   font-weight: 400;
   src: url('/static/fonts/lora-v14-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Lora Regular'), local('Lora-Regular'),
-       url('/static/fonts/lora-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/lora-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/lora-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/lora-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/lora-v14-latin-regular.svg#Lora') format('svg'); /* Legacy iOS */
+    url('/static/fonts/lora-v14-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/static/fonts/lora-v14-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('/static/fonts/lora-v14-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */ url('/static/fonts/lora-v14-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('/static/fonts/lora-v14-latin-regular.svg#Lora') format('svg'); /* Legacy iOS */
 }
 /* lora-700 - latin */
 @font-face {
@@ -18,11 +23,15 @@
   font-weight: 700;
   src: url('/static/fonts/lora-v14-latin-700.eot'); /* IE9 Compat Modes */
   src: local('Lora Bold'), local('Lora-Bold'),
-       url('/static/fonts/lora-v14-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/lora-v14-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/lora-v14-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/lora-v14-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/lora-v14-latin-700.svg#Lora') format('svg'); /* Legacy iOS */
+    url('/static/fonts/lora-v14-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/static/fonts/lora-v14-latin-700.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/static/fonts/lora-v14-latin-700.woff')
+      format('woff'),
+    /* Modern Browsers */ url('/static/fonts/lora-v14-latin-700.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */ url('/static/fonts/lora-v14-latin-700.svg#Lora')
+      format('svg'); /* Legacy iOS */
 }
 
 /* mono-lisa - regular */
@@ -32,10 +41,14 @@
   font-weight: 400;
   src: url('/static/fonts/monolisa/MonoLisa-Regular.otf'); /* IE9 Compat Modes */
   src: local(''),
-       url('/static/fonts/monolisa/MonoLisa-Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/monolisa/MonoLisa-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/monolisa/MonoLisa-Regular.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/monolisa/MonoLisa-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/static/fonts/monolisa/MonoLisa-Regular.otf?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/static/fonts/monolisa/MonoLisa-Regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('/static/fonts/monolisa/MonoLisa-Regular.woff') format('woff'),
+    /* Modern Browsers */ url('/static/fonts/monolisa/MonoLisa-Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
 }
 
 /* mono-lisa - bold */
@@ -45,8 +58,12 @@
   font-weight: 700;
   src: url('/static/fonts/monolisa/MonoLisa-Bold.otf'); /* IE9 Compat Modes */
   src: local(''),
-       url('/static/fonts/monolisa/MonoLisa-Bold.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/monolisa/MonoLisa-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/monolisa/MonoLisa-Bold.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/monolisa/MonoLisa-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/static/fonts/monolisa/MonoLisa-Bold.otf?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/static/fonts/monolisa/MonoLisa-Bold.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('/static/fonts/monolisa/MonoLisa-Bold.woff')
+      format('woff'),
+    /* Modern Browsers */ url('/static/fonts/monolisa/MonoLisa-Bold.ttf')
+      format('truetype'); /* Safari, Android, iOS */
 }
