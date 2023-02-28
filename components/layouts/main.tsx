@@ -1,34 +1,40 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { map } from 'ramda'
-import { nanoid as generate } from 'nanoid'
 import Head from '../Head'
 import { HOME_LABEL } from '../../constants'
+import Nav from '@/components/Nav'
 
-const createNavItems = map(([url, label]) => ({
-  uid: generate(),
-  url,
-  label,
-}))
+export interface NavItem {
+  url: string
+  label: string
+}
+export type NavItems = ReadonlyArray<NavItem>
 
-const Nav = dynamic(() => import('../Nav'))
-const navItemData = [
+const createNavItems: (args: [string, string][]) => NavItems = map(
+  ([url, label]) => ({
+    url,
+    label,
+  })
+)
+
+const NAV_ITEMS_TUPLES: [string, string][] = [
   ['/', HOME_LABEL],
   ['/resume', 'resume'],
   ['/projects', 'projects'],
   ['/blogs', 'blog'],
 ]
+const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES)
 
+const DEFAULT_FONTS = ['Inter']
 export const Page = ({
   children = null,
-  fonts = ['Inter'],
+  fonts = DEFAULT_FONTS,
   className = '',
 }) => {
-  const navItems = createNavItems(navItemData)
   return (
     <div id="app" className="max-w-5xl mx-auto">
       <Head fonts={fonts} />
-      <Nav items={navItems} />
+      <Nav items={NAV_ITEMS} />
       <div className={`container py-2 print:pt-2 px-1 table:px-2 ${className}`}>
         {children}
       </div>
