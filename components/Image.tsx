@@ -9,6 +9,7 @@ export default function Image({
   onClick,
   alt = '',
   className,
+  imageClassName,
   width,
   height,
   fill,
@@ -17,6 +18,7 @@ export default function Image({
   src: any
   alt?: string
   className?: string
+  imageClassName?: string
   width?: number
   height?: number
   imageRef?: Ref<HTMLImageElement>
@@ -24,7 +26,6 @@ export default function Image({
   inline?: boolean
 }) {
   const shouldFill = fill && noneDefined([width, height])
-  console.log({ shouldFill, width, height })
   return (
     <div
       className={`${inline && 'inline'} relative outline-none ${className}`}
@@ -33,7 +34,7 @@ export default function Image({
     >
       <NextImage
         ref={imageRef}
-        className="object-cover"
+        className={`object-cover ${imageClassName}`}
         src={src}
         alt={alt}
         fill={shouldFill}

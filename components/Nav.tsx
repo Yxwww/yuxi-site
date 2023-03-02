@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { removeFirstChar } from '../utils/index'
 import { HOME_LABEL } from '../constants'
-import { NavItem, NavItems } from './layouts/main'
+import { NavItem, NavItems } from './heading/Heading'
 
 function isLabelOurCurrentHighlight(label: string, highlight: string) {
   if (highlight === '/' && label === HOME_LABEL) {
@@ -20,15 +20,23 @@ function NavItemComponent({
   pathname: string
 }) {
   const { url, label } = item
+  const isHighlighted = isLabelOurCurrentHighlight(item.label, pathname)
   return (
-    <div
-      className={`print:hidden mx-1 text-base nav-items capitalize inline-block border-b-2 border-solid hover:border-teal-600 ${
-        isLabelOurCurrentHighlight(item.label, pathname)
-          ? 'text-indigo-600 border-teal-500'
-          : 'border-transparent'
-      }`}
-    >
-      <Link href={url}>{label}</Link>
+    <div className={`text-base capitalize inline-block`}>
+      <Link
+        className={`relative py-4 px-2 ${
+          isHighlighted ? 'text-indigo-600' : 'text-zinc-800'
+        }`}
+        href={url}
+      >
+        {label}
+        <span
+          className={`${
+            isHighlighted &&
+            'absolute inset-x-1 -bottom-px h-px bg-indigo-600 dark:bg-indigo-400'
+          }`}
+        ></span>
+      </Link>
     </div>
   )
 }
@@ -36,7 +44,7 @@ function NavItemComponent({
 function Nav({ items }: { items: NavItems }) {
   const { pathname } = useRouter()
   return (
-    <nav className="z-10 my-4">
+    <nav className="print:hidden z-10 py-4 max-w-md pt-6">
       {items.map((item) => {
         return (
           <NavItemComponent

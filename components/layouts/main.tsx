@@ -1,29 +1,6 @@
 import React from 'react'
-import { map } from 'ramda'
 import Head from '../Head'
-import { HOME_LABEL } from '../../constants'
-import Nav from '@/components/Nav'
-
-export interface NavItem {
-  url: string
-  label: string
-}
-export type NavItems = ReadonlyArray<NavItem>
-
-const createNavItems: (args: [string, string][]) => NavItems = map(
-  ([url, label]) => ({
-    url,
-    label,
-  })
-)
-
-const NAV_ITEMS_TUPLES: [string, string][] = [
-  ['/', HOME_LABEL],
-  ['/resume', 'resume'],
-  ['/projects', 'projects'],
-  ['/blogs', 'blog'],
-]
-const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES)
+import Heading from '../heading/Heading'
 
 const DEFAULT_FONTS = ['Inter']
 export const Page = ({
@@ -32,11 +9,19 @@ export const Page = ({
   className = '',
 }) => {
   return (
-    <div id="app" className="max-w-5xl mx-auto">
+    <div id="app" className="bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-50">
       <Head fonts={fonts} />
-      <Nav items={NAV_ITEMS} />
-      <div className={`container py-2 print:pt-2 px-1 table:px-2 ${className}`}>
-        {children}
+      <div className="max-w-6xl mx-auto bg-white px-4 h-screen flex flex-col">
+        <div className="px-16">
+          <div>
+            <Heading />
+          </div>
+          <div
+            className={`container flex-grow mt-16 py-2 print:pt-2 px-1 table:px-2 ${className}`}
+          >
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   )
