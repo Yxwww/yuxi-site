@@ -4,6 +4,7 @@ import { HOME_LABEL } from 'constants/index'
 import Image from '../Image'
 import ProfilePicture from 'public/static/img/kinect-infra-red.jpeg'
 import Link from 'next/link'
+import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn'
 
 export interface NavItem {
   url: string
@@ -40,11 +41,11 @@ export default function Heading() {
           />
         </Link>
       </div>
-      <div className="flex-grow  flex justify-center items-center">
+      <div className="flex-grow flex justify-center items-center">
         <Nav items={NAV_ITEMS} />
       </div>
       <div className="flex justify-end items-center">
-        <button>Dark mode</button>
+        <ThemePrefToggleBtn />
       </div>
     </div>
   )

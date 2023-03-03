@@ -52,12 +52,6 @@ module.exports = {
       sans: ['Helvetica', 'Open Sans', ...defaultTheme.fontFamily.sans],
       article: ['Lora', ...defaultTheme.fontFamily.serif],
     },
-    borderWidth: {
-      default: '1px',
-      0: '0',
-      2: '2px',
-      4: '4px',
-    },
     extend: {
       screens: {
         print: { raw: 'print' },

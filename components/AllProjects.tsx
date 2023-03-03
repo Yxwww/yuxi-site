@@ -13,16 +13,16 @@ const PostLink = ({ id, imgUrl, title, description, techStack }) => (
           fill
         />
       </Link>
-      <div className="px-6 pt-0 pb-4 bg-white">
+      <div className="px-6 pt-0 pb-4 ">
         <Link href={`/post/${id}`} as={`/post/${id}`}>
           <div className="font-medium text-xl py-2 font-bold">{title}</div>
         </Link>
-        <p className="text-gray-700 text-base py-2 my-0">{description}</p>
-        <span className="text-gray-600">
+        <p className=" text-base py-2 my-0">{description}</p>
+        <span className="">
           {techStack.map((skill) => (
             <span
               key={`${id}-${skill}`}
-              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+              className="inline-block rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
             >
               {skill}
             </span>

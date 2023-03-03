@@ -1,7 +1,10 @@
 import { useState } from 'react'
 
 // source: https://usehooks.com/useLocalStorage/
-export function useLocalStorage<T>(key: string, initialValue: T) {
+export function useLocalStorage<T>(
+  key: string,
+  initialValue: T
+): [T, (fn: (value: T) => T) => void] {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState(() => {
@@ -21,7 +24,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   })
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.
-  const setValue = (value: T) => {
+  const setValue = (value: T | ((value: T) => void)) => {
     try {
       // Allow value to be a function so we have same API as useState
       const valueToStore =

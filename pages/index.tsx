@@ -16,11 +16,12 @@ export default function Home() {
             <span role="img" aria-label="wave">
               👋
             </span>
-            , my name is Yuxi(pronounced &apos;Yushi&apos;). I&apos;m a software
-            developer currently looking for new possibility and eager to find my
-            next career opportunity.
+            , my name is Yuxi. I&apos;m a software developer currently looking
+            for new possibility and eager to find my next career opportunity.
           </p>
-          <SocialIcons className="text-left pt-8 pb-4" />
+          <div className="text-left pt-8 pb-4">
+            <SocialIcons />
+          </div>
           <p className="m-1">
             Here are my <Link href="/projects">projects</Link>,{' '}
             <Link href="/blogs">blogs</Link>, and updated{' '}

@@ -27,7 +27,7 @@ export default function Image({
 }) {
   const shouldFill = fill && noneDefined([width, height])
   return (
-    <div
+    <span
       className={`${inline && 'inline'} relative outline-none ${className}`}
       role={onClick && 'button'}
       onClick={onClick}
@@ -41,6 +41,6 @@ export default function Image({
         width={width}
         height={height}
       />
-    </div>
+    </span>
   )
 }

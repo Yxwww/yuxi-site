@@ -39,7 +39,7 @@ function Portfolio() {
           <div className="contact">
             <div className="social-icons print:hidden">
               <p className="my-0">You can reach me through:</p>
-              <SocialIcons className="text-left tablet:text-right" />
+              <SocialIcons className="" />
             </div>
             <ContactInfo />
           </div>
