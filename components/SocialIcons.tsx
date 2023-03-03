@@ -11,7 +11,7 @@ import Link from 'next/link'
 export default function SocialIcons({ className = '' }) {
   return (
     <div
-      className={`border border-indigo-500 pt-1 px-2 pb-3 dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
+      className={`border border-zinc-400 pt-1 px-2 pb-3 dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
     >
       <button
         title="print"
