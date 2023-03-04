@@ -5,7 +5,7 @@ import UnderConstruction from '../components/UnderConstruction'
 export default function Blog() {
   return (
     <Page>
-      <h1>Blog</h1>
+      <h1>Blogs</h1>
       <UnderConstruction />
       <ul className="">
         {/* <PostLink title="Testing Selectors" url="testing-selectors" /> */}

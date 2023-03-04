@@ -12,6 +12,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -50,12 +51,6 @@ module.exports = {
       mono: ['Monolisa', ...defaultTheme.fontFamily.mono],
       sans: ['Helvetica', 'Open Sans', ...defaultTheme.fontFamily.sans],
       article: ['Lora', ...defaultTheme.fontFamily.serif],
-    },
-    borderWidth: {
-      default: '1px',
-      0: '0',
-      2: '2px',
-      4: '4px',
     },
     extend: {
       screens: {

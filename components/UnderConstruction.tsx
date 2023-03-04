@@ -3,7 +3,7 @@ import Image from './Image'
 import HammerEmoji from '/public/static/img/icons/hammer.svg'
 
 const hammerClass =
-  'social-icon transform transition ease-in-out duration-200 hover:rotate-0'
+  'social-icon transform origin-bottom-left transition ease-in-out duration-200 hover:rotate-0'
 
 function reducer(state = false, action) {
   switch (action.type) {
@@ -16,7 +16,7 @@ function reducer(state = false, action) {
 
 export default function UnderConstruction() {
   const [hammer, setRef] = useState()
-  const [hammerSwingRight, dispatch] = useReducer(reducer, false)
+  const [swungout, dispatch] = useReducer(reducer, false)
   useEffect(() => {
     if (!hammer) {
       return () => {}
@@ -34,9 +34,7 @@ export default function UnderConstruction() {
       <Image
         inline
         className={
-          hammerSwingRight
-            ? `${hammerClass} -rotate-45`
-            : `${hammerClass} rotate-0`
+          swungout ? `${hammerClass} -rotate-45` : `${hammerClass} rotate-45`
         }
         imageRef={useCallback((node) => {
           setRef(node)

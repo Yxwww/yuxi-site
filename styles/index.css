@@ -7,11 +7,11 @@ html {
 }
 
 a {
-  @apply text-indigo-600;
+  @apply text-indigo-600 dark:text-indigo-400;
 }
 
 a:hover {
-  @apply text-indigo-800;
+  @apply text-indigo-800 dark:text-indigo-300;
 }
 
 .vertical-align {

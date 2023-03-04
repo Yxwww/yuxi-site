@@ -8,9 +8,11 @@ import PhoneIcon from '/public/static/img/icons/phone.png'
 import Image from './Image'
 import Link from 'next/link'
 
-export default function SocialIcons({ className }) {
+export default function SocialIcons({ className = '' }) {
   return (
-    <div className={className}>
+    <div
+      className={`border border-zinc-400 px-2 pb-2 dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
+    >
       <button
         title="print"
         onClick={(e) => {
