@@ -24,9 +24,10 @@ function NavItemComponent({
   return (
     <div className={`text-base capitalize inline-block`}>
       <Link
-        className={`relative text-zinc-800 dark:text-zinc-50 py-4 px-4  ${
-          isHighlighted &&
-          'text-indigo-600 hover:text-indigo:500 dark:text-indigo-400'
+        className={`relative py-4 px-4  ${
+          isHighlighted
+            ? 'text-indigo-600 hover:text-indigo:500 dark:text-indigo-400'
+            : 'text-zinc-800 dark:text-zinc-50 '
         }`}
         href={url}
       >
