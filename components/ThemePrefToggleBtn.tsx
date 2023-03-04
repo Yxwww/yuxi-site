@@ -24,10 +24,10 @@ export function ThemePrefToggleBtn() {
 
   return (
     <button
+      suppressHydrationWarning
       onClick={() => {
         console.log('button click')
         setTheme((theme) => {
-          console.log('setTheme', theme)
           if (theme === 'dark') {
             return 'light'
           } else {
@@ -36,7 +36,7 @@ export function ThemePrefToggleBtn() {
         })
       }}
     >
-      {theme === 'dark' ? 'darkmode' : 'lightmode'}
+      {theme === 'dark' ? 'dark' : 'light'}
     </button>
   )
 }

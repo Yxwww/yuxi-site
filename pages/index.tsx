@@ -19,7 +19,7 @@ export default function Home() {
             , my name is Yuxi. I&apos;m a software developer currently looking
             for new possibility and eager to find my next career opportunity.
           </p>
-          <div className="text-left pt-8 pb-4">
+          <div className="text-left pt-8 pb-4 px-1">
             <SocialIcons />
           </div>
           <p className="m-1">
