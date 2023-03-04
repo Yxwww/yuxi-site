@@ -23,7 +23,7 @@ const NAV_ITEMS_TUPLES: [string, string][] = [
   ['/', HOME_LABEL],
   ['/resume', 'resume'],
   ['/projects', 'projects'],
-  ['/blogs', 'blog'],
+  ['/blogs', 'blogs'],
 ]
 const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES)
 
@@ -44,7 +44,7 @@ export default function Heading() {
       <div className="flex-grow flex justify-center items-center">
         <Nav items={NAV_ITEMS} />
       </div>
-      <div className="flex justify-end items-center">
+      <div className="flex justify-end items-center print:hidden">
         <ThemePrefToggleBtn />
       </div>
     </div>

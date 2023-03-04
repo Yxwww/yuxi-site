@@ -2,18 +2,18 @@ import React from 'react'
 import Link from 'next/link'
 import Image from './Image'
 
-const PostLink = ({ id, imgUrl, title, description, techStack }) => (
-  <div className="inline-block m-2 tablet:m-0 align-top">
-    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200">
+const PostLink = ({ id, imgUrl, title, description = '', techStack = [] }) => (
+  <div className="inline-block p-2 tablet:m-0 align-top">
+    <div className="rounded overflow-hidden shadow-lg hover:shadow-2xl hover:bg-zinc-400 dark:hover:bg-zinc-800 transition-shadow duration-200">
       <Link href={`/post/${id}`} as={`/post/${id}`}>
         <Image
-          className="w-full my-0 h-[230px]"
+          className="block w-full my-0 h-[200px]"
           src={imgUrl}
           alt={`${title}-img`}
           fill
         />
       </Link>
-      <div className="px-6 pt-0 pb-4 ">
+      <div className="p-2">
         <Link href={`/post/${id}`} as={`/post/${id}`}>
           <div className="font-medium text-xl py-2 font-bold">{title}</div>
         </Link>
@@ -35,7 +35,7 @@ const PostLink = ({ id, imgUrl, title, description, techStack }) => (
 
 export default function AllProjects() {
   return (
-    <div className="max-w-6xl flex flex-wrap justify-center">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <PostLink
         id="steno3d-view"
         imgUrl="/static/img/projects/seequent-eagle.png"
@@ -46,7 +46,7 @@ export default function AllProjects() {
         techStack={['JS/TS', 'WebGL', 'Three', 'React', 'Redux', 'Svelte']}
       ></PostLink>
 
-      <PostLink
+      {/*<PostLink
         id="lfr"
         imgUrl="/static/img/projects/lfr.png"
         title="LFR - Li's Food Revolution"
@@ -60,7 +60,7 @@ export default function AllProjects() {
           'Project Planning',
           'UX Design',
         ]}
-      ></PostLink>
+        ></PostLink> */}
 
       <PostLink
         id="rdsdataviz"

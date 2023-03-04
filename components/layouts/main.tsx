@@ -9,10 +9,13 @@ export const Page = ({
   className = '',
 }) => {
   return (
-    <div id="app" className="transition-colors bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-50">
+    <div
+      id="app"
+      className="transition-colors bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-50"
+    >
       <Head fonts={fonts} />
       <div className="max-w-6xl transition-colors mx-auto bg-white dark:bg-zinc-800 px-4 min-h-screen flex flex-col">
-        <div className="px-16 pt-6">
+        <div className="px-16 pt-6 print:pt-0">
           <div>
             <Heading />
           </div>
