@@ -38,7 +38,7 @@ function Portfolio() {
           </div>
           <div className="contact">
             <div className="social-icons print:hidden">
-              <p className="my-0">You can reach me through:</p>
+              <p className="my-0 pb-1">You can reach me through:</p>
               <SocialIcons className="" />
             </div>
             <ContactInfo />

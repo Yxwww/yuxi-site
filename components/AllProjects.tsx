@@ -2,40 +2,67 @@ import React from 'react'
 import Link from 'next/link'
 import Image from './Image'
 
-const PostLink = ({ id, imgUrl, title, description = '', techStack = [] }) => (
-  <div className="inline-block p-2 tablet:m-0 align-top">
-    <div className="rounded overflow-hidden shadow-lg hover:shadow-2xl hover:bg-zinc-400 dark:hover:bg-zinc-800 transition-shadow duration-200">
-      <Link href={`/post/${id}`} as={`/post/${id}`}>
+function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
+  return (
+    <div className="card bg-base-50 shadow-lg transition-shadow">
+      <figure>
         <Image
           className="block w-full my-0 h-[200px]"
           src={imgUrl}
           alt={`${title}-img`}
           fill
         />
-      </Link>
-      <div className="p-2">
-        <Link href={`/post/${id}`} as={`/post/${id}`}>
-          <div className="font-medium text-xl py-2 font-bold">{title}</div>
-        </Link>
-        <p className=" text-base py-2 my-0">{description}</p>
-        <span className="">
-          {techStack.map((skill) => (
-            <span
-              key={`${id}-${skill}`}
-              className="inline-block rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
-            >
-              {skill}
-            </span>
-          ))}
-        </span>
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{title}</h2>
+        <p>{description}</p>
+        <div className="card-actions justify-end">
+          {techStack.map((skill) => {
+            return (
+              <div key={`${id}-${skill}`} className="badge badge-outline">
+                {skill}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
+// const PostLink = ({ id, imgUrl, title, description = '', techStack = [] }) => (
+//   <div className="inline-block p-2 tablet:m-0 align-top">
+//     <div className="rounded overflow-hidden shadow-lg hover:shadow-2xl hover:bg-zinc-400 dark:hover:bg-zinc-800 transition-shadow duration-200">
+//       <Link href={`/post/${id}`} as={`/post/${id}`}>
+//         <Image
+//           className="block w-full my-0 h-[200px]"
+//           src={imgUrl}
+//           alt={`${title}-img`}
+//           fill
+//         />
+//       </Link>
+//       <div className="p-2">
+//         <Link href={`/post/${id}`} as={`/post/${id}`}>
+//           <div className="font-medium text-xl py-2 font-bold">{title}</div>
+//         </Link>
+//         <p className=" text-base py-2 my-0">{description}</p>
+//         <span className="">
+//           {techStack.map((skill) => (
+//             <span
+//               key={`${id}-${skill}`}
+//               className="inline-block rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
+//             >
+//               {skill}
+//             </span>
+//           ))}
+//         </span>
+//       </div>
+//     </div>
+//   </div>
+// )
 
 export default function AllProjects() {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
       <PostLink
         id="steno3d-view"
         imgUrl="/static/img/projects/seequent-eagle.png"
@@ -68,7 +95,7 @@ export default function AllProjects() {
         title="rds-dataviz"
         description="
             rds-dataviz is a 2D data visualization library for visualizing map-based data. My responsibility was to design and implement the library to satisfy the performance and versatility requirements.            "
-        techStack={['TS', 'd3', 'Library Management']}
+        techStack={['d3', 'Data Visualization', 'Library Design']}
       ></PostLink>
 
       <PostLink
@@ -78,13 +105,7 @@ export default function AllProjects() {
         description="
               ERWear is my undergraduate research project. My responsibility was to design a system leveraging glass and wrist-based wearable technology to enhance emergency responders' situational awareness.
             "
-        techStack={[
-          'Wearable Programing',
-          'Google Glass',
-          'ReconJet',
-          'Android Watch',
-          'academic Research & writing',
-        ]}
+        techStack={['Wearable', 'Dashboard', 'Academic']}
       ></PostLink>
 
       <PostLink

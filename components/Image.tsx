@@ -34,7 +34,7 @@ export default function Image({
     >
       <NextImage
         ref={imageRef}
-        className={`object-cover ${imageClassName}`}
+        className={`object-cover m-0 ${imageClassName}`}
         src={src}
         alt={alt}
         fill={shouldFill}
