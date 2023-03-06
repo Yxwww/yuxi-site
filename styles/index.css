@@ -6,14 +6,6 @@ html {
   @apply font-normal leading-normal select-text text-base;
 }
 
-a {
-  @apply text-indigo-600 dark:text-indigo-400;
-}
-
-a:hover {
-  @apply text-indigo-800 dark:text-indigo-300;
-}
-
 .vertical-align {
   @apply absolute;
   top: calc(50% - 4rem);

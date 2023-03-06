@@ -14,13 +14,13 @@ export const Page = ({
       className="transition-colors bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-50"
     >
       <Head fonts={fonts} />
-      <div className="max-w-6xl transition-colors mx-auto bg-white dark:bg-zinc-800 px-4 min-h-screen flex flex-col">
-        <div className="px-16 pt-6 print:pt-0">
+      <div className="max-w-6xl transition-colors mx-auto bg-white dark:bg-zinc-800 md:px-4 min-h-screen flex flex-col">
+        <div className="px-4 md:px-16 pt-4 print:pt-0">
           <div>
             <Heading />
           </div>
           <div
-            className={`container flex-grow mt-16 py-2 print:pt-2 px-1 table:px-2 ${className}`}
+            className={`container flex-grow mt-16 sm:mt-32 py-2 print:pt-2 px-1 table:px-2 ${className}`}
           >
             {children}
           </div>

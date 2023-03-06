@@ -24,18 +24,15 @@ function NavItemComponent({
   return (
     <div className={`text-base capitalize inline-block`}>
       <Link
-        className={`relative py-4 px-4  ${
-          isHighlighted
-            ? 'text-indigo-600 hover:text-indigo:500 dark:text-indigo-400'
-            : 'text-zinc-800 dark:text-zinc-50 '
-        }`}
+        className={`relative link no-underline block py-4 px-4 ${
+          isHighlighted && 'link-primary'
+        } hover:text-primary-focus`}
         href={url}
       >
         {label}
         <span
           className={`${
-            isHighlighted &&
-            'absolute inset-x-1 -bottom-px h-px bg-indigo-600 dark:bg-indigo-400'
+            isHighlighted && 'absolute inset-x-1 -bottom-px h-px bg-primary'
           }`}
         ></span>
       </Link>
@@ -46,7 +43,7 @@ function NavItemComponent({
 function Nav({ items }: { items: NavItems }) {
   const { pathname } = useRouter()
   return (
-    <nav className="print:hidden z-10 py-4 max-w-md pt-6">
+    <nav className="print:hidden z-10 max-w-md pt-6 py-4 flex flex-col md:flex-row">
       {items.map((item) => {
         return (
           <NavItemComponent

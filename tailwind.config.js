@@ -65,5 +65,14 @@ module.exports = {
     margin: ['first'],
     rotate: ['hover'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    styled: true,
+    themes: ['garden', 'halloween'],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+  },
 }

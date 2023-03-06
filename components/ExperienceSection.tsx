@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 import { map, join, all } from 'ramda'
 import { nanoid as generate } from 'nanoid'
-import { allDefined } from 'utils'
 
 // TODO: all generate uid stuff going on here is messy
 

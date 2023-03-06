@@ -34,7 +34,6 @@ let experience
 export function createLfviewExperience() {
   if (!experience) {
     const uid = generate()
-    console.log('uid', uid)
     experience = createExperience(
       uid,
       'Seequent',

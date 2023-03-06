@@ -26,7 +26,6 @@ let experience
 export function createCurvenoteExperience() {
   if (!experience) {
     const uid = generate()
-    console.log('uid', uid)
     experience = createExperience(
       uid,
       'Curvenote',
