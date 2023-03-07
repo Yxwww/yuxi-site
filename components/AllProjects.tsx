@@ -67,7 +67,7 @@ export default function AllProjects() {
         id="curvenote"
         imgUrl="/static/img/projects/curvenote.jpeg"
         title="Curvenote"
-        description="Core web developer delivering innovative features and optimized architecture for efficient maintenance and functionality."
+        description="Curvenote is a web appilcation aims to revolutionize technical writing. I worked on delivering innovative features and optimized architecture for efficient maintenance and functionality."
         techStack={['ProseMirror', 'React', 'Full Stack', 'Monorepo']}
       ></PostLink>
 
@@ -75,7 +75,7 @@ export default function AllProjects() {
         id="steno3d-view"
         imgUrl="/static/img/projects/seequent-eagle.png"
         title="Seequent View"
-        description="Seequent View is a 3D web data visualization application. My responsibility is to maintain 3D data visualization library. I also proposed and implemented frontend stack revamp to improve architecture, user experience, and performance."
+        description="Seequent View is a 3D web data visualization application. I proposed and implemented frontend stack revamp to improve architecture, user experience, and performance. I was also the core maintainer for the 3D data visualization library."
         techStack={['JS/TS', 'WebGL', 'Three', 'React', 'Redux', 'Svelte']}
       ></PostLink>
 
