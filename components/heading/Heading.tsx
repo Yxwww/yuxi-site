@@ -1,11 +1,12 @@
+import { useState } from 'react'
 import Nav from '../Nav'
 import { map } from 'ramda'
-import { PlusIcon } from '@heroicons/react/24/solid'
 import { HOME_LABEL } from 'constants/index'
 import Image from '../Image'
 import ProfilePicture from 'public/static/img/kinect-infra-red.jpeg'
 import Link from 'next/link'
 import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn'
+import NavToggle from './NavToggle'
 
 export interface NavItem {
   url: string
@@ -28,17 +29,10 @@ const NAV_ITEMS_TUPLES: [string, string][] = [
 ]
 const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES)
 
-function MenuToggle() {
-  return (
-    <button className="btn btn-square btn-outline btn-sm">
-      <PlusIcon className="h-5 w-5" aria-hidden="true" />
-    </button>
-  )
-}
-
 export default function Heading() {
+  const [navCollapse, setCollapse] = useState(false)
   return (
-    <div className="flex justify-center">
+    <div className={`flex justify-center`}>
       <div className="flex justify-start items-center">
         <Link href="/">
           <Image
@@ -51,11 +45,16 @@ export default function Heading() {
         </Link>
       </div>
       <div className="flex-grow flex justify-center items-start">
-        <Nav items={NAV_ITEMS} />
+        <Nav items={NAV_ITEMS} collapsed={navCollapse} />
       </div>
       <div className="flex justify-end items-center print:hidden">
         <div className="p-1 sm:hidden">
-          <MenuToggle />
+          <NavToggle
+            active={navCollapse}
+            onClick={() => {
+              setCollapse((v) => !v)
+            }}
+          />
         </div>
         <div className="p-1">
           <ThemePrefToggleBtn />

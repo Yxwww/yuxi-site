@@ -32,7 +32,7 @@ function NavItemComponent({
         {label}
         <span
           className={`${
-            isHighlighted && 'absolute inset-x-1 -bottom-px h-px bg-primary'
+            isHighlighted && 'absolute inset-x-1 -bottom-px h-[2px] bg-primary'
           }`}
         ></span>
       </Link>
@@ -40,10 +40,15 @@ function NavItemComponent({
   )
 }
 
-function Nav({ items }: { items: NavItems }) {
+function Nav({ items, collapsed }: { items: NavItems; collapsed: boolean }) {
   const { pathname } = useRouter()
+
   return (
-    <nav className="print:hidden z-10 max-w-md pt-6 py-4 flex flex-col md:flex-row">
+    <nav
+      className={`print:hidden z-10 max-w-md flex flex-col sm:block sm:flex-row ${
+        collapsed && 'hidden'
+      } `}
+    >
       {items.map((item) => {
         return (
           <NavItemComponent
