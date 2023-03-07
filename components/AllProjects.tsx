@@ -64,30 +64,20 @@ export default function AllProjects() {
   return (
     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
       <PostLink
+        id="curvenote"
+        imgUrl="/static/img/projects/curvenote.jpeg"
+        title="Curvenote"
+        description="Core web developer delivering innovative features and optimized architecture for efficient maintenance and functionality."
+        techStack={['ProseMirror', 'React', 'Full Stack', 'Monorepo']}
+      ></PostLink>
+
+      <PostLink
         id="steno3d-view"
         imgUrl="/static/img/projects/seequent-eagle.png"
         title="Seequent View"
-        description="
-            Seequent View is a 3D web data visualization application. My responsibility is to maintain 3D data visualization library. I also proposed and implemented frontend stack revamp to improve architecture, user experience, and performance.
-            "
+        description="Seequent View is a 3D web data visualization application. My responsibility is to maintain 3D data visualization library. I also proposed and implemented frontend stack revamp to improve architecture, user experience, and performance."
         techStack={['JS/TS', 'WebGL', 'Three', 'React', 'Redux', 'Svelte']}
       ></PostLink>
-
-      {/*<PostLink
-        id="lfr"
-        imgUrl="/static/img/projects/lfr.png"
-        title="LFR - Li's Food Revolution"
-        description="
-              LFR is a Vancouver based healthy meal delivery business. My responsibility is to ideate, design, plan, and implement a full-stack application to fit the business needs.
-            "
-        techStack={[
-          'nextjs',
-          'tailwindcss',
-          'Mongodb',
-          'Project Planning',
-          'UX Design',
-        ]}
-        ></PostLink> */}
 
       <PostLink
         id="rdsdataviz"
