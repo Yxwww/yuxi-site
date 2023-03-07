@@ -28,7 +28,7 @@ export function ThemePrefToggleBtn() {
   // localStorage state causes hydration miss match. Suppress warning for now.
   return (
     <button
-      className="btn btn-circle btn-outline btn-sm btn-primary"
+      className="btn btn-circle btn-outline btn-primary"
       suppressHydrationWarning
       onClick={() => {
         setTheme((theme) => {

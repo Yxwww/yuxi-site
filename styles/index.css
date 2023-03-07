@@ -37,7 +37,7 @@ img {
 }
 
 .social-icon {
-  @apply fill-current w-6 h-6 mr-2 inline-block;
+  @apply fill-current w-6 h-6 mx-1 inline-block;
 }
 
 .right-bottom-corner {
