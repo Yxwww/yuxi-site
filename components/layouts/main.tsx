@@ -20,7 +20,7 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`container flex-grow mt-16 sm:mt-32 py-2 print:pt-2 px-1 table:px-2 ${className}`}
+            className={`container flex-grow mt-8 sm:mt-16 py-2 print:pt-2 px-1 table:px-2 ${className}`}
           >
             {children}
           </div>
