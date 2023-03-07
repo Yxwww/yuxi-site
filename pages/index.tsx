@@ -1,10 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Page } from '../components/layouts/main'
-
-const Attributions = dynamic(() => import('../components/Attributions'))
-const SocialIcons = dynamic(() => import('../components/SocialIcons'))
+import SocialIcons from '@/components/SocialIcons'
 
 export default function Home() {
   return (
@@ -28,7 +25,6 @@ export default function Home() {
             <Link href="/resume">resume</Link>.
           </p>
         </div>
-        <Attributions />
       </div>
     </Page>
   )

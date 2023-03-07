@@ -4,7 +4,7 @@ import Image from './Image'
 
 function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
   return (
-    <div className="card bg-base-50 shadow-lg transition-shadow">
+    <div className="card bg-base-50 card-bordered dark:border-zinc-700 shadow-lg transition-shadow">
       <figure>
         <Image
           className="block w-full my-0 h-[200px]"
