@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Nav from '../Nav'
 import { map } from 'ramda'
 import { HOME_LABEL } from 'constants/index'
@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn'
 import NavToggle from './NavToggle'
 import { useLocalStorage } from 'utils/hooks'
+import { useRouter } from 'next/router'
 
 export interface NavItem {
   url: string
@@ -35,6 +36,10 @@ export default function Heading() {
     'yuxi-site-nav-collapsed',
     true
   )
+  const { pathname } = useRouter()
+  useEffect(() => {
+    setCollapse(true)
+  }, [pathname, setCollapse])
 
   return (
     <div className={`flex justify-center`}>
