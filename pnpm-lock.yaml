@@ -26,7 +26,7 @@ specifiers:
   tsm: ^2.3.0
   typescript: ^4.9.5
   uvu: ^0.5.6
-  yuxi-scripts: ^0.0.2
+  yuxi-scripts: ^0.0.3
 
 dependencies:
   '@heroicons/react': 2.0.16_react@18.2.0
@@ -56,7 +56,7 @@ devDependencies:
   tsm: 2.3.0
   typescript: 4.9.5
   uvu: 0.5.6
-  yuxi-scripts: 0.0.2_ztlnmuobvwn63gpuifwwrjpt4i
+  yuxi-scripts: 0.0.3_ztlnmuobvwn63gpuifwwrjpt4i
 
 packages:
 
@@ -1277,8 +1277,8 @@ packages:
       eslint: 8.34.0
     dev: true
 
-  /eslint-config-yuxi/0.0.1_7kw3g6rralp5ps6mg3uyzz6azm:
-    resolution: {integrity: sha512-KFonHlJxs7jkwrZp5pm8fDeWUCQN9sd5I7Az4/ulPAGihVkra/nINi4zDkeoEzsFNltbSicbSWLC7TaCp1+sog==}
+  /eslint-config-yuxi/0.0.2_7kw3g6rralp5ps6mg3uyzz6azm:
+    resolution: {integrity: sha512-ORMatPcDEKDJJbb+VwVKHNlrKUNheL170AkLIXjY4ZfF3JkrSklVGBAWaMflb+N0/+9ViL3k0CvibwZ2B+IB0Q==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -3212,12 +3212,12 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /yuxi-scripts/0.0.2_ztlnmuobvwn63gpuifwwrjpt4i:
-    resolution: {integrity: sha512-rXnYAYNYA0MNPOBxIAae5stPaFxXTH0JdXcI+SP6c1aAg51Rzb6IpuYnx2D9WujuexWYqvNHvNDsKknm5Jn/Pw==}
+  /yuxi-scripts/0.0.3_ztlnmuobvwn63gpuifwwrjpt4i:
+    resolution: {integrity: sha512-CKCySQvpRUGuzybGSXwPtWzbNX03tocijFPv7iQ4eXXu6RlRXyn2gJY/CZxDXPuuga+TWtCigiEpWGHBvcZeWw==}
     peerDependencies:
       prettier: ^2.8.0
     dependencies:
-      eslint-config-yuxi: 0.0.1_7kw3g6rralp5ps6mg3uyzz6azm
+      eslint-config-yuxi: 0.0.2_7kw3g6rralp5ps6mg3uyzz6azm
       prettier: 2.8.4
     transitivePeerDependencies:
       - eslint
