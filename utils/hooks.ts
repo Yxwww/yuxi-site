@@ -35,7 +35,6 @@ export function useLocalStorage<T>(
         typeof window !== 'undefined' &&
         window.localStorage.getItem(key) !== stringified
       ) {
-        console.log('saving ', stringified)
         window.localStorage.setItem(key, stringified)
       }
     } catch (error) {

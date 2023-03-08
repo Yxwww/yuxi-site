@@ -10,9 +10,6 @@ export const Page = ({
   className = '',
 }) => {
   const scroll = useScrollPosition()
-  useEffect(() => {
-    console.log('scroll', scroll)
-  }, [scroll])
   return (
     <div
       id="app"

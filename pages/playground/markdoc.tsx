@@ -15,7 +15,7 @@ export default function MarkdocPage() {
   `
   const ast = Markdoc.parse(source)
   const content = Markdoc.transform(ast, config)
-  console.log('ast', { ast, content })
+  // console.log('ast', { ast, content })
   const components = Markdoc.renderers.react(content, React)
   return <Page>{components}</Page>
 }
