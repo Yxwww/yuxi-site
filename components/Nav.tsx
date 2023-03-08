@@ -45,7 +45,7 @@ function Nav({ items, collapsed }: { items: NavItems; collapsed: boolean }) {
 
   return (
     <nav
-      className={`print:hidden z-10 max-w-md flex flex-col sm:block sm:flex-row ${
+      className={`z-10 max-w-md flex flex-col sm:block sm:flex-row ${
         collapsed && 'hidden'
       } `}
     >

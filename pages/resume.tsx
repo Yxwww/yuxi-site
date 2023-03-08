@@ -31,7 +31,7 @@ function Portfolio() {
   const education = createEducation()
   return (
     <Page className="">
-      <div className="font-article flex flex-col mx-auto">
+      <div className="font-article flex flex-col mx-auto print:p-6">
         <div className="flex justify-between flex-wrap">
           <div>
             <h1>Yuxi Wang</h1>
