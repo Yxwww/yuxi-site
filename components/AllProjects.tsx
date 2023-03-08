@@ -67,7 +67,7 @@ export default function AllProjects() {
         id="curvenote"
         imgUrl="/static/img/projects/curvenote.jpeg"
         title="Curvenote"
-        description="Curvenote is a web appilcation aims to revolutionize technical writing. I worked on delivering innovative features and optimized architecture for efficient maintenance and functionality."
+        description="Curvenote is a web application focued on revolutionizing technical writing. I worked on delivering innovative features and optimized architecture for efficient maintenance and functionality."
         techStack={['ProseMirror', 'React', 'Full Stack', 'Monorepo']}
       ></PostLink>
 
