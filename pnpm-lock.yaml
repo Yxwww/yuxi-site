@@ -2,8 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@heroicons/react': ^2.0.16
-  '@markdoc/markdoc': ^0.1.13
-  '@markdoc/next.js': ^0.1.10
+  '@markdoc/markdoc': ^0.2.2
+  '@markdoc/next.js': ^0.2.2
   '@tailwindcss/typography': ^0.5.9
   '@types/markdown-it': ^12.2.3
   '@types/node': ^18.14.0
@@ -14,6 +14,7 @@ specifiers:
   eslint: ^8.34.0
   eslint-config-next: 13.1.6
   husky: ^7.0.4
+  js-yaml: ^4.1.0
   lint-staged: ^12.5.0
   nanoid: ^4.0.1
   next: ^13.1.6
@@ -30,9 +31,10 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.16_react@18.2.0
-  '@markdoc/markdoc': 0.1.13_wbq6czl73o2dzdhaehakq6xtsq
-  '@markdoc/next.js': 0.1.10_37ldikvoldfbnnho6ekuin2lnu
+  '@markdoc/markdoc': 0.2.2_pmekkgnqduwlme35zpnqhenc34
+  '@markdoc/next.js': 0.2.2_tieypbyitdip6dylwtj75ugcwu
   daisyui: 2.51.3_gbtt6ss3tbiz4yjtvdr6fbrj44
+  js-yaml: 4.1.0
   nanoid: 4.0.1
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   ramda: 0.28.0
@@ -130,25 +132,32 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@markdoc/markdoc/0.1.13_wbq6czl73o2dzdhaehakq6xtsq:
-    resolution: {integrity: sha512-zUdUpr2U3tf0uBQKr1aAiNDvwtZChAjCw3WPVv4PMKcPjYYlVHE0lizIS3NjChruRPJ2FvVQAI4ceyNpJWobiw==}
+  /@markdoc/markdoc/0.2.2_pmekkgnqduwlme35zpnqhenc34:
+    resolution: {integrity: sha512-0TiD9jmA5h5znN4lxo7HECAu3WieU5g5vUsfByeucrdR/x88hEilpt16EydFyJwJddQ/3w5HQgW7Ovy62r4cyw==}
     engines: {node: '>=14.7.0'}
     peerDependencies:
-      '@types/markdown-it': '*'
       '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
     dependencies:
-      '@types/markdown-it': 12.2.3
       '@types/react': 18.0.28
+      react: 18.2.0
+    optionalDependencies:
+      '@types/markdown-it': 12.2.3
     dev: false
 
-  /@markdoc/next.js/0.1.10_37ldikvoldfbnnho6ekuin2lnu:
-    resolution: {integrity: sha512-ncxQcxDtimRT1h5Xw4VXqLY9OSrOav6hHEkfV6Vq4pKUM3QOsb/RnNo8E1rNIj9hRDH/SvQEQzggTCsQYmAr0g==}
+  /@markdoc/next.js/0.2.2_tieypbyitdip6dylwtj75ugcwu:
+    resolution: {integrity: sha512-qHCwcTwyHOHrvxmUcueL+RREhHJxef9p6MS45CxHIChV9JHBcWOJt9v++T8HCf4iCbCdnIVCcR9OYzOj3Kq7XQ==}
     peerDependencies:
-      '@markdoc/markdoc': ^0.1.4
+      '@markdoc/markdoc': '*'
       next: '*'
       react: '*'
     dependencies:
-      '@markdoc/markdoc': 0.1.13_wbq6czl73o2dzdhaehakq6xtsq
+      '@markdoc/markdoc': 0.2.2_pmekkgnqduwlme35zpnqhenc34
       js-yaml: 4.1.0
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0

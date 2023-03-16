@@ -34,7 +34,7 @@ function Portfolio() {
       <div className="font-article flex flex-col mx-auto print:p-6">
         <div className="flex justify-between flex-wrap">
           <div>
-            <h1>Yuxi Wang</h1>
+            <h1 className="font-normal">Yuxi Wang</h1>
           </div>
           <div className="contact">
             <div className="social-icons print:hidden">
