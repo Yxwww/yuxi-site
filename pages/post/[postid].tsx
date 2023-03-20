@@ -7,7 +7,7 @@ import { promises as fs } from 'fs'
 import { Page } from '../../components/layouts/main'
 import { heading } from '@/markdoc/schema/Heading'
 import 'prismjs'
-import 'prismjs/themes/prism.css'
+import 'prismjs/themes/prism-tomorrow.min.css'
 
 import Prism from 'react-prism'
 
