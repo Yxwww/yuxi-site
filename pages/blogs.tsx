@@ -1,7 +1,7 @@
 import React from 'react'
 import { Page } from '../components/layouts/main'
 import { promises as fs } from 'fs'
-import Marcdoc from '@markdoc/markdoc'
+import Markdoc from '@markdoc/markdoc'
 import yaml from 'js-yaml' // or 'toml', etc.
 import path from 'path'
 import { PostList } from '@/components/post/PostList'
@@ -20,7 +20,7 @@ export async function getStaticProps(): Promise<{
 
       // Generally you would parse/transform the contents
       // For example you can transform markdown to HTML here
-      const ast = Marcdoc.parse(fileContents)
+      const ast = Markdoc.parse(fileContents)
       const frontmatter = ast.attributes.frontmatter
         ? yaml.load(ast.attributes.frontmatter)
         : {}
