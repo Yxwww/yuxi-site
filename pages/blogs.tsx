@@ -1,6 +1,5 @@
 import React from 'react'
 import { Page } from '../components/layouts/main'
-import UnderConstruction from '../components/UnderConstruction'
 import { promises as fs } from 'fs'
 import Marcdoc from '@markdoc/markdoc'
 import yaml from 'js-yaml' // or 'toml', etc.
@@ -48,7 +47,7 @@ export async function getStaticProps(): Promise<{
   }
 }
 
-export default function Blog({ posts }) {
+export default function Blogs({ posts }) {
   return (
     <Page className="mx-auto max-w-2xl lg:max-w-5xl">
       <h1>Blogs</h1>
