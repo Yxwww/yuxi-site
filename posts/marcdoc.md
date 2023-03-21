@@ -4,11 +4,13 @@ description: Quickly author amazing content with Markdoc syntax, a superset of M
 date: 2022-04-01
 ---
 
-## Hello from markdoc
+# Hello from markdoc
 
 - here is something love
 
 ```javascript
-var a = 1;
-function test() {console.log('hello world!')}
+var a = 1
+function test() {
+  console.log('hello world!')
+}
 ```

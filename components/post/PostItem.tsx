@@ -7,10 +7,10 @@ export function PostItem({ item }: { item: PostItem }) {
 
   return (
     <Link href={`/post/${filename.split('.')[0]}`}>
-      <div className="flex flex-row ">
-        <div className="divider divider-horizontal text-zinc-400 ml-0 items-start"></div>
+      <div className="flex flex-col sm:flex-row">
+        <div className="divider divider-vertical sm:divider-horizontal text-zinc-400 mb-0 sm:ml-0 items-start"></div>
         <div className="p-4">
-          <div className="flex items-start justify-center text-sm pr-16 pt-[2px]">
+          <div className="flex items-start justify-start sm:justify-center text-sm pr-16 pt-[2px]">
             <time className="text-zinc-400">
               {new Date(date).toDateString()}
             </time>

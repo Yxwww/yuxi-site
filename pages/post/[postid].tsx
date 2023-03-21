@@ -8,25 +8,13 @@ import { Page } from '../../components/layouts/main'
 import { heading } from '@/markdoc/schema/Heading'
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.min.css'
+import { Fence } from '@/components/markdoc/Fence'
+import { fence } from '@/markdoc/schema/Fence'
+import Head from 'next/head'
+import Link from 'next/link'
+import { InferGetStaticPropsType } from 'next'
+import { FrontmatterSerialized } from 'src/types'
 
-import Prism from 'react-prism'
-
-export function Fence({ children, language }) {
-  return (
-    <Prism key={language} component="pre" className={`language-${language}`}>
-      {children}
-    </Prism>
-  )
-}
-
-const fence = {
-  render: 'Fence',
-  attributes: {
-    language: {
-      type: String,
-    },
-  },
-}
 const config: Config = {
   nodes: {
     heading,
@@ -39,7 +27,7 @@ export async function getStaticPaths() {
   const filenames = await fs.readdir(postsDirectory)
 
   const paths = filenames.map((name) => ({
-    params: { postid: name.split('.')[0] },
+    params: { postid: name.split('.')[0], name },
   }))
 
   return {
@@ -49,6 +37,11 @@ export async function getStaticPaths() {
 }
 
 const postsDirectory = path.join(process.cwd(), 'posts')
+
+interface PostPagePropType {
+  frontmatter: FrontmatterSerialized
+  content: string
+}
 
 export async function getStaticProps({ params }) {
   const filePath = path.join(postsDirectory, params.postid)
@@ -63,12 +56,12 @@ export async function getStaticProps({ params }) {
       post: {
         frontmatter: { ...frontmatter, date: frontmatter.date.toString() },
         content: fileContents,
-      },
+      } as PostPagePropType,
     },
   }
 }
 
-const Post = ({ post }) => {
+function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const ast = Markdoc.parse(post.content)
   const content = Markdoc.transform(ast, config)
   const components = Markdoc.renderers.react(content, React, {
@@ -79,7 +72,20 @@ const Post = ({ post }) => {
 
   return (
     <Page>
-      <div className="prose">{components}</div>
+      <Head>
+        <title>{post.frontmatter.title} | Yuxi&apos;s Post</title>
+      </Head>
+      <div className="text-sm breadcrumbs pb-4 sm:pb-8">
+        <ul>
+          <li>
+            <Link href="/blogs" className="link link-hover">
+              Blogs
+            </Link>
+          </li>
+          <li>{post.frontmatter.title}</li>
+        </ul>
+      </div>
+      <div className="prose mx-auto max-w-2xl lg:max-w-5xl">{components}</div>
     </Page>
   )
 }
