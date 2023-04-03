@@ -19,10 +19,11 @@ function Header(props) {
     router: { pathname },
   } = props
 
+  const title = `Yuxi | ${processPathNameToTitle(pathname)}`
   return (
     <div>
       <Head>
-        <title>{`Yuxi | ${processPathNameToTitle(pathname)}`}</title>
+        <title>{title}</title>
         <link
           rel="apple-touch-icon"
           sizes="57x57"
