@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { PostItem } from 'src/types'
+import { getPostPath } from 'src/utils'
 
 export function PostItem({ item }: { item: PostItem }) {
   const { frontmatter, filename } = item
   const { title, description, date } = frontmatter
 
   return (
-    <Link href={`/post/${filename.split('.')[0]}`}>
+    <Link href={`/post/${getPostPath(item)}`}>
       <div className="flex flex-col sm:flex-row">
         <div className="divider divider-vertical sm:divider-horizontal text-zinc-400 mb-0 sm:ml-0 items-start"></div>
         <div className="p-4">
