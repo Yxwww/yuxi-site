@@ -42,7 +42,9 @@ export default function Heading() {
   }, [pathname, setCollapse])
 
   return (
-    <div className={`flex justify-center print:hidden`}>
+    <div
+      className={`flex justify-center print:hidden mx-auto max-w-2xl lg:max-w-5xl`}
+    >
       <div
         className={`flex p-1 justify-start ${
           navCollapse ? 'items-center' : 'items-start'

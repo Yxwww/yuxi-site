@@ -2,6 +2,10 @@ html {
   @apply antialiased bg-gray-100 leading-tight min-h-screen;
 }
 
+body {
+  margin-left: calc(100vw - 100%); /* To prevent scrollbar reflowing.https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/ */
+}
+
 .body {
   @apply font-normal leading-normal select-text text-base;
 }
@@ -13,7 +17,7 @@ html {
 }
 
 h1 {
-  @apply text-4xl;
+  @apply text-4xl font-bold;
 }
 
 h2 {

@@ -2,8 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@heroicons/react': ^2.0.16
-  '@markdoc/markdoc': ^0.1.13
-  '@markdoc/next.js': ^0.1.10
+  '@markdoc/markdoc': ^0.2.2
+  '@markdoc/next.js': ^0.2.2
   '@tailwindcss/typography': ^0.5.9
   '@types/markdown-it': ^12.2.3
   '@types/node': ^18.14.0
@@ -14,14 +14,17 @@ specifiers:
   eslint: ^8.34.0
   eslint-config-next: 13.1.6
   husky: ^7.0.4
+  js-yaml: ^4.1.0
   lint-staged: ^12.5.0
   nanoid: ^4.0.1
   next: ^13.1.6
   postcss: ^8.4.21
   prettier: ^2.8.4
+  prismjs: ^1.29.0
   ramda: ^0.28.0
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-prism: ^4.3.2
   tailwindcss: ^3.2.7
   tsm: ^2.3.0
   typescript: ^4.9.5
@@ -30,14 +33,17 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.16_react@18.2.0
-  '@markdoc/markdoc': 0.1.13_wbq6czl73o2dzdhaehakq6xtsq
-  '@markdoc/next.js': 0.1.10_37ldikvoldfbnnho6ekuin2lnu
+  '@markdoc/markdoc': 0.2.2_pmekkgnqduwlme35zpnqhenc34
+  '@markdoc/next.js': 0.2.2_tieypbyitdip6dylwtj75ugcwu
   daisyui: 2.51.3_gbtt6ss3tbiz4yjtvdr6fbrj44
+  js-yaml: 4.1.0
   nanoid: 4.0.1
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
+  prismjs: 1.29.0
   ramda: 0.28.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-prism: 4.3.2_react@18.2.0
 
 devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
@@ -130,25 +136,32 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@markdoc/markdoc/0.1.13_wbq6czl73o2dzdhaehakq6xtsq:
-    resolution: {integrity: sha512-zUdUpr2U3tf0uBQKr1aAiNDvwtZChAjCw3WPVv4PMKcPjYYlVHE0lizIS3NjChruRPJ2FvVQAI4ceyNpJWobiw==}
+  /@markdoc/markdoc/0.2.2_pmekkgnqduwlme35zpnqhenc34:
+    resolution: {integrity: sha512-0TiD9jmA5h5znN4lxo7HECAu3WieU5g5vUsfByeucrdR/x88hEilpt16EydFyJwJddQ/3w5HQgW7Ovy62r4cyw==}
     engines: {node: '>=14.7.0'}
     peerDependencies:
-      '@types/markdown-it': '*'
       '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
     dependencies:
-      '@types/markdown-it': 12.2.3
       '@types/react': 18.0.28
+      react: 18.2.0
+    optionalDependencies:
+      '@types/markdown-it': 12.2.3
     dev: false
 
-  /@markdoc/next.js/0.1.10_37ldikvoldfbnnho6ekuin2lnu:
-    resolution: {integrity: sha512-ncxQcxDtimRT1h5Xw4VXqLY9OSrOav6hHEkfV6Vq4pKUM3QOsb/RnNo8E1rNIj9hRDH/SvQEQzggTCsQYmAr0g==}
+  /@markdoc/next.js/0.2.2_tieypbyitdip6dylwtj75ugcwu:
+    resolution: {integrity: sha512-qHCwcTwyHOHrvxmUcueL+RREhHJxef9p6MS45CxHIChV9JHBcWOJt9v++T8HCf4iCbCdnIVCcR9OYzOj3Kq7XQ==}
     peerDependencies:
-      '@markdoc/markdoc': ^0.1.4
+      '@markdoc/markdoc': '*'
       next: '*'
       react: '*'
     dependencies:
-      '@markdoc/markdoc': 0.1.13_wbq6czl73o2dzdhaehakq6xtsq
+      '@markdoc/markdoc': 0.2.2_pmekkgnqduwlme35zpnqhenc34
       js-yaml: 4.1.0
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -2599,6 +2612,11 @@ packages:
     hasBin: true
     dev: true
 
+  /prismjs/1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
+    dev: false
+
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -2636,6 +2654,15 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-prism/4.3.2_react@18.2.0:
+    resolution: {integrity: sha512-Z8BzDfWxzhngDtnZFjYj4RgHo7uqiWB4cOCpp//GFEpWbtINbCqHLIpL+q/f8ah5Aokw/uXkBkoLgvYIGgtm4A==}
+    peerDependencies:
+      prop-types: ^15.5.0
+      react: ^15.5.0 || ^16.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
