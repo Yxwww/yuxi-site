@@ -17,7 +17,11 @@ const blurb = [
 
 const contributions = [
   'Maintained and improved 3D data visualization library, enhancing rendering performance and visual presentation',
+  'Significantly enhanced rendering performance by increasing renderable model size capacity from hundreds of MB to several GB, quadrupling the frame rate for large data models from under 10 FPS to over 50 FPS, and reducing the First Input Delay of the 3D application from  minutes to just a few seconds.',
+  'Maintained and developed new features for various data primitives including points, lines, and meshes. Pioneered innovative data representation techniques such as rendering points as disks for visualizing Structural Geology data.',
   'Led a redesign of the frontend UI application to improve user experience, performance, and architecture',
+  'Designed and implemented collaboration features for 3D visualization, including annotation, slide creation, and commenting capabilities.',
+  'Developed customized visualization widgets to enhance user exploration and interaction with visualizations.',
   'Researched and integrated emerging technologies such as SvelteJS, ReactJS, Redux, RxJS, TypeScript, CSS Grid, and Functional/Reactive Programming paradigm, enabling the architecture to scale with team growth',
   'Trained and mentored new team members with onboarding materials and documentation',
 ]

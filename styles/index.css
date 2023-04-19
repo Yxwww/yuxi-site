@@ -3,7 +3,15 @@ html {
 }
 
 body {
-  margin-left: calc(100vw - 100%); /* To prevent scrollbar reflowing.https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/ */
+  margin-left: calc(
+    100vw - 100%
+  ); /* To prevent scrollbar reflowing.https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/ */
+}
+
+@media print {
+  body {
+    margin-left: 0;
+  }
 }
 
 .body {
