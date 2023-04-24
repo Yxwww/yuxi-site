@@ -5,6 +5,7 @@ import { createEducation } from 'src/contents/education'
 import ExperienceContent from 'components/ExperienceContent'
 import ExperienceSection from 'components/ExperienceSection'
 import SocialIcons from 'components/SocialIcons'
+import { DOMAIN, PHONE_NUMBER } from 'constants/index'
 
 function ContactInfo() {
   return (
@@ -15,12 +16,10 @@ function ContactInfo() {
         </a>
       </div>
       <div className="hidden print:block">
-        <a href="https://yuxiwang.dev/resume">
-          Website: https://yuxiwang.dev/resume
-        </a>
+        <a href={`${DOMAIN}/resume`}>Website: {DOMAIN}/resume</a>
       </div>
       <div className="hidden print:block">
-        <a href="rel:1-403-560-6778">Phone: 778-992-0773</a>
+        <a href={`rel:${PHONE_NUMBER}`}>Phone: {PHONE_NUMBER}</a>
       </div>
     </div>
   )
