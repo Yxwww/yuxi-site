@@ -14,6 +14,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { InferGetStaticPropsType } from 'next'
 import { FrontmatterSerialized } from 'src/types'
+import { PROFILE_IMAGE_URL } from 'src/contents/constants'
 
 const config: Config = {
   nodes: {
@@ -70,10 +71,23 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     },
   })
 
+  const {
+    title, description
+  } = post.frontmatter;
+
   return (
     <Page>
       <Head>
-        <title>{`${post.frontmatter.title} |  Yuxi's Blog`}</title>
+        <title>{`${title} |  Yuxi's Blog`}</title>
+        <meta property="og:title" content={title} />
+        <meta
+          property="og:description"
+          content={description}
+        />
+        <meta
+          property="og:image"
+          content={PROFILE_IMAGE_URL}
+        />
       </Head>
       <div className="text-sm breadcrumbs pb-4 sm:pb-8">
         <ul>
@@ -82,7 +96,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
               Blogs
             </Link>
           </li>
-          <li>{post.frontmatter.title}</li>
+          <li>{title}</li>
         </ul>
       </div>
       <div className="prose mx-auto max-w-2xl lg:max-w-5xl">{components}</div>

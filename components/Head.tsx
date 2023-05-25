@@ -3,6 +3,7 @@ import { withRouter } from 'next/router'
 import Head from 'next/head'
 import { pipe, T, identity, equals, cond, always } from 'ramda'
 import { removeFirstChar, captalizeFirstChar } from '../utils/index'
+import { PROFILE_IMAGE_URL } from 'src/contents/constants'
 
 const processPathNameHomeCase = cond([
   [equals('/'), always('/home')],
@@ -24,6 +25,16 @@ function Header(props) {
     <div>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta
+          property="og:description"
+          content="Welcome to my space!"
+        />
+        <meta
+          property="og:image"
+          content={PROFILE_IMAGE_URL}
+        />
+
         <link
           rel="apple-touch-icon"
           sizes="57x57"
