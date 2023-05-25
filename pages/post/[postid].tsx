@@ -73,7 +73,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page>
       <Head>
-        <title>{post.frontmatter.title} | Yuxi&apos;s Post</title>
+        <title>{`${post.frontmatter.title} |  Yuxi's Blog`}</title>
       </Head>
       <div className="text-sm breadcrumbs pb-4 sm:pb-8">
         <ul>
