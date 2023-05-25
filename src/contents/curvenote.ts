@@ -28,7 +28,7 @@ export function createCurvenoteExperience() {
     const uid = generate()
     experience = createExperience(
       uid,
-      'Curvenote',
+      'Curvenote(YC)',
       '',
       THUMBNAILS,
       description,
