@@ -10,8 +10,8 @@ export async function getStaticProps(): Promise<{
   const posts = await getAllPosts()
   const sorted = posts.slice().sort((a, b) => {
     return (
-      new Date(a.frontmatter.date).getTime() -
-      new Date(b.frontmatter.date).getTime()
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
     )
   })
 

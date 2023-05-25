@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { PostItem } from 'src/types'
+import dayjs from 'dayjs'
 import { getPostPath } from 'src/utils'
 
 export function PostItem({ item }: { item: PostItem }) {
@@ -12,7 +13,7 @@ export function PostItem({ item }: { item: PostItem }) {
       <div className="p-4">
         <div className="flex items-start justify-start sm:justify-center sm:w-40 text-sm pr-16 pt-[2px] min-w-">
           <time className="text-zinc-400">
-            {new Date(date).toDateString()}
+            {dayjs(date).format('YYYY, MMM')}
           </time>
         </div>
       </div>
