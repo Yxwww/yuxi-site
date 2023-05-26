@@ -3,7 +3,7 @@ import { PostItem } from 'src/types'
 import dayjs from 'dayjs'
 import { getPostPath } from 'src/utils'
 
-export function PostItem({ item }: { item: PostItem }) {
+export function PostItem({ item, isFirstPostOfMonth: isFirst }: { item: PostItem, isFirstPostOfMonth?: boolean }) {
   const { frontmatter, filename } = item
   const { title, description, date } = frontmatter
 
@@ -12,9 +12,11 @@ export function PostItem({ item }: { item: PostItem }) {
       <div className="divider divider-vertical sm:divider-horizontal text-zinc-400 mb-0 sm:ml-0 items-start shrink-0"></div>
       <div className="p-4">
         <div className="flex items-start justify-start sm:justify-center sm:w-40 text-sm pr-16 pt-[2px] min-w-">
-          <time className="text-zinc-400">
-            {dayjs(date).format('YYYY, MMM')}
-          </time>
+          {isFirst && (
+            <time className="text-zinc-400">
+              {dayjs(date).format('YYYY, MMM')}
+            </time>
+          )}
         </div>
       </div>
       <div className="p-4 hover:bg-base-100 transition-colors cursor-pointer grow max-w-48">

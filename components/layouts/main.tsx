@@ -23,11 +23,10 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`px-2 py-1 bg-base-100 flex-grow text-base-content  ${
-              scroll > 300
-                ? 'fixed md:px-4 top-0 left-0 w-screen z-10'
-                : 'hidden'
-            }`}
+            className={`px-2 py-1 bg-base-100 flex-grow text-base-content  ${scroll > 100
+              ? 'fixed md:px-4 top-0 left-0 w-screen z-10'
+              : 'hidden'
+              }`}
           >
             <Heading />
           </div>

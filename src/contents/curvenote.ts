@@ -9,7 +9,7 @@ const blurb = [
 ]
 
 const contributions = [
-  'Implemented full-stack features including authentication, user workflow, UI programming, and editor functionalities.',
+  'Implemented full-stack features including authentication, user workflow, UI programming, and rich text editor functionalities.',
   'Improved performance, enabling seamless usage of application with larger documents leading to expanded customer reach.',
   'Spearheaded E2E testing and assisted with monorepo migration for efficient code maintenance and testing.',
 ]
