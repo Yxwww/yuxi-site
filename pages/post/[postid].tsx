@@ -14,7 +14,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { InferGetStaticPropsType } from 'next'
 import { FrontmatterSerialized } from 'src/types'
-import { PROFILE_IMAGE_URL } from 'src/contents/constants'
+import { AUTHOR_NAME, PROFILE_IMAGE_URL } from 'src/contents/constants'
+import dayjs from 'dayjs'
 
 const config: Config = {
   nodes: {
@@ -99,7 +100,18 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           <li>{title}</li>
         </ul>
       </div>
-      <div className="prose mx-auto max-w-2xl lg:max-w-5xl">{components}</div>
+      <article className="prose prose-slate mx-auto max-w-2xl lg:max-w-5xl md:prose-lg dark:prose-invert">
+        <>
+          <h1>{post.frontmatter.title}</h1>
+          <div className="flex justify-between text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
+            <time>Date: {dayjs(post.frontmatter.date).format('MMM DD, YYYY')}</time>
+            <span className="italic text-md">written by: {AUTHOR_NAME}</span>
+          </div>
+
+        </>
+
+        {components}
+      </article>
     </Page>
   )
 }
