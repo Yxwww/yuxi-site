@@ -1,11 +1,17 @@
-import Link from 'next/link'
-import { PostItem } from 'src/types'
-import dayjs from 'dayjs'
-import { getPostPath } from 'src/utils'
+import Link from 'next/link';
+import { PostItem } from '@/src/types';
+import dayjs from 'dayjs';
+import { getPostPath } from '@/src/utils';
 
-export function PostItem({ item, isFirstPostOfMonth: isFirst }: { item: PostItem, isFirstPostOfMonth?: boolean }) {
-  const { frontmatter, filename } = item
-  const { title, description, date } = frontmatter
+export function PostItem({
+  item,
+  isFirstPostOfMonth: isFirst,
+}: {
+  item: PostItem;
+  isFirstPostOfMonth?: boolean;
+}) {
+  const { frontmatter, filename } = item;
+  const { title, description, published } = frontmatter;
 
   return (
     <div className="flex flex-col sm:flex-row">
@@ -14,7 +20,7 @@ export function PostItem({ item, isFirstPostOfMonth: isFirst }: { item: PostItem
         <div className="flex items-start justify-start sm:justify-center sm:w-40 text-sm pr-16 pt-[2px] min-w-">
           {isFirst && (
             <time className="text-zinc-400">
-              {dayjs(date).format('YYYY, MMM')}
+              {dayjs(published).format('YYYY, MMM')}
             </time>
           )}
         </div>
@@ -28,5 +34,5 @@ export function PostItem({ item, isFirstPostOfMonth: isFirst }: { item: PostItem
         </Link>
       </div>
     </div>
-  )
+  );
 }

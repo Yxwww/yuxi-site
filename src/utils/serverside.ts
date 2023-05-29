@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import Markdoc from '@markdoc/markdoc'
 import yaml from 'js-yaml' // or 'toml', etc.
 import path from 'path'
-import { PostItemList } from 'src/types'
+import { FrontmatterParsed, FrontmatterSerialized, PostItemList } from 'src/types'
 
 export async function getAllPosts(): Promise<PostItemList> {
   const postsDirectory = path.join(process.cwd(), 'posts')
@@ -30,4 +30,14 @@ export async function getAllPosts(): Promise<PostItemList> {
     })
   )
   return posts
+}
+
+export function processFrontmatter(frontmatter: FrontmatterParsed) {
+  const { published, updated, ...rest } = frontmatter;
+  const result: FrontmatterSerialized = { ...rest, published: '' };
+  result.published = published.toString();
+  if (updated) {
+    result.updated = updated.toString();
+  }
+  return result;
 }
