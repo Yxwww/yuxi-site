@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Page>
       <div className="container pb-4">
-        <div className="max-w-lg">
+        <div className="max-w-lg font-mono">
           <p className="m-1">
             Hi{' '}
             <span role="img" aria-label="wave">

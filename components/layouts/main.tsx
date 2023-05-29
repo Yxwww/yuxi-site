@@ -18,7 +18,7 @@ export const Page = ({
     >
       <Head fonts={fonts} />
       <div className="min-h-screen max-w-6xl transition-colors mx-auto bg-white dark:bg-zinc-800   flex flex-col">
-        <main className="px-2 sm:px-4 pt-4 print:pt-0 flex-grow md:px-4">
+        <main className="px-2 sm:px-4 pt-4 print:pt-0 flex-grow">
           <div>
             <Heading />
           </div>

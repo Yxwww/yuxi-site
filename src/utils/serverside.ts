@@ -20,9 +20,11 @@ export async function getAllPosts(): Promise<PostItemList> {
         ? yaml.load(ast.attributes.frontmatter)
         : {}
 
+      const { title, description, published, date } = frontmatter;
+
       return {
         filename,
-        frontmatter: { ...frontmatter, date: frontmatter.date.toString() },
+        frontmatter: { title, description, published: published?.toString() || date?.toString() },
         content: fileContents,
       }
     })

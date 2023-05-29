@@ -48,9 +48,9 @@ module.exports = {
       '7xl': '5rem',
     },
     fontFamily: {
-      mono: ['Monolisa', ...defaultTheme.fontFamily.mono],
-      sans: ['Helvetica', 'Open Sans', ...defaultTheme.fontFamily.sans],
-      article: ['Lora', ...defaultTheme.fontFamily.serif],
+      mono: ['var(--font-roboto-mono)', ...defaultTheme.fontFamily.mono],
+      sans: ['Helvetica', 'var(--font-open-sans)', ...defaultTheme.fontFamily.sans],
+      article: ['var(--font-roboto-slab)', ...defaultTheme.fontFamily.serif],
     },
     extend: {
       screens: {

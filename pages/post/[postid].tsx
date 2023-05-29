@@ -17,6 +17,7 @@ import { FrontmatterSerialized } from 'src/types'
 import { AUTHOR_NAME, PROFILE_IMAGE_URL } from 'src/contents/constants'
 import dayjs from 'dayjs'
 
+
 const config: Config = {
   nodes: {
     heading,
@@ -56,7 +57,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: {
-        frontmatter: { ...frontmatter, date: frontmatter.date.toString() },
+        frontmatter: { ...frontmatter, published: frontmatter.published.toString(), updated: frontmatter.updated.toString(), },
         content: fileContents,
       } as PostPagePropType,
     },
@@ -100,12 +101,12 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           <li>{title}</li>
         </ul>
       </div>
-      <article className="prose prose-slate mx-auto max-w-2xl lg:max-w-5xl md:prose-lg dark:prose-invert">
+      <article className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl md:prose-lg dark:prose-invert`}>
         <>
           <h1>{post.frontmatter.title}</h1>
-          <div className="flex justify-between text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
-            <time>Date: {dayjs(post.frontmatter.date).format('MMM DD, YYYY')}</time>
-            <span className="italic text-md">written by: {AUTHOR_NAME}</span>
+          <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
+            <time>Published: {dayjs(post.frontmatter.published).format('MMM DD, YYYY')}</time>
+            <span className="italic">written by: {AUTHOR_NAME}</span>
           </div>
 
         </>

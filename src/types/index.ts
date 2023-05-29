@@ -4,11 +4,13 @@ interface Frontmatter {
 }
 
 export interface FrontmatterSerialized extends Frontmatter {
-  date: string
+  published: string
+  updated?: string
 }
 
 export interface FrontmatterParsed extends Frontmatter {
-  date: Date
+  published: Date
+  updated?: Date
 }
 
 export interface PostItem {

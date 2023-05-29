@@ -1,5 +1,4 @@
 @tailwind base;
-@import './fonts/fonts.css';
-@import './fonts/opensans.css';
+/* @import './fonts/fonts.css'; not using monolisa for now */
 @tailwind components;
 @tailwind utilities;
