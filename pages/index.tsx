@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import { Page } from '../components/layouts/main'
-import SocialIcons from '@/components/SocialIcons'
+import React from 'react';
+import Link from 'next/link';
+import { Page } from '@/components/layouts/main';
+import SocialIcons from '@/components/SocialIcons';
 
 export default function Home() {
   return (
@@ -27,5 +27,5 @@ export default function Home() {
         </div>
       </div>
     </Page>
-  )
+  );
 }

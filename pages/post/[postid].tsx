@@ -72,7 +72,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     },
   });
 
-  const { title, description } = post.frontmatter;
+  const { title, description, published } = post.frontmatter;
 
   return (
     <Page>
@@ -93,16 +93,13 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         </ul>
       </div>
       <article
-        className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl md:prose-lg dark:prose-invert`}
+        className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl md:prose-lg lg:prose-xl dark:prose-invert`}
       >
         <>
           <h1>{post.frontmatter.title}</h1>
           <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
-            <time>
-              Published:{' '}
-              {dayjs(post.frontmatter.published).format('MMM DD, YYYY')}
-            </time>
-            <span className="italic">written by: {AUTHOR_NAME}</span>
+            <time>Published: {dayjs(published).format('MMM DD, YYYY')}</time>
+            <span className="italic">Written by: {AUTHOR_NAME}</span>
           </div>
         </>
         {components}
