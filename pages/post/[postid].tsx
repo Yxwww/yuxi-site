@@ -17,6 +17,11 @@ import { FrontmatterParsed, FrontmatterSerialized } from 'src/types';
 import { AUTHOR_NAME, PROFILE_IMAGE_URL } from 'src/contents/constants';
 import dayjs from 'dayjs';
 import { processFrontmatter } from 'src/utils/serverside';
+import {
+  META_DESCRIPTION_KEY,
+  META_IMAGE_KEY,
+  META_TITLE_KEY,
+} from '@/constants';
 
 const config: Config = {
   nodes: {
@@ -72,15 +77,23 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     },
   });
 
-  const { title, description, published } = post.frontmatter;
+  const { title, description, published, updated } = post.frontmatter;
 
   return (
     <Page>
       <Head>
         <title>{`${title} |  Yuxi's Blog`}</title>
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={PROFILE_IMAGE_URL} />
+        <meta property="og:title" content={title} key={META_TITLE_KEY} />
+        <meta
+          property="og:description"
+          content={description}
+          key={META_DESCRIPTION_KEY}
+        />
+        <meta
+          property="og:image"
+          content={PROFILE_IMAGE_URL}
+          key={META_IMAGE_KEY}
+        />
       </Head>
       <div className="text-sm breadcrumbs pb-4 sm:pb-8">
         <ul>
@@ -98,7 +111,12 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         <>
           <h1>{post.frontmatter.title}</h1>
           <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
-            <time>Published: {dayjs(published).format('MMM DD, YYYY')}</time>
+            {updated ? (
+              <time>Updated: {dayjs(updated).format('MMM DD, YYYY')}</time>
+            ) : (
+              <time>Published: {dayjs(published).format('MMM DD, YYYY')}</time>
+            )}
+
             <span className="italic">Written by: {AUTHOR_NAME}</span>
           </div>
         </>

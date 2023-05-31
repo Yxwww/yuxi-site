@@ -1,40 +1,46 @@
-import React from 'react'
-import { withRouter } from 'next/router'
-import Head from 'next/head'
-import { pipe, T, identity, equals, cond, always } from 'ramda'
-import { removeFirstChar, captalizeFirstChar } from '../utils/index'
-import { PROFILE_IMAGE_URL } from 'src/contents/constants'
+import React from 'react';
+import { withRouter } from 'next/router';
+import Head from 'next/head';
+import { pipe, T, identity, equals, cond, always } from 'ramda';
+import { removeFirstChar, captalizeFirstChar } from '../utils/index';
+import { PROFILE_IMAGE_URL } from 'src/contents/constants';
+import {
+  META_DESCRIPTION_KEY,
+  META_IMAGE_KEY,
+  META_TITLE_KEY,
+} from '@/constants';
 
 const processPathNameHomeCase = cond([
   [equals('/'), always('/home')],
   [T, identity],
-])
+]);
 const processPathNameToTitle = pipe(
   processPathNameHomeCase,
   removeFirstChar,
   captalizeFirstChar
-)
+);
 
 function Header(props) {
   const {
     router: { pathname },
-  } = props
+  } = props;
 
-  const title = `Yuxi | ${processPathNameToTitle(pathname)}`
+  const title = `Yuxi | ${processPathNameToTitle(pathname)}`;
   return (
     <div>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={title} key={META_TITLE_KEY} />
         <meta
           property="og:description"
           content="Welcome to my space!"
+          key={META_DESCRIPTION_KEY}
         />
         <meta
           property="og:image"
           content={PROFILE_IMAGE_URL}
+          key={META_IMAGE_KEY}
         />
-
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -115,6 +121,6 @@ function Header(props) {
         )
       </Head>
     </div>
-  )
+  );
 }
-export default withRouter(Header)
+export default withRouter(Header);
