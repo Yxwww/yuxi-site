@@ -85,7 +85,7 @@ export default function AllProjects() {
         title="rds-dataviz"
         description="
             rds-dataviz is a 2D data visualization library for visualizing map-based data. My responsibility was to design and implement the library to satisfy the performance and versatility requirements.            "
-        techStack={['d3', 'Data Visualization', 'Library Design']}
+        techStack={['D3.js', 'Data Visualization', 'Library Design']}
       ></PostLink>
 
       <PostLink
@@ -95,7 +95,11 @@ export default function AllProjects() {
         description="
               ERWear is my undergraduate research project. My responsibility was to design a system leveraging glass and wrist-based wearable technology to enhance emergency responders' situational awareness.
             "
-        techStack={['Wearable', 'Dashboard', 'Academic']}
+        techStack={[
+          'Wearable Programming',
+          'Dashboard UI',
+          'Academic Research',
+        ]}
       ></PostLink>
 
       <PostLink
@@ -108,7 +112,7 @@ export default function AllProjects() {
         techStack={[
           'Node',
           'Socket.IO',
-          'JS',
+          'Canvas API',
           'C#',
           'MS Kinect',
           'Google Tango',
