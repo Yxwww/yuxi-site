@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import useScrollPosition from 'utils/hooks'
-import { Footer } from '../footer'
-import Head from '../Head'
-import Heading from '../heading/Heading'
+import React, { useEffect } from 'react';
+import useScrollPosition from '@/utils/hooks/useScrollPosition';
+import { Footer } from '../footer';
+import Head from '../Head';
+import Heading from '../heading/Heading';
 
-const DEFAULT_FONTS = ['Inter']
+const DEFAULT_FONTS = ['Inter'];
 export const Page = ({
   children = null,
   className = '',
   fonts = DEFAULT_FONTS,
 }) => {
-  const scroll = useScrollPosition()
+  const scroll = useScrollPosition();
   return (
     <div
       id="app"
@@ -23,10 +23,11 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`px-2 py-1 bg-base-100 flex-grow text-base-content  ${scroll > 100
-              ? 'fixed md:px-4 top-0 left-0 w-screen z-10'
-              : 'hidden'
-              }`}
+            className={`px-2 py-1 bg-base-100 flex-grow text-base-content  ${
+              scroll > 100
+                ? 'fixed md:px-4 top-0 left-0 w-screen z-10'
+                : 'hidden'
+            }`}
           >
             <Heading />
           </div>
@@ -39,5 +40,5 @@ export const Page = ({
         <Footer />
       </div>
     </div>
-  )
-}
+  );
+};

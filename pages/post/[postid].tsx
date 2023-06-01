@@ -1,6 +1,6 @@
 // import fetch from 'isomorphic-unfetch'
 import Markdoc, { Config } from '@markdoc/markdoc';
-import React from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import path from 'path';
 import yaml from 'js-yaml'; // or 'toml', etc.
 import { promises as fs } from 'fs';
@@ -24,12 +24,22 @@ import {
   META_OG_TITLE_KEY,
   META_TITLE_KEY,
 } from '@/constants';
+import useScript, { UseScriptsAttributes } from '@/utils/hooks/useScript';
+import useEl from '@/utils/hooks/useEl';
 
 const config: Config = {
   nodes: {
     heading,
     fence,
   },
+};
+const UTTERANCES_SCRIPT_SETUP: UseScriptsAttributes = {
+  src: 'https://utteranc.es/client.js',
+  crossOrigin: 'anonymous',
+  repo: 'Yxwww/yuxi-site',
+  'issue-term': 'pathname',
+  theme: 'preferred-color-scheme',
+  async: true,
 };
 
 export async function getStaticPaths() {
@@ -78,8 +88,15 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
       Fence,
     },
   });
+  const [renderComments, setRenderComments] = React.useState(false);
+  useEffect(() => {
+    setRenderComments(true);
+  }, []);
 
   const { title, description, published, updated } = post.frontmatter;
+  const [el, ref] = useEl();
+
+  useScript(renderComments ? el : null, UTTERANCES_SCRIPT_SETUP);
 
   return (
     <Page>
@@ -97,7 +114,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           key={META_OG_IMAGE_KEY}
         />
       </Head>
-      <div className="text-sm breadcrumbs pb-4 sm:pb-8">
+      <div className="text-sm breadcrumbs pb-4 sm:pb-8 truncate">
         <ul>
           <li>
             <Link href="/blogs" className="link link-hover">
@@ -107,7 +124,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           <li>{title}</li>
         </ul>
       </div>
-      <article
+      <div
         className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl dark:prose-invert`}
       >
         <>
@@ -123,7 +140,11 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           </div>
         </>
         {components}
-      </article>
+
+        <hr />
+        <h2>Comments ☕️</h2>
+        <div ref={ref}></div>
+      </div>
     </Page>
   );
 }

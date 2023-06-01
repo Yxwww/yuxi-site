@@ -1,45 +1,45 @@
-import { useEffect, useState } from 'react'
-import Nav from '../Nav'
-import { map } from 'ramda'
-import { HOME_LABEL } from 'constants/index'
-import Image from '../Image'
-import ProfilePicture from 'public/static/img/kinect-infra-red.jpeg'
-import Link from 'next/link'
-import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn'
-import NavToggle from './NavToggle'
-import { useLocalStorage } from 'utils/hooks'
-import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react';
+import Nav from '../Nav';
+import { map } from 'ramda';
+import { HOME_LABEL } from 'constants/index';
+import Image from '../Image';
+import ProfilePicture from 'public/static/img/kinect-infra-red.jpeg';
+import Link from 'next/link';
+import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn';
+import NavToggle from './NavToggle';
+import { useLocalStorage } from '@/utils/hooks/useScrollPosition';
+import { useRouter } from 'next/router';
 
 export interface NavItem {
-  url: string
-  label: string
+  url: string;
+  label: string;
 }
-export type NavItems = ReadonlyArray<NavItem>
+export type NavItems = ReadonlyArray<NavItem>;
 
 const createNavItems: (args: [string, string][]) => NavItems = map(
   ([url, label]) => ({
     url,
     label,
   })
-)
+);
 
 const NAV_ITEMS_TUPLES: [string, string][] = [
   ['/', HOME_LABEL],
   ['/resume', 'resume'],
   ['/projects', 'projects'],
   ['/blogs', 'blogs'],
-]
-const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES)
+];
+const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES);
 
 export default function Heading() {
   const [navCollapse, setCollapse] = useLocalStorage(
     'yuxi-site-nav-collapsed',
     true
-  )
-  const { pathname } = useRouter()
+  );
+  const { pathname } = useRouter();
   useEffect(() => {
-    setCollapse(true)
-  }, [pathname, setCollapse])
+    setCollapse(true);
+  }, [pathname, setCollapse]);
 
   return (
     <div
@@ -72,7 +72,7 @@ export default function Heading() {
           <NavToggle
             active={navCollapse}
             onClick={() => {
-              setCollapse((v) => !v)
+              setCollapse((v) => !v);
             }}
           />
         </div>
@@ -81,5 +81,5 @@ export default function Heading() {
         </div>
       </div>
     </div>
-  )
+  );
 }

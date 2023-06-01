@@ -2,3 +2,13 @@
 /* @import './fonts/fonts.css'; not using monolisa for now */
 @tailwind components;
 @tailwind utilities;
+
+article pre {
+  /* TODO: this should be handled with markdoc. Altho, using css variable is good enough for now. */
+  font-family: var(--font-roboto-mono) !important;
+  font-size: 0.95rem !important;
+}
+
+.utterances {
+  @apply sm:mx-2 mx-0 my-4;
+}

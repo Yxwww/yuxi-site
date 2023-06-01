@@ -1,15 +1,15 @@
-import { useEffect } from 'react'
-import { useLocalStorage } from 'utils/hooks'
-import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
+import { useEffect } from 'react';
+import { useLocalStorage } from '@/utils/hooks/useScrollPosition';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 
-export type ThemePreference = 'light' | 'dark' | 'none'
-const SITE_LOCAL_SOTRAGE_KEY = 'yuxi-site-theme' //
+export type ThemePreference = 'light' | 'dark' | 'none';
+const SITE_LOCAL_SOTRAGE_KEY = 'yuxi-site-theme'; //
 
 export function ThemePrefToggleBtn() {
   const [theme, setTheme] = useLocalStorage<ThemePreference>(
     SITE_LOCAL_SOTRAGE_KEY,
     'none'
-  )
+  );
 
   useEffect(() => {
     if (
@@ -17,13 +17,13 @@ export function ThemePrefToggleBtn() {
       (!(SITE_LOCAL_SOTRAGE_KEY in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      document.documentElement.classList.add('dark')
-      document.documentElement.setAttribute('data-theme', 'halloween') // for daisy
+      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'halloween'); // for daisy
     } else {
-      document.documentElement.classList.remove('dark')
-      document.documentElement.setAttribute('data-theme', 'garden')
+      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'garden');
     }
-  }, [theme])
+  }, [theme]);
 
   // localStorage state causes hydration miss match. Suppress warning for now.
   return (
@@ -33,11 +33,11 @@ export function ThemePrefToggleBtn() {
       onClick={() => {
         setTheme((theme) => {
           if (theme === 'dark') {
-            return 'light'
+            return 'light';
           } else {
-            return 'dark'
+            return 'dark';
           }
-        })
+        });
       }}
     >
       {theme === 'dark' ? (
@@ -46,5 +46,5 @@ export function ThemePrefToggleBtn() {
         <SunIcon className="block h-5 w-5" />
       )}
     </button>
-  )
+  );
 }

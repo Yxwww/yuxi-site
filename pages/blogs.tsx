@@ -30,7 +30,7 @@ export default function Blogs({ posts }) {
       <h1>Blogs</h1>
       <p className="py-4 max-w-2xl">
         I write stuff here sometimes! None of the posts are final. We all just
-        learning as we go aren&apos;t we. 😉
+        learning as we go aren&apos;t we. ;)
       </p>
       <PostList posts={posts} />
     </Page>
