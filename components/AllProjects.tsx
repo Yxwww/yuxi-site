@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from './Image'
+import React from 'react';
+import Link from 'next/link';
+import Image from './Image';
 
 function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
   return (
@@ -22,12 +22,12 @@ function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
               <div key={`${id}-${skill}`} className="badge badge-outline">
                 {skill}
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
+  );
 }
 // const PostLink = ({ id, imgUrl, title, description = '', techStack = [] }) => (
 //   <div className="inline-block p-2 tablet:m-0 align-top">
@@ -67,8 +67,8 @@ export default function AllProjects() {
         id="curvenote"
         imgUrl="/static/img/projects/curvenote.jpeg"
         title="Curvenote"
-        description="Curvenote is a web application focued on revolutionizing technical writing. I worked on delivering innovative features and optimized architecture for efficient maintenance and functionality."
-        techStack={['ProseMirror', 'React', 'Full Stack', 'Monorepo']}
+        description="Curvenote is a web application aim to revolutionize technical writing. I worked on delivering innovative features and optimized architecture for efficient maintenance and functionality."
+        techStack={['Rich Text Editing', 'React', 'Full Stack', 'Monorepo']}
       ></PostLink>
 
       <PostLink
@@ -115,5 +115,5 @@ export default function AllProjects() {
         ]}
       ></PostLink>
     </div>
-  )
+  );
 }

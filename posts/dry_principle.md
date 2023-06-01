@@ -1,19 +1,19 @@
 ---
 title: DRY Principle and Product Driven Architecture Design
-description: Discuss the effectiveness of DRY and principle and how product driven architecture design
+description: Document my thougths on DRY principle and how I achieve it
 published: 2023-05-25
-updated: 2023-05-26
+updated: 2023-05-31
 ---
 
 > Every piece of knowledge must have a single, unambiguous, authoritative representation within a system
 
-This is the DRY(Don't Repeat Yourself) Principle highlighted in the book _The Pragmatic Programmer_. I implement this through `abstraction`, in forms such as components, functions, or scripts. However, achieving DRY principle requires understanding of its nuances. My strategy involves a blend of PDAD(Product Driven Architecture Design) principle, a term I use so 🐻 with me, and the WET(Write Everything Twice) principle.
+This is the DRY(Don't Repeat Yourself) Principle highlighted in the book _The Pragmatic Programmer_. In my day to day programming, I implement DRY principle through `abstraction`, in forms such as components, functions, or scripts. However, the process requires understanding of its nuances. My strategy involves a blend of PDAD(Product Driven Architecture Design) principle, a term I use so 🐻 with me, and the WET(Write Everything Twice) principle.
 
 The process includes:
 
 1. Collaborating with product, UX and CS teams to devise sophisiticated solutions to user problems
 2. Designing the tech architecture based on principles such as DRY, and appropirate design patterns, along with product requirements
-3. Apply WET principle during development
+3. Apply WET principle during development. Abstract when you are confident the abstraction will be reused.
 4. Test solution and iterate with product, UX, and CS teams
 
 ## The challenge

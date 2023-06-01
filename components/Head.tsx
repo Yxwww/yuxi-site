@@ -5,8 +5,9 @@ import { pipe, T, identity, equals, cond, always } from 'ramda';
 import { removeFirstChar, captalizeFirstChar } from '../utils/index';
 import { PROFILE_IMAGE_URL } from 'src/contents/constants';
 import {
-  META_DESCRIPTION_KEY,
-  META_IMAGE_KEY,
+  META_OG_DESCRIPTION_KEY,
+  META_OG_IMAGE_KEY,
+  META_OG_TITLE_KEY,
   META_TITLE_KEY,
 } from '@/constants';
 
@@ -20,6 +21,8 @@ const processPathNameToTitle = pipe(
   captalizeFirstChar
 );
 
+// TODO: get title from frontmatter if blogs or normal title for other pages
+function getTitle() {}
 function Header(props) {
   const {
     router: { pathname },
@@ -29,17 +32,17 @@ function Header(props) {
   return (
     <div>
       <Head>
-        <title>{title}</title>
-        <meta property="og:title" content={title} key={META_TITLE_KEY} />
+        <title key={META_TITLE_KEY}>{title}</title>
+        <meta property="og:title" content={title} key={META_OG_TITLE_KEY} />
         <meta
           property="og:description"
           content="Welcome to my space!"
-          key={META_DESCRIPTION_KEY}
+          key={META_OG_DESCRIPTION_KEY}
         />
         <meta
           property="og:image"
           content={PROFILE_IMAGE_URL}
-          key={META_IMAGE_KEY}
+          key={META_OG_IMAGE_KEY}
         />
         <link
           rel="apple-touch-icon"

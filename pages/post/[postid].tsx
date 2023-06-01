@@ -7,6 +7,7 @@ import { promises as fs } from 'fs';
 import { Page } from '../../components/layouts/main';
 import { heading } from '@/markdoc/schema/Heading';
 import 'prismjs';
+import 'prismjs/components/prism-jsx';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import { Fence } from '@/components/markdoc/Fence';
 import { fence } from '@/markdoc/schema/Fence';
@@ -18,8 +19,9 @@ import { AUTHOR_NAME, PROFILE_IMAGE_URL } from 'src/contents/constants';
 import dayjs from 'dayjs';
 import { processFrontmatter } from 'src/utils/serverside';
 import {
-  META_DESCRIPTION_KEY,
-  META_IMAGE_KEY,
+  META_OG_DESCRIPTION_KEY,
+  META_OG_IMAGE_KEY,
+  META_OG_TITLE_KEY,
   META_TITLE_KEY,
 } from '@/constants';
 
@@ -82,17 +84,17 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page>
       <Head>
-        <title>{`${title} |  Yuxi's Blog`}</title>
-        <meta property="og:title" content={title} key={META_TITLE_KEY} />
+        <title key={META_TITLE_KEY}>{`${title} |  Yuxi's Blog`}</title>
+        <meta property="og:title" content={title} key={META_OG_TITLE_KEY} />
         <meta
           property="og:description"
           content={description}
-          key={META_DESCRIPTION_KEY}
+          key={META_OG_DESCRIPTION_KEY}
         />
         <meta
           property="og:image"
           content={PROFILE_IMAGE_URL}
-          key={META_IMAGE_KEY}
+          key={META_OG_IMAGE_KEY}
         />
       </Head>
       <div className="text-sm breadcrumbs pb-4 sm:pb-8">
