@@ -22,7 +22,6 @@ const processPathNameToTitle = pipe(
 );
 
 // TODO: get title from frontmatter if blogs or normal title for other pages
-function getTitle() {}
 function Header(props) {
   const {
     router: { pathname },
