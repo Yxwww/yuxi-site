@@ -5,47 +5,52 @@ import path from 'path';
 import {
   FrontmatterParsed,
   FrontmatterSerialized,
+  PostItem,
   PostItemList,
 } from 'src/types';
+import { T, always, cond, evolve, is } from 'ramda';
 
 export async function getAllPosts(): Promise<PostItemList> {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filenames = await fs.readdir(postsDirectory);
 
-  const posts = await Promise.all(
-    filenames.map(async (filename) => {
-      const filePath = path.join(postsDirectory, filename);
-      const fileContents = await fs.readFile(filePath, 'utf8');
+  const posts = (
+    await Promise.all(
+      filenames.map(async (filename) => {
+        const filePath = path.join(postsDirectory, filename);
+        const fileContents = await fs.readFile(filePath, 'utf8');
 
-      // Generally you would parse/transform the contents
-      // For example you can transform markdown to HTML here
-      const ast = Markdoc.parse(fileContents);
-      const frontmatter = ast.attributes.frontmatter
-        ? yaml.load(ast.attributes.frontmatter)
-        : {};
+        // Generally you would parse/transform the contents
+        // For example you can transform markdown to HTML here
+        const ast = Markdoc.parse(fileContents);
+        const frontmatter = ast.attributes.frontmatter
+          ? yaml.load(ast.attributes.frontmatter)
+          : {};
 
-      const { title, description, published, date } = frontmatter;
-
-      return {
-        filename,
-        frontmatter: {
-          title,
-          description,
-          published: published?.toString() || date?.toString(),
-        },
-        content: fileContents,
-      };
-    })
-  );
+        return {
+          filename,
+          frontmatter: processFM(frontmatter),
+          content: fileContents,
+        } as PostItem;
+      })
+    )
+  ).filter((p) => !!p.frontmatter.published);
   return posts;
 }
 
+function processDate(date: Date) {
+  return date.toDateString();
+}
+const processPublished = cond([
+  [is(Object), processDate],
+  [T, always('')],
+]);
+
+const processFM = evolve({
+  published: processPublished,
+  updated: processDate,
+});
+
 export function processFrontmatter(frontmatter: FrontmatterParsed) {
-  const { published, updated, ...rest } = frontmatter;
-  const result: FrontmatterSerialized = { ...rest, published: '' };
-  result.published = published.toString();
-  if (updated) {
-    result.updated = updated.toString();
-  }
-  return result;
+  return processFM(frontmatter) as FrontmatterSerialized;
 }

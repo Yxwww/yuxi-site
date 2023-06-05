@@ -1,8 +1,6 @@
 import React from 'react';
-import { withRouter } from 'next/router';
+import { useRouter, withRouter } from 'next/router';
 import Head from 'next/head';
-import { pipe, T, identity, equals, cond, always } from 'ramda';
-import { removeFirstChar, captalizeFirstChar } from '../utils/index';
 import { PROFILE_IMAGE_URL } from 'src/contents/constants';
 import {
   META_OG_DESCRIPTION_KEY,
@@ -10,24 +8,13 @@ import {
   META_OG_TITLE_KEY,
   META_TITLE_KEY,
 } from '@/constants';
+import { usePage } from '@/components/contexts/page';
 
-const processPathNameHomeCase = cond([
-  [equals('/'), always('/home')],
-  [T, identity],
-]);
-const processPathNameToTitle = pipe(
-  processPathNameHomeCase,
-  removeFirstChar,
-  captalizeFirstChar
-);
-
-// TODO: get title from frontmatter if blogs or normal title for other pages
 function Header(props) {
   const {
-    router: { pathname },
-  } = props;
+    pageContext: { title, description, image, tags },
+  } = usePage();
 
-  const title = `Yuxi | ${processPathNameToTitle(pathname)}`;
   return (
     <div>
       <Head>
@@ -43,6 +30,7 @@ function Header(props) {
           content={PROFILE_IMAGE_URL}
           key={META_OG_IMAGE_KEY}
         />
+        <meta name="keywords" content={tags.join(',')} />
         <link
           rel="apple-touch-icon"
           sizes="57x57"

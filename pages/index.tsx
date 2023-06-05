@@ -20,9 +20,19 @@ export default function Home() {
             <SocialIcons />
           </div>
           <p className="m-1">
-            Here are my <Link href="/projects">projects</Link>,{' '}
-            <Link href="/blogs">blogs</Link>, and updated{' '}
-            <Link href="/resume">resume</Link>.
+            Here are my{' '}
+            <Link className="link" href="/projects">
+              projects
+            </Link>
+            ,{' '}
+            <Link className="link" href="/blogs">
+              blogs
+            </Link>
+            , and updated{' '}
+            <Link className="link" href="/resume">
+              resume
+            </Link>
+            .
           </p>
         </div>
       </div>

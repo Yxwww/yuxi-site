@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-article pre {
+body article pre {
   /* TODO: this should be handled with markdoc. Altho, using css variable is good enough for now. */
   font-family: var(--font-roboto-mono) !important;
   font-size: 0.95rem !important;

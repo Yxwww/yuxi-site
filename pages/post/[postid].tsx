@@ -8,6 +8,7 @@ import { Page } from '../../components/layouts/main';
 import { heading } from '@/markdoc/schema/Heading';
 import 'prismjs';
 import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-typescript';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import { Fence } from '@/components/markdoc/Fence';
 import { fence } from '@/markdoc/schema/Fence';
@@ -26,6 +27,7 @@ import {
 } from '@/constants';
 import useScript, { UseScriptsAttributes } from '@/utils/hooks/useScript';
 import useEl from '@/utils/hooks/useEl';
+import { usePage } from '@/components/contexts/page';
 
 const config: Config = {
   nodes: {
@@ -62,6 +64,7 @@ interface PostPagePropType {
   frontmatter: FrontmatterSerialized;
   content: string;
 }
+
 export async function getStaticProps({ params }) {
   const filePath = path.join(postsDirectory, params.postid);
   const fileContents = await fs.readFile(`${filePath}.md`, 'utf8');
@@ -82,6 +85,7 @@ export async function getStaticProps({ params }) {
 
 function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const ast = Markdoc.parse(post.content);
+  const { setPostContext } = usePage();
   const content = Markdoc.transform(ast, config);
   const components = Markdoc.renderers.react(content, React, {
     components: {
@@ -93,10 +97,17 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     setRenderComments(true);
   }, []);
 
-  const { title, description, published, updated } = post.frontmatter;
+  const { title, description, published, updated, tags } = post.frontmatter;
   const [el, ref] = useEl();
 
   useScript(renderComments ? el : null, UTTERANCES_SCRIPT_SETUP);
+  useEffect(() => {
+    setPostContext({
+      title,
+      description,
+      tags: tags ? tags.split(',').map((v) => v.trim()) : [],
+    });
+  }, [title, description, published, updated, tags, setPostContext]);
 
   return (
     <Page>

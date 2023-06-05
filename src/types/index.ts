@@ -1,22 +1,23 @@
 interface Frontmatter {
-  title: string
-  description: string
+  title: string;
+  description: string;
+  tags?: string;
 }
 
 export interface FrontmatterSerialized extends Frontmatter {
-  published: string
-  updated?: string
+  published: string;
+  updated?: string;
 }
 
 export interface FrontmatterParsed extends Frontmatter {
-  published: Date
-  updated?: Date
+  published: Date;
+  updated?: Date;
 }
 
 export interface PostItem {
-  filename: string
-  frontmatter: FrontmatterSerialized
-  content: string
+  filename: string;
+  frontmatter: FrontmatterSerialized;
+  content: string;
 }
 
-export type PostItemList = ReadonlyArray<PostItem>
+export type PostItemList = ReadonlyArray<PostItem>;

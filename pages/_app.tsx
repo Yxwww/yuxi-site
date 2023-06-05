@@ -3,6 +3,7 @@ import App from 'next/app';
 import '../styles/global.css';
 import '../styles/index.css';
 import { Open_Sans, Roboto_Slab, Roboto_Mono } from '@next/font/google';
+import { PageProvider } from '@/components/contexts/page';
 
 const opensansFont = Open_Sans({
   subsets: ['latin'],
@@ -22,11 +23,13 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <div
-        className={`${robotoSlab.variable} ${robotoMonoFont.variable} ${opensansFont.variable} font-sans sm:px-2 body`}
-      >
-        <Component {...pageProps} />
-      </div>
+      <PageProvider>
+        <div
+          className={`${robotoSlab.variable} ${robotoMonoFont.variable} ${opensansFont.variable} font-sans sm:px-2 body`}
+        >
+          <Component {...pageProps} />
+        </div>
+      </PageProvider>
     );
   }
 }
