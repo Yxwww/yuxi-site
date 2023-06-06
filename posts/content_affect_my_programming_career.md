@@ -1,5 +1,5 @@
 ---
-title: The Programming Repository - My Personal Compendium
+title: My Programming Conpendium
 description: Personal Collection of Programming Content such as books, videos, or podcasts.
 published: 2023-06-06
 tags: JavaScript, Programming, History
