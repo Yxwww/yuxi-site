@@ -2,7 +2,8 @@
 title: My Programming Conpendium
 description: Personal Collection of Programming Content such as books, videos, or podcasts.
 published: 2023-06-06
-tags: JavaScript, Programming, History
+tags: Programming, History, JavaScript
+image: compendium-pixel.png
 ---
 
 ## The Past Present & Future of JavaScript - Brendan Eich (2016)

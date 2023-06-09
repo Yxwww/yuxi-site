@@ -29,9 +29,21 @@ The best thing about learning Redux was understanding the principles that came w
 
 ### Single data flow
 
-This principle single-handedly helped me get some complex logic right, especially when maintaining relationships across different parts of my code.
+This principle has single-handedly guided me in correctly implementing some complex logic, especially when it comes to maintaining relationships across different parts of my code.
+
+Building highly interactive, real-time data applications is not an easy task. As demonstrated by the following graph:![realtime application data flow](/static/img/posts/realtime-interactive-application-data-flow.png)
+
+The challenges:
+
+- It's easy to lose track of what the source of truth is.
+- Effectively and properly synchronizing state.
+- Communicating the state of the application to the user.
+
+By following Redux's single data flow principle, we can ensure that each update, regardless of whether it originates from a user action or the network, is applied correctly without any side effects or unexpected outcomes.
 
 ### Pure functions
+
+The approach:
 
 - Most of the application logic should be implemented as pure functions.
 - Functional programming practices should be used to weave them together.

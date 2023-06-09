@@ -28,6 +28,7 @@ import {
 import useScript, { UseScriptsAttributes } from '@/utils/hooks/useScript';
 import useEl from '@/utils/hooks/useEl';
 import { usePage } from '@/components/contexts/page';
+import Image from 'next/image';
 
 const config: Config = {
   nodes: {
@@ -97,17 +98,20 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     setRenderComments(true);
   }, []);
 
-  const { title, description, published, updated, tags } = post.frontmatter;
+  const { title, image, description, published, updated, tags } =
+    post.frontmatter;
   const [el, ref] = useEl();
 
   useScript(renderComments ? el : null, UTTERANCES_SCRIPT_SETUP);
+
   useEffect(() => {
     setPostContext({
       title,
       description,
+      image,
       tags: tags ? tags.split(',').map((v) => v.trim()) : [],
     });
-  }, [title, description, published, updated, tags, setPostContext]);
+  }, [title, description, published, updated, tags, setPostContext, image]);
 
   return (
     <Page>
@@ -121,7 +125,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         />
         <meta
           property="og:image"
-          content={PROFILE_IMAGE_URL}
+          content={image || PROFILE_IMAGE_URL}
           key={META_OG_IMAGE_KEY}
         />
       </Head>
@@ -149,9 +153,19 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
 
             <span className="italic">Written by: {AUTHOR_NAME}</span>
           </div>
+
+          {false && (
+            <div className="h-[200px] sm:h-[400px] w-full relative">
+              <Image
+                className="object-contain md:object-cover my-0"
+                src={post.frontmatter.image}
+                alt={`image of post`}
+                fill
+              />
+            </div>
+          )}
         </>
         {components}
-
         <hr />
         <h2>Comments ☕️</h2>
         <div ref={ref}></div>

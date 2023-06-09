@@ -8,6 +8,11 @@ body article pre {
   font-family: var(--font-roboto-mono) !important;
   font-size: 0.95rem !important;
 }
+body article img {
+  margin-left: auto;
+  margin-right: auto;
+  @apply sm:max-w-lg max-w-sm w-full;
+}
 
 .utterances {
   @apply sm:mx-2 mx-0 my-4;

@@ -10,7 +10,7 @@ import {
 } from '@/constants';
 import { usePage } from '@/components/contexts/page';
 
-function Header(props) {
+function Header() {
   const {
     pageContext: { title, description, image, tags },
   } = usePage();
@@ -20,14 +20,16 @@ function Header(props) {
       <Head>
         <title key={META_TITLE_KEY}>{title}</title>
         <meta property="og:title" content={title} key={META_OG_TITLE_KEY} />
+        <meta name="description" content={description} />
         <meta
           property="og:description"
-          content="Welcome to my space!"
+          content={description}
           key={META_OG_DESCRIPTION_KEY}
         />
+        <meta property="og:locale" content="en_US" />
         <meta
           property="og:image"
-          content={PROFILE_IMAGE_URL}
+          content={image || PROFILE_IMAGE_URL}
           key={META_OG_IMAGE_KEY}
         />
         <meta name="keywords" content={tags.join(',')} />

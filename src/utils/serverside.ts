@@ -8,7 +8,7 @@ import {
   PostItem,
   PostItemList,
 } from 'src/types';
-import { T, always, cond, evolve, is } from 'ramda';
+import { T, always, concat, cond, evolve, is } from 'ramda';
 
 export async function getAllPosts(): Promise<PostItemList> {
   const postsDirectory = path.join(process.cwd(), 'posts');
@@ -49,6 +49,7 @@ const processPublished = cond([
 const processFM = evolve({
   published: processPublished,
   updated: processDate,
+  image: concat('/static/img/posts/'),
 });
 
 export function processFrontmatter(frontmatter: FrontmatterParsed) {

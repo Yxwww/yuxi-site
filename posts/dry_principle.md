@@ -3,7 +3,7 @@ title: My Approach to the DRY Principle
 description: Document my thougths on DRY principle and how I achieve it
 tags: DRY Principle, Programming Principle
 published: 2023-05-25
-updated: 2023-05-31
+updated: 2023-06-02
 ---
 
 ## Introduction
@@ -43,17 +43,17 @@ During the ideation and user study process, it's key to be involved to understan
 
 In addition, collaboration with various teams brings fresh perspectives to the problems we are trying to solve. Simply having a more comprehensive context enhances our understanding of the problem, allowing us to focus on the solution rather than getting lost in the fog of uncertainty.
 
-## Reusability and Readability
+## Reusability & Readability
 
-When we follow DRY principle, we abstract for reusability. Sometimes, we just want to abstract just for readability to make our code easier to read. Some good rule of thumb to follow for JavaScript developer:
+When following DRY principle, we abstract for reusability. Sometimes, we abstract for readability to make our code easier to read. Some of my preference:
 
-- abstract nested scope
-- avoid splitting files unless it's necessary
-- no raw loops
+- minimize nested scope. This includes callbacks, for loops, nested component.
+- using library like [ramda](https://ramdajs.com/). I can abstract out most of the commonly used utilities.
+- avoid splitting files unless it makes sense
 
 ## Conclusion
 
-This is my approach to software architecture design. It involves collaborating with various stakeholders to understand the problem correctly. Contributing to the conversation to explore various ways to solve the problem. Applying various principles and tools to design the software architecture, then testing and iterating on the solution.
+This is my approach to implement DRY principle during software architecture design. It involves collaborating with various stakeholders to understand the problem correctly. Contributing to the conversation to explore various ways to solve the problem. Applying various principles and tools to design the software architecture, then testing and iterating on the solution.
 
 ## Glossaries
 
