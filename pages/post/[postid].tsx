@@ -143,7 +143,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl dark:prose-invert`}
       >
         <>
-          <h1>{post.frontmatter.title}</h1>
+          <h1 className="capitalize">{post.frontmatter.title}</h1>
           <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
             {updated ? (
               <time>Updated: {dayjs(updated).format('MMM DD, YYYY')}</time>
