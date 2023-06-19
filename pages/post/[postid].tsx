@@ -11,6 +11,7 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import { Fence } from '@/components/markdoc/Fence';
+import { Heading as HeadingRenderingNode } from '@/components/markdoc/Heading';
 import { fence } from '@/markdoc/schema/Fence';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -94,6 +95,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const components = Markdoc.renderers.react(content, React, {
     components: {
       Fence,
+      Heading: HeadingRenderingNode,
     },
   });
   const [renderComments, setRenderComments] = React.useState(false);
@@ -147,22 +149,6 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl dark:prose-invert`}
       >
         <>
-          <h1 className="capitalize">{title}</h1>
-          <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
-            <time>
-              {updated ? (
-                <>Updated: {dayjs(updated).format('MMM DD, YYYY')}</>
-              ) : (
-                <>Published: {dayjs(published).format('MMM DD, YYYY')}</>
-              )}
-              <span className="sm:pl-2 pl-1 text-sm font-mono">
-                🍜 {readingTime} mins
-              </span>
-            </time>
-
-            <span className="italic">Written by: {AUTHOR_NAME}</span>
-          </div>
-
           {image && (
             <div className="h-[200px] sm:h-[500px] w-full relative">
               <Image
@@ -173,6 +159,21 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
               />
             </div>
           )}
+          <h1 className="capitalize sm:pt-16 pt-8">{title}</h1>
+          <div className="flex flex-wrap justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
+            <time className="shrink-0">
+              {updated ? (
+                <>Updated: {dayjs(updated).format('MMM DD, YYYY')}</>
+              ) : (
+                <>Published: {dayjs(published).format('MMM DD, YYYY')}</>
+              )}
+              <span className="sm:pl-2 pl-1 text-sm font-mono">
+                🍜 {readingTime} mins
+              </span>
+            </time>
+
+            <span className="italic shrink-0">Written by: {AUTHOR_NAME}</span>
+          </div>
         </>
         {components}
         <hr />

@@ -12,3 +12,13 @@ export function getReadingTime(fileContents: string) {
 
   return Math.ceil(wordCount / READING_SPEED);
 }
+
+// Or replace this with your own function
+export function generateID(children) {
+  return children
+    .filter((child) => typeof child === 'string')
+    .join(' ')
+    .replace(/[?]/g, '')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+}

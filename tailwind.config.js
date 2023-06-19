@@ -9,7 +9,7 @@
 //   plugins: [],
 // }
 
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   darkMode: 'class',
@@ -33,23 +33,14 @@ module.exports = {
       desktop: '1280px',
       // => @media (min-width: 1280px) { ... }
     },
-    fontSize: {
-      xs: '.75rem',
-      sm: '.875rem',
-      tiny: '0.9rem',
-      base: '1rem',
-      lg: '1.25rem',
-      xl: '1.375rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
-      '7xl': '5rem',
-    },
+
     fontFamily: {
       mono: ['var(--font-roboto-mono)', ...defaultTheme.fontFamily.mono],
-      sans: ['Helvetica', 'var(--font-open-sans)', ...defaultTheme.fontFamily.sans],
+      sans: [
+        'Helvetica',
+        'var(--font-open-sans)',
+        ...defaultTheme.fontFamily.sans,
+      ],
       article: ['var(--font-roboto-slab)', ...defaultTheme.fontFamily.serif],
     },
     extend: {
@@ -75,4 +66,4 @@ module.exports = {
     rtl: false,
     prefix: '',
   },
-}
+};
