@@ -29,6 +29,7 @@ import useScript, { UseScriptsAttributes } from '@/utils/hooks/useScript';
 import useEl from '@/utils/hooks/useEl';
 import { usePage } from '@/components/contexts/page';
 import Image from 'next/image';
+import { getReadingTime } from '@/src/utils';
 
 const config: Config = {
   nodes: {
@@ -64,6 +65,7 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 interface PostPagePropType {
   frontmatter: FrontmatterSerialized;
   content: string;
+  readingTime: number;
 }
 
 export async function getStaticProps({ params }) {
@@ -79,6 +81,7 @@ export async function getStaticProps({ params }) {
       post: {
         frontmatter: processFrontmatter(frontmatter),
         content: fileContents,
+        readingTime: getReadingTime(fileContents),
       } as PostPagePropType,
     },
   };
@@ -98,6 +101,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     setRenderComments(true);
   }, []);
 
+  const { readingTime } = post;
   const { title, image, description, published, updated, tags } =
     post.frontmatter;
   const [el, ref] = useEl();
@@ -145,11 +149,16 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         <>
           <h1 className="capitalize">{title}</h1>
           <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
-            {updated ? (
-              <time>Updated: {dayjs(updated).format('MMM DD, YYYY')}</time>
-            ) : (
-              <time>Published: {dayjs(published).format('MMM DD, YYYY')}</time>
-            )}
+            <time>
+              {updated ? (
+                <>Updated: {dayjs(updated).format('MMM DD, YYYY')}</>
+              ) : (
+                <>Published: {dayjs(published).format('MMM DD, YYYY')}</>
+              )}
+              <span className="sm:pl-2 pl-1 text-sm font-mono">
+                🍜 {readingTime} mins
+              </span>
+            </time>
 
             <span className="italic">Written by: {AUTHOR_NAME}</span>
           </div>

@@ -29,7 +29,7 @@ export function PostItem({
         <Link href={`/post/${getPostPath(item)}`}>
           <div className="flex flex-col items-start max-w-xl px-4">
             <div className="font-bold">{title}</div>
-            <p className="m-0 pt-2 text-sm font-mono text-base-content">
+            <p className="m-0 pt-2 text-sm font-mono text-slate-500">
               🍜 {readingTime} mins
             </p>
             <div className="py-2 text-sm">{description}</div>

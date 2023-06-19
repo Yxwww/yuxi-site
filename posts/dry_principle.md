@@ -40,9 +40,9 @@ When developing a product, generally we want to make things flexible. When we di
 
 `Ideation => User Study => Product Requirements => Architecture Design => Implementation => Test and Iteration`.
 
-During the ideation and user study process, it's key to be involved to understand the problem that's being solved. Keep in mind, it's the `problem` we are focosing on, not the solution. Solutions can change and adapt, the problem however stays as long as we care about it as a business. Once I collaborated with product and UX team, I quickly learn that a solution is something very _temporary_. This mindset frees me from committing to a certain structure of code. An architecture can be more nimble and is setup to be scalable is more desired than a structure that's rigid and promise infinite scalability. Abstraction makes code more defined and structured, but over abstraction makes it hard to change and adapt which go against the idea of exploration.
+During the ideation and user study process, it's crucial to be involved to understand the problem that's being solved. Keep in mind, it's the problem we are focusing on, not the solution. Solutions can change and adapt, but the problem remains as long as it's relevant. Once I started collaborating with the product and UX teams, I quickly learned that a solution is very temporary. This mindset frees me from committing to a certain code structure. An architecture that is nimble and set up to scale is more desirable than a rigid structure promising infinite scalability. While abstraction makes code more defined and structured, over-abstraction makes it hard to change and adapt, which goes against the idea of exploration.
 
-In addition, collaboration with various teams brings fresh perspectives to the problems we are trying to solve. Simply having a more comprehensive context enhances our understanding of the problem, allowing us to focus on the solution rather than getting lost in the fog of uncertainty.
+In addition, collaborating with various teams brings fresh perspectives to the problems we're trying to solve. Simply having a more comprehensive context enhances our understanding of the problem, allowing us to focus on the solution rather than getting lost in the fog of uncertainty.
 
 ## Reusability & Readability
 
