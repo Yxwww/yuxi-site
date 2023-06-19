@@ -1,8 +1,9 @@
 ---
-title: What I learned from using redux and why you may not need it
+title: What I learned from using redux
 description: Redux transformed the way I build applications. Here is what I learned after using it for several years, and also why I think you don't need it.
 tags: JavaScript, Redux, Learning
 published: 2023-06-06
+image: capybara_wood_working.png
 incomplete: true
 ---
 

@@ -1,11 +1,11 @@
-import React from 'react'
-import { Page } from 'components/layouts/main'
-import { getExperience } from 'src/contents'
-import { createEducation } from 'src/contents/education'
-import ExperienceContent from 'components/ExperienceContent'
-import ExperienceSection from 'components/ExperienceSection'
-import SocialIcons from 'components/SocialIcons'
-import { DOMAIN, PHONE_NUMBER } from 'constants/index'
+import React from 'react';
+import { Page } from 'components/layouts/main';
+import { getExperience } from 'src/contents';
+import { createEducation } from 'src/contents/education';
+import ExperienceContent from 'components/ExperienceContent';
+import ExperienceSection from 'components/ExperienceSection';
+import SocialIcons from 'components/SocialIcons';
+import { DOMAIN, PHONE_NUMBER } from 'constants/index';
 
 function ContactInfo() {
   return (
@@ -22,12 +22,12 @@ function ContactInfo() {
         <a href={`rel:${PHONE_NUMBER}`}>Phone: {PHONE_NUMBER}</a>
       </div>
     </div>
-  )
+  );
 }
 
 function Portfolio() {
-  const experience = getExperience()
-  const education = createEducation()
+  const experience = getExperience();
+  const education = createEducation();
   return (
     <Page className="print:max-w-5xl">
       <div className="font-article flex flex-col mx-auto print:p-6">
@@ -45,7 +45,7 @@ function Portfolio() {
         </div>
         <div className="title">
           <div className="text-left">
-            <h2 className="pt-4">Summary</h2>
+            <h2 className="font-medium pt-4">Summary</h2>
             <p>
               Experienced developer with a passion for creating elegant
               solutions to complex problems. Skilled in state management,
@@ -54,10 +54,6 @@ function Portfolio() {
               React, and Node. Committed to delivering exceptional user
               experiences.
             </p>
-          </div>
-          <div className="right">
-            <div className="contact" />
-            {/* leave contact info here ? */}
           </div>
         </div>
         <div className="projects">
@@ -71,7 +67,7 @@ function Portfolio() {
       </div>
       {/* end of app */}
     </Page>
-  )
+  );
 }
 
-export default Portfolio
+export default Portfolio;

@@ -143,7 +143,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         className={`font-article prose prose-slate mx-auto max-w-2xl lg:max-w-5xl dark:prose-invert`}
       >
         <>
-          <h1 className="capitalize">{post.frontmatter.title}</h1>
+          <h1 className="capitalize">{title}</h1>
           <div className="flex justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
             {updated ? (
               <time>Updated: {dayjs(updated).format('MMM DD, YYYY')}</time>
@@ -154,11 +154,11 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
             <span className="italic">Written by: {AUTHOR_NAME}</span>
           </div>
 
-          {false && (
-            <div className="h-[200px] sm:h-[400px] w-full relative">
+          {image && (
+            <div className="h-[200px] sm:h-[500px] w-full relative">
               <Image
                 className="object-contain md:object-cover my-0"
-                src={post.frontmatter.image}
+                src={image}
                 alt={`image of post`}
                 fill
               />

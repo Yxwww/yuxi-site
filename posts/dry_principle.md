@@ -1,7 +1,8 @@
 ---
 title: My Approach to the DRY Principle
 description: Document my thougths on DRY principle and how I achieve it
-tags: DRY Principle, Programming Principle
+tags: DRY Principle, Abstraction, Product Driven Design
+image: dry.png
 published: 2023-05-25
 updated: 2023-06-02
 ---
@@ -10,7 +11,7 @@ updated: 2023-06-02
 
 > Every piece of knowledge must have a single, unambiguous, authoritative representation within a system
 
-This is the DRY(Don't Repeat Yourself) Principle highlighted in the book _The Pragmatic Programmer_. During development, DRY principle is implemented through `abstraction`, in forms such as components, functions, or scripts. However, the process requires understanding of its nuances. Otherwise, you might run into `Premature Abstraction`. Premature abstraction occurs when you abstract at the wrong place and the wrong time. To get it right, my strategy involves a blend of PDAD(Product Driven Architecture Design) principle, a term I use so 🐻 with me, and the WET(Write Everything Twice) principle.
+This is the Don't Repeat Yourself (DRY) Principle highlighted in the book _The Pragmatic Programmer_. During development, DRY principle is implemented through `abstraction`, in forms such as components, functions, or scripts. However, the process requires understanding of its nuances. Otherwise, you might run into `Premature Abstraction`. Premature abstraction occurs when you abstract at the wrong place and the wrong time. To get it right, my strategy involves a blend of PDAD(Product Driven Architecture Design) principle, a term I use so 🐻 with me, and the WET(Write Everything Twice) principle.
 
 The process includes:
 
