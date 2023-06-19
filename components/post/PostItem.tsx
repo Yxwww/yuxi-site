@@ -10,7 +10,7 @@ export function PostItem({
   item: PostItem;
   isFirstPostOfMonth?: boolean;
 }) {
-  const { frontmatter, filename } = item;
+  const { frontmatter, filename, readingTime } = item;
   const { title, description, published, tags } = frontmatter;
 
   return (
@@ -27,13 +27,14 @@ export function PostItem({
       </div>
       <div className="p-4 hover:bg-base-100 transition-colors cursor-pointer grow max-w-48">
         <Link href={`/post/${getPostPath(item)}`}>
-          <div className="flex flex-col items-start max-w-xl">
-            <div className="font-bold px-4">{title}</div>
-            <div className="px-4 py-2 text-sm">{description}</div>
+          <div className="flex flex-col items-start max-w-xl px-4">
+            <div className="font-bold">{title}</div>
+            <p className="m-0 pt-2 text-sm font-mono">🍜 {readingTime} mins</p>
+            <div className="py-2 text-sm">{description}</div>
             {tags && (
-              <div className="pl-2 text-xs">
+              <div className="text-xs">
                 {tags.split(',').map((t) => (
-                  <span className="mx-1 badge badge-ghost" key={t}>
+                  <span className="mr-1 badge badge-ghost" key={t}>
                     {t}
                   </span>
                 ))}

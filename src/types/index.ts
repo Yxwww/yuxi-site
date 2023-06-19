@@ -18,6 +18,7 @@ export interface FrontmatterParsed extends Frontmatter {
 export interface PostItem {
   filename: string;
   frontmatter: FrontmatterSerialized;
+  readingTime: number;
   content: string;
 }
 

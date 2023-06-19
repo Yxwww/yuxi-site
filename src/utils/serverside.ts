@@ -9,6 +9,7 @@ import {
   PostItemList,
 } from 'src/types';
 import { T, always, concat, cond, evolve, is } from 'ramda';
+import { getReadingTime } from '.';
 
 export async function getAllPosts(): Promise<PostItemList> {
   const postsDirectory = path.join(process.cwd(), 'posts');
@@ -18,7 +19,7 @@ export async function getAllPosts(): Promise<PostItemList> {
     await Promise.all(
       filenames.map(async (filename) => {
         const filePath = path.join(postsDirectory, filename);
-        const fileContents = await fs.readFile(filePath, 'utf8');
+        const fileContents = await fs.readFile(filePath, 'utf8'); // in MD
 
         // Generally you would parse/transform the contents
         // For example you can transform markdown to HTML here
@@ -30,6 +31,7 @@ export async function getAllPosts(): Promise<PostItemList> {
         return {
           filename,
           frontmatter: processFM(frontmatter),
+          readingTime: getReadingTime(fileContents),
           content: fileContents,
         } as PostItem;
       })
