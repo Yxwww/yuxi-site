@@ -19,14 +19,12 @@ export const Page = ({
     >
       <Head />
       <div className="min-h-screen max-w-6xl transition-colors mx-auto bg-white dark:bg-zinc-800   flex flex-col">
-        <main
-          className={`px-2 sm:px-4 pt-4 print:pt-0 flex-grow transition-spacing `}
-        >
+        <main className={`px-2 sm:px-4 sm:pt-4 pt-2 print:pt-0 flex-grow`}>
           <div>
             <Heading />
           </div>
           <div
-            className={`px-2 py-1 bg-base-100 flex-grow text-base-content  ${
+            className={`sm:px-2 sm:py-1 bg-base-100 flex-grow text-base-content  ${
               showFloatingHeader
                 ? 'fixed md:px-4 top-0 left-0 w-screen z-10'
                 : 'hidden'
@@ -35,9 +33,7 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`container flex-grow py-2 print:pt-2 px-1 table:px-2 mx-auto max-w-2xl lg:max-w-5xl ${
-              showFloatingHeader ? 'mt-[100px]' : 'mt-8 sm:mt-12'
-            } ${className}`}
+            className={`container flex-grow pb-2 print:pt-2 sm:pt-10 pt-2 px-1 tablet:px-2 mx-auto max-w-2xl lg:max-w-5xl ${className}`}
           >
             {children}
           </div>

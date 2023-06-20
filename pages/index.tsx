@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Page>
       <div className="container pb-4">
-        <div className="max-w-lg font-mono px-1">
+        <div className="max-w-lg font-mono px-1 mx-auto">
           <div className="h-[400px] sm:h-[600px] w-full relative">
             <Image
               className="object-contain md:object-cover my-0"

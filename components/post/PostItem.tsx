@@ -19,7 +19,7 @@ export function PostItem({
       <div className="p-4">
         <div className="flex items-start justify-start sm:justify-center sm:w-40 text-sm pr-16 pt-[2px] min-w-">
           {isFirst && (
-            <time className="text-zinc-400">
+            <time className="text-slate-600">
               {dayjs(published).format('YYYY, MMM')}
             </time>
           )}
@@ -36,7 +36,7 @@ export function PostItem({
             {tags && (
               <div className="text-xs">
                 {tags.split(',').map((t) => (
-                  <span className="mr-1 badge badge-ghost" key={t}>
+                  <span className="mr-1 badge badge-ghost py-1" key={t}>
                     {t}
                   </span>
                 ))}
