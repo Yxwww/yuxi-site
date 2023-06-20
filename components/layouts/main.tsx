@@ -35,7 +35,9 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`container flex-grow mt-8 sm:mt-12 py-2 print:pt-2 px-1 table:px-2 mx-auto max-w-2xl lg:max-w-5xl ${className}`}
+            className={`container flex-grow py-2 print:pt-2 px-1 table:px-2 mx-auto max-w-2xl lg:max-w-5xl ${
+              showFloatingHeader ? 'mt-[100px]' : 'mt-8 sm:mt-12'
+            } ${className}`}
           >
             {children}
           </div>
