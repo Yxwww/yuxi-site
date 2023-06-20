@@ -44,6 +44,9 @@ module.exports = {
       article: ['var(--font-roboto-slab)', ...defaultTheme.fontFamily.serif],
     },
     extend: {
+      transitionProperty: {
+        spacing: 'margin, padding',
+      },
       screens: {
         print: { raw: 'print' },
       },
