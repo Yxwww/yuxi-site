@@ -63,6 +63,6 @@ No matter how hard we try, to make an application sing is it's side effects. Ani
 
 > Though tools may adapt to circumstance, the essence of their purpose remains unaltered.
 
-Redux the library is a toolkit merely implements the principle and hand hold the user to make it work. I'm a believer of once you master a tool, you can either improve the tool (ie, [Redux toolkit](https://redux-toolkit.js.org/)) or find a way to achieve the outcome of what the tool delievers while not paying the cost of the tool.
+In fact, I'd say you don't "need" any tool once you mastered it. As long as you can follow redux principle
 
 `To be continued ...`
