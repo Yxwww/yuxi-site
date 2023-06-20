@@ -29,36 +29,6 @@ function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
     </div>
   );
 }
-// const PostLink = ({ id, imgUrl, title, description = '', techStack = [] }) => (
-//   <div className="inline-block p-2 tablet:m-0 align-top">
-//     <div className="rounded overflow-hidden shadow-lg hover:shadow-2xl hover:bg-zinc-400 dark:hover:bg-zinc-800 transition-shadow duration-200">
-//       <Link href={`/post/${id}`} as={`/post/${id}`}>
-//         <Image
-//           className="block w-full my-0 h-[200px]"
-//           src={imgUrl}
-//           alt={`${title}-img`}
-//           fill
-//         />
-//       </Link>
-//       <div className="p-2">
-//         <Link href={`/post/${id}`} as={`/post/${id}`}>
-//           <div className="font-medium text-xl py-2 font-bold">{title}</div>
-//         </Link>
-//         <p className=" text-base py-2 my-0">{description}</p>
-//         <span className="">
-//           {techStack.map((skill) => (
-//             <span
-//               key={`${id}-${skill}`}
-//               className="inline-block rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
-//             >
-//               {skill}
-//             </span>
-//           ))}
-//         </span>
-//       </div>
-//     </div>
-//   </div>
-// )
 
 export default function AllProjects() {
   return (

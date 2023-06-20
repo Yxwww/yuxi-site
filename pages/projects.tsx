@@ -1,6 +1,7 @@
-import React from 'react'
-import { Page } from '../components/layouts/main'
-import AllProjects from 'components/AllProjects'
+import React from 'react';
+import { Page } from '../components/layouts/main';
+import AllProjects from 'components/AllProjects';
+import Image from 'next/image';
 
 export default function Projects() {
   return (
@@ -14,5 +15,5 @@ export default function Projects() {
 
       <AllProjects />
     </Page>
-  )
+  );
 }
