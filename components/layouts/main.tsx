@@ -24,10 +24,8 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`sm:px-2 sm:py-1 bg-base-100 flex-grow text-base-content  ${
-              showFloatingHeader
-                ? 'fixed md:px-4 top-0 left-0 w-screen z-10'
-                : 'hidden'
+            className={`fixed w-screen md:px-4  left-0  z-10 sm:px-2 sm:py-1 bg-base-100 flex-grow text-base-content transition-all  ${
+              showFloatingHeader ? 'top-0' : '-top-[100px]'
             }`}
           >
             <Heading />
