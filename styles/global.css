@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html {
-  scroll-padding-top: 100px; /* offset fixed nav when scrolled. */
+  scroll-padding-top: 80px; /* offset fixed nav when scrolled. */
   scroll-behavior: smooth;
 }
 body article pre {
