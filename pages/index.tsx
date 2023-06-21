@@ -9,7 +9,7 @@ export default function Home() {
     <Page>
       <div className="container pb-4">
         <div className="max-w-lg font-mono px-1">
-          <div className="h-[400px] sm:h-[600px] w-full relative">
+          <div className="h-[300px] sm:h-[400px] w-full relative max-w-[400px]">
             <Image
               className="object-contain md:object-cover my-0"
               src="/static/img/capybara-landing.png"

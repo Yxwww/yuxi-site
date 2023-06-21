@@ -31,7 +31,7 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`container flex-grow pb-2 print:pt-2 sm:pt-10 pt-2 px-1 tablet:px-2 mx-auto max-w-2xl lg:max-w-5xl ${className}`}
+            className={`container flex-grow pb-2 print:pt-2 sm:pt-10 pt-4 px-1 tablet:px-2 mx-auto max-w-2xl lg:max-w-5xl ${className}`}
           >
             {children}
           </div>
