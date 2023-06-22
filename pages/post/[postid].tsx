@@ -152,7 +152,8 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           {image && (
             <div className="h-[200px] sm:h-[500px] w-full relative">
               <Image
-                className="object-contain md:object-cover my-0"
+                className="object-contain md:object-cover"
+                style={{ marginTop: 0, marginBottom: 0 }}
                 src={image}
                 alt={`image of post`}
                 fill
