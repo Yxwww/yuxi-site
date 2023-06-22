@@ -168,7 +168,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
               ) : (
                 <>Published: {dayjs(published).format('MMM DD, YYYY')}</>
               )}
-              <span className="sm:pl-2 pl-1 text-sm font-mono">
+              <span className="sm:pl-2 pl-1 font-mono font-bold">
                 🍜 {readingTime} mins
               </span>
             </time>
