@@ -14,7 +14,7 @@ export function ThemePrefToggleBtn() {
   useEffect(() => {
     if (
       theme === 'dark' ||
-      (!(SITE_LOCAL_SOTRAGE_KEY in localStorage) &&
+      (theme === 'none' &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
       document.documentElement.classList.add('dark');
