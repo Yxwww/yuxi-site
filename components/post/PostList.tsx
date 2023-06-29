@@ -11,8 +11,8 @@ export function PostList({ posts }: { posts: PostItemList }) {
       {posts.map((post, i) => {
         return (
           <PostItem
-            item={post}
             key={post.filename}
+            item={post}
             isFirstPostOfMonth={
               i === 0 ||
               getMonth(posts[i - 1].frontmatter.published) !==

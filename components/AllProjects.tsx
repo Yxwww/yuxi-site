@@ -13,9 +13,9 @@ function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
           fill
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body font-mono">
         <h2 className="card-title">{title}</h2>
-        <p>{description}</p>
+        <p className="text-sm">{description}</p>
         <div className="card-actions justify-end">
           {techStack.map((skill) => {
             return (

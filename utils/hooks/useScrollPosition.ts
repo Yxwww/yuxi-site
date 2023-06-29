@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 // source: https://usehooks.com/useLocalStorage/
 export function useLocalStorage<T>(
   key: string,
-  initialValue: T
+  initialValue: T | (() => T)
 ): [T, (value: T | ((value: T) => T)) => void] {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
@@ -11,15 +11,19 @@ export function useLocalStorage<T>(
     if (typeof window === 'undefined') {
       return initialValue;
     }
+    const initVal: T =
+      typeof initialValue === 'function'
+        ? (initialValue as () => T)()
+        : initialValue;
     try {
       // Get from local storage by key
       const item = window.localStorage.getItem(key);
       // Parse stored json or if none return initialValue
-      return item ? JSON.parse(item) : initialValue;
+      return item ? JSON.parse(item) : initVal;
     } catch (error) {
       // If error also return initialValue
       console.error(error);
-      return initialValue;
+      return initVal;
     }
   });
 

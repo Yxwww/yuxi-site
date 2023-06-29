@@ -17,22 +17,22 @@ export function PostItem({
     <div className="flex flex-col sm:flex-row">
       <div className="divider divider-vertical sm:divider-horizontal text-zinc-400 mb-0 sm:ml-0 items-start shrink-0"></div>
       <div className="p-4">
-        <div className="flex items-start justify-start sm:justify-center sm:w-40 text-sm pr-16 pt-[2px] min-w-">
+        <div className="flex items-start justify-start sm:justify-center lg:w-40 sm:w-20 pt-[2px] min-w-">
           {isFirst && (
-            <time className="text-slate-600">
+            <time className="text-md font-mono">
               {dayjs(published).format('YYYY, MMM')}
             </time>
           )}
         </div>
       </div>
-      <div className="p-4 hover:bg-base-100 transition-colors cursor-pointer grow max-w-48">
-        <Link href={`/post/${getPostPath(item)}`}>
-          <div className="flex flex-col items-start max-w-xl px-4">
-            <div className="font-bold">{title}</div>
-            <p className="m-0 pt-2 text-sm font-mono text-slate-500">
+      <div className="p-4 hover:bg-base-100 transition-colors cursor-pointer grow flex">
+        <Link href={`/post/${getPostPath(item)}`} className="flex grow">
+          <div className="flex flex-col items-start px-4 sm:border-b sm:pb-4 grow">
+            <div className="font-bold text-lg font-mono">{title}</div>
+            <p className="m-0 pt-2 font-mono text-slate-500 dark:text-slate-400">
               🍜 {readingTime} mins
             </p>
-            <div className="py-2 text-sm">{description}</div>
+            <div className="py-2 font-mono text-sm">{description}</div>
             {tags && (
               <div className="text-xs">
                 {tags.split(',').map((t) => (

@@ -59,10 +59,8 @@ Challenges to consider:
 
 No matter how hard we try, to make an application sing is it's side effects. Animations, saving data, rendering something to screen. Although, that will will go way beyound the topics of this post. I will leave a placeholder [here](/post/sideeffects) to talk about it.
 
-## Yes, you don't need redux
+## Yes, you may not need redux.
 
 > Though tools may adapt to circumstance, the essence of their purpose remains unaltered.
 
-In fact, I'd say you don't "need" any tool once you mastered it. As long as you can follow redux principle
-
-`To be continued ...`
+Stepping outside of the react world, you might find applying redux is not as straightforward. However, the principle still stands. Knowing how to apply react principle in vairous environment is a fun and rewarding challenge. That might be a post for another time.
