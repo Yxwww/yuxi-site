@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import '../styles/global.css';
 import '../styles/index.css';
-import { Open_Sans, Roboto_Slab, Roboto_Mono } from '@next/font/google';
+import { Open_Sans, Roboto_Slab, Martian_Mono } from '@next/font/google';
 import { PageProvider } from '@/components/contexts/page';
 
 const opensansFont = Open_Sans({
@@ -14,7 +14,7 @@ const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
   variable: '--font-roboto-slab',
 });
-const robotoMonoFont = Roboto_Mono({
+const robotoMonoFont = Martian_Mono({
   subsets: ['latin'],
   variable: '--font-roboto-mono',
 });

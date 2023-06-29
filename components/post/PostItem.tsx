@@ -25,18 +25,18 @@ export function PostItem({
           )}
         </div>
       </div>
-      <div className="p-4 hover:bg-base-100 transition-colors cursor-pointer grow flex">
+      <div className="px-4 sm:pt-6 pt-2 hover:bg-base-100 transition-colors cursor-pointer grow flex">
         <Link href={`/post/${getPostPath(item)}`} className="flex grow">
-          <div className="flex flex-col items-start px-4 sm:border-b sm:pb-4 grow">
-            <div className="font-bold text-lg font-mono">{title}</div>
-            <p className="m-0 pt-2 font-mono text-slate-500 dark:text-slate-400">
+          <div className="flex flex-col items-start px-4 sm:border-b sm:pb-4 pb-2 grow font-mono">
+            <div className="font-bold text-lg">{title}</div>
+            <p className="m-0 pt-2  font-light text-sm text-slate-500 dark:text-slate-400">
               🍜 {readingTime} mins
             </p>
-            <div className="py-2 font-mono text-sm">{description}</div>
+            <div className="pt-4 pb-2 font-light text-sm">{description}</div>
             {tags && (
-              <div className="text-xs">
+              <div className="font-light">
                 {tags.split(',').map((t) => (
-                  <span className="mr-1 badge badge-ghost py-1" key={t}>
+                  <span className="mr-1 badge badge-ghost py-1 text-sm" key={t}>
                     {t}
                   </span>
                 ))}
