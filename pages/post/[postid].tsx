@@ -31,6 +31,7 @@ import useEl from '@/utils/hooks/useEl';
 import { usePage } from '@/components/contexts/page';
 import Image from 'next/image';
 import { getReadingTime } from '@/src/utils';
+import RotatingHammer from '@/components/icons/RotatingHammer';
 
 const config: Config = {
   nodes: {
@@ -67,6 +68,7 @@ interface PostPagePropType {
   frontmatter: FrontmatterSerialized;
   content: string;
   readingTime: number;
+  incomplete: boolean;
 }
 
 export async function getStaticProps({ params }) {
@@ -88,6 +90,10 @@ export async function getStaticProps({ params }) {
   };
 }
 
+function formatDate(date: Date | string) {
+  return dayjs(date).format('MMM DD, YYYY');
+}
+
 function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const ast = Markdoc.parse(post.content);
   const { setPostContext } = usePage();
@@ -104,7 +110,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   }, []);
 
   const { readingTime } = post;
-  const { title, image, description, published, updated, tags } =
+  const { title, image, description, published, updated, incomplete, tags } =
     post.frontmatter;
   const [el, ref] = useEl();
 
@@ -164,13 +170,16 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           <div className="flex flex-wrap justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
             <time className="shrink-0">
               {updated ? (
-                <>Updated: {dayjs(updated).format('MMM DD, YYYY')}</>
+                <>Updated: {formatDate(updated)}</>
               ) : (
-                <>Published: {dayjs(published).format('MMM DD, YYYY')}</>
+                <>Published: {formatDate(published)}</>
               )}
               <span className="sm:pl-2 pl-1 font-mono font-bold">
                 🍜 {readingTime} mins
               </span>
+              {incomplete && (
+                <RotatingHammer interval={1800} className="ml-4 w-6 h-6" />
+              )}
             </time>
 
             <span className="italic shrink-0">Written by: {AUTHOR_NAME}</span>

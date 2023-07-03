@@ -47,11 +47,15 @@ const processPublished = cond([
   [is(Object), processDate],
   [T, always('')],
 ]);
+function convertBooleanToString(v: boolean) {
+  return v.toString();
+}
 
 const processFM = evolve({
   published: processPublished,
   updated: processDate,
   image: concat('/static/img/posts/'),
+  incomplete: convertBooleanToString,
 });
 
 export function processFrontmatter(frontmatter: FrontmatterParsed) {

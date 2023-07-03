@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { PostItem } from '@/src/types';
 import dayjs from 'dayjs';
 import { getPostPath } from '@/src/utils';
+import RotatingHammer from '../icons/RotatingHammer';
 
 export function PostItem({
   item,
@@ -11,7 +12,7 @@ export function PostItem({
   isFirstPostOfMonth?: boolean;
 }) {
   const { frontmatter, filename, readingTime } = item;
-  const { title, description, published, tags } = frontmatter;
+  const { title, description, published, tags, incomplete } = frontmatter;
 
   return (
     <div className="flex flex-col sm:flex-row">
@@ -28,7 +29,9 @@ export function PostItem({
       <div className="px-4 sm:pt-6 pt-2 hover:bg-base-100 transition-colors cursor-pointer grow flex">
         <Link href={`/post/${getPostPath(item)}`} className="flex grow">
           <div className="flex flex-col items-start px-4 sm:border-b sm:pb-4 pb-2 grow font-mono">
-            <div className="font-bold text-lg">{title}</div>
+            <div className="font-bold text-lg">
+              {title} {incomplete && <RotatingHammer className="w-6 h-6" />}
+            </div>
             <p className="m-0 pt-2  font-light text-sm text-slate-500 dark:text-slate-400">
               🍜 {readingTime} mins
             </p>

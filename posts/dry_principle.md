@@ -1,6 +1,6 @@
 ---
 title: My Approach to the DRY Principle
-description: Document my thougths on DRY principle and how I achieve it
+description: Document my thougths on DRY principle and how I incorporate it
 tags: DRY Principle, Abstraction, Product Driven Design
 image: dry.png
 published: 2023-05-25
@@ -49,7 +49,7 @@ In addition, collaborating with various teams brings fresh perspectives to the p
 When following DRY principle, we abstract for reusability. Sometimes, we abstract for readability to make our code easier to read. Some of my preference:
 
 - minimize the nested scope. This includes callbacks, for loops, nested component.
-- use battle tested abstractions. see: [no raw loops](https://sean-parent.stlab.cc/presentations/2013-09-11-cpp-seasoning/cpp-seasoning.pdf)
+- use battle tested abstractions. see: [no raw loops](https://www.youtube.com/watch?v=W2tWOdzgXHA)
 - avoid splitting files unless it improves readability or organization.
 
 ## Conclusion

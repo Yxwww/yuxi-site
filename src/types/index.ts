@@ -8,11 +8,13 @@ interface Frontmatter {
 export interface FrontmatterSerialized extends Frontmatter {
   published: string;
   updated?: string;
+  incomplete?: string;
 }
 
 export interface FrontmatterParsed extends Frontmatter {
   published: Date;
   updated?: Date;
+  incomplete?: boolean;
 }
 
 export interface PostItem {
