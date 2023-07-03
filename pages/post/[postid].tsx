@@ -178,7 +178,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
                 🍜 {readingTime} mins
               </span>
               {incomplete && (
-                <RotatingHammer interval={1800} className="ml-4 w-6 h-6" />
+                <RotatingHammer interval={1800} className="ml-4 w-8 h-8" />
               )}
             </time>
 
