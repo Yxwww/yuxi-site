@@ -26,7 +26,7 @@ export function PostItem({
           )}
         </div>
       </div>
-      <div className="px-4 sm:pt-6 pt-2 hover:bg-base-100 transition-colors cursor-pointer grow flex">
+      <div className="px-4 sm:pt-4 pt-2 hover:bg-base-100 transition-colors cursor-pointer grow flex">
         <Link href={`/post/${getPostPath(item)}`} className="flex grow">
           <div className="flex flex-col items-start px-4 sm:border-b sm:pb-4 pb-2 grow font-mono">
             <div className="font-bold text-lg">
