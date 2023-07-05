@@ -11,13 +11,13 @@ Alongside the Functional Programming (FP) Paradigm, Redux has significantly impa
 
 The primary challenge I faced was scaling a startup's frontend stack. I had issues maintaining and reasoning about the data flow and the state of the existing stack. I reviewed a bunch of Object-Oriented design patterns and picked up the JS design patterns book. Unfortunately, none of the design patterns resonated with me as they all felt too anecdotal. That's when I discovered Redux.
 
-The last time I delved into anything closely resembling FP was during a university course on Programming Paradigms, where I learned and came to appreciate Haskell. It felt mathematical and outlandish compared to Java or Python, mainly due to how logic is composed instead of being managed through inheritance. It's not the most intuitive solution you would find when designing software, but you can't argue with the results it produces. The learning curve is steep when getting started; however, the difficulty scales much better than traditional OO inheritance.
+The last time I delved into anything closely resembling FP was during a university course on Programming Paradigms, where I learned and came to appreciate Haskell. It felt mathematical and outlandish compared to Java or Python, mainly due to how logic is composed instead of being managed through inheritance. It's not the most intuitive solution you would find when designing software, but you can't argue with the results it produces. The learning curve is steep when getting started; however, the difficulty of maintenance scales much better than traditional OO inheritance.
 
 The FP flavor in Redux reminded me of Haskell. I was eager to put Redux to the test. Using an FP approach in solving a real-world problem was exciting. Going from prototype to production, following the Redux principle has led us to some great successes:
 
 - Reduced the amount of time spent on maintaining code and building new features
-- Understood the state of the application, which led to deterministic application behavior
-- Established a standard in writing applications
+- The state of the application is much easier to reason about, which led to deterministic application behavior
+- Established a standard in writing applications. Having a structure > not having one
 
 ## The three principles and the challenges
 
@@ -58,3 +58,7 @@ Challenges to consider:
 - Understand the performance trade-off and how to minimize its impact.
 
 To make an application sing is it's side effects such as network, rendering, and user interactions. Although, sideeffects management is a beast, I will leave a placeholder [here](/post/sideeffects) to discuss it further.
+
+## Conclusion
+
+Redux has helped me immensely to develop reliable software. It makes the application much easier to reason about and easy to maintain. However, while beneficial, it's not without its limitations. I've documented my observations on its drawbacks on another blog [You may not need redux](/posts/you_may_not_need_redux), and discuss ways to leverage its power without having to pay the redux tax.
