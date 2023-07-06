@@ -6,6 +6,18 @@ import useMounted from '@/utils/hooks/useMounted';
 export type ThemePreference = 'light' | 'dark' | 'none';
 const SITE_LOCAL_SOTRAGE_KEY = 'yuxi-site-theme'; //
 
+/**
+ * Placeholder component to act and occupy the space as a toggle icon button.
+ * Prevents layoutshift client side only
+ */
+function ToggleBtnPlaceholder() {
+  return (
+    <div className="btn btn-circle">
+      <div className="h-5 w-5"></div>
+    </div>
+  );
+}
+
 export function ThemePrefToggleBtn() {
   const [theme, setTheme] = useLocalStorage<ThemePreference>(
     SITE_LOCAL_SOTRAGE_KEY,
@@ -29,26 +41,26 @@ export function ThemePrefToggleBtn() {
   }, [theme]);
 
   // localStorage state causes hydration miss match. Suppress warning for now.
-  return (
-    mounted && (
-      <button
-        className="btn btn-circle btn-outline btn-primary"
-        onClick={() => {
-          setTheme((theme) => {
-            if (theme === 'dark') {
-              return 'light';
-            } else {
-              return 'dark';
-            }
-          });
-        }}
-      >
-        {theme === 'dark' ? (
-          <MoonIcon className="block h-5 w-5" />
-        ) : (
-          <SunIcon className="block h-5 w-5" />
-        )}
-      </button>
-    )
+  return mounted ? (
+    <button
+      className="btn btn-circle btn-outline btn-primary"
+      onClick={() => {
+        setTheme((theme) => {
+          if (theme === 'dark') {
+            return 'light';
+          } else {
+            return 'dark';
+          }
+        });
+      }}
+    >
+      {theme === 'dark' ? (
+        <MoonIcon className="block h-5 w-5" />
+      ) : (
+        <SunIcon className="block h-5 w-5" />
+      )}
+    </button>
+  ) : (
+    <ToggleBtnPlaceholder />
   );
 }
