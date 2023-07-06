@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocalStorage } from '@/utils/hooks/useScrollPosition';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
+import useMounted from '@/utils/hooks/useMounted';
 
 export type ThemePreference = 'light' | 'dark' | 'none';
 const SITE_LOCAL_SOTRAGE_KEY = 'yuxi-site-theme'; //
@@ -10,6 +11,8 @@ export function ThemePrefToggleBtn() {
     SITE_LOCAL_SOTRAGE_KEY,
     'none'
   );
+
+  const mounted = useMounted();
 
   useEffect(() => {
     if (
@@ -27,24 +30,25 @@ export function ThemePrefToggleBtn() {
 
   // localStorage state causes hydration miss match. Suppress warning for now.
   return (
-    <button
-      className="btn btn-circle btn-outline btn-primary"
-      suppressHydrationWarning
-      onClick={() => {
-        setTheme((theme) => {
-          if (theme === 'dark') {
-            return 'light';
-          } else {
-            return 'dark';
-          }
-        });
-      }}
-    >
-      {theme === 'dark' ? (
-        <MoonIcon className="block h-5 w-5" />
-      ) : (
-        <SunIcon className="block h-5 w-5" />
-      )}
-    </button>
+    mounted && (
+      <button
+        className="btn btn-circle btn-outline btn-primary"
+        onClick={() => {
+          setTheme((theme) => {
+            if (theme === 'dark') {
+              return 'light';
+            } else {
+              return 'dark';
+            }
+          });
+        }}
+      >
+        {theme === 'dark' ? (
+          <MoonIcon className="block h-5 w-5" />
+        ) : (
+          <SunIcon className="block h-5 w-5" />
+        )}
+      </button>
+    )
   );
 }

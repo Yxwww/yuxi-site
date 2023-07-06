@@ -18,7 +18,7 @@ export function PostItem({
     <div className="flex flex-col sm:flex-row">
       <div className="divider divider-vertical sm:divider-horizontal text-zinc-400 mb-0 sm:ml-0 items-start shrink-0"></div>
       <div className="p-4">
-        <div className="flex items-start justify-start sm:justify-center lg:w-40 sm:w-20 pt-1 min-w-">
+        <div className="flex items-start justify-start sm:justify-center lg:w-40 sm:w-20 sm:pt-6 pt-2 min-w-">
           {isFirst && (
             <time className="text-md font-mono">
               {dayjs(published).format('YYYY, MMM')}
