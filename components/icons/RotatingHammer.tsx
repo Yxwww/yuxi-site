@@ -32,7 +32,7 @@ const RotatingHammer: FC<{ className: string; interval?: number }> = ({
 
   return (
     <img
-      className={`inline transform origin-bottom-left transition ease-in-out hover:rotate-0 ${
+      className={`hammer inline transform origin-bottom-left transition ease-in-out hover:rotate-0 ${
         swungout
           ? `-rotate-45 -translate-y-2 duration-[1600ms]`
           : 'rotate-45 -translate-y-1 translate-x-1  duration-200'

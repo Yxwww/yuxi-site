@@ -21,3 +21,8 @@ body article img {
 .utterances {
   @apply sm:mx-2 mx-0 my-4;
 }
+
+/* Overwrite prose plugin style */
+.prose .hammer {
+  @apply mt-0 mb-0;
+}
