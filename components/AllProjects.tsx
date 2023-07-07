@@ -1,19 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from './Image';
+import Image from 'next/image';
 
 function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
   return (
-    <div className="card bg-base-50 card-bordered dark:border-zinc-700 shadow-lg transition-shadow">
-      <figure>
+    <div className="card card-side bg-base-50 dark:border-zinc-700 shadow-lg transition-shadow rounded-none">
+      <figure className="relative sm:w-[370px] flex-shrink-0">
         <Image
-          className="block w-full my-0 h-[200px]"
+          className="blockmy-0 h-full object-contain"
           src={imgUrl}
           alt={`${title}-img`}
           fill
         />
       </figure>
-      <div className="card-body font-mono">
+      <div className="card-body font-mono flex-grow-0">
         <h2 className="card-title">{title}</h2>
         <p className="text-sm font-light">{description}</p>
         <div className="card-actions justify-end">
@@ -32,7 +32,7 @@ function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
 
 export default function AllProjects() {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4">
       <PostLink
         id="curvenote"
         imgUrl="/static/img/projects/curvenote.jpeg"
