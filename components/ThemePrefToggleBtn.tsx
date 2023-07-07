@@ -55,9 +55,9 @@ export function ThemePrefToggleBtn() {
       }}
     >
       {theme === 'dark' ? (
-        <MoonIcon className="block h-5 w-5" />
-      ) : (
         <SunIcon className="block h-5 w-5" />
+      ) : (
+        <MoonIcon className="block h-5 w-5" />
       )}
     </button>
   ) : (

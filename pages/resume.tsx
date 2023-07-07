@@ -29,7 +29,7 @@ function Portfolio() {
   const experience = getExperience();
   const education = createEducation();
   return (
-    <Page className="print:max-w-5xl print:dark:text-zinc-800">
+    <Page className="print:max-w-5xl">
       <div className="font-article flex flex-col mx-auto print:p-6">
         <div className="flex justify-between flex-wrap">
           <div>
