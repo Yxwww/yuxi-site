@@ -7,33 +7,93 @@ image: capybara-watch.png
 incomplete: true
 ---
 
-Some tools brighten my day. Some tools transform my life. [Redux is one of those tools that changed how I approach software development](/post/redux), although no tool is perfect. Redux is designed with React ecosystem as it's primary consumer. The three principles and concepts are powerful, but there are many ways to implement them. The way Redux approaches it is specifically tailored toward React. If you need to use Redux outside of React, you will need some kind of caching-capable adapter. Otherwise, there will be too much performance overhead.
+Some tools brighten my day. Some tools transform my life. Redux [changed how I approach software development](/post/redux), although no tool is perfect. Redux is designed with React ecosystem as it's primary consumer. The three principles and concepts are powerful, but there are many ways to implement them. The way Redux approaches it is specifically tailored toward React. If you need to use Redux outside of React, you will need some kind of caching-capable adapter. Otherwise, there will be too much performance overhead.
 
 > Though tools may adapt to circumstance, the essence of their purpose remains unaltered.
 
-Instead of trying to make the Redux library work for various environments, we can adapt Redux principles and concepts to the new environment.
+Instead of trying to make the Redux library work for various environments, we can adapt Redux principles and concepts to the new environment. First, I want to bring up some performance concerns I've had with React ecosystem.
 
 ## Issues with Redux library and React in general
 
-Redux is not designed to maximize performance. Same can be said about React. Both technologies focus on building things `correctly` but not building things run `fast`. While there can be an argument made that if it's easier to built things right, then it's easier to make them fast. That's partially true. In practice, if the developer has a clear grasp of what is happening in the codebase, it's easier to optimize. However, this is not a performance perk, it's merely a beneficial side effect of able to buid things right. React developers have to explore and come up with ways to make things _not_ slow using technology like memoization, [reselect](https://www.npmjs.com/package/reselect), and [virtual dom](https://www.npmjs.com/package/React-dom). Here are some potential pitfalls applying redux concepts:
+Redux is not designed to maximize performance. Same can be said about React. Both technologies focus on building things `correctly` but not building things run `fast`. While there can be an argument made that if it's easier to built things right, then it's easier to make them fast. I partially agree with this notion. Although, unfortunately in my experience, if an architecture allows things to be slower here and there, then it will always add up. _Always_. Making a system easy to reason about does not directly make code fast, it is merely a beneficial side effect.
 
-- [Single source of truth with unidirectional data flow](</post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>) is powerful for reasoning about state update; however, it leads to any state update will have to go through the entire store each time it updates. _Each time_ it updates.
-  - reducer switch state blocks majority of the state update
-  - memoization to prevent the app from rerendering (selectors, v-dom, hooks)
-  - Unrelated functions gets run (or rendered), developers hope they cache or memoize state object correctly to avoid a rerender
-- [Pure functions](/post/redux#pure-functions-with-kickass-compositions) does not make it easy to write performant code, other than memoization becomes easier
-  - Mutation will always be faster than recreating large data for the sake of purity
-  - In-place operations always is more memory effecient; however, it goes against the whole point of writing pure functions.
-  - Fixated writing pure functions may lead to heavy garbage collection (GC) work. If the GC happens on the main thread, it will be very noticable
-- `Immutable data` is just a nightmare concept working with large data.
-  - Due to lack of native immutable data structure support in JS, we are using third party solutions
-  - Treating something immutable is way more effecient than actually making it immutable.
-  - Developer needs to know how to set purity boundary when working with large data set
+React developers explore and come up with ways to make things _not_ `slower than it should` using technology like memoization, [reselect](https://www.npmjs.com/package/reselect), and [virtual dom](https://www.npmjs.com/package/React-dom). Here are some potential pitfalls applying redux concepts:
 
-This is what I mean by redux is not designed for writing performant web apps. It's very easy to writ correctly behaving yet slow applications if not careful. One of the most impactful process when it comes to performance management in React ecosystem is `managing when referencial equality check should pass`. It's a bit overly counter intuitive imo. When you build applications, you just want to focus on build the application. Lets say a change in one element leads to the need to update another. Instead of directly programming that procedure using handler and call an update function, we are playing this game around referencial equality to make sure the app is not overly eager to rerender.
+### Issue with single source of truth
 
-I hope this is not just my personal experience. If you are new to React, you will hear a lot about how to `prevent rerender`. The way to achieve it is not obvious. Working with React in combination with Redux does not make things easier.
+[Single source of truth with unidirectional data flow](</post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>) is powerful for reasoning about state update; however, it leads to any state update will have to go through the entire store each time it updates. _Each time_ it updates.
 
-## Maybe there's another way
+- reducer switch statement process all actions
+- memoization to prevent the app from rerendering (selectors, v-dom, hooks)
+- Unrelated functions gets run (or rendered), developers hope they cache or memoize state object correctly to avoid a rerender
 
-[Redux principles and concepts transcends the library and even react](<http://localhost:3000/post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>). Personally, I've had great success applying unidirectional data flow Redux concept long before I started using Redux. This convinced me, we can apply the rest of the Redux concept to make our application more robust, easy to work with, and performant.
+### Issue with pure functions
+
+[Pure functions](/post/redux#pure-functions-with-kickass-compositions) does not make it easy to write performant code, other than memoization becomes easier
+
+- Mutation will always be faster than recreating large data for the sake of purity
+- In-place operations always is more memory effecient; however, it goes against the whole point of writing pure functions.
+- Fixated writing pure functions may lead to heavy garbage collection (GC) work. If the GC happens on the main thread, it will be very noticable
+
+### Issue with immutable data
+
+`Immutable data` is just a nightmare concept working with large data.
+
+- Due to lack of native immutable data structure support in JS, we are using third party solutions
+- Treating something immutable is way more effecient than actually making it immutable.
+- Developer needs to know how to set purity boundary when working with large data set
+
+If you've been in the React world long enough, you will hear a lot about how to `prevent rerender`. The way to achieve it is not obvious. Working with React in combination with Redux does not make things easier either. Here are some examples of rerendering people deal with on daily basis.
+
+### Everything gets rendered all the time
+
+In react, any parents component rerenders, the child gets rerendered as well. In the following example, `<ListComponent />` will always gets rendered on input change.
+
+```jsx
+function Form() {
+  const [name, setName] = useState('');
+  return (
+    <form>
+      <input
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+      />
+      <span>@{name}</span>
+      <ListComponent list={someLargeArray} />
+    </form>
+  );
+}
+
+function ListComponent({ list }) {
+  return <table>{list.map(renderListItem)}</table>;
+}
+```
+
+This is an issue, it's not obvious why `name` state changes, it rerenders everything below. Even though v-dom will check `list` to make sure no actually dom render is needed, we are still paying the CPU and memory costs. And that's assuming the render calls are not creating heavy render logics.
+
+> Children rendering is deeply coupled with parents rendering logic
+
+### Play the the Cache game
+
+This is what I mean by redux is not designed for writing performant web apps. It's very easy to write correctly behaving yet slow applications if not careful. The key knowledge to React performance is `managing when referencial equality check should pass`. It's a bit overly counter intuitive imo. When you build applications, you just want to focus on build the application. Lets say a change in one element leads to the need to update another. Instead of directly programming that procedure using handler and call an update function, we are playing this game around referencial equality to make sure the app is not overly eager to rerender.
+
+### The Cost
+
+## The dark side: dicipline vs constraining
+
+Let's try to picture what
+
+[Redux principles and concepts transcends the library](</post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>). I've had great success applying unidirectional data flow concept long before I started using Redux. This convinced me, we can apply the rest of the Redux concept to make our application more robust, easy to work with, and performant.
+
+We are not looking for some library perfect code. We are not looking for code that solves everything. We just want something simple, effective and performant. Let's go back to the basics. Let's focus on the priciples and the web platform.
+
+### Disclaimer
+
+- doing this for performance heavy components
+- let's think outside of the box just for little bit
+
+```
+
+```

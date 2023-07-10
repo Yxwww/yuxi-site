@@ -3,6 +3,7 @@ title: What I Learned From Using Redux
 description: Redux transformed the way I build applications. Here is what I learned after using it for several years.
 tags: JavaScript, Redux, Learning
 published: 2023-06-06
+updated: 2023-07-09
 image: capybara_wood_working.png
 ---
 
@@ -18,7 +19,7 @@ The FP flavor in Redux reminded me of Haskell. I was eager to put Redux to the t
 - The state of the application is much easier to reason about directly led to deterministic application behavior
 - Established architecture standard. Having a structure is always better than not having one.
 
-## The principles and the challenges
+## The principles, the challenges, and how to get there
 
 The best thing about learning Redux is grasping its principles and concepts that come with it. I've applied Redux concepts to solve various programming problems in different environments. Like any other technologies, knowing how to apply the concepts into an application stack effectively remains challenging.
 
@@ -34,15 +35,38 @@ Challenges to consider:
 - Effectively and properly synchronizing state.
 - Communicating the state of the application to the user.
 
+How to migrate to using pure functions:
+
+...
+
 ### Pure functions with kickass compositions
 
-Functions are like vessels and organs carries and process "blood" in your system - Event data, state data or network data. Foundational functions such as `pipe`/`compose` and `curry`/`partial` opens up foundamental ways to compose functions, much like body's circulatory system. Once accustomed to using pure functions, you can harness the power of [ramdajs](https://ramdajs.com/). This library brings in rich suite of capabilities to your programming toolbox.
+Functions are like vessels and organs carries and process "blood" in your system - Event data, state data or network data. Foundational functions such as `pipe`/`compose` and `curry`/`partial` opens up foundamental ways to compose functions, much like body's circulatory system.
+Once accustomed to using pure functions, it opens up many possibilities such as memoization, easier to test, easier to share the logic even between threads, and easier to compose. You can harness the power of [ramdajs](https://ramdajs.com/). This library brings in rich suite of capabilities to your programming toolbox.
 
 Challenges to consider:
 
 - Most of the business logic can be implemented as pure functions.
 - Use FP techniques for composition.
 - Handle side effects at the edge.
+
+How to migrate to using pure functions:
+
+- seperate the state update computation from the side effects
+- parameterize any data that's not created by the function
+- try out utility funcitons like `curry` `compose` ;P
+
+Once you dicipline yourself to write pure functions, the functions become idempotent:
+
+```javascript
+var a = subtract(2, 1);
+// is the same as
+var a = 2 - 1;
+// is the same as
+var a = 1;
+```
+
+It makes your functions more trustworthy. You can trust that under any circumstances, your code will always produce the same output given the same imput. There's no hidden state.
 
 ### Readonly state with immutable data
 
@@ -53,6 +77,12 @@ Challenges to consider:
 - Treating data as if it's immutable versus actually making it
 - Mutate for performance if needed but maintain the immutability at the correct boundaries.
 - Understand the performance trade-off and how to minimize its impact.
+
+How to migrate to using immutable data:
+
+- do not mutate any array or object data
+- create new array when any update is needed
+- cache against the referencial equality to check whether the array value is updated
 
 ## Conclusion
 

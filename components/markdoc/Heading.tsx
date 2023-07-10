@@ -22,7 +22,7 @@ function ClickToCopy({ id }) {
 
   return (
     <button
-      className="group-hover:opacity-100 transition-opacity opacity-40 inline text-md hover:underline ml-2 text-slate-500 dark:text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+      className="group-hover:opacity-100 transition-opacity opacity-10 inline text-md hover:underline ml-2 text-slate-500 dark:text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
       onClick={handleClick}
     >
       #

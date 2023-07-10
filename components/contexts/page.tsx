@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/router';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { pipe, T, equals, cond, always, startsWith, prop, evolve } from 'ramda';
+import { pipe, T, equals, cond, always, startsWith, prop } from 'ramda';
 import { removeFirstChar, captalizeFirstChar } from '@/utils/index';
 import { POST_PATH } from '@/src/contents/constants';
 
@@ -28,8 +28,6 @@ const PageContext = createContext<PageContextProps>({
     console.warn('set context setter is not initialized ');
   },
 });
-
-const processContext = evolve({});
 
 const processNonBlogPath = pipe(removeFirstChar, captalizeFirstChar);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouter, withRouter } from 'next/router';
+import { withRouter } from 'next/router';
 import Head from 'next/head';
 import { PROFILE_IMAGE_URL } from 'src/contents/constants';
 import {

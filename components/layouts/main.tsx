@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useScrollPosition from '@/utils/hooks/useScrollPosition';
 import { Footer } from '../footer';
 import Head from '../Head';
 import Heading from '../heading/Heading';
 
-const DEFAULT_FONTS = ['Inter'];
-export const Page = ({
-  children = null,
-  className = '',
-  fonts = DEFAULT_FONTS,
-}) => {
+export const Page = ({ children = null, className = '' }) => {
   const scroll = useScrollPosition();
   const showFloatingHeader = scroll > 100;
   return (
@@ -24,7 +19,7 @@ export const Page = ({
             <Heading />
           </div>
           <div
-            className={`fixed w-screen md:px-4  left-0  z-10 sm:px-2 sm:py-1 bg-base-100 flex-grow text-base-content transition-all  ${
+            className={`fixed w-screen md:px-4  left-0  z-10 sm:px-2 sm:py-1 bg-base-100 flex-grow text-base-content  ${
               showFloatingHeader ? 'top-0' : '-top-[100px]'
             }`}
           >

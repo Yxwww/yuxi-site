@@ -1,6 +1,6 @@
 // import fetch from 'isomorphic-unfetch'
 import Markdoc, { Config } from '@markdoc/markdoc';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect } from 'react';
 import path from 'path';
 import yaml from 'js-yaml'; // or 'toml', etc.
 import { promises as fs } from 'fs';
@@ -156,7 +156,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
       >
         <>
           {image && (
-            <div className="h-[200px] sm:h-[500px] w-full relative">
+            <div className="h-[200px] sm:h-[600px] w-full relative">
               <Image
                 className="object-contain md:object-cover"
                 style={{ marginTop: 0, marginBottom: 0 }}

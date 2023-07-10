@@ -19,12 +19,12 @@ function ToggleBtnPlaceholder() {
 }
 
 export function ThemePrefToggleBtn() {
+  const mounted = useMounted();
+
   const [theme, setTheme] = useLocalStorage<ThemePreference>(
     SITE_LOCAL_SOTRAGE_KEY,
     'none'
   );
-
-  const mounted = useMounted();
 
   useEffect(() => {
     if (

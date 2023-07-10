@@ -15,7 +15,7 @@ body article pre {
 body article img {
   margin-left: auto;
   margin-right: auto;
-  @apply sm:max-w-lg max-w-sm w-full;
+  @apply w-11/12;
 }
 
 .utterances {
