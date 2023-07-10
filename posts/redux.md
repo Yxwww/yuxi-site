@@ -4,7 +4,6 @@ description: Redux transformed the way I build applications. Here is what I lear
 tags: JavaScript, Redux, Learning
 published: 2023-06-06
 image: capybara_wood_working.png
-incomplete: true
 ---
 
 Alongside the Functional Programming (FP) Paradigm, Redux has significantly impacted my journey in programming. Around the year 2016, I was searching for an architecture to build web applications. React wasn't widely adopted at the time and its main focus was on building components and rendering. I was seeking an architecture that could effectively manage the state of an application.
