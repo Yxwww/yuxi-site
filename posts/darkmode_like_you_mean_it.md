@@ -1,6 +1,6 @@
 ---
 title: Darkmode like you mean it
-description: improving darkmode using nextjs and tailwindcss
+description: improving darkmode with nextjs and tailwindcss.
 published: 2023-07-06
 tags: darkmode, nextjs, tailwindcss
 incomplete: true
@@ -9,38 +9,34 @@ image: capybara-darkmode.png
 
 ## Requirements
 
-### Functional Requirements
-
-- read system preference by default
-- allows configuration, preference should be stored and persisted
-
-### Technical Requirements
-
-- no initial flash(white => black) at the beginning of a darkmode
-- resolve hydration issue. `useMounted`, placeholder div
-- use [tailwindcss.com](https://tailwindcss.com/) as a goal
+- Functional requirements
+  - read system preference by default
+  - allows configuration, preference should be stored and persisted
+- UX & Technical requirements
+  - no flash(light => dark) during first render
+  - resolve hydration issue with localStorage
 
 ## Importance
 
-- solving this issue lays ground work for future user preference handling
-- make the loading experience seamless. first 3 seconds is important. get rid of flash headache
-- understanding how to handle darkmode
+- Solving darkmode well lays ground work for future user preference handling
+- Make the loading experience seamless. First 3 seconds is important.
+- Learning how to handle darkmode helps future development
 
 ## Process
 
-### Enable user to set theme preference
+- Enable user to set theme preference with `<ThemePrefToggleBtn />`
+- Store theme preferencee with `useLocalStorage`
+- resolve hydration issue with `useMounted`
 
-#### UX consideration
+While addressing the requirements, I've noticed the flashing issue when page is refreshed.
 
-### Store the theme preference with `useLocalStorage`
-
-### Removing flash
+## Handle flash - understanding the issue
 
 - webpage flashes the light theme before render the darktheme after page reload
 - theme state source of truth resides in `localStorage`
 - theme toggle effect is handled by `<ThemePrefToggleBtn />`
 
-#### Hypothesis: .theme class gets rendered by `<ThemePrevToggle />` which is too deep into render tree
+### Hypothesis: .theme class gets rendered by `<ThemePrevToggle />` too late
 
 - Observation
   - throttle CPU speed to 4X in chrome performance tab
@@ -56,9 +52,9 @@ Prototype: lifting theme state into app root see if flash persists:
 
 ![Images](/static/img/posts/lift-theme-effect-up.png)
 
-Result, flash disappear sooner! Yet, it is still obvious. Rerender is the issue, can we handle darkmode even earlier?
+Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issue, can we handle darkmode even earlier?
 
-### Hypothesis: can we lift up darkmode all the way to the top?
+### Hypothesis: can we lift up darkmode logic all the way to the top makes rerender not observable
 
 ![Images](/static/img/posts/tailwind-darkmode-logic.png)
 
@@ -74,7 +70,7 @@ Result, flash disappear sooner! Yet, it is still obvious. Rerender is the issue,
 
 Result, flash is gone! It looks like the script is loaded synchronously which immediately add `.dark` class into document. The document renders theme right after.
 
-### Hypothesis: prerender darkmode
+### Hypothesis: render darkmode class on the server
 
 ![Images](/static/img/posts/prerenders_dark_mode.png)
 
