@@ -8,3 +8,5 @@ export const META_TITLE_KEY = 'title';
 export const META_OG_TITLE_KEY = 'og:title';
 export const META_OG_DESCRIPTION_KEY = 'description';
 export const META_OG_IMAGE_KEY = 'image';
+
+export const SITE_LOCAL_SOTRAGE_KEY = 'yuxi-site-theme'; //

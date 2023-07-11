@@ -2,11 +2,17 @@
  * Direct copy from tailwindcss.com
  * iife
  */
-(function () {
+const THEME_KEY = 'yuxi-site-theme'; // TODO: shared the values in constants/ somehow
+function getThemeFromLocalStorage() {
+  return JSON.parse(localStorage.getItem(THEME_KEY));
+}
+
+(function() {
   try {
+    const theme = getThemeFromLocalStorage();
     if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
+      theme === 'dark' ||
+      (!(THEME_KEY in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
       document.documentElement.classList.add('dark');
@@ -18,5 +24,5 @@
       document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('data-theme', 'garden');
     }
-  } catch (_) {}
+  } catch (_) { }
 })();

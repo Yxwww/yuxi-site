@@ -72,7 +72,14 @@ Result, flash disappear sooner! Yet, it is still obvious. Rerender is the issue,
   - tryout tailwind darkmode script
   - useDarkMode recommendation to achieve this in nextjs https://github.com/donavon/use-dark-mode#that-flash
 
-Result, flash is gone! it's probably good enough.
+Result, flash is gone! It looks like the script is loaded synchronously which immediately add `.dark` class into document. The document renders theme right after.
+
+### Hypothesis: prerender darkmode
+
+![Images](/static/img/posts/prerenders_dark_mode.png)
+
+- Looks like tailwind dark mode came with the http request
+- What's an effecient way to render darkmode?
 
 #### Resources:
 
