@@ -1,6 +1,9 @@
-import React, { Ref } from 'react'
-import NextImage from 'next/image'
-import { noneDefined } from 'utils'
+/**
+ * TODO: Revisit this abstraction. With better understanding of next/image
+ */
+import React, { Ref } from 'react';
+import NextImage from 'next/image';
+import { noneDefined } from 'utils';
 
 export default function Image({
   inline,
@@ -14,18 +17,18 @@ export default function Image({
   height,
   fill,
 }: {
-  fill?: boolean
-  src: any
-  alt?: string
-  className?: string
-  imageClassName?: string
-  width?: number
-  height?: number
-  imageRef?: Ref<HTMLImageElement>
-  onClick?: () => void
-  inline?: boolean
+  fill?: boolean;
+  src: any;
+  alt?: string;
+  className?: string;
+  imageClassName?: string;
+  width?: number;
+  height?: number;
+  imageRef?: Ref<HTMLImageElement>;
+  onClick?: () => void;
+  inline?: boolean;
 }) {
-  const shouldFill = fill && noneDefined([width, height])
+  const shouldFill = fill && noneDefined([width, height]);
   return (
     <span
       className={`${inline && 'inline'} relative outline-none ${className}`}
@@ -42,5 +45,5 @@ export default function Image({
         height={height}
       />
     </span>
-  )
+  );
 }

@@ -61,7 +61,7 @@ Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issu
 - Observation:
   - tailwind has inline script tag handles darkmode
   - lifing darkmode all the way into script tag will do the trick
-- consideration
+- Consideration
   - flash can still happen depends on how fast rerender can happen
 - Approach:
   - use `_document` for prerendered darkmode script
@@ -70,12 +70,15 @@ Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issu
 
 Result, flash is gone! It looks like the script is loaded synchronously which immediately add `.dark` class into document. The document renders theme right after.
 
-### Hypothesis: render darkmode class on the server
+### Hypothesis: render darkmode on the server solves rerender issue completely
 
 ![Images](/static/img/posts/prerenders_dark_mode.png)
 
-- Looks like tailwind dark mode came with the http request
-- What's an effecient way to render darkmode?
+- Observation:
+  - Looks like tailwind dark mode came with the http request
+  - What's an effecient way to render darkmode in SSG?
+- Consideration:
+  - Landing page should be static instead of server rendered
 
 #### Resources:
 

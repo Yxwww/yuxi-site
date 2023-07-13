@@ -1,11 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
   return (
-    <div className="card card-side bg-base-50 dark:border-zinc-700 shadow-lg transition-shadow rounded-none">
-      <figure className="relative sm:w-[370px] flex-shrink-0">
+    <div className="card card-side bg-base-50 dark:border-zinc-700 shadow-lg transition-shadow rounded-none sm:flex-row flex-col">
+      <figure className="relative sm:w-[370px] w-full sm:h-auto h-60 flex-shrink-0">
         <Image
           className="blockmy-0 h-full object-contain"
           src={imgUrl}

@@ -9,9 +9,9 @@ export default function Home() {
     <Page>
       <div className="container pb-4">
         <div className="max-w-lg font-mono px-1">
-          <div className="h-[300px] sm:h-[400px] w-full relative max-w-[400px]">
+          <div className="mt-10 -ml-4 h-[300px] sm:h-[400px] w-full relative max-w-[400px]">
             <Image
-              className="object-contain md:object-cover my-0"
+              className="object-contain md:object-cover my-0 origin-top-left -rotate-6"
               src="/static/img/capybara-landing.png"
               alt={`landing image - capybara on books!`}
               fill

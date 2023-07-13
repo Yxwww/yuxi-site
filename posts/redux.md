@@ -66,7 +66,7 @@ var a = 2 - 1;
 var a = 1;
 ```
 
-It makes your functions more trustworthy. You can trust that under any circumstances, your code will always produce the same output given the same imput. There's no hidden state.
+It makes your functions more trustworthy. You can trust that under any circumstances, your code will always produce the same output given the same input. There's no hidden state.
 
 ### Readonly state with immutable data
 
