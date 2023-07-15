@@ -121,10 +121,10 @@ We ejected from the react ecosystem, we moved from using a `Framework` to direct
 
 ![Images](/static/img/posts/web-app-abstraction.png)
 
-The problem with this approach is it doesn't scale very well if not careful. We aren't thinking in components lifecycle, side effects management, or state management. Instead, we are thinking in managing and updating the dom nodes directly.
+A potential problem with this approach is it doesn't scale very well if not careful. We aren't thinking in components lifecycle, side effects management, or state management. Instead, we are thinking in managing and updating the dom nodes directly. We need to build some abstraction like a framework to allow us think in building an app instead of a dom manipulation tool. Before we move on I want to make the app more complete:
 
-Now, starting from here if you are building an app from scratch. Can possibly avoid all the footguns listed above. How would you build it?
+# [In sert more complete version of the app]
 
-Here is how I'd approach it:
+Now, the app is complete, anything more code we add from now is to help us organize or reason about the code. Keep in mind, the more code we add from here, will slow down the user client. So we want to minimize the extra code as much as we can.
 
-#### TO BE CONTINUED...
+### TO BE CONTINUED...
