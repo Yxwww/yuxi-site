@@ -156,7 +156,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
       >
         <>
           {image && (
-            <div className="h-[200px] sm:h-[600px] w-full relative">
+            <div className="h-[200px] sm:h-[400px] lg:h-[600px] w-full relative">
               <Image
                 className="object-contain md:object-cover"
                 style={{ marginTop: 0, marginBottom: 0 }}
