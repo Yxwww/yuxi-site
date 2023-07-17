@@ -119,7 +119,7 @@ Here you go, that's it. That's all there is. Do you feel the sense of tranquilit
 
 We ejected from the react ecosystem, we moved from using a `Framework` to directly dealing with `HTML, CSS, JS`. We are dealing with the lower level abstraction of the web app development:
 
-![Images](/static/img/posts/web-app-abstraction.png)
+![Images](/static/img/posts/webapp-abstraction.png)
 
 A potential problem with this approach is it doesn't scale very well if not careful. We aren't thinking in components lifecycle, side effects management, or state management. Instead, we are thinking in managing and updating the dom nodes directly. We need to build some abstraction like a framework to allow us think in building an app instead of a dom manipulation tool. Before we move on I want to make the app more complete:
 
