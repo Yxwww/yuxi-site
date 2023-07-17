@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function createIdGenerator() {
   let counter = 0;
@@ -63,42 +63,42 @@ function computeState(tasks: Task[]): {
 
 export default function QueuePlayground() {
   const [tasks, setState] = useState<Task[]>([]);
-  console.log({ tasks });
+  const lockedRef = useRef<boolean>();
+  const [active, setActive] = useState<Task>(null);
+  const [locked, setLock] = useState<boolean>(false);
+  // console.log({ tasks });
 
   useEffect(() => {
     let discarded = false;
     let t;
     async function processNext() {
       // const
-      const { isEmpty, isLocked, nextToRun } = computeState(tasks);
-      if (isEmpty) return;
-      if (isLocked) return;
-      if (!nextToRun) return;
-      console.log('process', nextToRun.id);
+      if (tasks.length === 0 || locked) {
+        return;
+      }
 
-      setState((ts) => {
-        const toUpdateIdx = ts.findIndex((v) => nextToRun.id === v.id);
-        const shallowCopy = ts.slice();
-        shallowCopy[toUpdateIdx] = { ...ts[toUpdateIdx], status: 'pending' };
-        return shallowCopy;
-      });
-
-      await nextToRun.task();
-
-      setState((ts) => {
-        const toUpdateIdx = ts.findIndex((v) => nextToRun.id === v.id);
-        const shallowCopy = ts.slice();
-        shallowCopy[toUpdateIdx] = { ...ts[toUpdateIdx], status: 'complete' };
-        return shallowCopy;
-      });
+      const [top, ...rest] = tasks;
+      setLock(true);
+      setState(rest);
+      setActive(top);
+      // console.log('start', top.id);
+      await top.task();
+      setActive(null);
+      setLock(false);
+      // setState((ts) => {
+      //   const toUpdateIdx = ts.findIndex((v) => nextToRun.id === v.id);
+      //   const shallowCopy = ts.slice();
+      //   shallowCopy[toUpdateIdx] = { ...ts[toUpdateIdx], status: 'pending' };
+      //   return shallowCopy;
+      // });
     }
     processNext();
 
     return () => {
-      console.log('discard', t?.id);
+      // console.log('discard', t?.id);
       discarded = true;
     };
-  }, [tasks]);
+  }, [tasks, locked]);
   return (
     <div>
       <button
@@ -106,8 +106,8 @@ export default function QueuePlayground() {
           setState((arr) => [
             ...arr,
             createTask(uuid(), () =>
-              delay(5000).then((v) => {
-                console.log('task:', v);
+              delay(2000).then((v) => {
+                // console.log('task:', v);
               })
             ),
           ]);
@@ -116,13 +116,16 @@ export default function QueuePlayground() {
         add task
       </button>
 
-      <ul>
-        {tasks
-          .filter((v) => v.status === 'waiting' || v.status === 'pending')
-          .map((t, i) => {
-            return <div key={t.id}>{t.id} </div>;
-          })}
-      </ul>
+      <div>
+        <h2>Active: {active ? active.id : 'NOne'}</h2>
+        <ul style={{ flex: 1 }}>
+          {tasks
+            .filter((v) => v.status === 'waiting' || v.status === 'pending')
+            .map((t, i) => {
+              return <div key={t.id}>{t.id} </div>;
+            })}
+        </ul>
+      </div>
     </div>
   );
 }
