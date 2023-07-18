@@ -1,5 +1,5 @@
 ---
-title: Eject From React Redux with Grace
+title: Eject From React Redux with
 description: After learning and using React and Redux for years, I want to take some time sit back and brainstorm how would I build a web app from scratch.
 tags: Redux, React, Web Developemenmt
 published: 2023-07-03
@@ -7,25 +7,26 @@ image: capybara-watch.png
 incomplete: true
 ---
 
-Some tools brighten my day. Some tools transform my life. Redux [changed how I approach software development](/post/redux), although no tool is perfect. Redux is designed with React ecosystem as it's primary consumer. The three principles and concepts are powerful, but there are many ways to implement them. The way Redux approaches it is specifically tailored toward React. If you need to use Redux outside of React, you will need some kind of caching-capable adapter. Otherwise, there will be too much performance overhead.
+Some tools brighten my day. Some tools transform my life. Although no tool is perfect, Redux [changed how I approach software development](/post/redux). Redux is designed with React ecosystem as its primary consumer. The three principles and concepts are powerful, but there are many ways to implement them. The way Redux approaches it is specifically tailored toward React. If you need to use Redux outside of React, you will need some kind of caching-capable adapter. Otherwise, there will be too much performance overhead.
 
 > Though tools may adapt to circumstance, the essence of their purpose remains unaltered.
 
 Instead of trying to make the Redux work for various environments, we can adapt Redux principles and concepts to the new environment. First, I want to bring up some performance concerns I've had with React(React) ecosystem as whole.
 
-## Issues with Redux library and React in general
+## General issues with Redux library and React
 
-Redux is not designed to maximize performance. Same can be said about React. Both technologies focus on building things `correctly` but not building things run `fast`. While there can be an argument made that if it's easier to built things right, then it's easier to make them fast. I partially agree with this notion. Although, unfortunately in my experience, if an architecture allows things to be slower here and there, then it will always add up. _Always_. Making a system easy to reason about does not directly make code fast, it is merely a beneficial side effect.
+Redux is not designed to maximize performance, a trait it shares with React. Both technologies focus on building things `correctly`, but not building things run `fast`. While there can be an argument made that if it's easier to built things right, then it's easier to make them fast. I partially agree with this notion. Although, unfortunately in my experience, if an architecture allows things to be slower here and there, then it will always add up. _Always_. Making a system easy to reason about does not directly make code fast, it is merely a beneficial side effect.
 
 React developers explore and come up with ways to make things _not_ `slower than it should` using technology like memoization, [reselect](https://www.npmjs.com/package/reselect), and [virtual dom](https://www.npmjs.com/package/React-dom). Here are some potential pitfalls applying redux concepts:
 
 ### Issue with single source of truth
 
-[Single source of truth with unidirectional data flow](</post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>) is powerful for reasoning about state update; however, it leads to any state update will have to go through the entire store each time it updates. _Each time_ it updates.
+[Single source of truth with unidirectional data flow](</post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>) is powerful for reasoning about state update; however, it leads to any state update will have to go through the entire store each time it updates.
 
 - reducer switch statement process all actions
 - memoization to prevent the app from rerendering (selectors, v-dom, hooks)
-- Unrelated functions gets run (or rendered), developers hope they cache or memoize state object correctly to avoid a rerender
+- Unrelated functions gets run (or rendered), developers hope they cache or memoize state object correctly to avoid a rerender.
+  - For apps with large data, that can easily crash the browser
 
 ### Issue with pure functions
 
@@ -33,7 +34,7 @@ React developers explore and come up with ways to make things _not_ `slower than
 
 - Mutation will always be faster than recreating large data for the sake of purity
 - In-place operations always is more memory effecient; however, it goes against the whole point of writing pure functions.
-- Fixated writing pure functions may lead to heavy garbage collection (GC) work. If the GC happens on the main thread, it will be very noticable
+- Fixated writing pure functions may lead to heavy garbage collection (GC) work. If the GC happens on the main thread, it will be very noticeable.
 
 ### Issue with immutable data
 
@@ -88,6 +89,8 @@ What if the component render functions has expensive procedures. Memoize the hea
 
 This is what I mean by redux is not designed for writing performant web apps. It's very easy to write correctly behaving yet slow applications. The key knowledge to React performance is `managing when referencial equality check should pass`. It's a bit overly counter intuitive imo. When we build applications, we just want to focus on building the app logic. Lets say, we are implementing the behavior where one element triggers the update of another. Instead of directly programming that procedure using handler and call an update function, we are playing this game around referencial equality to make sure the app is not overly eager to rerender.
 
+How can we design the app to be fast while follows React & Redux principles. Maybe we have to jump back to the beginning. We have to unlearn what we have learned.
+
 ## Back to the basics
 
 [Redux principles and concepts transcends the library](</post/redux#single-source-of-truth-with-unidirectional-data-flow-(udf)>). I've had great success applying unidirectional data flow concept long before I started using Redux. This convinced me, we can apply the rest of the Redux concept to make our application more robust, easy to work with, and performant.
@@ -115,7 +118,7 @@ In plain HTML, this looks like:
 </form>
 ```
 
-Here you go, that's it. That's all there is. Do you feel the sense of tranquility? Do you feel like your soul has been cleansed? No rerendering from the `<ul>` component, we don't have to memoize anything. Something changed directly update the things needs to be updated. It's like WUUUUT? How come this is not the norm??
+Here you go, that's it. That's all there is. Do you feel the sense of tranquility? Do you feel like your soul has been cleansed? No rerendering from the `<ul>` component, we don't have to memoize anything. Something changed directly update the things needs to be updated. How come this is not the norm??
 
 We ejected from the react ecosystem, we moved from using a `Framework` to directly dealing with `HTML, CSS, JS`. We are dealing with the lower level abstraction of the web app development:
 
@@ -123,8 +126,10 @@ We ejected from the react ecosystem, we moved from using a `Framework` to direct
 
 A potential problem with this approach is it doesn't scale very well if not careful. We aren't thinking in components lifecycle, side effects management, or state management. Instead, we are thinking in managing and updating the dom nodes directly. We need to build some abstraction like a framework to allow us think in building an app instead of a dom manipulation tool. Before we move on I want to make the app more complete:
 
-# [In sert more complete version of the app]
+# [Insert more completed version of the app]
 
 Now, the app is complete, anything more code we add from now is to help us organize or reason about the code. Keep in mind, the more code we add from here, will slow down the user client. So we want to minimize the extra code as much as we can.
+
+# [Insert updated example followed with Redux principle]
 
 ### TO BE CONTINUED...
