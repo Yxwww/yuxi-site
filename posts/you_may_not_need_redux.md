@@ -1,5 +1,5 @@
 ---
-title: Eject From React Redux with
+title: Eject From React Redux with Grace
 description: After learning and using React and Redux for years, I want to take some time sit back and brainstorm how would I build a web app from scratch.
 tags: Redux, React, Web Developemenmt
 published: 2023-07-03
