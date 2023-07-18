@@ -15,9 +15,9 @@ Instead of trying to make the Redux work for various environments, we can adapt 
 
 ## General issues with Redux library and React
 
-Redux is not designed to maximize performance, a trait it shares with React. Both technologies focus on building things `correctly`, but not building things run `fast`. While there can be an argument made that if it's easier to built things right, then it's easier to make them fast. I partially agree with this notion. Although, unfortunately in my experience, if an architecture allows things to be slower here and there, then it will always add up. _Always_. Making a system easy to reason about does not directly make code fast, it is merely a beneficial side effect.
+Redux is not designed to maximize performance, a trait it shares with React. Both technologies focus on building things `correctly`, but not building things run `fast`. While there can be an argument made that if it's easier to built things right, then it's easier to make them fast. I partially agree with this notion. Although, unfortunately in my experience, if an architecture allows things to be slower here and there, then it will always add up. _Always_. In addition, making a system easy to reason about does not directly make code fast, it is merely a beneficial side effect.
 
-React developers explore and come up with ways to make things _not_ `slower than it should` using technology like memoization, [reselect](https://www.npmjs.com/package/reselect), and [virtual dom](https://www.npmjs.com/package/React-dom). Here are some potential pitfalls applying redux concepts:
+React developers explore and come up with ways to make things `NOT slower than it should` using technology like memoization, [reselect](https://www.npmjs.com/package/reselect), and [virtual dom](https://www.npmjs.com/package/React-dom). Here are some potential pitfalls applying redux concepts:
 
 ### Issue with single source of truth
 
@@ -26,11 +26,11 @@ React developers explore and come up with ways to make things _not_ `slower than
 - reducer switch statement process all actions
 - memoization to prevent the app from rerendering (selectors, v-dom, hooks)
 - Unrelated functions gets run (or rendered), developers hope they cache or memoize state object correctly to avoid a rerender.
-  - For apps with large data, that can easily crash the browser
+  - Dealing with apps with large data, caching data without care can easily lead to crashing the browser
 
 ### Issue with pure functions
 
-[Pure functions](/post/redux#pure-functions-with-kickass-compositions) does not make it easy to write performant code, other than memoization becomes easier
+[Pure functions](/post/redux#pure-functions-with-kickass-compositions) does not make it easy to build performant app.
 
 - Mutation will always be faster than recreating large data for the sake of purity
 - In-place operations always is more memory effecient; however, it goes against the whole point of writing pure functions.
