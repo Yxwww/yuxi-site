@@ -1,7 +1,5 @@
 // ./schema/Heading.markdoc.js
 
-import { Tag } from '@markdoc/markdoc';
-
 export const heading = {
   children: ['inline'],
   render: 'Heading',

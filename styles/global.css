@@ -26,3 +26,7 @@ body article img {
 .prose .hammer {
   @apply mt-0 mb-0;
 }
+.prose .callout p{
+  margin-top: 0;
+  margin-bottom: 0;
+}

@@ -5,14 +5,13 @@ import path from 'path';
 import yaml from 'js-yaml'; // or 'toml', etc.
 import { promises as fs } from 'fs';
 import { Page } from '../../components/layouts/main';
-import { heading } from '@/markdoc/schema/Heading';
 import 'prismjs';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import { Fence } from '@/components/markdoc/Fence';
 import { Heading as HeadingRenderingNode } from '@/components/markdoc/Heading';
-import { fence } from '@/markdoc/schema/Fence';
+import { fence, callout, heading } from '@/markdoc/schema';
 import Head from 'next/head';
 import Link from 'next/link';
 import { InferGetStaticPropsType } from 'next';
@@ -32,11 +31,15 @@ import { usePage } from '@/components/contexts/page';
 import Image from 'next/image';
 import { getReadingTime } from '@/src/utils';
 import RotatingHammer from '@/components/icons/RotatingHammer';
+import CalloutTag from '@/components/markdoc/Callout';
 
 const config: Config = {
   nodes: {
     heading,
     fence,
+  },
+  tags: {
+    callout,
   },
 };
 const UTTERANCES_SCRIPT_SETUP: UseScriptsAttributes = {
@@ -94,16 +97,18 @@ function formatDate(date: Date | string) {
   return dayjs(date).format('MMM DD, YYYY');
 }
 
+const RENDER_OPTION = {
+  components: {
+    Fence,
+    Heading: HeadingRenderingNode,
+    Callout: CalloutTag,
+  },
+};
 function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const ast = Markdoc.parse(post.content);
   const { setPostContext } = usePage();
   const content = Markdoc.transform(ast, config);
-  const components = Markdoc.renderers.react(content, React, {
-    components: {
-      Fence,
-      Heading: HeadingRenderingNode,
-    },
-  });
+  const components = Markdoc.renderers.react(content, React, RENDER_OPTION);
   const [renderComments, setRenderComments] = React.useState(false);
   useEffect(() => {
     setRenderComments(true);
