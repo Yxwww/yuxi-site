@@ -1,5 +1,5 @@
 ---
-title: Darkmode like you mean it
+title: Darkmode - doing it right
 description: improving darkmode with nextjs and tailwindcss.
 published: 2023-07-06
 tags: darkmode, nextjs, tailwindcss
@@ -30,23 +30,24 @@ image: capybara-darkmode.png
 
 While addressing the requirements, I've noticed the flashing issue when page is refreshed.
 
-## Handle flash - understanding the issue
+### Handle flash - understanding the issue
+
+Assessing the current design:
 
 - webpage flashes the light theme before render the darktheme after page reload
 - theme state source of truth resides in `localStorage`
-- theme toggle effect is handled by `<ThemePrefToggleBtn />`
+- theme toggle effect is handled by <ThemePrefToggleBtn /> component
 
-### Hypothesis: .theme class gets rendered by `<ThemePrevToggle />` too late
+#### Hypothesis: .theme class gets rendered by <ThemePrevToggle /> too late
 
 - Observation
   - throttle CPU speed to 4X in chrome performance tab
   - notice the flash comes from the light theme gets rendered first
   - `theme` css class gets rendered too late
-  - recall theme toggle logic lives with the `<ThemePrefToggleBtn />`
   - assumption: the theme button gets rendered too late
 - Approach
   - lift up the theme state so the theme state gets resolved at the root
-  - `<ThemePrefToggleBtn />` only handles toggling
+  - <ThemePrefToggleBtn /> only handles toggling
 
 Prototype: lifting theme state into app root see if flash persists:
 
@@ -54,7 +55,7 @@ Prototype: lifting theme state into app root see if flash persists:
 
 Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issue, can we handle darkmode even earlier?
 
-### Hypothesis: can we lift up darkmode logic all the way to the top makes rerender not observable
+#### Hypothesis: can we lift up darkmode logic all the way to the top makes rerender not observable
 
 ![Images](/static/img/posts/tailwind-darkmode-logic.png)
 
@@ -70,7 +71,7 @@ Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issu
 
 Result, flash is gone! It looks like the script is loaded synchronously which immediately add `.dark` class into document. The document renders theme right after.
 
-### Hypothesis: render darkmode on the server solves rerender issue completely
+#### Hypothesis: render darkmode on the server solves rerender issue completely
 
 ![Images](/static/img/posts/prerenders_dark_mode.png)
 

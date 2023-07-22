@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocalStorage } from '@/utils/hooks/useScrollPosition';
+import { useLocalStorage } from '@/utils/hooks';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import useMounted from '@/utils/hooks/useMounted';
 import { SITE_LOCAL_SOTRAGE_KEY } from '@/constants';

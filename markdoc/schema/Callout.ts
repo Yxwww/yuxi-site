@@ -1,4 +1,6 @@
-export const CALLOUT_TYPES = ['caution', 'check', 'note', 'warning'] as const;
+const CALLOUT_TYPE = ['caution', 'check', 'note', 'warning'];
+export const CALLOUT_TYPES_READONLY = [...CALLOUT_TYPE] as const; // for TSC
+
 export const callout = {
   render: 'Callout',
   children: ['paragraph', 'tag', 'list'],
@@ -6,8 +8,8 @@ export const callout = {
     type: {
       type: String,
       default: 'note',
-      matches: CALLOUT_TYPES,
-      errorLevel: 'critical' as const, // this is strange
+      matches: CALLOUT_TYPE,
+      errorLevel: 'critical' as const,
     },
     title: {
       type: String,

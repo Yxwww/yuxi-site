@@ -1,5 +1,5 @@
 import React from 'react';
-import useScrollPosition from '@/utils/hooks/useScrollPosition';
+import { useScrollPosition } from '@/utils/hooks';
 import { Footer } from '../footer';
 import Head from '../Head';
 import Heading from '../heading/Heading';

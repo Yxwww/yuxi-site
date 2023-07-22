@@ -1,7 +1,6 @@
 ---
 title: Past Present and Future
 description: A moment of comtemplation of past
-published: 2023-06-06
 tags: Life
 incomplete: true
 image: capybara-by-the-river.png

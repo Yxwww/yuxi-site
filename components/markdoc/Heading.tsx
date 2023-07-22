@@ -30,12 +30,12 @@ function ClickToCopy({ id }) {
   );
 }
 
-export function Heading({ children, level, ...rest }) {
+export function Heading({ children, level }) {
   const HeadingLevel = getHeadingLevel(level) as keyof JSX.IntrinsicElements;
   const id = generateID([children]);
 
   return (
-    <HeadingLevel id={id} className="text-2xl font-bold group">
+    <HeadingLevel id={id} className="font-bold group">
       {children}
       <ClickToCopy id={id} />
     </HeadingLevel>

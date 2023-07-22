@@ -7,7 +7,7 @@ import ProfilePicture from 'public/static/img/kinect-infra-red.jpeg';
 import Link from 'next/link';
 import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn';
 import NavToggle from './NavToggle';
-import { useLocalStorage } from '@/utils/hooks/useScrollPosition';
+import { useLocalStorage } from '@/utils/hooks';
 import { useRouter } from 'next/router';
 
 export interface NavItem {

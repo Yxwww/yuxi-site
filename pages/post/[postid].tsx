@@ -10,8 +10,9 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import { Fence } from '@/components/markdoc/Fence';
-import { Heading as HeadingRenderingNode } from '@/components/markdoc/Heading';
-import { fence, callout, heading } from '@/markdoc/schema';
+import { Heading as HeadingNodeRenderer } from '@/components/markdoc/Heading';
+import { Image as ImageNodeRenderer } from '@/components/markdoc/Image';
+import { fence, callout, heading, image } from '@/markdoc/schema';
 import Head from 'next/head';
 import Link from 'next/link';
 import { InferGetStaticPropsType } from 'next';
@@ -40,6 +41,7 @@ const config: Config = {
   },
   tags: {
     callout,
+    image,
   },
 };
 const UTTERANCES_SCRIPT_SETUP: UseScriptsAttributes = {
@@ -100,8 +102,9 @@ function formatDate(date: Date | string) {
 const RENDER_OPTION = {
   components: {
     Fence,
-    Heading: HeadingRenderingNode,
+    Heading: HeadingNodeRenderer,
     Callout: CalloutTag,
+    Image: ImageNodeRenderer,
   },
 };
 function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -161,7 +164,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
       >
         <>
           {image && (
-            <div className="h-[200px] sm:h-[400px] lg:h-[600px] w-full relative">
+            <div className="h-[200px] sm:h-[400px] lg:h-[550px] w-full relative">
               <Image
                 className="object-contain md:object-cover"
                 style={{ marginTop: 0, marginBottom: 0 }}
@@ -171,7 +174,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
               />
             </div>
           )}
-          <h1 className="capitalize sm:pt-16 pt-8">{title}</h1>
+          <h1 className="title capitalize sm:pt-16 pt-8">{title}</h1>
           <div className="flex flex-wrap justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
             <time className="shrink-0">
               {updated ? (
@@ -192,7 +195,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         </>
         {components}
         <hr />
-        <h2>Comments ☕️</h2>
+        <p className="text-3xl text-bold">Comments ☕️</p>
         <div ref={ref}></div>
       </div>
     </Page>
