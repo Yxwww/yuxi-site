@@ -49,7 +49,7 @@ Any non main-thread dependent operation should be delegated to web workers. For 
 const { createWorkerUtil } = imaginaryUtilities;
 const { filter } = createWorkerUtil();
 
-const filteredArr = await map(arr, (v) => v + 1); // not sure how to make this happen with worker ? Maybe some kind of eval ?
+const filteredArr = await filter(arr, (v) => v + 1); // not sure how to make this happen with worker ? Maybe some kind of eval ?
 ```
 
 ### All operations must be cancellable
@@ -67,7 +67,7 @@ const { filter } = createWorkerUtil();
 const controller = new AbortController();
 const abortSignal = controller.signal;
 
-const filteredArr = await map(arr, (v) => v + 1, {
+const filteredArr = await filter(arr, (v) => v + 1, {
   abortSignal,
 });
 
