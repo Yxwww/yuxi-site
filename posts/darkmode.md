@@ -10,7 +10,7 @@ image: capybara-darkmode.png
 ## Requirements
 
 - Functional requirements
-  - read system preference by default
+  - renders system preference by default
   - allows configuration, preference should be stored and persisted
 - UX & Technical requirements
   - no flash(light => dark) during first render
@@ -24,13 +24,13 @@ image: capybara-darkmode.png
 
 ## Process
 
-Adding darkmode is fairly straightforward process, it can be mainly summerized as:
+Adding darkmode is a fairly straightforward process, it can be mainly summerized as:
 
 - Enable user to set theme preference with `<ThemePrefToggleBtn />`
 - Store theme preferencee with `useLocalStorage`
-- render out darkmode based on user preference or system preference
+- Render out darkmode based on user preference
 
-There are two issues that I ran into makes it a bit tricky:
+Two issues that I fixed:
 
 - resolve hydration issue with `useMounted`
 - resolve "flash" issue where light always gets rendered first for a short period before rendering darkmode
@@ -42,17 +42,17 @@ There are two issues that I ran into makes it a bit tricky:
   height=500
   /%}
 
-This was inspired by tailwind documentation theme toggle button. Its a single action button to toggle theme from `dark => light` and from `light => dark`.
+The current iteration of the darkmode button was inspired by tailwind documentation. It's a single action button to toggle theme from `dark => light` and from `light => dark`.
 
-Currently, the draw back of this design is it only supports toggling from between "always dark" and "always light". Once, the toggle is used there's no way to go back to "using system preference". A better approach would be having a dropdown where user can select all three options.
+The drawback of this design is it only supports toggling from between "always dark" and "always light". Once the toggle is clicked, there's no way to go back to "using system preference" option. A better approach would be having a dropdown where user can select all three options. This is documented at [future plans](/post/darkmode#future-plan)
 
 ### Storing theme preference
 
 I ended up choosing `localStorage` to store the user preference theme state due to:
 
-- theme data is small
-- browser environment dependent: some browser as darker theme some don't
+- theme data being small
 - easy to build
+- browser environment dependent: the look of the browser can affect user preference
 
 Came across `useLocalStorage` hook to easily abstract storing and syncing logic. Checkout the hook [here](https://github.com/Yxwww/yuxi-site/blob/main/utils/hooks/useLocalStorage.ts)
 
@@ -71,19 +71,30 @@ Very standard hydration issue when the source of state is not stored on server. 
 
 - theme state is stored on the client `localStorage`
 - server doesn't have access to the theme state
-- renders the content that does not match with client
+- renders the content that does not match with client leads to hydration error
 
 ### The solution: useMounted
 
-Checkout `useMounted` [here](https://github.com/Yxwww/yuxi-site/blob/main/utils/hooks/useMounted.ts). It makes the ThemeToggleButton only rendered by client.
+Checkout `useMounted` [here](https://github.com/Yxwww/yuxi-site/blob/main/utils/hooks/useMounted.ts). This simple hook utilized the nature of useEffect. useEffect with empty `[]` dependencies only gets called by the client when the component gets mounted.
+
+To use useMounted hook:
+
+```typescript
+function Component() {
+  const mounted = useMounted();
+  return mounted ? <>Only rendered by client.</> : null;
+}
+```
+
+Using useMounted hook makes the <ThemeToggleButton /> only rendered by client. This avoids hydration issue all together.
 
 ## Fix flash issue
 
-While addressing the requirements, I've noticed the flashing issue when page is refreshed.
+While addressing the requirements, I've noticed a flashing issue when the page initially renders in light mode then renders the darkmode.
 
 Assessing the current design:
 
-- webpage flashes the light theme before render the darktheme after page reload
+- webpage flashes the light theme before render the darktheme after page gets loaded
 - source of truth of theme state is stored in `localStorage`
 - theme toggle effect is handled by <ThemePrefToggleBtn /> component
 
@@ -93,7 +104,7 @@ Assessing the current design:
   - throttle CPU speed to 4X in chrome performance tab
   - notice the flash comes from the light theme gets rendered first
   - `theme` css class gets rendered too late
-  - assumption: the theme button gets rendered too late
+  - assumption: the theme button gets rendered too late due to theme toggle button is too nested in the render tree
 - Approach
   - lift up the theme state so the theme state gets resolved at the root
   - <ThemePrefToggleBtn /> only handles toggling
@@ -116,9 +127,9 @@ Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issu
 - Approach:
   - use `_document` for prerendered darkmode script
   - tryout tailwind darkmode script
-  - useDarkMode recommendation to achieve this in nextjs https://github.com/donavon/use-dark-mode#that-flash
+  - `useDarkMode` recommendation script see: [docs page](https://github.com/donavon/use-dark-mode#that-flash)
 
-Result, flash is gone! It looks like the script is loaded synchronously which immediately add `.dark` class into document. The document renders theme right after.
+Result, flash is gone! It looks like the script gets executed synchronously which immediately adds `.dark` class into document. The document renders theme right after. This is good enough for now.
 
 ### Hypothesis: render darkmode on the server solves rerender issue completely
 
@@ -126,17 +137,18 @@ Result, flash is gone! It looks like the script is loaded synchronously which im
 
 - Observation:
   - Looks like tailwind dark mode came with the http request
-  - What's an effecient way to render darkmode in SSG?
+  - What's an effecient way to render darkmode in SSR/SSG?
 - Consideration:
   - Landing page should be static instead of server rendered
   - Could fix hydration issue if done correctly
 
 ## Future plan
 
-- use a dropdown select component to support user to select system preference state
+- use a dropdown <select /> component to support user to select "system preference state", "always light", and "always dark".
+  - sync "prefer system theme" state with toggle UI
 - if user select system preferences, app should detect theme change when system theme is changed
-  - long polling, check system darkmode every 5 mins ?
-  - checkout on window focused?
+  - long polling, check system theme pref every 5 mins
+  - check system pref on window focused
 - checkout the last hypothesis: rendering darkmode on server approach
   - is there a request header you can specify user theme preference?
 
