@@ -30,11 +30,13 @@ It's essential to avoid pitfalls such as immediate abstraction at the sight of r
 
 ## What worked for me 🔧
 
-> Let's make it work, then we make it better!
+{% callout %}
+Let's make it work, then we make it better!
+{% /callout %}
 
-My advice is to make it work first, then make it better! This approach depends on understanding the product's future, not afraid to write things more than once, and learning from battle-tested solutions. The optimal approach is different for different development purpose such as developing a product vs developing a library.
+My advice is to make it work first, then make it better! This approach depends on understanding the product's future, not afraid to write things more than once, and learning from battle-tested solutions. The optimal approach is different for different development purpose such as developing products vs developing tools
 
-### Developing a product
+### Developing products - fluidity
 
 When developing a product, generally we want to make things flexible. When we discover a user problem, we aim to solve that problem and provide value to our user. The process looks like:
 
@@ -44,13 +46,49 @@ During the ideation and user study process, it's crucial to be involved to under
 
 In addition, collaborating with various teams brings fresh perspectives to the problems we're trying to solve. Simply having a more comprehensive context enhances our understanding of the problem, allowing us to focus on the solution rather than getting lost in the fog of uncertainty.
 
-## Reusability & Readability
+With that being said, it's important to follow software design patterns and principles. Such as [Redux principles](/post/redux#the-principles,-the-challenges,-and-how-to-get-there), [React best practices](https://react.dev/learn/thinking-in-react), to build correctly behaving applications and go from there.
+
+### Developing tools - less is more
+
+When developing a library, we want to have full control of every single line of code. Tools such as libraries or frameworks is meant to be simple and reliable. You shouldn't do more or less than what its intended. In order to achieve that, we can limit third party dependencies and practice SOLID principle. SOLID principle is a principle, it can be used under any context regardless if you are using object-oriented programming flavour or functional programming flavour.
+
+### Reusability & Readability
 
 When following DRY principle, we abstract for reusability. Sometimes, we abstract for readability to make our code easier to read. Some of my preference:
 
-- minimize the nested scope. This includes callbacks, for loops, nested component.
-- use battle tested abstractions. see: [no raw loops](https://www.youtube.com/watch?v=W2tWOdzgXHA)
-- avoid splitting files unless it improves readability or organization.
+- Minimize the nested scope. This includes callbacks, for loops, nested component.
+- Use battle tested abstractions. see: JS standard methods, lodash, [talk: no raw loops](https://www.youtube.com/watch?v=W2tWOdzgXHA)
+- Be mindful when physically splitting code such as seperate code into different files. Avoid splitting files unless it actually makes sense.
+
+### WET programming - seperation of concern
+
+Let's take a look at the following types:
+
+```ts
+interface PostContext {
+  title: string;
+  description: string;
+  image: string;
+  tags?: string[];
+}
+interface PageContext {
+  title: string;
+  description: string;
+  image: string;
+  tags?: string[];
+}
+```
+
+Both `PostContext` and `PageContext` describes the same kind of metadata for a post or a page. A much younger version of me would not have let this happen. As you can see, these two types are structurally identical. Howeer, I have decided to let these two coexist for the time being. Why? You may ask. Firstly, it makes sense for the application to have both types, and each type has its own identity and meaning. PostContext is parsed from the post data of each blog. PageContext, however, is the metadata rendered out on the web page. Secondly:
+
+{% callout %}
+Duplication promotes seperation of concern.
+{% /callout %}
+
+When something is duplicated, we don't have to worry about whether modifications to one would impact the other. The mere fact that these two types appear identical does not mean they are the same. Utilizing duplication to ensure separation of concerns is a common approach. Here are a few examples:
+
+- Webworker [clone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) data when passing value to different threads for memory safety
+- Redux uses [immutable data](/post/redux#readonly-state-with-immutable-data) to ensure each state update is pure "enough". To garantee each render is behaving correctly.
 
 ## Conclusion
 
