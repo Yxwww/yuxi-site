@@ -3,7 +3,6 @@ title: Darkmode - doing it right
 description: Adding darkmode to this website. Documenting the things learned.
 published: 2023-07-06
 tags: darkmode, nextjs, tailwindcss
-incomplete: true
 image: capybara-darkmode.png
 ---
 
