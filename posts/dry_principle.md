@@ -4,7 +4,7 @@ description: Document my thougths on DRY principle and how I incorporate it
 tags: DRY Principle, Abstraction, Product Driven Design
 image: dry.png
 published: 2023-05-25
-updated: 2023-06-02
+updated: 2023-07-24
 ---
 
 ## Introduction
