@@ -1,31 +1,30 @@
-import { nanoid as generate } from 'nanoid'
-import { SENIOR_DEVELOPER_ROLE } from './constants'
-import { createExperience } from './constructors'
+import { nanoid as generate } from 'nanoid';
+import { SENIOR_DEVELOPER_ROLE } from './constants';
+import { createExperience } from './constructors';
 
-const THUMBNAILS = []
+const THUMBNAILS = [];
 
-const blurb = [
-  'Core web developer delivering innovative features and optimized architecture for efficient maintenance and functionality.',
-]
+const blurb = [];
 
 const contributions = [
+  'Delivering innovative features and optimizing architecture for effective maintenance and functionality.',
   'Implemented full-stack features including authentication, user workflow, UI programming, and rich text editor functionalities.',
-  'Improved performance, enabling seamless usage of application with larger documents leading to expanded customer reach.',
-  'Spearheaded E2E testing and assisted with monorepo migration for efficient code maintenance and testing.',
-]
+  'Boosted application performance, facilitating seamless usage with larger documents and broadening customer reach.',
+  'Led end-to-end testing initiatives and contributed to monorepo migration for streamlined code maintenance and testing.',
+];
 
-const description = blurb
+const description = blurb;
 
-const roles = [SENIOR_DEVELOPER_ROLE]
-const time = 'May 2021 - Sep 2022'
+const roles = [SENIOR_DEVELOPER_ROLE];
+const time = 'May 2021 - Sep 2022';
 
-const url = '/post/curvenote'
+const url = '/post/curvenote';
 
-let experience
+let experience;
 
 export function createCurvenoteExperience() {
   if (!experience) {
-    const uid = generate()
+    const uid = generate();
     experience = createExperience(
       uid,
       'Curvenote(YC)',
@@ -37,7 +36,7 @@ export function createCurvenoteExperience() {
       url,
       roles
       // blurb,
-    )
+    );
   }
-  return experience
+  return experience;
 }
