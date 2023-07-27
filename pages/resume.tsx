@@ -26,7 +26,7 @@ function ContactInfo() {
 }
 
 function Portfolio() {
-  const experience = getExperience();
+  const experience = getExperience(); // TODO: move to SSG
   const education = createEducation();
   return (
     <Page className="print:max-w-5xl">

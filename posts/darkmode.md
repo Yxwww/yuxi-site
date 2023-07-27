@@ -151,7 +151,7 @@ Result, flash is gone! It looks like the script gets executed synchronously whic
 - checkout the last hypothesis: rendering darkmode on server approach
   - is there a request header you can specify user theme preference?
 
-### Resources:
+## Resources:
 
 - [Github thread](https://github.com/vercel/next.js/discussions/21982)
 - [tailwindcsss](https://tailwindcss.com)

@@ -29,8 +29,9 @@ export default function Blogs({ posts }) {
     <Page className="mx-auto max-w-2xl lg:max-w-5xl">
       <h1>Blogs</h1>
       <p className="py-4 max-w-2xl">
-        I write stuff here sometimes! All post are work in progress, although
-        some are more complete than others.
+        Each blog is a living document, evolving over time. It begins as a
+        Twitter-style summary, which is gradually refined and expanded. Stay
+        tuned to witness and be a part of this exciting growth journey!
       </p>
       <PostList posts={posts} />
     </Page>
