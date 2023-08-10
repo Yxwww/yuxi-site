@@ -5,7 +5,11 @@ import { createEducation } from 'src/contents/education';
 import ExperienceContent from 'components/ExperienceContent';
 import ExperienceSection from 'components/ExperienceSection';
 import SocialIcons from 'components/SocialIcons';
+import ProfilePicture from '/public/static/img/icons/download.png';
 import { DOMAIN, PHONE_NUMBER } from 'constants/index';
+import Link from 'next/link';
+import Image from '@/components/Image';
+import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 function ContactInfo() {
   return (
@@ -33,7 +37,18 @@ function Portfolio() {
       <div className="font-article flex flex-col mx-auto print:p-6">
         <div className="flex justify-between flex-wrap">
           <div>
-            <h1 className="font-normal">Yuxi Wang</h1>
+            <h1 className="font-normal">
+              Yuxi Wang{' '}
+              <Link
+                href="/static/contents/yuxi_resume_2023.pdf"
+                title="Download Resume"
+                className="text-slate-500"
+                target="_blank"
+                download
+              >
+                <ArrowDownTrayIcon className="w-6 h-6 inline-block" />
+              </Link>
+            </h1>
           </div>
           <div className="contact">
             <div className="social-icons print:hidden">

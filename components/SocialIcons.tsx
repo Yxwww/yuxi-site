@@ -1,28 +1,17 @@
-import React from 'react'
-import ProfilePicture from '/public/static/img/icons/download.png'
-import GithubIcon from '/public/static/img/icons/github-64px.png'
-import TwitterIcon from '/public/static/img/logos/twitter-icon-4.png'
-import LinkedinIcon from '/public/static/img/logos/in-black-28px.png'
-import EmailIcon from '/public/static/img/icons/email.png'
-import PhoneIcon from '/public/static/img/icons/phone.png'
-import Image from './Image'
-import Link from 'next/link'
+import React from 'react';
+import GithubIcon from '/public/static/img/icons/github-64px.png';
+import TwitterIcon from '/public/static/img/logos/twitter-icon-4.png';
+import LinkedinIcon from '/public/static/img/logos/in-black-28px.png';
+import EmailIcon from '/public/static/img/icons/email.png';
+import PhoneIcon from '/public/static/img/icons/phone.png';
+import Image from './Image';
+import Link from 'next/link';
 
 export default function SocialIcons({ className = '' }) {
   return (
     <div
       className={`border border-zinc-400 px-2 pb-1 pt-2 dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
     >
-      <button
-        title="print"
-        onClick={(e) => {
-          e.preventDefault()
-          window.print()
-        }}
-      >
-        <Image src={ProfilePicture} className="social-icon" alt="" fill />
-      </button>
-
       <Link
         title="open github"
         href="https://github.com/Yxwww"
@@ -56,5 +45,5 @@ export default function SocialIcons({ className = '' }) {
         <Image className="social-icon" src={PhoneIcon} alt="" />
       </Link>
     </div>
-  )
+  );
 }
