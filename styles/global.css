@@ -18,9 +18,6 @@ body article img {
   @apply w-11/12;
 }
 
-.prose h4 {
-}
-
 .utterances {
   @apply sm:mx-2 mx-0 my-4;
 }
@@ -36,35 +33,55 @@ body article img {
 
 /* MARK: Heading counters */
 
-.heading-counter {
-  @apply mr-1 font-normal; /* using em for relative size shrinking */
-  font-size: 0.9em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply relative;
 }
 
-.prose h1 {
+.prose.counted h1:hover::before,
+.prose.counted h2:hover:before,
+.prose.counted h3:hover::before,
+.prose.counted h4:hover::before,
+.prose.counted h5:hover::before,
+.prose.counted h6:hover::before {
+  @apply opacity-100;
+}
+
+
+.heading-counter {
+  @apply transition-opacity opacity-50 text-slate-500 mr-1 font-normal absolute bottom-1 right-full; /* using em for relative size shrinking */
+  font-size: 0.7em;
+}
+
+.prose.counted h1 {
   counter-reset: h2section; /* Initialize the main counter */
 }
-.prose h2::before {
+.prose.counted h2::before {
   counter-increment: h2section; /* Increment the main counter */
   content: counter(h2section) '.'; /* Display the counter */
   @apply heading-counter;
 }
 
-.prose h2 {
+.prose.counted h2 {
   counter-reset: h3subsection; /* Initialize a subsection counter for each h1 */
 }
 
-.prose h3::before {
+.prose.counted h3::before {
   counter-increment: h3subsection; /* Increment the subsection counter */
   /* Display the counter with a '.' after it and a space */
   content: counter(h2section) '.' counter(h3subsection) '.';
   @apply heading-counter;
 }
 
-.prose h3 {
+.prose.counted h3 {
   counter-reset: h4subsection; /* Initialize a subsection counter for each h1 */
 }
-.prose h4::before {
+
+.prose.counted h4::before {
   counter-increment: h4subsection; /* Increment the subsection counter */
   /* Display the counter with a '.' after it and a space */
   content: counter(h2section) '.' counter(h3subsection) '.'
