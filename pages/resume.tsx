@@ -5,10 +5,8 @@ import { createEducation } from 'src/contents/education';
 import ExperienceContent from 'components/ExperienceContent';
 import ExperienceSection from 'components/ExperienceSection';
 import SocialIcons from 'components/SocialIcons';
-import ProfilePicture from '/public/static/img/icons/download.png';
 import { DOMAIN, PHONE_NUMBER } from 'constants/index';
 import Link from 'next/link';
-import Image from '@/components/Image';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 function ContactInfo() {
