@@ -33,6 +33,8 @@ import Image from 'next/image';
 import { getReadingTime } from '@/src/utils';
 import RotatingHammer from '@/components/icons/RotatingHammer';
 import CalloutTag from '@/components/markdoc/Callout';
+import ReadingTime from '@/components/ReadingTime';
+import Hammer from '@/components/icons/Hammer';
 
 const config: Config = {
   nodes: {
@@ -175,22 +177,23 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
             </div>
           )}
           <h1 className="title capitalize sm:pt-16 pt-8">{title}</h1>
-          <div className="flex flex-wrap justify-between text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
-            <time className="shrink-0">
-              {updated ? (
-                <>Updated: {formatDate(updated)}</>
-              ) : (
-                <>Published: {formatDate(published)}</>
-              )}
-              <span className="sm:pl-2 pl-1 font-mono font-bold">
-                🍜 {readingTime} mins
-              </span>
-              {incomplete && (
-                <RotatingHammer interval={1800} className="ml-4 w-8 h-8" />
-              )}
-            </time>
-
-            <span className="italic shrink-0">Written by: {AUTHOR_NAME}</span>
+          <div className="text-md text-slate-500 dark:text-slate-400 sm:mb-8 mb-4">
+            {incomplete && (
+              <div className="flex flex-wrap items-center dark:text-slate-400 text-slate-500 text-md sm:mb-4 mb-2">
+                <ReadingTime readingTime={readingTime} />
+                <Hammer className="h-5 w-5" title="work in progress" />
+              </div>
+            )}
+            <div className="flex flex-wrap justify-between">
+              <time className="shrink-0">
+                {updated ? (
+                  <>Updated: {formatDate(updated)}</>
+                ) : (
+                  <>Published: {formatDate(published)}</>
+                )}
+              </time>
+              <span className="italic shrink-0">Written by: {AUTHOR_NAME}</span>
+            </div>
           </div>
         </>
         {components}

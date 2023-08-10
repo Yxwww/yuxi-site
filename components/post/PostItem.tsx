@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { PostItem } from '@/src/types';
 import dayjs from 'dayjs';
 import { getPostPath } from '@/src/utils';
-import RotatingHammer from '../icons/RotatingHammer';
+import Hammer from '../icons/Hammer';
+import ReadingTime from '../ReadingTime';
 
 export function PostItem({
   item,
@@ -30,9 +31,11 @@ export function PostItem({
         <Link href={`/post/${getPostPath(item)}`} className="flex grow">
           <div className="flex flex-col items-start sm:py-8 py-2 sm:px-6 px-4 sm:border-b grow font-mono">
             <div className="font-bold text-lg">{title}</div>
-            <p className="m-0 pt-2  font-light text-sm text-slate-500 dark:text-slate-400">
-              🍜 {readingTime} mins{' '}
-              {incomplete && <RotatingHammer className="w-6 h-6" />}
+            <p className="m-0 pt-2  font-light text-sm text-slate-500 dark:text-slate-400 flex items-center">
+              <ReadingTime readingTime={readingTime} />
+              {incomplete && (
+                <Hammer className="w-5 h-5" title="work in progress" />
+              )}
             </p>
             <div className="pt-4 sm:pb-4 pb-2 font-light text-sm">
               {description}

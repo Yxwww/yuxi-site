@@ -50,7 +50,7 @@ const Callout: FC<{
   const daisyThemeVar = CalloutTypeToDaisyThemeVarMap[type];
   return (
     <div
-      className={`callout	py-2 sm:px-4 px-2 border-${daisyThemeVar} border-l-4 `}
+      className={`callout	py-2 sm:px-4 px-2 border-${daisyThemeVar} border-x-4 border-r-transparent `}
     >
       <div
         className={`content flex item-center justify-start ${

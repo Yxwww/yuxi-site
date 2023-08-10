@@ -114,7 +114,7 @@ Prototype: lifting theme state into app root see if flash persists:
 
 Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issue, can we handle darkmode even earlier?
 
-### Hypothesis: can we lift up darkmode logic all the way to the top makes rerender not observable
+### Hypothesis: lift darkmode logic all the way to the top of render tree makes rerender not observable
 
 ![Images](/static/img/posts/tailwind-darkmode-logic.png)
 
