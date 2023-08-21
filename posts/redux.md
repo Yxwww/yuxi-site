@@ -87,3 +87,7 @@ How to migrate to using immutable data:
 ## Conclusion
 
 Redux has helped me immensely to develop reliable software. It makes the application much easier to reason about and easy to maintain. However, while beneficial, it's not without its limitations. No tool is perfect. While redux is powerful, I've documented my observations on its drawbacks on another blog [You may not need Redux](/post/you_may_not_need_redux), and discussed ways to leverage its power without having to pay the Redux tax.
+
+{% callout %}
+Checkout [this other blog](/post/eject_from_redux) where I discuss the issues using React Redux and eject from the ecosystem.
+{% /callout %}

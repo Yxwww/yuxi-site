@@ -40,7 +40,7 @@ function Portfolio() {
               <Link
                 href="/static/contents/yuxi_resume_2023.pdf"
                 title="Download Resume"
-                className="text-slate-500"
+                className="text-slate-500 dark:text-slate-400"
                 target="_blank"
                 download
               >

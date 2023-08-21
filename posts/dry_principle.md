@@ -79,7 +79,7 @@ interface PageContext {
 }
 ```
 
-Both `PostContext` and `PageContext` describes the same kind of metadata for a post or a page. A much younger version of me would not have let this happen. As you can see, these two types are structurally identical. Howeer, I have decided to let these two coexist for the time being. Why? You may ask. Firstly, it makes sense for the application to have both types, and each type has its own identity and meaning. PostContext is parsed from the post data of each blog. PageContext, however, is the metadata rendered out on the web page. Secondly:
+Both `PostContext` and `PageContext` describes the same kind of metadata for a post or a page. If I was younger, I would've advocated for applying DRY principle to consolidate these two types into one since the the two types are structurally identical. Howeer, I have decided to let these two coexist for the time being. The reason is: firstly, it makes sense for the application to have both types, and each type has its own identity and meaning. PostContext is parsed from the post data of each blog. PageContext, however, is the metadata rendered out on the web page. Secondly:
 
 {% callout %}
 Duplication promotes seperation of concern.
@@ -89,6 +89,22 @@ When something is duplicated, we don't have to worry about whether modifications
 
 - Webworker [clone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) data when passing value to different threads for memory safety
 - Redux uses [immutable data](/post/redux#readonly-state-with-immutable-data) to ensure each state update is pure "enough". To garantee each render is behaving correctly.
+
+Back to our example, the more sophisticated refactor is:
+
+```TS
+interface Frontmatter {
+  title: string;
+  description: string;
+  image: string;
+  tags?: string[];
+}
+
+interface PostContext extends Frontmatter {}
+interface PageContext extends Frontmatter {}
+```
+
+This approach keeps Page and Post contexts seperated while removes the duplication. It also enables the reuse of the Frontmatter.
 
 ## Conclusion
 

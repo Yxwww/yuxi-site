@@ -7,7 +7,7 @@ image: capybara-watch.png
 incomplete: true
 ---
 
-Although no tool is perfect, Redux [changed how I approach software development](/post/redux). Redux is designed with React ecosystem as its primary consumer. The three principles and concepts are powerful, and there are many ways to implement them. The way Redux approaches it is specifically tailored toward React. If you need to use Redux outside of React, you will need some kind of caching-capable adapter. Otherwise, there will be too much performance overhead.
+Although no tool is perfect, Redux [changed how I approach software development](/post/redux). Redux is designed with React ecosystem as its primary consumer. The three principles and concepts are powerful, and there are many ways to implement them? The way Redux approaches it is specifically tailored toward React. If you need to use Redux outside of React, you will need some kind of caching-capable adapter. Otherwise, there will be too much performance overhead.
 
 {% callout %}
 Though tools may adapt to circumstance, the essence of their purpose remains unaltered.
@@ -111,7 +111,7 @@ function ListComponent({ list }) {
 }
 ```
 
-It's not obvious that `<ListComponent />` will always gets rendered on input change. There's no direct logic connection between the `<ListComponent />` and the `<input />` state, the rerender still happens. Even though virtual dom will eventually block rerendering to the dom nodes, we are still paying the CPU and memory costs for these unnecessary rerendering calls. What if the component render functions has expensive procedures. Memoize the heavy compute logic is required so that the application is not slowing down too much. The point is: the fact that any parent component causes all child component rerender by default is a design flaw. We have to always worry about any component rerendering is cost on the developer and any machine the React engine runs on.
+Can you believe that that `<ListComponent />` render function will always gets called on `<input />` change while having no direct connection between them. Even though virtual dom will eventually block rerendering to the dom nodes, we are still paying the CPU and memory costs for these unnecessary rerendering calls. What if the component render functions has expensive procedures. Memoize the heavy compute logic is required so that the application is not slowing down too much. The point is: any parent component causes all child component rerender by default is a design flaw. We have to worry about any component rerendering is cost on the developer and any machine the React engine runs on.
 
 ### Play the Cache game
 
