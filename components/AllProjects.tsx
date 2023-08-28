@@ -46,7 +46,7 @@ export default function AllProjects() {
         imgUrl="/static/img/projects/project-blogs.png"
         cover
         title="Personal Website"
-        description="I created my personal website to share long-form articles on software development. Built with Vercel, TailwindCSS, and Markdoc, the site's code is publicly available."
+        description="I created my personal website to share long-form thoughts on programming and software development. Built with Vercel, TailwindCSS, and Markdoc, the site's code is publicly available."
         techStack={['Markdoc', 'Vercel', 'TailwindCSS']}
       ></PostLink>
 
