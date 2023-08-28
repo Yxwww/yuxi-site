@@ -80,7 +80,7 @@ function Portfolio() {
               Three.js <SkillYear year={3} />, d3.js <SkillYear year={1} />,
               prosemirror <SkillYear year={2} />
             </li>
-            <li className="my-1">RxJS, SWR</li>
+            <li className="my-1">RxJS, SWR, Tailwindcss</li>
           </SkillGroup>
 
           <SkillGroup title="Tools">
