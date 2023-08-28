@@ -10,11 +10,12 @@ import Link from 'next/link';
 export default function SocialIcons({ className = '' }) {
   return (
     <div
-      className={`dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
+      className={`dark:bg-neutral-300 rounded-lg inline-flex items-center  ${className}`}
     >
       <Link
         title="open github"
         href="https://github.com/Yxwww"
+        className="inline-block"
         rel="noopener noreferrer"
         target="_blank"
       >
