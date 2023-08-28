@@ -1,9 +1,6 @@
 import { nanoid as generate } from 'nanoid';
 import { DEVELOPER_ROLE } from './constants';
 import { createExperience } from './constructors';
-import EAGLE_IMG from '/static/img/projects/seequent-eagle.png';
-import WING_IMG from '/static/img/projects/lfview-look-at-wing.png';
-import SLIDES_IMG from '/static/img/projects/seequent-eagle-slides.png';
 
 const THUMBNAILS = [
   'seequent-eagle.png',
@@ -12,7 +9,7 @@ const THUMBNAILS = [
 ];
 
 const blurb = [
-  `As one of the first hires at 3ptscience, I started my career working on frontend UI using WebComponents. Then, I proposed and led frontend architecture revamp to React & Redux architecture. After that, I joined the visualization team as a key contributor to revamping the visualization library with TypeScript and Three.js. During the time I worked there, I set standards for frontend code quality and mentored team members.`,
+  `As an early team member, I initially focused on frontend UI development using WebComponents. Recognizing opportunities for improvement, I spearheaded a transition to a more robust React & Redux architecture. Subsequently, I joined the visualization team, where I was instrumental in overhauling the existing visualization library using TypeScript and Three.js. Throughout my tenure, I established coding standards for frontend development and served as a mentor to junior team members.`,
 ];
 
 const contributions = [

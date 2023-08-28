@@ -70,3 +70,7 @@ img {
     zoom: 70%;
   }
 }
+
+.contact-icons {
+  @apply inline w-4 h-4 mr-2;
+}

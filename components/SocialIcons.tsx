@@ -10,7 +10,7 @@ import Link from 'next/link';
 export default function SocialIcons({ className = '' }) {
   return (
     <div
-      className={`border border-zinc-400 px-2 pb-1 pt-2 dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
+      className={`dark:bg-neutral-300 rounded-lg inline-block  ${className}`}
     >
       <Link
         title="open github"

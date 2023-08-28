@@ -5,16 +5,16 @@ const SkillGroup: FC<{ children?: ReactNode; title: string }> = ({
   title,
 }) => {
   return (
-    <div className="py-2 pl-1">
+    <div className="py-2">
       <h3 className="">{title}</h3>
-      <ul className="px-4 list-disc mt-2">{children}</ul>
+      <ul className="px-4 sm:px-0 list-disc mt-2">{children}</ul>
     </div>
   );
 };
 
 const SkillYear: FC<{ year: string | number }> = ({ year }) => {
   return (
-    <span className="text-sm">
+    <span className="text-sm text-slate-500">
       ({year} {year === 1 ? 'yr' : 'yrs'})
     </span>
   );

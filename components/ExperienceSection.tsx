@@ -80,19 +80,6 @@ export default function ExperienceSection(props) {
       </div>
       <div className="px-2 tablet:px-4">
         <ul className="px-4 list-disc">{contributionLists}</ul>
-        {/* {showMore && <ul>{hiddenContributions}</ul>}
-            {contributions.length > NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setShowMore(!showMore)
-                }}
-              >
-                {showMore ? 'Show Less' : 'Show More'}
-              </button>
-            ) : (
-              <></>
-            )} */}
       </div>
       <span className="right-bottom-corner" />
     </div>
