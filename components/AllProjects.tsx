@@ -1,12 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
 
-function PostLink({ id, imgUrl, title, description = '', techStack = [] }) {
+function PostLink({
+  id,
+  imgUrl,
+  title,
+  cover = false,
+  description = '',
+  techStack = [],
+}) {
   return (
     <div className="card card-side bg-base-50 dark:border-zinc-700 shadow-lg transition-shadow rounded-none sm:flex-row flex-col">
       <figure className="relative sm:w-[370px] w-full sm:h-auto h-60 flex-shrink-0">
         <Image
-          className="blockmy-0 h-full object-contain"
+          className={`blockmy-0 h-full ${
+            cover ? 'object-cover' : 'object-contain'
+          }`}
           src={imgUrl}
           alt={`${title}-img`}
           fill
@@ -34,10 +43,19 @@ export default function AllProjects() {
     <div className="grid grid-cols-1 gap-4">
       <PostLink
         id="curvenote"
+        imgUrl="/static/img/projects/project-blogs.png"
+        cover
+        title="Personal Website"
+        description="I created my personal website to share long-form articles on software development. Built with Vercel, TailwindCSS, and Markdoc, the site's code is publicly available."
+        techStack={['Markdoc', 'Vercel', 'TailwindCSS']}
+      ></PostLink>
+
+      <PostLink
+        id="curvenote"
         imgUrl="/static/img/projects/curvenote.jpeg"
         title="Curvenote"
         description="Curvenote is a web application aim to revolutionize technical writing. I worked on delivering innovative features and optimized architecture for efficient maintenance and functionality."
-        techStack={['Rich Text Editing', 'React', 'Full Stack', 'Monorepo']}
+        techStack={['Rich Text Editing', 'React', 'Full Stack']}
       ></PostLink>
 
       <PostLink

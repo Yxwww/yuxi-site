@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Nav from '../Nav';
 import { map } from 'ramda';
 import { HOME_LABEL } from 'constants/index';
