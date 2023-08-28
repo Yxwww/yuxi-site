@@ -23,16 +23,13 @@ image: capybara-darkmode.png
 
 ## Process
 
-Adding darkmode is a fairly straightforward process, it can be mainly summerized as:
+Adding darkmode is a fairly straightforward process, it can be summerized as:
 
 - Enable user to set theme preference with `<ThemePrefToggleBtn />`
 - Store theme preferencee with `useLocalStorage`
 - Render out darkmode based on user preference
 
-Two issues that I fixed:
-
-- resolve hydration issue with `useMounted`
-- resolve "flash" issue where light always gets rendered first for a short period before rendering darkmode
+Let's have a look at how to add the toggle button.
 
 ### A darkmode toggle button
 
@@ -62,11 +59,18 @@ export type ThemePreference = 'light' | 'dark' | 'none';
 const [theme, setTheme] = useLocalStorage<ThemePreference>('theme', 'none');
 ```
 
-## Fix hydration issue
+## Fixing issues
+
+Although, adding darkmode button is faily staright forward. Devil's always in the detail. There are two technical challanges stood out to me when adding darkmode:
+
+- Hydration issue: server side rendering does not have access to local storage causes hydration mismatch
+- Theme preference render happens later than expected which causes an uncomfortable flash.
+
+## The hydration issue
 
 ### The problem: hydration content mismatch due to state difference
 
-Very standard hydration issue when the source of state is not stored on server. This happens to the theme button due to the icon rendering state is dependent on the theme state.
+Very standard hydration issue when the source of state is not stored on server. This happens to the theme button due to the icon rendering state is dependent on the theme state:
 
 - theme state is stored on the client `localStorage`
 - server doesn't have access to the theme state
@@ -85,11 +89,11 @@ function Component() {
 }
 ```
 
-Using useMounted hook makes the <ThemeToggleButton /> only rendered by client. This avoids hydration issue all together.
+Using useMounted hook makes the <ThemeToggleButton /> only rendered by client. This avoids hydration issue all together. Now, let's have a looking at how to fix the flash issue.
 
-## Fix flash issue
+## The flash issue
 
-While addressing the requirements, I've noticed a flashing issue when the page initially renders in light mode then renders the darkmode.
+While addressing the requirements, I've noticed an issue when the page renders the theme preference stored in `localStorage` later than expected causes the app to render "incorrect" theme first before rendering the prefered theme.
 
 Assessing the current design:
 
