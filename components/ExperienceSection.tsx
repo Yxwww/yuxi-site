@@ -1,24 +1,24 @@
-import Link from 'next/link'
-import React from 'react'
-import { map, join, all } from 'ramda'
-import { nanoid as generate } from 'nanoid'
+import Link from 'next/link';
+import React from 'react';
+import { map, join, all } from 'ramda';
+import { nanoid as generate } from 'nanoid';
 
 // TODO: all generate uid stuff going on here is messy
 
-const generateRolesString = join(', ')
+const generateRolesString = join(', ');
 
 const createContributionList = map((data: any) => (
   <li className="my-1" key={data.uid}>
     {data.contribution}
   </li>
-))
+));
 // const NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD = 3
-const toArrayOfP = map((o: any) => <p key={generate()}>{o}</p>)
+const toArrayOfP = map((o: any) => <p key={generate()}>{o}</p>);
 function renderDescription(description: string[]) {
   if (Array.isArray(description)) {
-    return toArrayOfP(description)
+    return toArrayOfP(description);
   }
-  return <p>{description}</p>
+  return <p>{description}</p>;
 }
 
 export default function ExperienceSection(props) {
@@ -35,19 +35,19 @@ export default function ExperienceSection(props) {
       projecturl,
       linkTitle,
     },
-  } = props
+  } = props;
   // const [showMore, setShowMore] = useState(false)
   // const thumbnailsDivs = createThumbnailDivs(thumbnails)
-  const contributionLists = createContributionList(contributions)
+  const contributionLists = createContributionList(contributions);
 
   const CompanyInfo = (
     <>
       {all((v: string) => !!v && v.length > 0)([company, product]) && ' - '}
       <span className="captalize">{company}</span>
     </>
-  )
+  );
   return (
-    <div className="py-2 tablet:py-4 relative" key={uid}>
+    <div className="py-1 tablet:py-2 relative" key={uid}>
       {/* <div className="thumbnail-gallery">{thumbnailsDivs}</div> */}
       <div>
         {linkTitle ? (
@@ -96,5 +96,5 @@ export default function ExperienceSection(props) {
       </div>
       <span className="right-bottom-corner" />
     </div>
-  )
+  );
 }

@@ -162,7 +162,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
         </ul>
       </div>
       <div
-        className={`font-article prose prose-slate md:prose-md lg:prose-xl mx-auto max-w-2xl lg:max-w-5xl dark:prose-invert`}
+        className={`font-article prose counted prose-slate md:prose-md lg:prose-xl mx-auto max-w-2xl lg:max-w-5xl dark:prose-invert`}
       >
         <>
           {image && (

@@ -6,6 +6,9 @@ import { pipe, T, equals, cond, always, startsWith, prop } from 'ramda';
 import { removeFirstChar, captalizeFirstChar } from '@/utils/index';
 import { POST_PATH } from '@/src/contents/constants';
 
+/**
+ * Seemingly duplication
+ */
 interface PostContext {
   title: string;
   description: string;

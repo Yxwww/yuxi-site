@@ -1,4 +1,3 @@
-import React from 'react';
 import { Page } from 'components/layouts/main';
 import { getExperience } from 'src/contents';
 import { createEducation } from 'src/contents/education';
@@ -8,6 +7,7 @@ import SocialIcons from 'components/SocialIcons';
 import { DOMAIN, PHONE_NUMBER } from 'constants/index';
 import Link from 'next/link';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import { SkillGroup, SkillYear } from '@/components/SkillGroup';
 
 function ContactInfo() {
   return (
@@ -28,7 +28,7 @@ function ContactInfo() {
 }
 
 function Portfolio() {
-  const experience = getExperience(); // TODO: move to SSG
+  const experience = getExperience();
   const education = createEducation();
   return (
     <Page className="print:max-w-5xl">
@@ -60,21 +60,55 @@ function Portfolio() {
           <div className="text-left">
             <h2 className="font-medium pt-4">Summary</h2>
             <p>
-              Experienced developer with a passion for creating elegant
-              solutions to complex problems. Skilled in state management,
-              architecture design, and optimization, with over 7 years of
-              experience building web applications. Proficient in JavaScript,
-              React, and Node. Committed to delivering exceptional user
-              experiences.
+              Experienced developer with a passion for reasearching and creating
+              elegant solutions to complex problems. Skilled in UI programming,
+              data visualization, and performance optimization, with over 7
+              years of experience building web applications. Proficient in
+              JavaScript, React, and the Web platform. Committed to delivering
+              exceptional user experiences.
             </p>
           </div>
         </div>
+        <h2 className="font-medium pt-4">Skills</h2>
+        <div className="grid grid-cols-1 tablet:grid-cols-3 pt-2 tablet:gap-8 gap-2">
+          <SkillGroup title="Languages">
+            <li className="my-1">
+              JavaScript/TypeScript <SkillYear year="8" />
+            </li>
+            <li className="my-1">
+              HTML & CSS <SkillYear year="8" />
+            </li>
+            <li className="my-1">
+              C# <SkillYear year="2" />
+            </li>
+          </SkillGroup>
+
+          <SkillGroup title="Frameworks & Libraries">
+            <li className="my-1">
+              React/Redux <SkillYear year={5} />, WebComponents{' '}
+              <SkillYear year={2} />, Svelte <SkillYear year={1} />
+            </li>
+            <li className="my-1">
+              Three.js <SkillYear year={3} />, d3.js <SkillYear year={1} />,
+              prosemirror <SkillYear year={2} />
+            </li>
+            <li className="my-1">RxJS, SWR</li>
+          </SkillGroup>
+
+          <SkillGroup title="Tools">
+            <li className="my-1">Git, Webpack, Rollup, Babel</li>
+            <li className="my-1">Vercel, Node.js, Express, MongoDB</li>
+            <li className="my-1">
+              Jest, Cypress, React testing library, Github Actions
+            </li>
+          </SkillGroup>
+        </div>
         <div className="projects">
-          <h2 className="font-medium pt-6">Projects</h2>
+          <h2 className="font-medium pt-4">Projects</h2>
           <ExperienceContent experience={experience} />
         </div>
         <div className="py-8">
-          <h2 className="font-medium pt-6">Education</h2>
+          <h2 className="font-medium pt-4">Education</h2>
           <ExperienceSection experience={education} />
         </div>
       </div>
