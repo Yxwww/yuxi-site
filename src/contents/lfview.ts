@@ -11,7 +11,9 @@ const THUMBNAILS = [
   'seequent-eagle-slides.png',
 ];
 
-const blurb = [];
+const blurb = [
+  `As one of the first hires at 3ptscience, I started my career working on frontend UI using WebComponents. Then, I proposed and led frontend architecture revamp to React & Redux architecture. After that, I joined the visualization team as a key contributor to revamping the visualization library with TypeScript and Three.js. During the time I worked there, I set standards for frontend code quality and mentored team members.`,
+];
 
 const contributions = [
   'Oversaw the maintenance and enhancement of a 3D data visualization library, improving rendering performance and visual presentation.',
@@ -38,7 +40,7 @@ export function createLfviewExperience() {
     experience = createExperience(
       uid,
       'Seequent',
-      'LeapFrog View',
+      '',
       THUMBNAILS,
       description,
       contributions,

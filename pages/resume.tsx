@@ -70,19 +70,7 @@ function Portfolio() {
           </div>
         </div>
         <h2 className="font-medium pt-4">Skills</h2>
-        <div className="grid grid-cols-1 tablet:grid-cols-3 pt-2 tablet:gap-8 gap-2">
-          <SkillGroup title="Languages">
-            <li className="my-1">
-              JavaScript/TypeScript <SkillYear year="8" />
-            </li>
-            <li className="my-1">
-              HTML & CSS <SkillYear year="8" />
-            </li>
-            <li className="my-1">
-              C# <SkillYear year="2" />
-            </li>
-          </SkillGroup>
-
+        <div className="grid grid-cols-1 print:grid-cols-3 tablet:grid-cols-3 pt-2 tablet:gap-8 gap-2">
           <SkillGroup title="Frameworks & Libraries">
             <li className="my-1">
               React/Redux <SkillYear year={5} />, WebComponents{' '}
@@ -100,6 +88,17 @@ function Portfolio() {
             <li className="my-1">Vercel, Node.js, Express, MongoDB</li>
             <li className="my-1">
               Jest, Cypress, React testing library, Github Actions
+            </li>
+          </SkillGroup>
+          <SkillGroup title="Languages">
+            <li className="my-1">
+              JavaScript/TypeScript <SkillYear year="8" />
+            </li>
+            <li className="my-1">
+              HTML & CSS <SkillYear year="8" />
+            </li>
+            <li className="my-1">
+              C# <SkillYear year="2" />
             </li>
           </SkillGroup>
         </div>

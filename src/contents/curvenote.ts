@@ -4,7 +4,9 @@ import { createExperience } from './constructors';
 
 const THUMBNAILS = [];
 
-const blurb = [];
+const blurb = [
+  'First hire at Curvenote, I am responsible for building the core product. ',
+];
 
 const contributions = [
   'Delivering innovative features and optimizing architecture for effective maintenance and functionality.',
