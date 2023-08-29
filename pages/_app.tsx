@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import App from 'next/app';
 import '../styles/global.css';
 import '../styles/index.css';
-import { Open_Sans, Roboto_Slab, Martian_Mono } from '@next/font/google';
+import { Open_Sans, Roboto_Slab, Martian_Mono } from 'next/font/google';
 import { PageProvider } from '@/components/contexts/page';
 const opensansFont = Open_Sans({
   subsets: ['latin'],

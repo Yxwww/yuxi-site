@@ -19,7 +19,7 @@ export const Page = ({ children = null, className = '' }) => {
             <Heading />
           </div>
           <div
-            className={`fixed w-screen md:px-4  left-0  z-10 sm:px-2 sm:py-1 bg-base-100 flex-grow text-base-content  ${
+            className={`fixed w-screen md:px-4  left-0  z-10 sm:px-2 sm:py-1 bg-base-200 flex-grow text-base-content  ${
               showFloatingHeader ? 'top-0' : '-top-[100px]'
             }`}
           >

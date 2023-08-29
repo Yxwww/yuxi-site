@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { pipe, T, equals, cond, always, startsWith, prop } from 'ramda';
 import { removeFirstChar, captalizeFirstChar } from '@/utils/index';
-import { POST_PATH } from '@/src/contents/constants';
+import { POST_PATH, PROFILE_IMAGE_URL } from '@/src/contents/constants';
 
 /**
  * Seemingly duplication
@@ -22,11 +22,16 @@ interface PageContextState {
   tags?: string[];
 }
 interface PageContextProps {
-  pageContext: PageContextState | null;
+  pageContext: PageContextState;
   setPostContext: (context: PostContext) => void;
 }
 const PageContext = createContext<PageContextProps>({
-  pageContext: null,
+  pageContext: {
+    title: "Yuxi's Space",
+    description: 'Personal website of Yuxi Wang',
+    image: PROFILE_IMAGE_URL,
+    tags: [],
+  },
   setPostContext() {
     console.warn('set context setter is not initialized ');
   },

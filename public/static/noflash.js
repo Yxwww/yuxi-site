@@ -7,7 +7,7 @@ function getThemeFromLocalStorage() {
   return JSON.parse(localStorage.getItem(THEME_KEY));
 }
 
-(function() {
+(function () {
   try {
     const theme = getThemeFromLocalStorage();
     if (
@@ -17,12 +17,12 @@ function getThemeFromLocalStorage() {
     ) {
       document.documentElement.classList.add('dark');
       document.documentElement.setAttribute('data-theme', 'halloween'); // for daisy
-      document
-        .querySelector('meta[name="theme-color"]')
-        .setAttribute('content', '#0B1120');
+      // document
+      //   .querySelector('meta[name="theme-color"]')
+      //   .setAttribute('content', '#0B1120');
     } else {
       document.documentElement.classList.remove('dark');
-      document.documentElement.setAttribute('data-theme', 'garden');
+      document.documentElement.setAttribute('data-theme', 'lofi');
     }
-  } catch (_) { }
+  } catch (_) {}
 })();

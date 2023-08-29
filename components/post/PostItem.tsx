@@ -27,7 +27,7 @@ export function PostItem({
           )}
         </div>
       </div>
-      <div className="hover:bg-base-100 transition-colors cursor-pointer grow flex">
+      <div className="hover:bg-base-200 transition-colors cursor-pointer grow flex">
         <Link href={`/post/${getPostPath(item)}`} className="flex grow">
           <div className="flex flex-col items-start sm:py-8 py-2 sm:px-6 px-4 sm:border-b grow font-mono">
             <div className="font-bold text-lg">{title}</div>

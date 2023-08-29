@@ -35,7 +35,7 @@ export function ThemePrefToggleBtn() {
       document.documentElement.setAttribute('data-theme', 'halloween'); // for daisy
     } else {
       document.documentElement.classList.remove('dark');
-      document.documentElement.setAttribute('data-theme', 'garden');
+      document.documentElement.setAttribute('data-theme', 'lofi');
     }
   }, [theme]);
 
