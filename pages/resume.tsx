@@ -117,7 +117,7 @@ function Portfolio() {
           <h2 className="pt-4">Experience</h2>
           <ExperienceContent experience={experience} />
         </div>
-        <div className="py-8">
+        <div className="py-4">
           <h2 className="font-medium pt-4">Education</h2>
           <ExperienceSection experience={education} />
         </div>

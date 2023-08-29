@@ -1,6 +1,7 @@
 import { nanoid as generate } from 'nanoid';
 import { DEVELOPER_ROLE } from './constants';
 import { createExperience } from './constructors';
+import { createERWearExperience } from './erwear';
 
 const THUMBNAILS = [
   'seequent-eagle.png',
@@ -29,23 +30,17 @@ const time = 'June 2016 - May 2021';
 
 const url = '/post/steno3d-view';
 
-let experience;
-
 export function createLfviewExperience() {
-  if (!experience) {
-    const uid = generate();
-    experience = createExperience(
-      uid,
-      'Seequent',
-      '',
-      THUMBNAILS,
-      description,
-      contributions,
-      time,
-      url,
-      roles
-      // blurb,
-    );
-  }
-  return experience;
+  return createExperience({
+    company: 'Seequent',
+    productExperiences: [
+      {
+        description,
+        contributions,
+        time,
+        projecturl: url,
+        roles,
+      },
+    ],
+  });
 }

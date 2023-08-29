@@ -1,28 +1,16 @@
-import React from 'react'
-import { map } from 'ramda'
-import ExperienceSection from './ExperienceSection'
+import React from 'react';
+import { map } from 'ramda';
+import ExperienceSection from './ExperienceSection';
+import { Experience } from '@/src/types';
 
-// const createThumbnailDivs = map(data => (
-//   <div
-//     key={data.uid}
-//     className="thumbnail"
-//     style={{ backgroundImage: `url(${data.img})` }}
-//   />
-// ))
+const createExpereienceSections = map((exp: Experience) => (
+  <ExperienceSection key={exp.uid} experience={exp} />
+));
 
-const createExpereienceSections = map((exp: any) => (
-  <ExperienceSection key={exp.uid} experience={exp} linkTitle />
-))
+function ExperienceContent({ experience }: { experience: Experience[] }) {
+  const experienceSections = createExpereienceSections(experience);
 
-function ExperienceContent(props: any) {
-  const { experience } = props
-  const experienceSections = createExpereienceSections(experience)
-
-  return (
-    <>
-      <div className="mx-auto">{experienceSections}</div>
-    </>
-  )
+  return <div className="mx-auto">{experienceSections}</div>;
 }
 
-export default ExperienceContent
+export default ExperienceContent;

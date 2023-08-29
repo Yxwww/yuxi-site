@@ -25,3 +25,19 @@ export interface PostItem {
 }
 
 export type PostItemList = ReadonlyArray<PostItem>;
+
+export interface ProductExperience {
+  product?: string;
+  thumbnails?: string[];
+  description?: string[];
+  contributions: string[];
+  time: string;
+  projecturl: string;
+  roles: string[];
+}
+
+export interface Experience {
+  uid?: string;
+  company: string;
+  productExperiences: ProductExperience[];
+}

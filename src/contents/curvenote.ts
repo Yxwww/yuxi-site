@@ -22,23 +22,18 @@ const time = 'May 2021 - Sep 2022';
 
 const url = '/post/curvenote';
 
-let experience;
-
 export function createCurvenoteExperience() {
-  if (!experience) {
-    const uid = generate();
-    experience = createExperience(
-      uid,
-      'Curvenote(YC)',
-      '',
-      THUMBNAILS,
-      description,
-      contributions,
-      time,
-      url,
-      roles
-      // blurb,
-    );
-  }
-  return experience;
+  return createExperience({
+    company: 'Curvenote(YC)',
+    productExperiences: [
+      {
+        thumbnails: THUMBNAILS,
+        description,
+        contributions,
+        time,
+        projecturl: url,
+        roles,
+      },
+    ],
+  });
 }
