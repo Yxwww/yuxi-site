@@ -1,33 +1,36 @@
-import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import { Page } from '../../components/layouts/main'
-import { LfviewExperience } from '../../src/contents'
-import ImageModal from '../../components/modals/ImageModal'
-import ImageGallery from '../../components/ImageGallery'
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { Page } from '../../components/layouts/main';
+import { createLfviewExperience } from '../../src/contents/lfview';
+import ImageModal from '../../components/modals/ImageModal';
+import ImageGallery from '../../components/ImageGallery';
 
 const UnderConstruction = dynamic(
   () => import('../../components/UnderConstruction')
-)
+);
 const ExperienceSection = dynamic(
   () => import('../../components/ExperienceSection')
-)
+);
 
 export default function Steno3DProject() {
-  const [modelOpened, setModelOpened] = useState(false)
-  const [imageModelState, setImageModelState] = useState({ url: '', title: '' })
+  const [modelOpened, setModelOpened] = useState(false);
+  const [imageModelState, setImageModelState] = useState({
+    url: '',
+    title: '',
+  });
   function toggleModel() {
-    setModelOpened(!modelOpened)
+    setModelOpened(!modelOpened);
   }
   function onImageClicked({ url, title }) {
-    setImageModelState({ url, title })
-    toggleModel()
+    setImageModelState({ url, title });
+    toggleModel();
   }
   return (
     <Page>
       <div className="container">
         <div className="py-2">
-          <ExperienceSection experience={LfviewExperience} />
+          <ExperienceSection experience={createLfviewExperience()} />
         </div>
         <div className="w-full tablet:max-w-5xl mx-auto rounded-lg tablet:max-w-5xl">
           <a
@@ -79,5 +82,5 @@ export default function Steno3DProject() {
         </div>
       </div>
     </Page>
-  )
+  );
 }
