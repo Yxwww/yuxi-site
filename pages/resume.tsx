@@ -53,7 +53,7 @@ function Portfolio() {
           <div className="contact">
             <div className="social-icons print:hidden pb-1 pt-2">
               <Link
-                href="/static/contents/yuxi_resume_2023.pdf"
+                href="/static/contents/yuxi_resume.pdf"
                 title="Download Resume"
                 className="text-slate-800 dark:text-slate-400 inline-flex justify-end items-end dark:mr-2"
                 target="_blank"
