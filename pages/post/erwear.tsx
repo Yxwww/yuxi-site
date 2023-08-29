@@ -1,33 +1,36 @@
-import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-import { Page } from '../../components/layouts/main'
-import { ERWearExperience } from '../../src/contents'
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import { Page } from '../../components/layouts/main';
+import { createSodExperience } from '@/src/contents/sod';
 
 const ExperienceSection = dynamic(
   () => import('../../components/ExperienceSection')
-)
+);
 const UnderConstruction = dynamic(
   () => import('../../components/UnderConstruction')
-)
-const ImageModal = dynamic(() => import('../../components/modals/ImageModal'))
-const ImageGallery = dynamic(() => import('../../components/ImageGallery'))
+);
+const ImageModal = dynamic(() => import('../../components/modals/ImageModal'));
+const ImageGallery = dynamic(() => import('../../components/ImageGallery'));
 
 export default function SoDProject() {
-  const [modelOpened, setModelOpened] = useState(false)
-  const [imageModelState, setImageModelState] = useState({ url: '', title: '' })
+  const [modelOpened, setModelOpened] = useState(false);
+  const [imageModelState, setImageModelState] = useState({
+    url: '',
+    title: '',
+  });
   function toggleModel() {
-    setModelOpened(!modelOpened)
+    setModelOpened(!modelOpened);
   }
   function onImageClicked({ url, title }) {
-    setImageModelState({ url, title })
-    toggleModel()
+    setImageModelState({ url, title });
+    toggleModel();
   }
   return (
     <Page>
       <div className="container">
         <h1 className="my-4">ERWear</h1>
         <div className="tablet:p-8">
-          <ExperienceSection experience={ERWearExperience} linkTitle />
+          <ExperienceSection experience={createSodExperience()} />
         </div>
         <div className="my-4">
           <ImageGallery
@@ -62,5 +65,5 @@ export default function SoDProject() {
         <UnderConstruction />
       </div>
     </Page>
-  )
+  );
 }
