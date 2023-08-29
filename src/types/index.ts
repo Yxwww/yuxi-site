@@ -39,5 +39,6 @@ export interface ProductExperience {
 export interface Experience {
   uid?: string;
   company: string;
+  description?: string;
   productExperiences: ProductExperience[];
 }

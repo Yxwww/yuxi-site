@@ -22,7 +22,7 @@ const thumbnails = [];
 
 export function createEducation() {
   return createExperience({
-    company: 'Computer Science - University of Calgary',
+    company: 'University of Calgary',
     productExperiences: [
       {
         product: 'Computer Science',

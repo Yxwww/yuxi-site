@@ -1,7 +1,5 @@
-import { nanoid as generate } from 'nanoid';
 import { DEVELOPER_ROLE } from './constants';
 import { createExperience } from './constructors';
-import { createERWearExperience } from './erwear';
 
 const THUMBNAILS = [
   'seequent-eagle.png',
@@ -9,18 +7,14 @@ const THUMBNAILS = [
   'seequent-eagle-slides.png',
 ];
 
-const blurb = [
-  `As an early team member, I initially focused on frontend UI development using WebComponents. Recognizing opportunities for improvement, I spearheaded a transition to a more robust React & Redux architecture. Subsequently, I joined the visualization team, where I was instrumental in overhauling the existing visualization library using TypeScript and Three.js. Throughout my tenure, I established coding standards for frontend development and served as a mentor to junior team members.`,
-];
+const blurb = [];
 
 const contributions = [
-  'Oversaw the maintenance and enhancement of a 3D data visualization library, improving rendering performance and visual presentation.',
-  'Achieved significant performance increase by expanding renderable model size capacity, quadrupling frame rate for large data models, and reducing the First Input Delay.',
-  'Developed and maintained features for data primitives including points, lines, and meshes.',
-  'Led a comprehensive redesign of the frontend UI application, enhancing user experience, performance, and architecture.',
-  'Engineered collaboration features and customized visualization widgets for an enhanced interactive user experience.',
-  'Integrated various emerging technologies to enable architectural scalability alongside team growth.',
-  'Provided mentorship and training to new team members.',
+  'Led the transition from WebComponents to a more robust React & Redux architecture.',
+  'Appointed to the visualization team and spearheaded the revamp of the existing visualization library using TypeScript and Three.js.',
+  "Achieved a 4x frame rate increase for large data models, significantly improving the application's performance and capabilities.",
+  "Integrated various emerging technologies to ensure architectural scalability, accommodating the company's growth and evolving needs.",
+  'Mentored junior team members and established coding standards for frontend development.',
 ];
 
 const description = blurb;

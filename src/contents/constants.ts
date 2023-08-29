@@ -1,4 +1,7 @@
 export const DEVELOPER_ROLE = 'Software Developer';
+export const CONTRACTOR = 'Contractor';
+export const DATA_VIZ_DEV = 'Data Visualization Developer';
+export const FULLSTACK_DEV = 'Full Stack Developer';
 export const SENIOR_DEVELOPER_ROLE = 'Senior Software Developer';
 export const ROLE_DEVELOPER_INTERN = 'Software Developer Intern';
 export const RESEARCHER_ROLE = 'Researcher';

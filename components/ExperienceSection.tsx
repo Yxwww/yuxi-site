@@ -12,7 +12,7 @@ const createContributionList = map((data: any) => (
 ));
 // const NUMBER_OF_CONTRIBUTION_TOSHOW_ON_LOAD = 3
 const toArrayOfP = map((o: any) => (
-  <p className="my-2" key={generate()}>
+  <p className="my-1" key={generate()}>
     {o}
   </p>
 ));
@@ -20,7 +20,7 @@ function renderDescription(description: string[] | string) {
   if (Array.isArray(description)) {
     return toArrayOfP(description);
   }
-  return <p>{description}</p>;
+  return description ? <p>{description}</p> : null;
 }
 
 const ProjectExperience: FC<{ productExp: ProductExperience }> = ({
@@ -28,20 +28,20 @@ const ProjectExperience: FC<{ productExp: ProductExperience }> = ({
 }) => {
   const contributionLists = createContributionList(contributions);
   return (
-    <div className="my-2">
+    <div className="py-1">
       <div className="mt-1 text-lg">{product}</div>
       <div className="text-slate-500 flex justify-between align-end">
-        <div>
-          <i className="text-left experience-time">{time}</i>
-        </div>
         <div>
           <i className="text-left experience-roles">
             {generateRolesString(roles)}
           </i>
         </div>
+        <div>
+          <i className="text-left experience-time">{time}</i>
+        </div>
       </div>
       {renderDescription(description)}
-      <div className="px-2 tablet:px-4">
+      <div className="px-2 tablet:px-4 pt-1">
         <ul className="px-4 list-disc">{contributionLists}</ul>
       </div>
     </div>

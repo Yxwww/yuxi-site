@@ -71,7 +71,7 @@ function Portfolio() {
           <div className="text-left">
             <h2 className="pt-4">Profile</h2>
             <p>
-              Experienced developer with a passion for reasearching and creating
+              Experienced developer with a passion for researching and creating
               elegant solutions to complex problems. Skilled in UI programming,
               data visualization, and performance optimization, with over 7
               years of experience building web applications. Proficient in

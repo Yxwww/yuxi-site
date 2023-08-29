@@ -8,6 +8,7 @@ export function getExperience(): Experience[] {
   return [
     createCurvenoteExperience(),
     createLfviewExperience(),
+    createFreelancingExperience(),
     createSodExperience(),
   ];
 }

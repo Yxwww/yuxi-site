@@ -4,18 +4,16 @@ import { RESEARCHER_ROLE, DEVELOPER_ROLE } from './constants';
 import { ProductExperience } from '../types';
 
 const contributions = [
-  'Utilized IDEO methods for user feedback analysis and design refinement of a wearable tech-based emergency response system.',
-  'Designed and developed functional prototype with glass and wrist based wearable hardware.',
-  'Integrated wearable application with spatial-aware communication system.',
+  "Conducted undergraduate research on enhancing emergency responders' situational awareness through wearable technology.",
+  'Utilized IDEO methods for design refinement and user feedback analysis.',
+  'Developed a functional prototype integrating glass and wrist-based wearable hardware.',
 ];
 
 const thumbnails = ['erwear-poster.png'];
 
-const description = [
-  "ERWear is my undergraduate research project. My responsibility was to design a system leveraging glass and wrist-based wearable technology to enhance emergency responders' situational awareness.",
-];
+const description = [];
 const roles = [RESEARCHER_ROLE, DEVELOPER_ROLE];
-const time = 'September 2015 - June 2016';
+const time = 'Sep 2015 - Jun 2016';
 
 export function createERWearExperience(): ProductExperience {
   return {
