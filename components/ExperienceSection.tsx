@@ -29,7 +29,7 @@ const ProjectExperience: FC<{ productExp: ProductExperience }> = ({
   const contributionLists = createContributionList(contributions);
   return (
     <div className="py-1">
-      <div className="mt-1 text-lg">{product}</div>
+      {product ? <div className="mt-1 text-lg">{product}</div> : null}
       <div className="text-slate-500 flex justify-between align-end">
         <div>
           <i className="text-left experience-roles">
