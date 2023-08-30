@@ -1,10 +1,14 @@
 ---
 title: Darkmode - doing it right
-description: Adding darkmode to this website. Documenting the things learned.
+description: Adding darkmode to this website. Documenting the issues I tackled.
 published: 2023-07-06
 tags: darkmode, nextjs, tailwindcss
 image: capybara-darkmode.png
 ---
+
+{% callout %}
+This post is curently published in `dev notes` format. Will probably turn it into a proper blog post when I get to it.
+{% /callout %}
 
 ## Requirements
 
