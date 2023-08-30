@@ -109,6 +109,7 @@ function Header() {
           content="/static/favicons/ms-icon-144x144.png"
         />
         <meta name="theme-color" content="#ffffff" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         )
       </Head>

@@ -30,7 +30,7 @@ export function PostItem({
       <div className="hover:bg-base-200 transition-colors cursor-pointer grow flex">
         <Link href={`/post/${getPostPath(item)}`} className="flex grow">
           <div className="flex flex-col items-start sm:py-8 py-2 sm:px-6 px-4 sm:border-b grow font-mono">
-            <div className="font-bold text-lg">{title}</div>
+            <div className="font-bold text-2xl font-article">{title}</div>
             <p className="m-0 pt-2  font-light text-sm text-slate-500 dark:text-slate-400 flex items-center">
               <ReadingTime readingTime={readingTime} />
               {incomplete && (
