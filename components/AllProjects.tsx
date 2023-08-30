@@ -24,7 +24,7 @@ function PostLink({
       <div className="card-body font-mono flex-grow-0">
         <h2 className="card-title">{title}</h2>
         <p className="text-sm font-light">{description}</p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-end text-slate-500">
           {techStack.map((skill) => {
             return (
               <div key={`${id}-${skill}`} className="badge badge-outline">
