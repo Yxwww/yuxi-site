@@ -32,7 +32,7 @@ Continuous improvement is essential, but not every problem necessitates an archi
 
 ## The Balance
 
-As I became more mature and understanding how various framework and libraries work. I began to develop my own approach to solving problems. I learned that [React & Redux just doesn't cut it at that point](/post/eject_from_redux#general-issues-with-redux-library-and-react). My strategies for tackling intricate, high-performance applications became increasingly lightweight and custom. My guiding principles for finding the right balance include:
+As I gained more experience and understood various frameworks and libraries, my approach evolved. For example, I realized that [React & Redux is not the solution for every frontend architectural problem](/post/eject_from_redux#general-issues-with-redux-library-and-react). My strategies for tackling intricate, high-performance applications became increasingly lightweight and custom. My guiding principles for finding the right balance include:
 
 - **Apply the right tool for the right job.** Don't be afraid to experiment. You will make mistakes. Be brave to admit them, be ready to rectify them and move on.
 - **Start small and add things if necessary.** There are less necessary tools than you might think.
