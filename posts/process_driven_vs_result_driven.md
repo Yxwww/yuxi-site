@@ -12,7 +12,7 @@ Being fixated on results can lead to repetitive issue-solving, while an obsessio
 
 ## Being Result Driven
 
-I prid myself being the person for building things quickly and efficiently. I was heavily `result driven`. Most of the projects assigned to me were either completely greenfield or brand-new initiatives. I thrived in this fast-paced environment, even working extra hours to maintain speed and efficiency. While this approach served me well initially, things changed when I transitioned to an existing project with an established architecture.
+I pride myself being the person for building things quickly and efficiently. I was heavily `result driven`. Most of the projects assigned to me were either completely greenfield or brand-new initiatives. I thrived in this fast-paced environment, even working extra hours to maintain speed and efficiency. While this approach served me well initially, things changed when I transitioned to an existing project with an established architecture.
 
 Eager and excited, I quickly learned the ropes, mastering the system and team dynamics. Before long, I became a productive member of the team. However, one day, I found myself fixing the same bug for the tenth time. Though I was fast, I realized that my speed was channeled into resolving the same issues repeatedly. It prompted me to question the effectiveness of my result-driven approach. "There has to be a better way to do this," I told myself.
 
@@ -32,15 +32,16 @@ Continuous improvement is essential, but not every problem necessitates an archi
 
 ## The Balance
 
-As I became more mature and understanding how various framework and libraries work. I began to develop my own approach to solving problems. I learned that [React & Redux just doesn't cut it at that point](/post/eject_from_redux#general-issues-with-redux-library-and-react). My strategies for tackling intricate, high-performance applications became increasingly lightweight and custom. My guiding principles for finding the right balance include::
+As I became more mature and understanding how various framework and libraries work. I began to develop my own approach to solving problems. I learned that [React & Redux just doesn't cut it at that point](/post/eject_from_redux#general-issues-with-redux-library-and-react). My strategies for tackling intricate, high-performance applications became increasingly lightweight and custom. My guiding principles for finding the right balance include:
 
-- Apply the right tool for the right job. Don't be afraid to experiment
-- Try the ideas on real project. Build prototypes and analyze results carefully.
-- Be prepared to discard inadequate solutions
-- Document the journey and findings along the way.
-
-{% callout title="Learning" %}
-It's crucial to learn from experience and make thoughtful trade-offs.
-{% /callout %}
+- **Apply the right tool for the right job.** Don't be afraid to experiment. You will make mistakes. Be brave to admit them, be ready to rectify them and move on.
+- **Start small and add things if necessary.** There are less necessary tools than you might think.
+- **Take control over the runtime.** Whether it's frontend or backend, it's crucial to understand every call stack. Be picky about what goes into it.
+- **Learn the Basics, Dig Deeper.** A solid understanding of the underlying technology will empower you to make more informed decisions. Don't hesitate to dig a couple of layers deeper into the tech stack.
+- **Prototype Real-World Scenarios** Build prototypes and analyze results carefully and safely.
+- **Be prepared to discard inadequate solutions.** Some tools or methods may seem attractive due to flashy features or promises, but it's essential to consider their actual utility and effectiveness.
+- **Document the journey and findings** Keep a record of what you’ve learned, what worked, and what didn’t. Documentation is a treasure trove for future problem-solving.
+- **Influence the Team with Your Principles** Share these principles with your team to cultivate a collective approach to balancing speed and quality.
+- **Talk Over Noodles 🍜** Sometimes, the best conversations and revelations happen informally. Treat your teammates to some pho or ramen as you discuss your findings and insights.
 
 In summary, striking a balance between being result-driven and process-driven requires an adaptable mindset, bolstered by experience and ongoing learning.
