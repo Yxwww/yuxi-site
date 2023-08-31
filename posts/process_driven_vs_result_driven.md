@@ -1,6 +1,6 @@
 ---
 title: Process Driven vs Result Driven
-description: Personal experience shifting between process driven and result drive programming mindset. How I approach finding the happy medium.
+description: Personal experience shifting between process driven and result driven programming mindset. How I approach finding the happy medium.
 tags: Software Development, Programming mindset
 published: 2023-08-30
 image: capybara-digging.png
