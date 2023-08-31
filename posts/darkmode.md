@@ -84,7 +84,9 @@ Very standard hydration issue when the source of state is not stored on server. 
 - server doesn't have access to the theme state
 - renders the content that does not match with client leads to hydration error
 
-#### The solution: useMounted
+{% callout type="check" title="Solution" %}
+`useMounted` solves "all" hydration issue.
+{% /callout %}
 
 Checkout `useMounted` [here](https://github.com/Yxwww/yuxi-site/blob/main/utils/hooks/useMounted.ts). This simple hook utilized the nature of useEffect. useEffect with empty `[]` dependencies only gets called by the client when the component gets mounted.
 
@@ -111,7 +113,6 @@ Assessing the current design:
 
 {% callout type="note" title="Hypothesis" %}
 .theme class gets rendered by <ThemePrevToggle /> too late
-This post is curently published as _dev notes_ format. Will turn it into a proper blog post at somepoint. 🤞
 {% /callout %}
 
 - Observation
@@ -129,7 +130,9 @@ Prototype: lifting theme state into app root see if flash persists:
 
 Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issue, can we handle darkmode even earlier?
 
-### Hypothesis: lift darkmode logic all the way to the top of render tree makes rerender not observable
+{% callout type="note" title="Hypothesis" %}
+lift darkmode logic all the way to the top of render tree makes rerender not observable
+{% /callout %}
 
 ![Images](/static/img/posts/tailwind-darkmode-logic.png)
 
@@ -145,7 +148,9 @@ Result in flash disappear sooner! Yet, it is still obvious. Rerender is the issu
 
 Result, flash is gone! It looks like the script gets executed synchronously which immediately adds `.dark` class into document. The document renders theme right after. This is good enough for now.
 
-### Hypothesis: render darkmode on the server solves rerender issue completely
+{% callout type="note" title="Hypothesis" %}
+render darkmode on the server solves rerender issue completely
+{% /callout %}
 
 ![Images](/static/img/posts/prerenders_dark_mode.png)
 
