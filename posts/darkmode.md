@@ -6,8 +6,8 @@ tags: darkmode, nextjs, tailwindcss
 image: capybara-darkmode.png
 ---
 
-{% callout %}
-This post is curently published in `dev notes` format. Will probably turn it into a proper blog post when I get to it.
+{% callout type="caution" title="Note" %}
+This post is curently published as _dev notes_ format. Will turn it into a proper blog post at somepoint. 🤞
 {% /callout %}
 
 ## Requirements
