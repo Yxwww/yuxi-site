@@ -51,7 +51,6 @@ h6 {
   @apply opacity-100;
 }
 
-
 .heading-counter {
   @apply transition-opacity opacity-50 text-slate-500 mr-1 font-normal absolute bottom-1 right-full; /* using em for relative size shrinking */
   font-size: 0.7em;
@@ -87,4 +86,11 @@ h6 {
   content: counter(h2section) '.' counter(h3subsection) '.'
     counter(h4subsection) '.';
   @apply heading-counter;
+}
+
+.prose .callout ul {
+  @apply my-1;
+}
+.prose .callout li {
+  @apply my-1;
 }

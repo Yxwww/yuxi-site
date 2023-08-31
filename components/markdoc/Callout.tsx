@@ -57,7 +57,9 @@ const Callout: FC<{
           title ? 'flex-col sm:items-start' : 'flex-col sm:flex-row'
         }`}
       >
-        <div className={`flex items-center justify-center sm:mb-0 mb-2`}>
+        <div
+          className={`font-medium flex items-center justify-center sm:mb-0 mb-2`}
+        >
           <CalloutIcons icon={type} className={`text-${daisyThemeVar}`} />
           {title ? <span className="ml-2">{title}</span> : null}
         </div>
