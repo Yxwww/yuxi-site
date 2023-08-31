@@ -1,5 +1,5 @@
 ---
-title: Darkmode - doing it right
+title: Web dev problem solving - darkmode
 description: Adding darkmode to this website. Documenting the issues I tackled.
 published: 2023-07-06
 tags: darkmode, nextjs, tailwindcss
@@ -10,20 +10,24 @@ image: capybara-darkmode.png
 This post is curently published as _dev notes_ format. Will turn it into a proper blog post at somepoint. 🤞
 {% /callout %}
 
+It's good solve problems by understanding the nature of the problem before dive into the solutions. I've aware there are adequate darkmode solutions out there. However, it always helps to tackle the problem first. Let's start with requirement gathering.
+
 ## Requirements
 
 - Functional requirements
-  - renders system preference by default
+  - darkmode decides whether the application renders the light or dark theme
   - allows configuration, preference should be stored and persisted
 - UX & Technical requirements
-  - no flash(light => dark) during first render
-  - resolve hydration issue with localStorage
+  - Darkmode should behave expectedly as how OS handles darkmode
+  - renders system preference by default
 
 ## Importance
 
+Understanding the how important the problem is to solve helps laying down the scope and expectation of the result. The expectation consists of the following:
+
 - Solving darkmode well lays ground work for future user preference handling
 - Make the loading experience seamless. First 3 seconds is important.
-- Learning how to handle darkmode helps future development
+- Learning how to handle darkmode helps with future development.
 
 ## Process
 
@@ -70,9 +74,9 @@ Although, adding darkmode button is faily staright forward. Devil's always in th
 - Hydration issue: server side rendering does not have access to local storage causes hydration mismatch
 - Theme preference render happens later than expected which causes an uncomfortable flash.
 
-## The hydration issue
+### The hydration issue
 
-### The problem: hydration content mismatch due to state difference
+The problem: hydration content mismatch due to state difference
 
 Very standard hydration issue when the source of state is not stored on server. This happens to the theme button due to the icon rendering state is dependent on the theme state:
 
@@ -80,7 +84,7 @@ Very standard hydration issue when the source of state is not stored on server. 
 - server doesn't have access to the theme state
 - renders the content that does not match with client leads to hydration error
 
-### The solution: useMounted
+#### The solution: useMounted
 
 Checkout `useMounted` [here](https://github.com/Yxwww/yuxi-site/blob/main/utils/hooks/useMounted.ts). This simple hook utilized the nature of useEffect. useEffect with empty `[]` dependencies only gets called by the client when the component gets mounted.
 
@@ -95,7 +99,7 @@ function Component() {
 
 Using useMounted hook makes the <ThemeToggleButton /> only rendered by client. This avoids hydration issue all together. Now, let's have a looking at how to fix the flash issue.
 
-## The flash issue
+### The flash issue
 
 While addressing the requirements, I've noticed an issue when the page renders the theme preference stored in `localStorage` later than expected causes the app to render "incorrect" theme first before rendering the prefered theme.
 
@@ -105,7 +109,10 @@ Assessing the current design:
 - source of truth of theme state is stored in `localStorage`
 - theme toggle effect is handled by <ThemePrefToggleBtn /> component
 
-### Hypothesis: .theme class gets rendered by <ThemePrevToggle /> too late
+{% callout type="note" title="Hypothesis" %}
+.theme class gets rendered by <ThemePrevToggle /> too late
+This post is curently published as _dev notes_ format. Will turn it into a proper blog post at somepoint. 🤞
+{% /callout %}
 
 - Observation
   - throttle CPU speed to 4X in chrome performance tab
