@@ -1,5 +1,5 @@
 ---
-title: Web dev problem solving - darkmode
+title: Web app problem solving - darkmode
 description: Adding darkmode to this website. Documenting the issues I tackled.
 published: 2023-07-06
 tags: darkmode, nextjs, tailwindcss

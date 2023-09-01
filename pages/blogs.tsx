@@ -3,10 +3,12 @@ import { Page } from '../components/layouts/main';
 import { PostList } from '@/components/post/PostList';
 import { PostItemList } from 'src/types';
 import { getAllPosts } from 'src/utils/serverside';
+import generateRssFeed from '@/src/utils/generatedRSSFeed';
 
 export async function getStaticProps(): Promise<{
   props: { posts: PostItemList };
 }> {
+  await generateRssFeed();
   const posts = await getAllPosts();
   const sorted = posts.slice().sort((a, b) => {
     return (
