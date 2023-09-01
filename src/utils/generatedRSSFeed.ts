@@ -37,5 +37,4 @@ export default async function generateRssFeed() {
   fs.writeFileSync('./public/rss.xml', feed.xml({ indent: true }));
   // fs.writeFileSync('./public/rss.json', feed.json());
   // fs.writeFileSync('./public/atom.xml', feed.atom());
-  console.log('RSS feed generated.');
 }
