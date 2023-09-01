@@ -9,6 +9,7 @@ import { ThemePrefToggleBtn } from '../ThemePrefToggleBtn';
 import NavToggle from './NavToggle';
 import { useLocalStorage } from '@/utils/hooks';
 import { useRouter } from 'next/router';
+import RssFeedBtn from '../RssFeedBtn';
 
 export interface NavItem {
   url: string;
@@ -76,8 +77,14 @@ export default function Heading() {
             }}
           />
         </div>
-        <div className="p-1">
-          <ThemePrefToggleBtn />
+        <div className="p-1 flex items-center">
+          <div className="hidden sm:inline">
+            <RssFeedBtn />
+          </div>
+
+          <div className="inline sm:mx-2">
+            <ThemePrefToggleBtn />
+          </div>
         </div>
       </div>
     </div>

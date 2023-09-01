@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import RssIcon from '@heroicons/react/24/solid/RssIcon';
+import RssFeedBtn from './RssFeedBtn';
 
 export function Footer() {
   return (
@@ -18,9 +19,7 @@ export function Footer() {
           Blogs
         </Link>
       </div>
-      <Link href="/rss.xml" className="hover:text-primary-focus">
-        <RssIcon className="w-8 h-8" />
-      </Link>
+      <RssFeedBtn />
     </footer>
   );
 }
