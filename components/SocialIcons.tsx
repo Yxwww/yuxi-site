@@ -6,6 +6,7 @@ import EmailIcon from '/public/static/img/icons/email.png';
 import PhoneIcon from '/public/static/img/icons/phone.png';
 import Image from './Image';
 import Link from 'next/link';
+import { RssIcon } from '@heroicons/react/24/solid';
 
 export default function SocialIcons({ className = '' }) {
   return (
@@ -44,6 +45,9 @@ export default function SocialIcons({ className = '' }) {
       </Link>
       <Link title="Phone" href="rel:1-403-560-6778">
         <Image className="social-icon" src={PhoneIcon} alt="" />
+      </Link>
+      <Link href="/rss.xml">
+        <RssIcon className="w-8 h-8" />
       </Link>
     </div>
   );
