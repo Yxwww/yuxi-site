@@ -1,6 +1,4 @@
-import { nanoid as generate } from 'nanoid';
 import { createExperience } from './constructors';
-import { createERWearExperience } from './erwear';
 
 const contributions = [
   // 'CPSC-449: Programing Paradigms',

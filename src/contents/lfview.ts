@@ -1,12 +1,12 @@
 import { DEVELOPER_ROLE } from './constants';
 import { createExperience } from './constructors';
 
-const THUMBNAILS = [
-  'seequent-eagle.png',
-  'lfview-look-at-wing.png',
-  'seequent-eagle-slides.png',
-];
-
+// const THUMBNAILS = [
+//   'seequent-eagle.png',
+//   'lfview-look-at-wing.png',
+//   'seequent-eagle-slides.png',
+// ];
+//
 const blurb = [];
 
 const contributions = [
