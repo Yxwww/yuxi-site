@@ -1,0 +1,1 @@
+export { mdRenderToReact } from './config';

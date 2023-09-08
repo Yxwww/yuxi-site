@@ -47,7 +47,7 @@ function Portfolio() {
           <div>
             <h1 className="font-normal text-">Yuxi Wang </h1>
             <p className="text-slate-600 dark:text-slate-400">
-              Frontend Developer
+              Web Developer with Frontend Focus
             </p>
           </div>
           <div className="contact">

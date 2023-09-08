@@ -6,3 +6,5 @@ out
 
 .now
 public/rss.xml
+public/atom.xml
+public/rss.json

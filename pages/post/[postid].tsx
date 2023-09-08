@@ -9,10 +9,7 @@ import 'prismjs';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/themes/prism-tomorrow.min.css';
-import { Fence } from '@/components/markdoc/Fence';
-import { Heading as HeadingNodeRenderer } from '@/components/markdoc/Heading';
-import { Image as ImageNodeRenderer } from '@/components/markdoc/Image';
-import { fence, callout, heading, image } from '@/markdoc/schema';
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { InferGetStaticPropsType } from 'next';
@@ -31,21 +28,10 @@ import useEl from '@/utils/hooks/useEl';
 import { usePage } from '@/components/contexts/page';
 import Image from 'next/image';
 import { getReadingTime } from '@/src/utils';
-import RotatingHammer from '@/components/icons/RotatingHammer';
-import CalloutTag from '@/components/markdoc/Callout';
 import ReadingTime from '@/components/ReadingTime';
 import Hammer from '@/components/icons/Hammer';
+import { mdRenderToReact } from '@/markdoc';
 
-const config: Config = {
-  nodes: {
-    heading,
-    fence,
-  },
-  tags: {
-    callout,
-    image,
-  },
-};
 const UTTERANCES_SCRIPT_SETUP: UseScriptsAttributes = {
   src: 'https://utteranc.es/client.js',
   crossOrigin: 'anonymous',
@@ -101,19 +87,9 @@ function formatDate(date: Date | string) {
   return dayjs(date).format('MMM DD, YYYY');
 }
 
-const RENDER_OPTION = {
-  components: {
-    Fence,
-    Heading: HeadingNodeRenderer,
-    Callout: CalloutTag,
-    Image: ImageNodeRenderer,
-  },
-};
 function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const ast = Markdoc.parse(post.content);
   const { setPostContext } = usePage();
-  const content = Markdoc.transform(ast, config);
-  const components = Markdoc.renderers.react(content, React, RENDER_OPTION);
+  const components = mdRenderToReact(post.content);
   const [renderComments, setRenderComments] = React.useState(false);
   useEffect(() => {
     setRenderComments(true);

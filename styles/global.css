@@ -52,7 +52,7 @@ h6 {
 }
 
 .heading-counter {
-  @apply transition-opacity opacity-50 text-slate-500 mr-1 font-normal absolute bottom-1 right-full; /* using em for relative size shrinking */
+  @apply transition-opacity opacity-20 text-slate-500 mr-1 font-normal absolute bottom-1 right-full; /* using em for relative size shrinking */
   font-size: 0.7em;
 }
 
