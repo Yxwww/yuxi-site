@@ -62,7 +62,7 @@ const ExperienceSection: FC<{ experience: Experience }> = ({ experience }) => {
       {productExperiences.map((exp) => {
         return <ProjectExperience key={exp.projecturl} productExp={exp} />;
       })}
-      <span className="right-bottom-corner" />
+      <span className="right-bottom-corner text-slate-900  dark:text-slate-300" />
     </div>
   );
 };

@@ -170,6 +170,7 @@ render darkmode on the server solves rerender issue completely
   - check system pref on window focused
 - checkout the last hypothesis: rendering darkmode on server approach
   - is there a request header you can specify user theme preference?
+- checkout [shadcn](https://ui.shadcn.com/docs/dark-mode/next)
 
 ## Resources:
 

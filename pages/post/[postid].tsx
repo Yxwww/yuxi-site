@@ -112,7 +112,7 @@ function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   }, [title, description, published, updated, tags, setPostContext, image]);
 
   return (
-    <Page>
+    <Page className="print:max-w-5xl">
       <Head>
         <title key={META_TITLE_KEY}>{`${title} |  Yuxi's Blog`}</title>
         <meta property="og:title" content={title} key={META_OG_TITLE_KEY} />

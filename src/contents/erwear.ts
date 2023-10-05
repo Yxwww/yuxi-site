@@ -10,7 +10,7 @@ const contributions = [
 const thumbnails = ['erwear-poster.png'];
 
 const description = [];
-const roles = [RESEARCHER_ROLE, DEVELOPER_ROLE];
+const roles = [DEVELOPER_ROLE, RESEARCHER_ROLE];
 const time = 'Sep 2015 - Jun 2016';
 
 export function createERWearExperience(): ProductExperience {
