@@ -29,6 +29,7 @@ const NAV_ITEMS_TUPLES: [string, string][] = [
   ['/resume', 'resume'],
   ['/projects', 'projects'],
   ['/blogs', 'blogs'],
+  ['https://playground.yuxi.dev', 'playground'],
 ];
 const NAV_ITEMS: ReadonlyArray<NavItem> = createNavItems(NAV_ITEMS_TUPLES);
 
