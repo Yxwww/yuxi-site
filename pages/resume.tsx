@@ -47,7 +47,7 @@ function Portfolio() {
           <div>
             <h1 className="font-normal text-">Yuxi Wang </h1>
             <p className="text-slate-600 dark:text-slate-400">
-              Web Developer with Frontend Focus
+              SDK Development | 3D Visualization
             </p>
           </div>
           <div className="contact">
@@ -71,12 +71,14 @@ function Portfolio() {
           <div className="text-left">
             <h2 className="pt-4">Profile</h2>
             <p>
-              Experienced developer with a passion for researching and creating
-              elegant solutions to complex problems. Skilled in UI programming,
-              data visualization, and performance optimization, with over 7
-              years of experience building web applications. Proficient in
-              JavaScript, React, and the Web platform. Committed to delivering
-              exceptional user experiences.
+              Experienced developer specializing in 3D graphics and interactive
+              web applications, with expertise in Three.js, WebGL, and modern
+              rendering techniques. Skilled in building intuitive React-based
+              interfaces for complex 3D operations, performance optimization,
+              and creating elegant solutions to challenging spatial problems.
+              Over 9 years of experience developing web applications with a
+              focus on 3D visualization and delivering exceptional user
+              experiences for technical applications.
             </p>
           </div>
         </div>
@@ -84,29 +86,28 @@ function Portfolio() {
         <div className="grid grid-cols-1 print:grid-cols-3 tablet:grid-cols-3 pt-2 tablet:gap-8 gap-2">
           <SkillGroup title="Frameworks & Libraries">
             <li className="my-1">
-              React/Redux <SkillYear year={5} />, WebComponents{' '}
-              <SkillYear year={2} />, Svelte <SkillYear year={1} />
+              React <SkillYear year={6} />, WebComponents <SkillYear year={2} />
+              , Svelte <SkillYear year={1} />
             </li>
             <li className="my-1">
-              Three.js <SkillYear year={3} />, d3.js <SkillYear year={1} />,
+              Three.js <SkillYear year={5} />, d3.js <SkillYear year={1} />,
               prosemirror <SkillYear year={2} />
             </li>
             <li className="my-1">RxJS, SWR, Tailwindcss</li>
           </SkillGroup>
 
           <SkillGroup title="Tools">
-            <li className="my-1">Git, Webpack, Rollup, Babel</li>
+            <li className="my-1">Git, Webpack, Rollup, Babel, esbuild</li>
             <li className="my-1">Vercel, Node.js, Express, MongoDB</li>
-            <li className="my-1">
-              Jest, Cypress, React testing library, Github Actions
-            </li>
+            <li className="my-1">Jest, Cypress, React testing library</li>
+            <li className="my-1">Cursor Agent, Claude Code</li>
           </SkillGroup>
           <SkillGroup title="Languages">
             <li className="my-1">
-              JavaScript/TypeScript <SkillYear year="8" />
+              JavaScript/TypeScript <SkillYear year="10" />
             </li>
             <li className="my-1">
-              HTML & CSS <SkillYear year="8" />
+              HTML & CSS <SkillYear year="10" />
             </li>
             <li className="my-1">
               C# <SkillYear year="2" />
