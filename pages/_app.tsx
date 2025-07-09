@@ -8,15 +8,24 @@ import { PageProvider } from '@/components/contexts/page';
 const opensansFont = Open_Sans({
   subsets: ['latin'],
   variable: '--font-open-sans',
+  display: 'swap',
+  adjustFontFallback: false,
+  preload: true,
 });
 
 const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
   variable: '--font-roboto-slab',
+  display: 'swap',
+  adjustFontFallback: false,
+  preload: true,
 });
 const robotoMonoFont = Martian_Mono({
   subsets: ['latin'],
   variable: '--font-roboto-mono',
+  display: 'swap',
+  adjustFontFallback: false,
+  preload: true,
 });
 
 const MyApp = ({ Component, pageProps }) => {
