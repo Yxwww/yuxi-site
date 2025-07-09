@@ -14,17 +14,17 @@ export function createFreelancingExperience() {
         projecturl: '/post/freelancing',
         roles: [DATA_VIZ_DEV],
       },
-      {
-        product: "Li's Food Revolution",
-        thumbnails: [],
-        contributions: [
-          'Served as Lead Developer, guiding clients through the digital transformation of their commercial kitchen management system.',
-          'Implemented secure authentication via Magic Auth and spearheaded full-stack development using Vercel, Tailwind CSS, and MongoDB.',
-        ],
-        time: 'Jul, 2020 - Feb, 2022',
-        projecturl: '/post/lfr',
-        roles: [FULLSTACK_DEV],
-      },
+      // {
+      //   product: "Li's Food Revolution",
+      //   thumbnails: [],
+      //   contributions: [
+      //     'Served as Lead Developer, guiding clients through the digital transformation of their commercial kitchen management system.',
+      //     'Implemented secure authentication via Magic Auth and spearheaded full-stack development using Vercel, Tailwind CSS, and MongoDB.',
+      //   ],
+      //   time: 'Jul, 2020 - Feb, 2022',
+      //   projecturl: '/post/lfr',
+      //   roles: [FULLSTACK_DEV],
+      // },
     ],
   });
 }
