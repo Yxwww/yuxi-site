@@ -10,7 +10,7 @@ const contributions = [
   'Enabled multi-million dollar enterprise contracts through rapid delivery of mission-critical SDK solutions for major international airports and large commercial venues, ranging from emergency bug fixes to rebuilding entire React Native SDK from scratch with 88% test coverage within one-month deadline.',
   'Solved complex 3D spatial fitting problems achieving pixel-perfect geometry alignment, resolved depth buffer issues for transparent image rendering, implemented pan bounds calculation algorithms for dynamic map sizing, and optimized altitude offset calculations for stacked map visual separation - saving thousands of hours of customer support time',
   'Led and coached cross-functional engineering team while collaborating with product, sales, and engineering stakeholders to translate business requirements into technical solutions, fostering a supportive high-velocity culture that consistently exceeded delivery goals',
-  'Established comprehensive testing framework for 3D visualization applications with 70%+ coverage, implementing development best practices that delivered enterprise-grade reliability and reduced production incidents while enabling confident feature delivery',
+  'Established comprehensive testing for 3D visualization applications with 70%+ coverage, implementing development best practices that delivered enterprise-grade reliability and reduced production incidents while enabling confident feature delivery',
 ];
 
 const description = blurb;
